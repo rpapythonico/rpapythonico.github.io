@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%2025.2%20-%20DBs%20-%20Python/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Python - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Python";
+        var mkdocs_page_input_path = "S02\\Aula 25.2 - DBs - Python.md";
+        var mkdocs_page_url = "/S02/Aula%2025.2%20-%20DBs%20-%20Python/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Aula 25 - Bancos de Dados</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#sqlite">sqlite</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplo">Exemplo</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+          <li>Aula 25 - Bancos de Dados &raquo;</li>
+      <li>Python</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="bases-de-dados-python">Bases de Dados - Python</h1>
+<h2 id="sqlite">sqlite</h2>
+<p>Todo o conceito aplicado aqui foi utilizando o banco de dados sqlite, mas vale destacar que todas as demais <strong>bases relacionais</strong> possuem similaridade com o script executado através da biblioteca sqlite3.</p>
+<h2 id="exemplo">Exemplo</h2>
+<ul>
+<li>
+<p>Importar a biblioteca</p>
+<pre class="highlight"><code class="language-python">import sqlite3</code></pre>
+</li>
+<li>
+<p>Abrir conexão com um banco de dados</p>
+<pre class="highlight"><code class="language-python">con = sqlite3.connect('example.db')</code></pre>
+</li>
+<li>
+<p>Fechado conexão com um banco de dados</p>
+<pre class="highlight"><code class="language-python">con.close()</code></pre>
+</li>
+<li>
+<p>Abrir cursor em um banco de dados</p>
+<p>O cursor em um banco de dados é o que permite a interatividade entre a linguagem de programação e banco de dados. Permitindo assim, consultas, inserções, exclusões e atualizações nos registros.</p>
+<pre class="highlight"><code class="language-python">cur = con.cursor()</code></pre>
+</li>
+<li>
+<p>Fechar cursor em um banco de dados</p>
+<pre class="highlight"><code class="language-python">cur.close()</code></pre>
+</li>
+<li>
+<p>Criando uma tabela no banco de dados</p>
+<pre class="highlight"><code class="language-python">cur.execute('CREATE TABLE "TB_Cliente"( "CPF" INTEGER NOT NULL UNIQUE, "Nome_Completo" TEXT NOT NULL, "Data_Nascimento" TEXT NOT NULL, "Telefone" TEXT, "Email" TEXT, "CEP" TEXT NOT NULL, PRIMARY KEY("CPF"));')</code></pre>
+</li>
+<li>
+<p>Inserindo um registro no banco de dados</p>
+<p><pre class="highlight"><code class="language-python">cur.execute("INSERT INTO TB_Cliente VALUES (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355')"))
+
+con.commit()</code></pre>
+- Inserindo vários registros no banco de dados</p>
+<pre class="highlight"><code class="language-python">lista_registros = [(88190475789, 'José Hugo Manuel Porto', '11/07/1997', '41989320821', 'jjosehugomanuelporto@patriciagrillo.adv.br', '83309270'), (39962955106, 'Marina Carolina dos Santos', '26/09/1995', '81984235792', 'marinacarolinadossantos_@lukin4.com.br', '53350130'), (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355'), (76938977550, 'Yasmin Evelyn Maria Costa', '20/04/1959', '91998657654', 'yasminevelynmariacosta-88@yahoo.com.ar', '66810020'), (25373027375, 'Fernando Giovanni Bernardes', '02/03/1964', '81989889726', 'fernandogiovannibernardes-92@soulcomunicacao.com.br', '51180440'), (85775491947, 'Clarice Vitória Teixeira', '24/02/1958', '82996438794', 'claricevitoriateixeira-97@india.com', '57052605'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (90123303354, 'Carolina Cláudia Pietra da Rocha', '14/04/1952', '63992520221', 'carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br', '77017297'), (96558670801, 'Levi Theo Matheus Ramos', '04/04/1961', '22988505045', 'levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br', '28024123'), (57218723306, 'Davi Márcio Rafael Nogueira', '25/07/1997', '69991521228', 'davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br', '76964042')]
+
+cur.executemany("INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)", lista_registros)
+
+con.commit()</code></pre>
+</li>
+<li>
+<p>Apagar registro no banco de dados</p>
+<pre class="highlight"><code class="language-python">cur.execute("DELETE FROM TB_Cliente WHERE CPF = (?)",(88190475789,))
+
+con.commit()</code></pre>
+</li>
+<li>
+<p>Atualizar registro no banco de dados</p>
+<pre class="highlight"><code class="language-python">cur.execute("UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = (?)", (39962955106,))
+
+con.commit()</code></pre>
+</li>
+<li>
+<p>Efetuar consulta no banco de dados</p>
+<pre class="highlight"><code class="language-python">cur.execute("SELECT * FROM TB_Cliente")
+
+# Para receber UM registro localizado
+cur.fetchone()
+# output: (116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130')
+
+# Para receber TODOS os registros localizados
+cur.fetchall()
+# output: [(116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (7287125803, 'Eduarda Emily Almada', '20/04/1941', '32985692709', 'eduardaemilyalmada_@peopleside.com.br', '36200142')]</code></pre>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%2025.1%20-%20DBs%20-%20Queries/" class="btn btn-neutral float-left" title="Queries"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/" class="btn btn-neutral float-right" title="Aula 26 - Orientação a Objetos">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%2025.1%20-%20DBs%20-%20Queries/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        };
+    </script>
+
+</body>
+</html>
