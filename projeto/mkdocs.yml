@@ -1,0 +1,69 @@
+site_name: RPA Pythonico
+site_url: https://rpapythonico.github.io/
+nav:
+  - Principal: index.md
+  - Temporada 2:
+    # - Aulas 1 à 11 - Introdução: 
+    - Aula 0 - Instalação Python: S02/Aula 0 - Instalação Python.md
+    - Aula 1 - Distribuições: S02/Aula 1 - Distribuições.md
+    - Aula 2 - IDEs: S02/Aula 2 - IDEs.md
+    - Aula 3 - Variáveis: 
+      - Visão Geral: S02/Aula 3 - Variáveis.md
+      - Manipulação de Strings: S02/Aula 3.1 - Manipulação de Strings.md
+    - Aula 4 - Variaveis Compostas: S02/Aula 4 - Variaveis Compostas.md
+    - Aula 5 - Identação e Condicionais: S02/Aula 5 - Identação e Condicionais.md
+    - Aula 6 - Operadores Aritméticos: S02/Aula 6 - Operadores Aritméticos.md
+    - Aula 7 - Operadores Comparativos: S02/Aula 7 - Operadores Comparativos.md
+    - Aula 8 - Funções: S02/Aula 8 - Funções.md
+    - Aula 9 - Looping: S02/Aula 9 - Looping.md
+    - Aula 10 - Tratativas de Erros: S02/Aula 10 - Tratativas de Erros.md
+    - Aula 11 - Instalação e Importação de Bibliotecas: S02/Aula 11 - Instalação e Importação de Bibliotecas.md
+    # - Aulas 12 à 14 - Sistemas Operacionais:
+    - Aula 12 - Sistema Operacional: S02/Aula 12 - Sistema Operacional.md
+    - Aula 13 - Constants: S02/Aula 13 - Constants.md
+    - Aula 14 - Open: S02/Aula 14 - Open.md
+    # - Aulas 15 à 18 - Planilhas:
+    - Aula 15 - Openpyxl: S02/Aula 15 - Openpyxl.md
+    - Aula 16 - Xlsxwriter: S02/Aula 16 - Xlsxwriter.md
+    - Aula 17 - Pandas: S02/Aula 17 - Pandas.md
+    - Aula 18 - CSV: S02/Aula 18 - CSV.md
+    # - Aulas 19 à 21 - PDFs, Email e Expressões:
+    - Aula 19 - Pdfs: S02/Aula 19 - Pdfs.md
+    - Aula 20 - Email: S02/Aula 20 - Email.md
+    - Aula 21 - RegEx: S02/Aula 21 - RegEx.md
+    # - Aulas 22 à 24 - Web Scraping:
+    - Aula 22 - Selenium:
+      - Visão Geral: S02/Aula 22.0 - Selenium - Visão Geral.md
+      - Navegador: S02/Aula 22.1 - Selenium - Navegador.md
+      - Interações: S02/Aula 22.2 - Selenium - Interações.md
+    - Aula 23 - BeautifulSoup: S02/Aula 23 - BeautifulSoup.md
+    - Aula 24 - APIs: S02/Aula 24 - APIs.md
+    # - Aulas 25 e 26 - Avançado:
+    - Aula 25 - Bancos de Dados:
+      - Visão Geral: S02/Aula 25.0 - DBs - Geral.md
+      - Queries: S02/Aula 25.1 - DBs - Queries.md
+      - Python: S02/Aula 25.2 - DBs - Python.md
+    - Aula 26 - Orientação a Objetos: S02/Aula 26 - Orientação a Objetos.md
+    # - Extras:
+    - Aula 991 - Datetime: S02/Aula 992 - Datetime.md
+  - Temporada 1: 
+    - Aula 1 - Introdução: S01/Aula 1 - Introdução.md
+    - Aula 2 - Listas, Dicionários e Loopings: S01/Aula 2 - Listas, Dicionários e Loopings.md
+    - Aula 3 - Funções, Manipulações e Erros: S01/Aula 3 - Funções, Manipulações e Erros.md
+    - Aula 4 - Bibliotecas, Excel e TXTs: S01/Aula 4 - Bibliotecas, Excel e TXTs.md
+    - Aula 5 - Selenium e BeautifulSoup: S01/Aula 5 - Selenium e BeautifulSoup.md
+    - Aula 7 - RegEx e APIs: S01/Aula 7 - RegEx e APIs.md
+    - Aula 8 - Email, DBs e OO: S01/Aula 8 - Email, DBs e OO.md
+theme: 
+  name: readthedocs
+  # collapse_navigation: false
+  # titles_only: true
+  sticky_navigation: false
+  locale: pt_BR
+  highlightjs: true
+  hijs_languages:
+    - python
+    - bash
+markdown_extensions:
+  - pymdownx.superfences
+copyright: RPA Pythonico @ 2022

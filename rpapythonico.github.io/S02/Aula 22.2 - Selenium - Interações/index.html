@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Interações - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Intera\u00e7\u00f5es";
+        var mkdocs_page_input_path = "S02\\Aula 22.2 - Selenium - Intera\u00e7\u00f5es.md";
+        var mkdocs_page_url = "/S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Aula 22 - Selenium</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Interações</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#apagando-e-escrevendo-em-um-campo">Apagando e escrevendo em um campo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clicar-em-um-elemento">Clicar em um elemento:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#extrair-textos">Extrair textos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#printscreens">Printscreens</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dropdowns">Dropdowns</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+          <li>Aula 22 - Selenium &raquo;</li>
+      <li>Interações</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="selenium-interacoes">Selenium - Interações</h1>
+<h2 id="apagando-e-escrevendo-em-um-campo">Apagando e escrevendo em um campo</h2>
+<p>Durante a navegação em um site, existem formulátios ou campos de busca que precisam ser preenchidos. Com isso, o primeiro passo para evitar problemas, é apagar o campo utilizando o seguinte comando:
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('twotabsearchtextbox').clear()</code></pre></p>
+<p>Após o campo estar limpo e pronto para receber o texto, a escrita será realizada com o código:
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('twotabsearchtextbox').send_keys('Python')</code></pre></p>
+<h2 id="movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</h2>
+<p>Alguns elementos acabam não carregando até que a tela seja movimenta para próximo do mesmo. Para fazer isso, basta utilizar o código a seguir:
+<pre class="highlight"><code class="language-python">driver.find_element_by_class_name('navFooterBackToTopText').location_once_scrolled_into_view</code></pre></p>
+<h2 id="clicar-em-um-elemento">Clicar em um elemento:</h2>
+<p>Para acessar objetos na página, se faz necessário dar cliques e isso é permitido usando o comando:
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('nav-search-submit-button').click()</code></pre></p>
+<h2 id="extrair-textos">Extrair textos</h2>
+<p>Quando uma tag possui texto entre a abertura e o fechamento, o mesmo poderá ser coletado através da seguinte funcionalidade:  <br />
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('glow-ingress-line2').text</code></pre></p>
+<p>Caso não exista texto entre as tags, o mesmo poderá estar em algum atributo dela. Logo, para coletar direto de um atributo HTML, basta usar a seguinte função:
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('nav-logo-sprites').get_attribute('aria-label')</code></pre></p>
+<h2 id="printscreens">Printscreens</h2>
+<ul>
+<li>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:  <br />
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('navbar').screenshot('menu.png')</code></pre>
+Caso deseje tirar um print da página inteira conforme está sendo visto no navegador, basta utilizar a função a seguir:
+<pre class="highlight"><code class="language-python">driver.save_screenshot("screenshot.png")</code></pre></li>
+</ul>
+<h2 id="dropdowns">Dropdowns</h2>
+<p>Dentro do HTML, existe o conceito de dropdown, cujo botão permite ao usuário abrir uma lista de opções e escolher uma delas. Para que isso fique bem assertivo no Selenium, a função "Select" deverá ser importada e instanciada durante a execução. O uso dela pode ser visto melhor no código abaixo:
+<pre class="highlight"><code class="language-python">from selenium.webdriver.support.ui import Select
+
+dropdown = Select(driver.find_element_by_id('searchDropdownBox'))
+
+#Selecionar pelo texto presente
+dropdown.select_by_visible_text('Computadores e Informática')
+
+#Selecionar pelo atributo value do HTML
+dropdown.select_by_value('search-alias=computers')
+
+#Selecionar pelo número dele na lista
+dropdown.select_by_index(11)</code></pre></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" class="btn btn-neutral float-left" title="Navegador"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%2023%20-%20BeautifulSoup/" class="btn btn-neutral float-right" title="Aula 23 - BeautifulSoup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Aula%2023%20-%20BeautifulSoup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        };
+    </script>
+
+</body>
+</html>
