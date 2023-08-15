@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 2 - Listas, Dicionários e Loopings - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 2 - Listas, Diciona\u0301rios e Loopings";
+        var mkdocs_page_input_path = "S01\\Aula 2 - Listas, Diciona\u0301rios e Loopings.md";
+        var mkdocs_page_url = "/S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 2 - Listas, Dicionários e Loopings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#lista">Lista:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dicionario">Dicionário:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loopings">Loopings:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for">For:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#while">While:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 1 &raquo;</li>
+      <li>Aula 2 - Listas, Dicionários e Loopings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aula-2-listas-dicionarios-e-loopings">Aula 2 - Listas, Dicionários e Loopings</h1>
+<h2 id="lista">Lista:</h2>
+<ul>
+<li>
+<p>list() ou [ ]</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">lista = ['Thomas', 'Wilber', 'Marcos', 'Pedro']</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>.pop</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">lista.pop()
+print(lista)
+# output: ['Thomas', 'Wilber', 'Marcos']</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>.append()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">lista.append('Fernando')
+print(lista)
+# output: ['Thomas', 'Wilber', 'Marcos', 'Fernando']</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>.remove()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">lista.remove('Marcos')
+print(lista)
+# output: ['Thomas', 'Wilber', 'Fernando']</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Slice:</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">print(lista[1:3])
+# output: ['Thomas', 'Wilber']</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="dicionario">Dicionário:</h2>
+<ul>
+<li>
+<p>dict() ou { }</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">fruta = {}
+fruta['maca'] = 'É uma fruta vermelha'
+fruta['limao'] = 'É uma fruta verde'
+fruta['banana'] = 'É uma fruta amarela'
+
+#ou
+
+fruta = {'maca': 'É uma fruta vermelha', 'limao': 'É uma fruta verde', 'banana': 'É uma fruta amarela'}</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>.keys()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">fruta.keys()
+# output: dict_keys(['maca', 'limao', 'banana'])</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>.values()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">fruta.values()
+# output: dict_values(['É uma fruta vermelha', 'É uma fruta verde', 'É uma fruta amarela'])</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>items()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<pre class="highlight"><code class="language-python">fruta.items()
+# output: dict_items([('maca', 'É uma fruta vermelha'), ('limao', 'É uma fruta verde'), ('banana', 'É uma fruta amarela')])</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="loopings">Loopings:</h2>
+<h3 id="for">For:</h3>
+<ul>
+<li>
+<p>Looping com uma quantidade definida:</p>
+<pre class="highlight"><code class="language-python">for numero in range(5):
+    print(numero)
+
+# output:
+# 0
+# 1
+# 2
+# 3
+# 4</code></pre>
+</li>
+<li>
+<p>Looping usando um intervalo de números:</p>
+<pre class="highlight"><code class="language-python">for numero in range(3, 8):
+    print(numero)
+
+# output:
+# 3
+# 4
+# 5
+# 6
+# 7</code></pre>
+</li>
+<li>
+<p>Looping usando listas como delimitador:</p>
+<pre class="highlight"><code class="language-python">lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
+for filme in lista_de_filmes:
+    print(filme)
+
+# output:
+# Kill Bill
+# Pulp Fiction
+# Cães de Aluguel</code></pre>
+</li>
+<li>
+<p>Looping usando listas com seus respectivos índices:</p>
+<pre class="highlight"><code class="language-python">lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
+for indice, filme in enumerate(lista_de_filmes):
+print(indice, '-', filme)
+
+# output:
+# 0 - Kill Bill
+# 1 - Pulp Fiction
+# 2 - Cães de Aluguel</code></pre>
+</li>
+</ul>
+<h3 id="while">While:</h3>
+<ul>
+<li>
+<p>Looping condicional utilizando incrementador:</p>
+<pre class="highlight"><code class="language-python">contador = 0
+while contador &lt; 5:
+    print(f'O contador é {contador} e ainda é menor que 5!')
+    contador+= 1
+
+# output:
+# O contador é 0 e ainda é menor que 5!
+# O contador é 1 e ainda é menor que 5!
+# O contador é 2 e ainda é menor que 5!
+# O contador é 3 e ainda é menor que 5!
+# O contador é 4 e ainda é menor que 5!</code></pre>
+</li>
+<li>
+<p>Looping condicional infinito com "input":</p>
+<pre class="highlight"><code class="language-python">nome = ''
+while nome != 'seu nome':
+    nome = input('Insira seu nome: ')
+print('Parabéns, você entendeu a brincadeira!')</code></pre>
+</li>
+<li>
+<p>Looping condicional infinito com "break" e "continue":</p>
+<pre class="highlight"><code class="language-python">valor = 0
+while True:
+    num = input('Insira um valor para a soma: ')
+    if num != 'q':
+        valor+=int(num)
+        print(f'\nAgora o valor é: {valor}\n')
+        continue
+    else:
+        break
+print('Looping encerrado!')
+
+# output:
+# Insira um valor para a soma: 2
+# Agora o valor é: 2
+# Insira um valor para a soma: 4
+# Agora o valor é: 6
+# Insira um valor para a soma: q
+# Looping encerrado!</code></pre>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/" class="btn btn-neutral float-left" title="Aula 1 - Introdução"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" class="btn btn-neutral float-right" title="Aula 3 - Funções, Manipulações e Erros">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        };
+    </script>
+
+</body>
+</html>

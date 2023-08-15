@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%2017%20-%20Pandas/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 17 - Pandas - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 17 - Pandas";
+        var mkdocs_page_input_path = "S02\\Aula 17 - Pandas.md";
+        var mkdocs_page_url = "/S02/Aula%2017%20-%20Pandas/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 17 - Pandas</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#explicacao">Explicação</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#glossario">Glossário</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dataframe">DataFrame</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#series">Series</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#comandos">Comandos</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 17 - Pandas</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="pandas">Pandas</h1>
+<h2 id="explicacao">Explicação</h2>
+<p>Pandas é uma biblioteca do Python que permite extrair dados de diversos arquivos, como Excel, Json, HTML, SQL, etc...</p>
+<p>A mesma possui funcionalidades voltadas para análises de dados e ferramentas de manipulação de tabelas.</p>
+<h2 id="glossario">Glossário</h2>
+<h3 id="dataframe">DataFrame</h3>
+<p>Estrutura para dados que é composta de duas dimensões, estas sendo linhas e colunas. Assemelha-se à uma tabela de Excel.</p>
+<p><img alt="pd_dataframe" src="../../img/pd_dataframe.png" /></p>
+<h3 id="series">Series</h3>
+<p>Estrutura de dados de uma dimensão, sendo basicamente composta dos valores de uma linha ou coluna que representa apenas uma fatia do DataFrame.</p>
+<p><img alt="pd_series" src="../../img/pd_series.png" /></p>
+<h2 id="comandos">Comandos</h2>
+<ul>
+<li>
+<p>Instalando a biblioteca</p>
+<pre class="highlight"><code class="language-bash">pip install pandas</code></pre>
+</li>
+<li>
+<p>Importando a biblioteca
+    <pre class="highlight"><code class="language-python">import pandas as pd</code></pre></p>
+</li>
+<li>
+<p>Lendo um arquivo Excel
+    <pre class="highlight"><code class="language-python">df = pd.read_excel("tabela_clientes.xlsx")</code></pre></p>
+</li>
+<li>
+<p>Resumo das dimensões do DataFrame
+    <pre class="highlight"><code class="language-python">df.shape</code></pre></p>
+</li>
+<li>
+<p>Ver nome das colunas
+    <pre class="highlight"><code class="language-python">df.columns</code></pre></p>
+</li>
+<li>
+<p>Ver os primeiros resultados
+Como padrão a quantidades de linhas à ser trazido são cinco, porém esse valor pode ser alterado se preenchido os parênteses de acordo com o desejado.
+    <pre class="highlight"><code class="language-python">df.head()
+
+# ou
+
+df.head(20)</code></pre></p>
+</li>
+<li>
+<p>Ver os últimos resultados
+    <pre class="highlight"><code class="language-python">df.tail()</code></pre></p>
+</li>
+<li>
+<p>Selecionar uma coluna específica - pelo nome
+O segundo método apresentado no exemplo somente é permitido de usar em nomes de colunas sem espaço entre palavras.</p>
+<pre class="highlight"><code class="language-python">df["Nome_Completo"]
+
+# ou
+
+df.Nome_Completo</code></pre>
+</li>
+<li>
+<p>Selecionar o primeiro valor de uma coluna específica
+    <pre class="highlight"><code class="language-python">df["Nome_Completo"].values[0]</code></pre></p>
+</li>
+<li>
+<p>Selecionar uma linha através do index
+    <pre class="highlight"><code class="language-python">df.iloc[0]</code></pre></p>
+</li>
+<li>
+<p>Selecionar uma linha e uma coluna através do index
+    <pre class="highlight"><code class="language-python">df.iloc[0,0]</code></pre></p>
+</li>
+<li>
+<p>Criando um DataFrame
+    <pre class="highlight"><code class="language-python">data = {
+    "Nome": ["Harry", "Hermione", "Rony", "Luna", "Neville"],
+    "Herbologia": [8,5,6,9,7],
+    "Alquimia": [7,9,5,4,7],
+    "Adivinhacao": [7,4,7,6,8]
+}
+
+df_hp = pd.DataFrame(data)</code></pre></p>
+</li>
+<li>
+<p>Estatísticas descritivas das colunas - media, desvio padrão, mínimo, máximo, etc ...
+    <pre class="highlight"><code class="language-python">df.describe()</code></pre></p>
+</li>
+<li>
+<p>Extraindo o DataFrame em um arquivo Excel
+    <pre class="highlight"><code class="language-python">df_hp.to_excel("Boletins_Alunos.xlsx", index=False)</code></pre></p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%2016%20-%20Xlsxwriter/" class="btn btn-neutral float-left" title="Aula 16 - Xlsxwriter"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%2018%20-%20CSV/" class="btn btn-neutral float-right" title="Aula 18 - CSV">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%2016%20-%20Xlsxwriter/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Aula%2018%20-%20CSV/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        };
+    </script>
+
+</body>
+</html>

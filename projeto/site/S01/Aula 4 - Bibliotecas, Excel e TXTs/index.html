@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 4 - Bibliotecas, Excel e TXTs - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 4 - Bibliotecas, Excel e TXTs";
+        var mkdocs_page_input_path = "S01\\Aula 4 - Bibliotecas, Excel e TXTs.md";
+        var mkdocs_page_url = "/S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 4 - Bibliotecas, Excel e TXTs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas">Bibliotecas:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-arquivos">Manipulação de Arquivos:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interacao-com-o-so">Interação com o SO:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas-excel">Bibliotecas Excel:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xlrd">xlrd;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#openpyxl">openpyxl;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pandas">pandas:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xlsxwriter">xlsxwriter:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#caracteres-especiais">Caracteres especiais:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 1 &raquo;</li>
+      <li>Aula 4 - Bibliotecas, Excel e TXTs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aula-4-bibliotecas-excel-e-txts">Aula 4 - Bibliotecas, Excel e TXTs</h1>
+<h2 id="bibliotecas">Bibliotecas:</h2>
+<ul>
+<li>Repositório das Bibliotecas: <a href="https://pypi.org/">https://pypi.org/</a></li>
+<li>
+<p>Comando para instalar bibliotecas externas:</p>
+<pre class="highlight"><code class="language-bash">pip install nome_da_biblioteca
+# Ex.: pip install openpyxl</code></pre>
+</li>
+<li>
+<p>Comando para usar biblioteca no código</p>
+<pre class="highlight"><code class="language-python"># Importa a biblioteca com todas as funções dela
+import nome_da_biblioteca
+# import xlrd
+
+# Importa a biblioteca e permite criar um "apelido" pra ela
+import nome_da_biblioteca as ndb
+# Ex.: import pandas as pd
+
+# Importa uma função específica de dentro da biblioteca
+from nome_da_biblioteca import funcao
+# Ex.: from time import sleep</code></pre>
+</li>
+</ul>
+<h2 id="manipulacao-de-arquivos">Manipulação de Arquivos:</h2>
+<ul>
+<li>
+<p>Abrir o arquivo:</p>
+<ul>
+<li>
+<p>Para criar:</p>
+<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'w')</code></pre>
+</li>
+<li>
+<p>Para ler:</p>
+<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'r')</code></pre>
+</li>
+<li>
+<p>Para continuar um texto:</p>
+<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'a')</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Escrever dentro do .txt:</p>
+<pre class="highlight"><code class="language-python">arqv.write('texto do arquivo')</code></pre>
+</li>
+<li>
+<p>Fechar o arquivo:</p>
+<pre class="highlight"><code class="language-python">arqv.close()</code></pre>
+</li>
+</ul>
+<h2 id="interacao-com-o-so"><strong>Interação com o SO:</strong></h2>
+<ul>
+<li>
+<p>os:</p>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import os</code></pre>
+</li>
+<li>
+<p>Renomear um arquivo:</p>
+<pre class="highlight"><code class="language-python">os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></pre>
+</li>
+<li>
+<p>Remover um arquivo da pasta:</p>
+<pre class="highlight"><code class="language-python">os.remove('arquivo_modificado.txt')</code></pre>
+</li>
+<li>
+<p>Listar os arquivos presentes na pasta:</p>
+<pre class="highlight"><code class="language-python">os.listdir('.')</code></pre>
+</li>
+<li>
+<p>Aponta a execução do Python para uma pasta em específico:</p>
+<pre class="highlight"><code class="language-python">os.chdir('')</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>glob:</p>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import glob</code></pre>
+</li>
+<li>
+<p>Listar arquivos do diretório pela sua extensão:</p>
+<pre class="highlight"><code class="language-python">glob.glob(r'.\*.txt')</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>shutil:</p>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import shutil</code></pre>
+</li>
+<li>
+<p>Movimentar um arquivo para outra pasta:</p>
+<pre class="highlight"><code class="language-python">shutil.move('arquivo_modificado.txt', r'.\pasta_move\arquivo_modificado.txt')</code></pre>
+</li>
+<li>
+<p>Copiar um arquivo para outra pasta:</p>
+<pre class="highlight"><code class="language-python">shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.txt')</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="bibliotecas-excel"><strong>Bibliotecas Excel:</strong></h2>
+<h3 id="xlrd">xlrd;</h3>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import xlrd</code></pre>
+</li>
+<li>
+<p>Abre um arquivo Excel (XLS):</p>
+<pre class="highlight"><code class="language-python">wb = xlrd.open_workbook('banca_jornal.xls')</code></pre>
+</li>
+<li>
+<p>Seleciona a aba do Excel:</p>
+<pre class="highlight"><code class="language-python">sheet = wb.sheet_by_name('Planilha1')</code></pre>
+</li>
+<li>
+<p>Pega valores da primeira coluna:</p>
+<pre class="highlight"><code class="language-python">for cell in sheet.col(0):
+    cell</code></pre>
+</li>
+</ul>
+<h3 id="openpyxl">openpyxl;</h3>
+<ul>
+<li>
+<p>Importa a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import openpyxl</code></pre>
+</li>
+<li>
+<p>Abrir um arquivo Excel (XLS ou XLSX):</p>
+<pre class="highlight"><code class="language-python">wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></pre>
+</li>
+<li>
+<p>Apresenta o nome de todas as abas do Excel aberto:</p>
+<pre class="highlight"><code class="language-python">wb.get_sheet_names()
+# output: ['Planilha1']</code></pre>
+</li>
+<li>
+<p>Seleciona a aba do Excel:</p>
+<pre class="highlight"><code class="language-python">sheet = wb['Planilha1']</code></pre>
+</li>
+<li>
+<p>Ler o valor da primeira célula (A1):</p>
+<pre class="highlight"><code class="language-python">sheet['A1'].value
+# output: Chiclete</code></pre>
+</li>
+<li>
+<p>Apresentar números de linhas:</p>
+<pre class="highlight"><code class="language-python">sheet.max_row
+# output: 6</code></pre>
+</li>
+<li>
+<p>Percorre uma coluna inteira do Excel:</p>
+<pre class="highlight"><code class="language-python"># Nesse código, ele não irá pegar o cabeçalho da tabela
+# Caso queira pegar o cabeçalho, basta trocar o número 2 pelo número 1
+for linha in range(2, sheet.max_row+1):
+    nome = sheet.cell(linha, 1)
+
+# output:
+# Chiclete
+# Barra de Chocolate
+# Agua mineral
+# Jornal
+# Salgadinho</code></pre>
+</li>
+<li>
+<p>Pegar valores das três colunas, passando por todas as linhas:</p>
+<pre class="highlight"><code class="language-python">for linha in range(2, sheet.max_row+1):
+    nome = sheet.cell(linha, 1).value
+    unidade = sheet.cell(linha, 2).value
+    valor = sheet.cell(linha, 3).value
+    print(f'O produto {nome*} teve* {unidade} unidades vendidas no valor unitário de R${valor}')
+
+# output:
+# O produto Chiclete foi teve 45 unidades vendidas no valor unitário de R$1
+# O produto Barra de Chocolate foi teve 23 unidades vendidas no valor unitário de R$4
+# O produto Agua mineral foi teve 66 unidades vendidas no valor unitário de R$2
+# O produto Jornal foi teve 4 unidades vendidas no valor unitário de R$0.5
+# O produto Salgadinho foi teve 16 unidades vendidas no valor unitário de R$2.5</code></pre>
+</li>
+<li>
+<p>Fechar o arquivo Excel:</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h3 id="pandas">pandas:</h3>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import pandas as pd</code></pre>
+</li>
+<li>
+<p>Ler arquivo Excel:</p>
+<pre class="highlight"><code class="language-python">df = pd.read_excel('banca_jornal.xlsx')</code></pre>
+</li>
+<li>
+<p>Selecionar uma coluna:</p>
+<pre class="highlight"><code class="language-python">df['Produto']</code></pre>
+</li>
+<li>
+<p>Apresenta as abas disponíveis do Excel:</p>
+<pre class="highlight"><code class="language-python">pd.ExcelFile.sheet_names</code></pre>
+</li>
+</ul>
+<h3 id="xlsxwriter">xlsxwriter:</h3>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<pre class="highlight"><code class="language-python">import xlsxwriter</code></pre>
+</li>
+<li>
+<p>Criar arquivo Excel:</p>
+<pre class="highlight"><code class="language-python">wb = xlsxwriter.Woorkbook('alunos.xlsx')</code></pre>
+</li>
+<li>
+<p>Criar aba no arquivo Excel:</p>
+<pre class="highlight"><code class="language-python">ws = wb.add_worksheet('Planilha')</code></pre>
+</li>
+<li>
+<p>Colocar palavras em Negrito:</p>
+<pre class="highlight"><code class="language-python">bold = wb.add_format({'bold':1})</code></pre>
+</li>
+<li>
+<p>Escreve cabeçalho em negrito no Excel:</p>
+<pre class="highlight"><code class="language-python">ws.write('A1', 'Nome', bold)
+ws.write('B1', 'Idade', bold)
+ws.write('C1', 'Cidade', bold)</code></pre>
+</li>
+<li>
+<p>Cria valores para serem adicionados em formato de tabela:</p>
+<pre class="highlight"><code class="language-python">alunos = [('Thomas', '24', 'Curitiba'), ('Fernanda', '12', 'Sao Paulo'), ('Augusto', '56', 'Rio de Janeiro'), ('Marcela', '22', 'Maringa')]</code></pre>
+</li>
+<li>
+<p>Looping para escrever valores em formato de tabela:</p>
+<pre class="highlight"><code class="language-python">row = 1
+col = 0
+
+for aluno in alunos:
+    ws.write_string(row, col, aluno[0])
+    ws.write_string(row, col+1, aluno[1])
+    ws.write_string(row, col+2, aluno[2])
+    row += 1</code></pre>
+</li>
+<li>
+<p>Fechar e salvar o arquivo Excel:</p>
+<pre class="highlight"><code class="language-python">wb.close()</code></pre>
+</li>
+</ul>
+<h2 id="extras">Extras:</h2>
+<h3 id="caracteres-especiais"><strong>Caracteres especiais:</strong></h3>
+<p><img alt="escape_caracter.png" src="../../img/escape_caracter.png" /></p>
+<ul>
+<li><strong>Outras opções:</strong> <a href="https://www.python-excel.org/">https://www.python-excel.org/</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" class="btn btn-neutral float-left" title="Aula 3 - Funções, Manipulações e Erros"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" class="btn btn-neutral float-right" title="Aula 5 - Selenium e BeautifulSoup">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        };
+    </script>
+
+</body>
+</html>
