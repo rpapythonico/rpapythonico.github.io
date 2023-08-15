@@ -47,152 +47,157 @@
 ### Aula 1
 
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<h4>Demonstração de erro no Python.</h4>
+<dl>
+<dt>Demonstração de erro no Python.</dt>
+<dd>Aula1 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Demos/demo_execucao.py" target="_blank">demo_execucao.py</a></dd>
 
-- Aula1 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Demos/demo_execucao.py" target="_blank">demo_execucao.py</a>
+<dt>Demonstração do Selenium executando uma interação web.</dt>
 
-<h4>Demonstração do Selenium executando uma interação web.</h4>
+<dd>Aula1 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Demos/demo_google.py" target="_blank">demo_google.py</a></dd>
 
-- Aula1 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Demos/demo_google.py" target="_blank">demo_google.py</a>
+<dt>Script que efetua cálculo de IMC.</dt>
 
-<h4>Script que efetua cálculo de IMC.</h4>
+<dd>Aula1 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Exercicios/calculadora_imc.py" target="_blank">calculadora_imc.py</a></dd>
 
-- Aula1 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Exercicios/calculadora_imc.py" target="_blank">calculadora_imc.py</a>
+<dt>Script que valida a obrigatoriedade das eleições de acordo com a idade.</dt>
 
-<h4>Script que valida a obrigatoriedade das eleições de acordo com a idade.</h4>
+<dd>Aula1 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Exercicios/validador_eleicao.py" target="_blank">demo_google.py</a></dd>
+</dl>
 
-- Aula1 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula1/Exercicios/validador_eleicao.py" target="_blank">demo_google.py</a>
-
-</details>
-
-</br>
+</details></br>
 
 ### Aula 2
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<h4>Script que reordena uma lista.</h4>
+<dl>
+<dt>Script que reordena uma lista.</dt>
+<dd>Aula2 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula2/Exercicios/reordenacao.py" target="_blank">reordenacao.py</a></dd>
 
-- Aula2 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula2/Exercicios/reordenacao.py" target="_blank">reordenacao.py</a>
-
-<h4>Script que efetua a tabuada de 1 à 10 de um número fornecido pelo usuário</h4>
-
-- Aula2 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula2/Exercicios/tabuada.py" target="_blank">tabuada.py</a>
+<dt>Script que efetua a tabuada de 1 à 10 de um número fornecido pelo usuário</dt>
+<dd>Aula2 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula2/Exercicios/tabuada.py" target="_blank">tabuada.py</a></dd>
+</dl>
 
 </details><br>
 
 ### Aula 3
 
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<h4>Script que separa a frase escrita e apresenta a primeira palavra, a última palavra, a frase sem o começo e sem o fim, o texto com letras maíúsculas e letras minúsculas.</h4>
+<dl>
+<dt>Script que separa a frase escrita e apresenta a primeira palavra, a última palavra, a frase sem o começo e sem o fim, o texto com letras maíúsculas e letras minúsculas.</dt>
 
-- Aula 3 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Exerc%C3%ADcios/ttv_frases.py" target="_blank">ttv_frases.py</a>
+<dd> Aula 3 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Exerc%C3%ADcios/ttv_frases.py" target="_blank">ttv_frases.py</a></dd>
 
-<h4>Script que separa o nome completo fornecido e informa o primeiro nome, o último sobrenome e a quantidade de caracteres.</h4>
+<dt>Script que separa o nome completo fornecido e informa o primeiro nome, o último sobrenome e a quantidade de caracteres.</dt>
 
-- Aula 3 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Exerc%C3%ADcios/ttv_nome.py" target="_blank">ttv_nome.py</a>
+<dd>Aula 3 > Exercicios > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Exerc%C3%ADcios/ttv_nome.py" target="_blank">ttv_nome.py</a></dd>
 
-<h4>Projeto em Jupyter Notebook (ou Google Colab) contendo todo o conteúdo apresentado durante a aula da turma A2022T1.</h4>
+<dt>Projeto em Jupyter Notebook (ou Google Colab) contendo todo o conteúdo apresentado durante a aula da turma A2022T1.</dt>
 
-- Aula 3 > Material > A2022T1 > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Material/A2022T1/Aula_3_Fun%C3%A7%C3%B5es%2C_Manipula%C3%A7%C3%B5es_e_Erros.ipynb" target="_blank">Aula_3_Funções,_Manipulações_e_Erros.ipynb</a>
+<dd>Aula 3 > Material > A2022T1 > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Material/A2022T1/Aula_3_Fun%C3%A7%C3%B5es%2C_Manipula%C3%A7%C3%B5es_e_Erros.ipynb" target="_blank">Aula_3_Funções,_Manipulações_e_Erros.ipynb</a></dd>
 
-<h4>Projeto em formato ".py" contendo todo o conteúdo apresentado durante a aula da turma A2022T1.</h4>
+<dt>Projeto em formato ".py" contendo todo o conteúdo apresentado durante a aula da turma A2022T1.</dt>
 
-- Aula 3 > Material > A2022T1 > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Material/A2022T1/aula_3_fun%C3%A7%C3%B5es%2C_manipula%C3%A7%C3%B5es_e_erros.py" target="_blank">aula_3_funções,_manipulações_e_erros.py</a>
+<dd>Aula 3 > Material > A2022T1 > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula3/Material/A2022T1/aula_3_fun%C3%A7%C3%B5es%2C_manipula%C3%A7%C3%B5es_e_erros.py" target="_blank">aula_3_funções,_manipulações_e_erros.py</a></dd>
+</dl>
 
 </details><br>
 
 ### Aula 4
 
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<h4>Arquivo XLSX contendo um censo populacional fictício dos EUA.</h4>
+<dl>
+<dt>Arquivo XLSX contendo um censo populacional fictício dos EUA.</dt>
 
-- Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/censuspopdata.xlsx" target="_blank">censuspopdata.xlsx</a>
+<dd>Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/censuspopdata.xlsx" target="_blank">censuspopdata.xlsx</a></dd>
 
-<h4>Arquivo XLSX contendo dados fictícios de pessoas residentes nos EUA.</h4>
+<dt>Arquivo XLSX contendo dados fictícios de pessoas residentes nos EUA.</dt>
 
-- Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/challenge.xlsx" target="_blank">challenge.xlsx</a>
+<dd>Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/challenge.xlsx" target="_blank">challenge.xlsx</a></dd>
 
-<h4>Arquivo XLSX contendo dados reais retirados do portal <a href="https://cnae.ibge.gov.br/?option=com_cnae&view=estrutura&Itemid=6160&ti%20po=cnae&versao_classe=7.0.0&versao_subclasse=" target="_blank">IBGE</a> sobre as atividades econômicas e seus devidos códigos.</h4>
+<dt>Arquivo XLSX contendo dados reais retirados do portal <a href="https://cnae.ibge.gov.br/?option=com_cnae&view=estrutura&Itemid=6160&ti%20po=cnae&versao_classe=7.0.0&versao_subclasse=" target="_blank">IBGE</a> sobre as atividades econômicas e seus devidos códigos.</dt>
 
-- Aula4 > Arquivos > <a hred="xlsxhttps://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/dadosIbge.xlsx" target="_blank">dadosIbge.</a>
+<dd>Aula4 > Arquivos > <a hred="xlsxhttps://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/dadosIbge.xlsx" target="_blank">dadosIbge.</a></dd>
 
-<h4>Arquivo XLSX contendo dados fíctios de pessoas e suas compras nos meses do ano de 2014.</h4>
+<dt>Arquivo XLSX contendo dados fíctios de pessoas e suas compras nos meses do ano de 2014.</dt>
 
-- Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/duesRecords.xlsx" target="_blank">duesRecords.xlsx</a>
+<dd>Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/duesRecords.xlsx" target="_blank">duesRecords.xlsx</a></dd>
 
-<h4>Arquivo XLSX contendo dados fictícios de pessoas ao redor do mundo.</h4>
+<dt>Arquivo XLSX contendo dados fictícios de pessoas ao redor do mundo.</dt>
 
-- Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/file_example_XLSX_10.xlsx" target="_blank">file_example_XLSX_10.xlsx</a>
+<dd>Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/file_example_XLSX_10.xlsx" target="_blank">file_example_XLSX_10.xlsx</a></dd>
 
-<h4>Arquivo XLSX contendo dados de produtos à venda em um comércio fictício.</h4>
+<dt>Arquivo XLSX contendo dados de produtos à venda em um comércio fictício.</dt>
 
-- Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/produceSales.xlsx" target="_blank">produceSales.xlsx</a>
+<dd>Aula4 > Arquivos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula4/Arquivos/produceSales.xlsx" target="_blank">produceSales.xlsx</a></dd>
+<dl>
 
 </details><br>
 
 ### Aula 6
 
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<h4>Script do projeto que coleta dados de estadia do Booking utilizando data de check-in, data de check-out e a cidade desejada.</h4>
+<dl>
+<dt>Script do projeto que coleta dados de estadia do Booking utilizando data de check-in, data de check-out e a cidade desejada.</dt>
 
-- Aula6 > Projeto > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula6/Projeto/booking.py" target="_blank">booking.py</a>
+<dd>Aula6 > Projeto > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula6/Projeto/booking.py" target="_blank">booking.py</a></dd>
+</dl>
 
 </details><br>
 
 ### Aula 7
 
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<br>
+<dl>
+<dt>Arquivo .json que possui um compilado de requisições em APIs públicas demonstrando a arquitetura REST.</dt>
 
-<h4>Arquivo .json que possui um compilado de requisições em APIs públicas demonstrando a arquitetura REST.</h4>
-
-- Aula7 > Collection > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula7/Collection/Aula7.postman_collection.json" target="_blank">Aula7.postman_collection.json</a>
+<dd>Aula7 > Collection > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula7/Collection/Aula7.postman_collection.json" target="_blank">Aula7.postman_collection.json</a></dd>
+</dl>
 
 </details><br>
 
 ### Aula 8
 
 <details>
-    <summary>Clique para expandir!</summary>
+    <summary>Clique para expandir!</summary><br>
 
-<br>
+<dl>
+<dt>Script contendo uma visão inicial sobre Orientação à Objetos utilizando como base uma classe "Cachorro".</dt>
 
-<h4>Script contendo uma visão inicial sobre Orientação à Objetos utilizando como base uma classe "Cachorro".</h4>
+<dd>Aula8 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Demos/classe_cachorro.py" target="_blank">classe_cachorro.py</a></dd>
 
-- Aula8 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Demos/classe_cachorro.py" target="_blank">classe_cachorro.py</a>
+<dt>Script contendo disparo de email utilizando o protocolo SMTP.</dt>
 
-<h4>Script contendo disparo de email utilizando o protocolo SMTP.</h4>
+<dd>Aula8 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Demos/email_com_ou_sem_anexo.py" target="_blank">email_com_ou_sem_anexo.py</a></dd>
 
-- Aula8 > Demos > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Demos/email_com_ou_sem_anexo.py" target="_blank">email_com_ou_sem_anexo.py</a>
+<dt>Arquivo de backup com tabelas do banco de dados MS SQL.</dt>
 
-<h4>Arquivo de backup com tabelas do banco de dados MS SQL.</h4>
-
-- Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/SUCOS_VENDAS.BAK" target="_blank">SUCOS_VENDAS.BAK</a>
+<dd>Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/SUCOS_VENDAS.BAK" target="_blank">SUCOS_VENDAS.BAK</a></dd>
 
 <cite>Créditos: <a href="https://www.alura.com.br/" target="_blank">Alura</a></cite>
 
-<h4>Arquivo de backup com tabelas do banco de dados SQLite.</h4>
+<dt>Arquivo de backup com tabelas do banco de dados SQLite.</dt>
 
-- Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/aula8.db" target="_blank">aula8.db</a>
+<dd>Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/aula8.db" target="_blank">aula8.db</a></dd>
 
-<h4>Script contendo automação para efetuar carga no banco de dados SQLite.</h4>
+<dt>Script contendo automação para efetuar carga no banco de dados SQLite.</dt>
 
-- Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/carregar_banco.py" target="_blank">carregar_banco.py</a>
+<dd>Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/carregar_banco.py" target="_blank">carregar_banco.py</a></dd>
 
-<h4>Arquivo contendo dados brutos para serem carregados em bancos de dados.</h4>
+<dt>Arquivo contendo dados brutos para serem carregados em bancos de dados.</dt>
 
-- Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/data.json" target="_blank">data.json</a>
+<dd>Aula8 > Materiais > <a href="https://github.com/Wilberhg/python-rpa/blob/main/Aula8/Materiais/data.json" target="_blank">data.json</a></dd>
+</dl>
 
 </details><br>
 
