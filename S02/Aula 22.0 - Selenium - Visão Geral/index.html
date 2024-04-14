@@ -117,8 +117,6 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#css-selector">CSS Selector</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#xpath">Xpath</a>
-    </li>
         </ul>
     </li>
     </ul>
@@ -264,38 +262,22 @@
 <p>A página web possui <strong>tags</strong> com seus respectivos <strong>atributos</strong> (HTML) que permitem adicionar funcionalidades e/ou estilos (CSS). Além disso, as páginas contém linguagens scriptadas que permitem monitorar ações e realizar determinadas atividades quando alguma interação for realizada, este é o caso da linguagem JavaScript. Através dele, é permitido efetuar “injeções” de scripts.</p>
 <p>Para entender melhor, o Selenium irá trabalhar com:</p>
 <ul>
-<li>id;<ul>
+<li>id;</li>
 <li>Atributo <strong>identificador</strong> de alguma tag. Geralmente são <strong>únicos</strong> e <strong>imutáveis</strong>.</li>
-</ul>
-</li>
-<li>name;<ul>
+<li>name;</li>
 <li>Atributo que <strong>nomifica</strong> uma tag. Geralmente são <strong>únicos</strong> e <strong>podem sofrer alteração</strong>.</li>
-</ul>
-</li>
-<li>class_name;<ul>
+<li>class_name;</li>
 <li>Atributo que permite classificar um <strong>grupo de tags</strong> com a mesma regra de estilização. Ou seja, pode ter <strong>um ou mais</strong>.</li>
-</ul>
-</li>
-<li>tag_name;<ul>
+<li>tag_name;</li>
 <li>Tag HTML do elemento à ser inspecionado.</li>
-</ul>
-</li>
-<li>partial_link_text;<ul>
+<li>partial_link_text;</li>
 <li>Parte do texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a&gt;).</li>
-</ul>
-</li>
-<li>link_text;<ul>
+<li>link_text;</li>
 <li>Texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a&gt;).</li>
-</ul>
-</li>
-<li>css_selector;<ul>
+<li>css_selector;</li>
 <li>Padrão de elementos/termos baseados em tags e atributos junto ao CSS.</li>
-</ul>
-</li>
-<li>xpath.<ul>
+<li>xpath.</li>
 <li>Padrão de elementos/termos baseados em tags e atributos.</li>
-</ul>
-</li>
 </ul>
 <h2 id="criando-css-selector">Criando CSS Selector</h2>
 <p>Sintaxe: <strong>tag[atributo="valor"]</strong></p>
@@ -316,51 +298,51 @@ Imagem retirada do site <a href="https://www.guru99.com/">guru99</a>.</p>
 <h3 id="css-selector">CSS Selector</h3>
 <ul>
 <li>
-<p>Coleta através do ID
-    ```
-    #SIvCob</p>
+<p>Coleta através do ID</p>
+<p>```</p>
+<h1 id="sivcob">SIvCob</h1>
 <p>ou</p>
 <p>div#SIvCob
 ```</p>
 </li>
 <li>
-<p>Coleta através da CLASS NAME
-    ```
-    .gb_Jd</p>
+<p>Coleta através da CLASS NAME</p>
+<p>```
+.gb_Jd</p>
 <p>ou</p>
 <p>div.gb_Jd
 ```</p>
 </li>
 <li>
-<p>Pesquisa com Sintaxe Completa
-    <code>input[class="gLFyf gsfi"]</code></p>
+<p>Pesquisa com Sintaxe Completa</p>
+<p><code>input[class="gLFyf gsfi"]</code></p>
 </li>
 <li>
-<p>Pesquisa Utilizando uma Tag Filha
-    <code>div[class="RNNXgb"] input</code></p>
+<p>Pesquisa Utilizando uma Tag Filha</p>
+<p><code>div[class="RNNXgb"] input</code></p>
 </li>
 <li>
-<p>Pesquisa Através da Parcela de um Texto Entre Tags
-    <code>input[value*="Pesquisa"]</code></p>
+<p>Pesquisa Através da Parcela de um Texto Entre Tags</p>
+<p><code>input[value*="Pesquisa"]</code></p>
 </li>
 </ul>
 <h3 id="xpath">Xpath</h3>
 <ul>
 <li>
-<p>Pesquisa com Sintaxe Completa
-    <code>//*[@id="SIvCob"]</code></p>
+<p>Pesquisa com Sintaxe Completa</p>
+<p><code>//*[@id="SIvCob"]</code></p>
 </li>
 <li>
-<p>Pesquisa Utilizando Tags Filhas
-    <code>//div[@class="RNNXgb"]/div/div[2]/input</code></p>
+<p>Pesquisa Utilizando Tags Filhas</p>
+<p><code>//div[@class="RNNXgb"]/div/div[2]/input</code></p>
 </li>
 <li>
-<p>Pesquisa Através do Texto Entre Tags
-    <code>//div[text()="Disponibilizado pelo Google em:  "]</code></p>
+<p>Pesquisa Através do Texto Entre Tags</p>
+<p><code>//div[text()="Disponibilizado pelo Google em:  "]</code></p>
 </li>
 <li>
-<p>Pesquisa Através da Parcela de um Texto Entre Tags
-    <code>//div[contains(text(), 'Disponibilizado')]</code></p>
+<p>Pesquisa Através da Parcela de um Texto Entre Tags</p>
+<p><code>//div[contains(text(), 'Disponibilizado')]</code></p>
 </li>
 </ul>
               

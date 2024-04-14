@@ -134,7 +134,7 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 4 - Bibliotecas, Excel e TXTs</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas">Bibliotecas:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas">Bibliotecas</a>
     </li>
     </ul>
                   </li>
@@ -170,7 +170,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-4-bibliotecas-excel-e-txts">Aula 4 - Bibliotecas, Excel e TXTs</h1>
-<h2 id="bibliotecas">Bibliotecas:</h2>
+<h2 id="bibliotecas">Bibliotecas</h2>
 <ul>
 <li>Repositório das Bibliotecas: <a href="https://pypi.org/">https://pypi.org/</a></li>
 <li>
@@ -195,27 +195,29 @@ pip install nome_da_biblioteca</p>
 <p>```</p>
 </li>
 </ul>
-<h2 id="manipulacao-de-arquivos">Manipulação de Arquivos:</h2>
+<h2 id="manipulacao-de-arquivos">Manipulação de Arquivos</h2>
 <ul>
-<li>
-<p>Abrir o arquivo:</p>
-<ul>
+<li>Abrir o arquivo:</li>
 <li>
 <p>Para criar:</p>
-<p><code>python
-arqv = open('nome_do_arquivo.txt', 'w')</code></p>
+<pre><code>```python
+arqv = open('nome_do_arquivo.txt', 'w')
+```
+</code></pre>
 </li>
 <li>
 <p>Para ler:</p>
-<p><code>python
-arqv = open('nome_do_arquivo.txt', 'r')</code></p>
+<pre><code>```python
+arqv = open('nome_do_arquivo.txt', 'r')
+```
+</code></pre>
 </li>
 <li>
 <p>Para continuar um texto:</p>
-<p><code>python
-arqv = open('nome_do_arquivo.txt', 'a')</code></p>
-</li>
-</ul>
+<pre><code>```python
+arqv = open('nome_do_arquivo.txt', 'a')
+```
+</code></pre>
 </li>
 <li>
 <p>Escrever dentro do .txt:</p>
@@ -230,74 +232,86 @@ arqv.close()</code></p>
 </ul>
 <h2 id="interacao-com-o-so"><strong>Interação com o SO:</strong></h2>
 <ul>
-<li>
-<p>os:</p>
-<ul>
+<li>os:</li>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import os</code></p>
+<pre><code>```python
+import os
+```
+</code></pre>
 </li>
 <li>
 <p>Renomear um arquivo:</p>
-<p><code>python
-os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></p>
+<pre><code>```python
+os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')
+```
+</code></pre>
 </li>
 <li>
 <p>Remover um arquivo da pasta:</p>
-<p><code>python
-os.remove('arquivo_modificado.txt')</code></p>
+<pre><code>```python
+os.remove('arquivo_modificado.txt')
+```
+</code></pre>
 </li>
 <li>
 <p>Listar os arquivos presentes na pasta:</p>
-<p><code>python
-os.listdir('.')</code></p>
+<pre><code>```python
+os.listdir('.')
+```
+</code></pre>
 </li>
 <li>
 <p>Aponta a execução do Python para uma pasta em específico:</p>
-<p><code>python
-os.chdir('')</code></p>
-</li>
-</ul>
+<pre><code>```python
+os.chdir('')
+```
+</code></pre>
 </li>
 <li>
 <p>glob:</p>
-<ul>
+</li>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import glob</code></p>
+<pre><code>```python
+import glob
+```
+</code></pre>
 </li>
 <li>
 <p>Listar arquivos do diretório pela sua extensão:</p>
-<p><code>python
-glob.glob(r'.\*.txt')</code></p>
-</li>
-</ul>
+<pre><code>```python
+glob.glob(r'.\*.txt')
+```
+</code></pre>
 </li>
 <li>
 <p>shutil:</p>
-<ul>
+</li>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import shutil</code></p>
+<pre><code>```python
+import shutil
+```
+</code></pre>
 </li>
 <li>
 <p>Movimentar um arquivo para outra pasta:</p>
-<p><code>python
-shutil.move('arquivo_modificado.txt', r'.\pasta_move\arquivo_modificado.txt')</code></p>
+<pre><code>```python
+shutil.move('arquivo_modificado.txt', r'.\pasta_move\arquivo_modificado.txt')
+```
+</code></pre>
 </li>
 <li>
 <p>Copiar um arquivo para outra pasta:</p>
-<p><code>python
-shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.txt')</code></p>
-</li>
-</ul>
+<pre><code>```python
+shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.txt')
+```
+</code></pre>
 </li>
 </ul>
 <h2 id="bibliotecas-excel"><strong>Bibliotecas Excel:</strong></h2>
-<h3 id="xlrd">xlrd;</h3>
+<h3 id="xlrd">xlrd</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
@@ -318,10 +332,10 @@ sheet = wb.sheet_by_name('Planilha1')</code></p>
 <p>Pega valores da primeira coluna:</p>
 <p><code>python
 for cell in sheet.col(0):
-    cell</code></p>
+ cell</code></p>
 </li>
 </ul>
-<h3 id="openpyxl">openpyxl;</h3>
+<h3 id="openpyxl">openpyxl</h3>
 <ul>
 <li>
 <p>Importa a biblioteca:</p>
@@ -365,7 +379,7 @@ sheet.max_row</p>
 <h1 id="nesse-codigo-ele-nao-ira-pegar-o-cabecalho-da-tabela">Nesse código, ele não irá pegar o cabeçalho da tabela</h1>
 <h1 id="caso-queira-pegar-o-cabecalho-basta-trocar-o-numero-2-pelo-numero-1">Caso queira pegar o cabeçalho, basta trocar o número 2 pelo número 1</h1>
 <p>for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1)</p>
+ nome = sheet.cell(linha, 1)</p>
 <h1 id="output">output:</h1>
 <h1 id="chiclete">Chiclete</h1>
 <h1 id="barra-de-chocolate">Barra de Chocolate</h1>
@@ -378,10 +392,10 @@ sheet.max_row</p>
 <p>Pegar valores das três colunas, passando por todas as linhas:</p>
 <p>```python
 for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1).value
-    unidade = sheet.cell(linha, 2).value
-    valor = sheet.cell(linha, 3).value
-    print(f'O produto {nome<em>} teve</em> {unidade} unidades vendidas no valor unitário de R${valor}')</p>
+ nome = sheet.cell(linha, 1).value
+ unidade = sheet.cell(linha, 2).value
+ valor = sheet.cell(linha, 3).value
+ print(f'O produto {nome<em>} teve</em> {unidade} unidades vendidas no valor unitário de R${valor}')</p>
 <h1 id="output_1">output:</h1>
 <h1 id="o-produto-chiclete-foi-teve-45-unidades-vendidas-no-valor-unitario-de-r1">O produto Chiclete foi teve 45 unidades vendidas no valor unitário de R$1</h1>
 <h1 id="o-produto-barra-de-chocolate-foi-teve-23-unidades-vendidas-no-valor-unitario-de-r4">O produto Barra de Chocolate foi teve 23 unidades vendidas no valor unitário de R$4</h1>
@@ -391,13 +405,11 @@ for linha in range(2, sheet.max_row+1):
 <p>```</p>
 </li>
 <li>
-<p>Fechar o arquivo Excel:</p>
-<ul>
-<li></li>
-</ul>
+<p>Fechar o arquivo Excel
+    -</p>
 </li>
 </ul>
-<h3 id="pandas">pandas:</h3>
+<h3 id="pandas">pandas</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
@@ -420,7 +432,7 @@ df['Produto']</code></p>
 pd.ExcelFile.sheet_names</code></p>
 </li>
 </ul>
-<h3 id="xlsxwriter">xlsxwriter:</h3>
+<h3 id="xlsxwriter">xlsxwriter</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
@@ -460,10 +472,10 @@ alunos = [('Thomas', '24', 'Curitiba'), ('Fernanda', '12', 'Sao Paulo'), ('Augus
 row = 1
 col = 0</p>
 <p>for aluno in alunos:
-    ws.write_string(row, col, aluno[0])
-    ws.write_string(row, col+1, aluno[1])
-    ws.write_string(row, col+2, aluno[2])
-    row += 1
+ ws.write_string(row, col, aluno[0])
+ ws.write_string(row, col+1, aluno[1])
+ ws.write_string(row, col+2, aluno[2])
+ row += 1
 ```</p>
 </li>
 <li>
@@ -472,7 +484,7 @@ col = 0</p>
 wb.close()</code></p>
 </li>
 </ul>
-<h2 id="extras">Extras:</h2>
+<h2 id="extras">Extras</h2>
 <h3 id="caracteres-especiais"><strong>Caracteres especiais:</strong></h3>
 <p><img alt="escape_caracter.png" src="../../img/escape_caracter.png" /></p>
 <ul>

@@ -138,9 +138,9 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 7 - RegEx e APIs</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#testar-regex">Testar RegEx:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#testar-regex">Testar RegEx</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#re">re:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#re">re</a>
     </li>
     </ul>
                   </li>
@@ -172,14 +172,14 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-7-regex-e-apis">Aula 7 - RegEx e APIs</h1>
-<h2 id="testar-regex">Testar RegEx:</h2>
+<h2 id="testar-regex">Testar RegEx</h2>
 <ul>
 <li><a href="https://pythex.org/">https://pythex.org/</a></li>
 <li><a href="https://regex101.com/">https://regex101.com/</a></li>
 <li><a href="https://www.regexpal.com/">https://www.regexpal.com/</a></li>
 <li><a href="https://regexr.com/">https://regexr.com/</a></li>
 </ul>
-<h2 id="re">re:</h2>
+<h2 id="re">re</h2>
 <ul>
 <li>
 <p>Importar biblioteca:</p>
@@ -350,48 +350,51 @@ regex_separador = re.compile(r'\s')</p>
 </li>
 <li>
 <p>Padrões prontos:</p>
-<ul>
+</li>
 <li>
 <p>Buscar por CPF:</p>
-<p>```python
-regex_cpf = re.compile(r'\d{3}.?\d{3}.?\d{3}-?\d{2}')</p>
-<p>coleta = regex_cpf.findall('O seu CPF é 470.485.110-95 e o meu é 11745629009')</p>
-<p>print(coleta)</p>
-<h1 id="output-470485110-95-11745629009">output: ['470.485.110-95', '11745629009']</h1>
-<p>```</p>
+<pre><code>```python
+regex_cpf = re.compile(r'\d{3}\.?\d{3}\.?\d{3}\-?\d{2}')
+
+coleta = regex_cpf.findall('O seu CPF é 470.485.110-95 e o meu é 11745629009')
+
+print(coleta)
+# output: ['470.485.110-95', '11745629009']
+```
+</code></pre>
 </li>
 <li>
 <p>Busca por telefone:</p>
-<p>```python
-regex_tel = re.compile(r'(?\d{2})?\s?\d{4,5}-?\d{4}')</p>
-<p>coleta = regex_tel.findall("O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.")</p>
-<p>print(coleta)</p>
-<h1 id="output-41-3123-4567-41-99123-4567-4131234567">output: ['(41) 3123-4567', '41 99123-4567', '4131234567']</h1>
-<p>```</p>
+<pre><code>```python
+regex_tel = re.compile(r'\(?\d{2}\)?\s?\d{4,5}\-?\d{4}')
+
+coleta = regex_tel.findall("O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.")
+
+print(coleta)
+# output: ['(41) 3123-4567', '41 99123-4567', '4131234567']
+```
+</code></pre>
 </li>
 <li>
 <p>Busca por Email:</p>
-<p>```python
-regex_email = re.compile(r'(?:\w+.)<em>\w</em>\@\w*(?:.\w+)+')</p>
-<p>coleta = regex_email.findall('O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.')</p>
-<p>print(coleta)</p>
-<h1 id="output-tiarahessel9yahoocom-shaun_nitzsche96hotmailcom-alphonso19outlookcombr">output: ['tiara.hessel9@yahoo.com', 'shaun_nitzsche96@hotmail.com', 'alphonso19@outlook.com.br']</h1>
-<p>```</p>
+<pre><code>```python
+regex_email = re.compile(r'(?:\w+\.)*\w*\@\w*(?:\.\w+)+')
+
+coleta = regex_email.findall('O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.')
+
+print(coleta)
+# output: ['tiara.hessel9@yahoo.com', 'shaun_nitzsche96@hotmail.com', 'alphonso19@outlook.com.br']
+```
+</code></pre>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="apis">APIs:</h2>
+<h2 id="apis">APIs</h2>
 <ul>
-<li><strong>REST:</strong><ul>
+<li><strong>REST:</strong></li>
 <li>Postman: <a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></li>
 <li>Insomnia: <a href="https://insomnia.rest/download">https://insomnia.rest/download</a></li>
-</ul>
-</li>
-<li><strong>SOAP:</strong><ul>
+<li><strong>SOAP:</strong></li>
 <li>SoapUI: <a href="https://www.soapui.org/downloads/soapui/">https://www.soapui.org/downloads/soapui/</a></li>
-</ul>
-</li>
 </ul>
 <p><strong>Bibliotecas:</strong></p>
 <ul>
@@ -400,30 +403,38 @@ regex_email = re.compile(r'(?:\w+.)<em>\w</em>\@\w*(?:.\w+)+')</p>
 </ul>
 <p><strong>Funcionalidades:</strong></p>
 <ul>
-<li>
-<p><strong>GET</strong></p>
-<ul>
+<li><strong>GET</strong></li>
 <li>
 <p>API de teste:</p>
-<p>```python
-import requests</p>
-<p>url = "https://reqres.in/api/users?page=2"</p>
-<p>response = requests.get(url)</p>
-<p>r_json = response.json()</p>
-<p>print(r_json['data'][0]['email'])</p>
-<h1 id="output-michaellawsonreqresin">output: michael.lawson@reqres.in</h1>
-<p>```</p>
+<pre><code>```python
+import requests
+
+url = "https://reqres.in/api/users?page=2"
+
+response = requests.get(url)
+
+r_json = response.json()
+
+print(r_json['data'][0]['email'])
+# output: michael.lawson@reqres.in
+```
+</code></pre>
 </li>
 <li>
 <p>API de Universidades no Brasil:</p>
-<p>```python
-import requests</p>
-<p>url = "http://universities.hipolabs.com/search?country=brazil"</p>
-<p>response = requests.get(url)</p>
-<p>r_json = response.json()</p>
-<p>print(r_json[15]['name'])</p>
-<h1 id="output-universidade-regional-de-blumenau">output: Universidade Regional de Blumenau</h1>
-<p>```</p>
+<pre><code>```python
+import requests
+
+url = "http://universities.hipolabs.com/search?country=brazil"
+
+response = requests.get(url)
+
+r_json = response.json()
+
+print(r_json[15]['name'])
+# output: Universidade Regional de Blumenau
+```
+</code></pre>
 </li>
 <li>
 <p>Exemplos GET:</p>
@@ -432,52 +443,52 @@ import requests</p>
 <li><a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></li>
 <li><a href="https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao">https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao</a></li>
 <li><a href="https://agify.io/">https://agify.io/</a></li>
-<li>https://github.com/Hipo/university-domains-list</li>
+<li><a href="https://github.com/Hipo/university-domains-list">https://github.com/Hipo/university-domains-list</a></li>
 </ul>
 </li>
 <li><strong>POST:</strong></li>
 <li>
 <p>Cadastrar usuário de teste:</p>
-<p>```python
+<pre><code>```python
 import requests
-import json</p>
-<p>url = "https://reqres.in/api/users"</p>
-<p>payload = json.dumps({
+import json
+
+url = "https://reqres.in/api/users"
+
+payload = json.dumps({
   "name": "Harry Potter",
   "job": "Desenvolvedor RPA"
 })
 headers = {
   'Content-Type': 'application/json'
-}</p>
-<p>response = requests.post(url, headers=headers, data=payload)</p>
-<p>r_json = response.json()</p>
-<p>print(r_json['job'])</p>
-<h1 id="output-desenvolvedor-rpa">output: Desenvolvedor RPA</h1>
-<p>```</p>
-</li>
-</ul>
+}
+
+response = requests.post(url, headers=headers, data=payload)
+
+r_json = response.json()
+
+print(r_json['job'])
+# output: Desenvolvedor RPA
+```
+</code></pre>
 </li>
 <li>
 <p>PUT:</p>
-<ul>
-<li>Serve para atualizar algum dado em base através de API.</li>
-</ul>
 </li>
-<li>DELETE:<ul>
+<li>Serve para atualizar algum dado em base através de API.</li>
+<li>DELETE:</li>
 <li>Serve para apagar algum dado em base através de API.</li>
 </ul>
-</li>
-</ul>
-<h2 id="extras">Extras:</h2>
-<h3 id="apis-para-brincar">APIs para "Brincar":</h3>
+<h2 id="extras">Extras</h2>
+<h3 id="apis-para-brincar">APIs para "Brincar"</h3>
 <ul>
 <li><a href="https://apipheny.io/free-api/">https://apipheny.io/free-api/</a></li>
-<li>https://github.com/public-apis/public-apis</li>
+<li><a href="https://github.com/public-apis/public-apis">https://github.com/public-apis/public-apis</a></li>
 <li><a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></li>
 <li><a href="https://reqres.in/">https://reqres.in/</a></li>
 <li><a href="https://gorest.co.in/">https://gorest.co.in/</a></li>
 </ul>
-<h3 id="aprender-regex">Aprender RegEx:</h3>
+<h3 id="aprender-regex">Aprender RegEx</h3>
 <ul>
 <li><a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></li>
 <li><a href="https://www.w3schools.com/python/python_regex.asp">https://www.w3schools.com/python/python_regex.asp</a></li>

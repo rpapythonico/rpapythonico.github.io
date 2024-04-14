@@ -136,9 +136,9 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 5 - Selenium e BeautifulSoup</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#webdrivers">Webdrivers:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#webdrivers">Webdrivers</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#selenium">Selenium:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#selenium">Selenium</a>
     </li>
     </ul>
                   </li>
@@ -172,38 +172,28 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-5-selenium-e-beautifulsoup">Aula 5 - Selenium e BeautifulSoup</h1>
-<h2 id="webdrivers">Webdrivers:</h2>
+<h2 id="webdrivers">Webdrivers</h2>
 <ul>
+<li>Chromedriver:</li>
 <li>
-<p>Chromedriver:</p>
-<ul>
-<li><a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a></li>
-</ul>
+<p><a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a></p>
 </li>
 <li>
 <p>Geckodriver:</p>
-<ul>
-<li><a href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a></li>
-</ul>
 </li>
-<li>IEDriver:<ul>
+<li><a href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a></li>
+<li>IEDriver:</li>
 <li><a href="https://www.selenium.dev/downloads/">https://www.selenium.dev/downloads/</a><ul>
 <li>x64: <a href="https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.150.0/IEDriverServer_x64_3.150.2.zip">https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.150.0/IEDriverServer_x64_3.150.2.zip</a></li>
 <li>x32: <a href="https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.150.0/IEDriverServer_Win32_3.150.2.zip">https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.150.0/IEDriverServer_Win32_3.150.2.zip</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li>Operadriver:<ul>
+<li>Operadriver:</li>
 <li><a href="https://github.com/operasoftware/operachromiumdriver/releases">https://github.com/operasoftware/operachromiumdriver/releases</a></li>
-</ul>
-</li>
-<li>Edgedriver:<ul>
+<li>Edgedriver:</li>
 <li><a href="https://developer.microsoft.com/e../img/n-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a></li>
 </ul>
-</li>
-</ul>
-<h2 id="selenium">Selenium:</h2>
+<h2 id="selenium">Selenium</h2>
 <ul>
 <li>
 <p>Instalação do Selenium:</p>
@@ -334,7 +324,7 @@ driver.close()</code></p>
 driver.quit()</code></p>
 </li>
 </ul>
-<h2 id="beautifulsoup">BeautifulSoup:</h2>
+<h2 id="beautifulsoup">BeautifulSoup</h2>
 <ul>
 <li>
 <p>Importar biblioteca para "baixar" o HTML da página:</p>
@@ -345,18 +335,18 @@ from urllib.request import urlopen</code></p>
 <p>Efetuar requisição da página HTML:</p>
 <p><code>python
 html = urlopen('https://quotes.toscrape.com/')</code></p>
-<ul>
+</li>
 <li>
 <p><strong>Resolvendo problema de certificado SSL (se houver):</strong></p>
-<p>```python
-import ssl</p>
-<p>ssl._create_default_https_context = ssl._create_unverified_context
-```</p>
+<pre><code>```python
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+```
+</code></pre>
 <ul>
 <li>Outras formas de resolver o erro de certificado SSL: <a href="https://exerror.com/urlopen-error-ssl-certificate_verify_failed-certificate-verify-failed/">https://exerror.com/urlopen-error-ssl-certificate_verify_failed-certificate-verify-failed/</a></li>
 <li>Instalar o “parser” do HTML:</li>
-</ul>
-</li>
 </ul>
 <p><code>bash
 pip install beautifulsoup4</code></p>
@@ -373,28 +363,34 @@ soup = BeautifulSoup(html.read(), 'html.parser')</code></p>
 </li>
 <li>
 <p><strong>ALTERNATIVA de biblioteca para "baixar" o html da página:</strong></p>
-<ul>
+</li>
 <li>
 <p>Instalação da "lib":</p>
-<p><code>bash
-pip install requests</code></p>
+<pre><code>```bash
+pip install requests
+```
+</code></pre>
 </li>
 <li>
 <p>Importação da “lib”:</p>
-<p><code>python
-import requests</code></p>
+<pre><code>```python
+import requests
+```
+</code></pre>
 </li>
 <li>
 <p>Efetuar requisição da página HTML:</p>
-<p><code>python
-html = requests.get('https://quotes.toscrape.com/')</code></p>
+<pre><code>```python
+html = requests.get('https://quotes.toscrape.com/')
+```
+</code></pre>
 </li>
 <li>
 <p>Formatar o código de HTML para “parsear”:</p>
-<p><code>python
-soup = BeautifulSoup(html.text, 'html.parser')</code></p>
-</li>
-</ul>
+<pre><code>```python
+soup = BeautifulSoup(html.text, 'html.parser')
+```
+</code></pre>
 </li>
 <li>
 <p>Acessar uma TAG diretamente:</p>
@@ -446,7 +442,7 @@ soup.find('div', {'class': 'quote'}).get('itemtype')</p>
 <p>```</p>
 </li>
 </ul>
-<h2 id="xpath">Xpath:</h2>
+<h2 id="xpath">Xpath</h2>
 <p><img alt="032816_0758_XPathinSele1.png" src="../../img/xpath_syntax.png" /></p>
 <ul>
 <li>Guia de criação de Xpath: <a href="https://www.guru99.com/xpath-selenium.html">https://www.guru99.com/xpath-selenium.html</a></li>
@@ -458,7 +454,7 @@ soup.find('div', {'class': 'quote'}).get('itemtype')</p>
 <li>Cheat Sheet: <a href="https://devhints.io/css">https://devhints.io/css</a></li>
 <li>Extra: <a href="https://www.freecodecamp.org/news/css-selectors-cheat-sheet/">https://www.freecodecamp.org/news/css-selectors-cheat-sheet/</a></li>
 </ul>
-<h2 id="extras">Extras:</h2>
+<h2 id="extras">Extras</h2>
 <ul>
 <li><a href="https://dunossauro.github.io/curso-python-selenium/">https://dunossauro.github.io/curso-python-selenium/</a></li>
 <li><a href="https://scrapy.org/">https://scrapy.org/</a></li>

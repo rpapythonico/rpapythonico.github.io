@@ -132,9 +132,13 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 3 - Funções, Manipulações e Erros</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#funcoes">Funções:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#funcoes">Funções</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-string">Manipulação de String:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-string">Manipulação de String</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#excecoeserros">Exceções/Erros</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#datetime">datetime</a>
     </li>
     </ul>
                   </li>
@@ -172,202 +176,206 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-3-funcoes-manipulacoes-e-erros">Aula 3 - Funções, Manipulações e Erros</h1>
-<h2 id="funcoes">Funções:</h2>
+<h2 id="funcoes">Funções</h2>
 <ul>
 <li>def():</li>
 <li>Ex.:<pre><code>````python
 def soma(num1, num2):
-    return num1 + num2
+ return num1 + num2
 ```
 </code></pre>
 </li>
 </ul>
-<h2 id="manipulacao-de-string">Manipulação de String:</h2>
+<h2 id="manipulacao-de-string">Manipulação de String</h2>
 <ul>
-<li>
-<p>Indexação e slicing [:]:</p>
-<ul>
+<li>Indexação e slicing [:]:</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'Python é a melhor linguagem do mundo'</p>
-<p>frase[:6]</p>
-<h1 id="output-python">output: 'Python'</h1>
-<p>frase[31:]</p>
-<h1 id="output-mundo">output: 'mundo'</h1>
-<p>frase[:]</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo">output: 'Python é a melhor linguagem do mundo'</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'Python é a melhor linguagem do mundo'
+
+frase[:6]
+# output: 'Python'
+
+frase[31:]
+# output: 'mundo'
+
+frase[:]
+# output: 'Python é a melhor linguagem do mundo'
+```
+</code></pre>
 </li>
 <li>
 <p>.find():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase.find('mundo')</p>
-<h1 id="output-31">output: 31</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase.find('mundo')
+# output: 31
+```
+</code></pre>
 </li>
 <li>
 <p>None e vazio:</p>
-<ul>
+</li>
 <li>Apaga o valor de dentro de uma variável.</li>
 <li>
 <p>Ex.:</p>
-<p><code>python
-frase = None</code></p>
-</li>
-</ul>
+<pre><code>```python
+frase = None
+```
+</code></pre>
 </li>
 <li>
 <p>in e not in</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'Python é a melhor linguagem do mundo'</p>
-<p>'Python' in frase</p>
-<h1 id="output-true">output: True</h1>
-<p>'Python' not in frase</p>
-<h1 id="output-false">output: False</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'Python é a melhor linguagem do mundo'
+
+'Python' in frase
+# output: True
+
+'Python' not in frase
+# output: False
+```
+</code></pre>
 </li>
 <li>
 <p>upper() e isupper()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'Python é a melhor linguagem do mundo'</p>
-<p>frase.isupper()</p>
-<h1 id="output-false_1">output: False</h1>
-<p>frase.upper()</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo_1">output: 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'Python é a melhor linguagem do mundo'
+
+frase.isupper()
+# output: False
+
+frase.upper()
+# output: 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'
+```
+</code></pre>
 </li>
 <li>
 <p>lower() e islower()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'</p>
-<p>frase.islower()</p>
-<h1 id="output-false_2">output: False</h1>
-<p>frase.lower()</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo_2">output: 'python é a melhor linguagem do mundo'</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'
+
+frase.islower()
+# output: False
+
+frase.lower()
+# output: 'python é a melhor linguagem do mundo'
+```
+</code></pre>
 </li>
 <li>
 <p>startswith() e endswith()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'Python é a melhor linguagem do mundo'</p>
-<p>frase.startswith('Python')</p>
-<h1 id="output-true_1">output: True</h1>
-<p>frase.endswith('mundo')</p>
-<h1 id="output-true_2">output: True</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'Python é a melhor linguagem do mundo'
+
+frase.startswith('Python')
+# output: True
+
+frase.endswith('mundo')
+# output: True
+```
+</code></pre>
 </li>
 <li>
 <p>split() e join()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'Python é a melhor linguagem do mundo'</p>
-<p>frase = palavra.split(' ')</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo_3">output: ['Python', 'é', 'a', 'melhor', 'linguagem', 'do', 'mundo']</h1>
-<p>';'.join(frase)</p>
-<h1 id="output-pythoneamelhorlinguagemdomundo">output: 'Python;é;a;melhor;linguagem;do;mundo'</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'Python é a melhor linguagem do mundo'
+
+frase = palavra.split(' ')
+# output: ['Python', 'é', 'a', 'melhor', 'linguagem', 'do', 'mundo']
+
+';'.join(frase)
+#output: 'Python;é;a;melhor;linguagem;do;mundo'
+```
+</code></pre>
 </li>
 <li>
 <p>rjust(), ljust() e center():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-frase = 'Python é a melhor linguagem do mundo'</p>
-<p>frase.rjust(50,'-')</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo_4">output: '--------------Python é a melhor linguagem do mundo'</h1>
-<p>frase.ljust(50,'-')</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo-">output: 'Python é a melhor linguagem do mundo--------------'</h1>
-<p>frase.center(50,'*')</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo_5">output: '<strong><em>*</em></strong>Python é a melhor linguagem do mundo<strong><em>*</em></strong>'</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+frase = 'Python é a melhor linguagem do mundo'
+
+frase.rjust(50,'-')
+# output: '--------------Python é a melhor linguagem do mundo'
+
+frase.ljust(50,'-')
+# output: 'Python é a melhor linguagem do mundo--------------'
+
+frase.center(50,'*')
+# output: '*******Python é a melhor linguagem do mundo*******'
+```
+</code></pre>
 </li>
 <li>
 <p>zfill():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-cpf = '345678911'</p>
-<p>cpf.zfill(11)</p>
-<h1 id="output-00345678911">output: '00345678911'</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+cpf = '345678911'
+
+cpf.zfill(11)
+# output: '00345678911'
+```
+</code></pre>
 </li>
 <li>
 <p>strip(), rstrip() e lstrip():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-nome = '          Harry Potter          '</p>
-<p>nome.strip()</p>
-<h1 id="output-harry-potter">output: 'Harry Potter'</h1>
-<p>nome.rstrip()</p>
-<h1 id="output-harry-potter_1">output: '          Harry Potter'</h1>
-<p>nome.lstrip()</p>
-<h1 id="output-harry-potter_2">output: 'Harry Potter          '</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+nome = '          Harry Potter          '
+
+nome.strip()
+# output: 'Harry Potter'
+
+nome.rstrip()
+# output: '          Harry Potter'
+
+nome.lstrip()
+# output: 'Harry Potter          '
+```
+</code></pre>
 </li>
 <li>
 <p>replace():</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-frase = 'Java é a melhor linguagem do mundo'</p>
-<p>frase.replace('Java', 'Python')</p>
-<h1 id="output-python-e-a-melhor-linguagem-do-mundo_6">output: 'Python é a melhor linguagem do mundo'</h1>
-<p>```</p>
+</li>
+<li>Ex.:<pre><code>```python
+frase = 'Java é a melhor linguagem do mundo'
+
+frase.replace('Java', 'Python')
+# output: 'Python é a melhor linguagem do mundo'
+```
+</code></pre>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="excecoeserros">Exceções/Erros:</h2>
+<h2 id="excecoeserros">Exceções/Erros</h2>
 <ul>
-<li>
-<p>try:, except:, else: e finally:</p>
-<ul>
+<li>try:, except:, else: e finally:</li>
 <li>
 <p>Ex.:</p>
-<p>```python
+<pre><code>```python
 def divisao(valor1, valor2):
   valor1 = str(valor1)
   try: # É a etapa de tentativa. Se der sucesso, vai para o "else" e se der erro, irá para o "except"
@@ -376,40 +384,40 @@ def divisao(valor1, valor2):
   except ZeroDivisionError as error: # Trata o erro de divisão por zero somente
     print(f'{error}')
     print(f'Não foi possível dividir o valor {valor1} pelo valor {valor2}')
-    except: # Trata qualquer erro que não esteja mapeado
-        print('Erro desconhecido e ele poderia ter parado o programa!')
+ except: # Trata qualquer erro que não esteja mapeado
+  print('Erro desconhecido e ele poderia ter parado o programa!')
   else: # Se tudo der certo dentro do "try", o código continuará aqui
     return valor1 / valor2
   finally: # Essa ação abaixo será executada independente de sucesso ou erro
-    print('Isso aqui rodará independente do erro')</p>
-<p>num1= 25
-num2 = 0</p>
-<p>divisao(num1, num2)</p>
-<h1 id="output-nao-foi-possivel-dividir-o-valor-25-pelo-valor-0">output: 'Não foi possível dividir o valor 25 pelo valor 0'</h1>
-<p>```</p>
-</li>
-</ul>
+    print('Isso aqui rodará independente do erro')
+
+num1= 25
+num2 = 0
+
+divisao(num1, num2)
+# output: 'Não foi possível dividir o valor 25 pelo valor 0'
+```
+</code></pre>
 </li>
 <li>
 <p>raise:</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<p>```python
-raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')</p>
-<h1 id="output-traceback-most-recent-call-last">output: Traceback (most recent call last):</h1>
-<h1 id="file-line-1-in">File "<pyshell#27>", line 1, in <module></h1>
-<h1 id="raise-baseexceptioneste-e-um-erro-personalizado-caso-caia-em-alguma-condicional-invalida">raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')</h1>
-<h1 id="baseexception-este-e-um-erro-personalizado-caso-caia-em-alguma-condicional-invalida">BaseException: Este é um erro personalizado caso caia em alguma condicional inválida!</h1>
-<p>```</p>
-</li>
-</ul>
+<pre><code>```python
+raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')
+# output: Traceback (most recent call last):
+#  File "&lt;pyshell#27&gt;", line 1, in &lt;module&gt;
+#    raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')
+# BaseException: Este é um erro personalizado caso caia em alguma condicional inválida!
+```
+</code></pre>
 </li>
 <li>
 <p>Tipos de erros: <a href="https://www.programiz.com/python-programming/exceptions#built-in">https://www.programiz.com/python-programming/exceptions#built-in</a></p>
 </li>
 </ul>
-<h2 id="datetime">datetime:</h2>
+<h2 id="datetime">datetime</h2>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
@@ -459,7 +467,7 @@ data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')</p>
 <p>```</p>
 </li>
 </ul>
-<h2 id="extras">Extras:</h2>
+<h2 id="extras">Extras</h2>
 <p>Documentação datetime: <a href="https://docs.python.org/pt-br/3/library/datetime.html">https://docs.python.org/pt-br/3/library/datetime.html</a></p>
 <p>Tabela de símbolos para o strftime: <a href="https://www.programiz.com/python-programming/datetime/strftime#format-code">https://www.programiz.com/python-programming/datetime/strftime#format-code</a>
 ````</p>

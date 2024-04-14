@@ -179,46 +179,38 @@
 <li>Variável <strong>"nome"</strong> não declarada:</li>
 </ul>
 <p><code>python
-  print(nome)</code>
-  <img alt="NameError" src="../../img/NameError.png" /></p>
+  print(nome)</code></p>
+<p><img alt="NameError" src="../../img/NameError.png" /></p>
 <ul>
 <li>Soma entre <strong>"string"</strong> e <strong>"integer"</strong>:</li>
 </ul>
 <p><code>python
-  '2' + 2</code>
-  <img alt="TypeError" src="../../img/TypeError.png" /></p>
+  '2' + 2</code></p>
+<p><img alt="TypeError" src="../../img/TypeError.png" /></p>
 <ul>
 <li>Barra invertida como operador aritmético:</li>
 </ul>
 <p><code>python
-  10 \ 0</code>
-  <img alt="SyntaxError" src="../../img/SyntaxError.png" /></p>
+  10 \ 0</code></p>
+<p><img alt="SyntaxError" src="../../img/SyntaxError.png" /></p>
 <ul>
 <li>Divisão de um valor por zero:</li>
 </ul>
 <p><code>python
-  10 / 0</code>
-  <img alt="ZeroDivisionError" src="../../img/ZeroDivisionError.png" /></p>
+  10 / 0</code></p>
+<p><img alt="ZeroDivisionError" src="../../img/ZeroDivisionError.png" /></p>
 <h2 id="explicacao">Explicação</h2>
 <p>Para que um código não "quebre" e acabe parando uma automação ou um script, é necessário fazer uma tratativa de erro. Para isso, o Python possui quatro palavras reservadas: <strong>try</strong>, <strong>except</strong>, <strong>else</strong> e <strong>finally</strong>.</p>
 <ul>
-<li>try:<ul>
+<li>try:</li>
 <li>Bloco que <strong>executará o código principal</strong>.</li>
-</ul>
-</li>
-<li>except:<ul>
+<li>except:</li>
 <li>Bloco que criará um <strong>caminho alternativo</strong> à tentativa realizada anteriormente <strong>em caso de falha</strong>;</li>
 <li>Pode ser especificada (<a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">conforme documentação</a>) ou de forma genérica.</li>
-</ul>
-</li>
-<li>else:<ul>
+<li>else:</li>
 <li>Bloco que efetuará a <strong>continuação do código</strong> escrito dentro do <strong>try</strong> em caso de sucesso.</li>
-</ul>
-</li>
-<li>finally:<ul>
+<li>finally:</li>
 <li>Bloco que <strong>executará código independente</strong> do <strong>SUCESSO</strong> ou <strong>FALHA</strong></li>
-</ul>
-</li>
 </ul>
 <h2 id="exemplo">Exemplo</h2>
 <p><code>python

@@ -121,11 +121,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#efetuando-parse-no-html">Efetuando "parse" no HTML</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#instalacao-do-parser-do-html-utilizando-o-gerenciador-de-pacotes-pip">Instalação do “parser” do HTML utilizando o gerenciador de pacotes "pip":</a>
+    <li class="toctree-l3"><a class="reference internal" href="#instalacao-do-parser-do-html-utilizando-o-gerenciador-de-pacotes-pip">Instalação do “parser” do HTML utilizando o gerenciador de pacotes "pip"</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#importacao-do-parser-de-html">Importação do “parser” de HTML:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#importacao-do-parser-de-html">Importação do “parser” de HTML</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#formatar-o-codigo-de-html-para-parsear">Formatar o código de HTML para “parsear”:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#formatar-o-codigo-de-html-para-parsear">Formatar o código de HTML para “parsear”</a>
     </li>
         </ul>
     </li>
@@ -224,9 +224,9 @@ import ssl</p>
 <h3 id="biblioteca-externa-requests">Biblioteca Externa - requests</h3>
 <ol>
 <li>
-<p>Instalação da "lib" usando o gerenciador de pacotes "pip":
-    <code>bash
-    pip install requests</code></p>
+<p>Instalação da "lib" usando o gerenciador de pacotes "pip":</p>
+<p><code>bash
+pip install requests</code></p>
 </li>
 <li>
 <p>Importação da “lib”:</p>
@@ -234,26 +234,26 @@ import ssl</p>
 import requests</code></p>
 </li>
 <li>
-<p>Download da página HTML:   </p>
+<p>Download da página HTML:</p>
 <p><code>python
 html = requests.get('https://quotes.toscrape.com/')</code></p>
-<h2 id="efetuando-parse-no-html">Efetuando "parse" no HTML</h2>
 </li>
 </ol>
-<h3 id="instalacao-do-parser-do-html-utilizando-o-gerenciador-de-pacotes-pip">Instalação do “parser” do HTML utilizando o gerenciador de pacotes "pip":</h3>
+<h2 id="efetuando-parse-no-html">Efetuando "parse" no HTML</h2>
+<h3 id="instalacao-do-parser-do-html-utilizando-o-gerenciador-de-pacotes-pip">Instalação do “parser” do HTML utilizando o gerenciador de pacotes "pip"</h3>
 <p><code>bash
 pip install beautifulsoup4</code></p>
-<h3 id="importacao-do-parser-de-html">Importação do “parser” de HTML:</h3>
+<h3 id="importacao-do-parser-de-html">Importação do “parser” de HTML</h3>
 <p><code>python
 from bs4 import BeautifulSoup</code></p>
-<h3 id="formatar-o-codigo-de-html-para-parsear">Formatar o código de HTML para “parsear”:</h3>
+<h3 id="formatar-o-codigo-de-html-para-parsear">Formatar o código de HTML para “parsear”</h3>
 <p>```python</p>
 <h1 id="formato-para-quem-usou-urllib">Formato para quem usou urllib</h1>
 <p>soup = BeautifulSoup(html.read(), 'html.parser')</p>
 <h1 id="formato-para-quem-usou-requests">Formato para quem usou requests</h1>
 <p>soup = BeautifulSoup(html.text, 'html.parser')
 ```</p>
-<h3 id="acessar-uma-tag-diretamente">Acessar uma TAG diretamente:</h3>
+<h3 id="acessar-uma-tag-diretamente">Acessar uma TAG diretamente</h3>
 <p>```python
 soup.h1</p>
 <h1 id="output">output:</h1>
@@ -261,31 +261,31 @@ soup.h1</p>
 <h1 id="quotes-to-scrape"><a href="/" style="text-decoration: none">Quotes to Scrape</a></h1>
 <h1 id="_2"></h1></h1>
 <p>```</p>
-<h3 id="acessar-o-primeiro-elemento-atraves-dos-seus-atributos-basicos-id-ou-class">Acessar o <strong>PRIMEIRO</strong> elemento através dos seus atributos básicos (ID  ou CLASS):</h3>
+<h3 id="acessar-o-primeiro-elemento-atraves-dos-seus-atributos-basicos-id-ou-class">Acessar o <strong>PRIMEIRO</strong> elemento através dos seus atributos básicos (ID  ou CLASS)</h3>
 <p>```python
 soup.find(class_='text')</p>
 <h1 id="output_1">output:</h1>
 <h1 id="the-world-as-we-have-created-it-is-a-process-of-our-thinking-it-cannot-be-changed-without-changing-our-thinking"><span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span></h1>
 <p>```</p>
-<h3 id="buscar-algum-elemento-atraves-do-seu-texto-entre-tags">Buscar algum elemento através do seu texto (entre TAGs):</h3>
+<h3 id="buscar-algum-elemento-atraves-do-seu-texto-entre-tags">Buscar algum elemento através do seu texto (entre TAGs)</h3>
 <p>```python
 soup.find(text="deep-thoughts")</p>
 <h1 id="output-deep-thoughts">output: 'deep-thoughts'</h1>
 <p>```</p>
-<h3 id="buscar-mais-de-um-elemento-na-pagina">Buscar mais de um elemento na página:</h3>
+<h3 id="buscar-mais-de-um-elemento-na-pagina">Buscar mais de um elemento na página</h3>
 <p>```python
 soup.find_all(class_='text')</p>
 <h1 id="ou">ou</h1>
 <p>soup.find_all('span', {'class': 'text'})</p>
 <h1 id="output-the-world-as-we-have-created-it-is-a-process-of-our-thinking-it-cannot-be-changed-without-changing-our-thinking-it-is-our-choices-harry-that-show-what-we-truly-are-far-more-than-our-abilities">output: [<span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span>, <span class="text" itemprop="text">“It is our choices, Harry, that show what we truly are, far more than our abilities.”</span>, ... ]</h1>
 <p>```</p>
-<h3 id="ver-atributos-da-tag-de-html">Ver atributos da TAG de HTML:</h3>
+<h3 id="ver-atributos-da-tag-de-html">Ver atributos da TAG de HTML</h3>
 <p>```python
 div = soup.find('div', {'class': 'quote'})
 div.attrs</p>
 <h1 id="output-class-quote-itemscope-itemtype-httpschemaorgcreativework">output: {'class': ['quote'], 'itemscope': '', 'itemtype': 'http://schema.org/CreativeWork'}</h1>
 <p>```</p>
-<h3 id="pegar-atributos-da-tag-de-html">Pegar atributos da TAG de HTML:</h3>
+<h3 id="pegar-atributos-da-tag-de-html">Pegar atributos da TAG de HTML</h3>
 <p>```python
 soup.find('div', {'class': 'quote'}).get('itemtype')</p>
 <h1 id="output-httpschemaorgcreativework">output: 'http://schema.org/CreativeWork'</h1>

@@ -174,61 +174,83 @@
                 <h1 id="csv">CSV</h1>
 <h2 id="explicacao">Explicação</h2>
 <p>Assim como os formatos xlsx e xls, também é possível ler arquivos gerados por programas ou sites que possuem os valores separadas por delimitadores (.csv).
-Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python. </p>
+Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python.</p>
 <h2 id="comandos">Comandos</h2>
 <ul>
 <li>
 <p>Utilizando a biblioteca CSV, é possível ler e escrever arquivos  no formato ".csv".</p>
-<ul>
+</li>
 <li>
 <p>Importação</p>
-<p><code>python
-import csv</code>
-    - Abertura do arquivo</p>
-<p><code>python
-arqv_csv = open('tabela_clientes.csv', 'r')</code></p>
+<pre><code>```python
+import csv
+```
+</code></pre>
+</li>
+<li>
+<p>Abertura do arquivo</p>
+<pre><code>```python
+arqv_csv = open('tabela_clientes.csv', 'r')
+```
+</code></pre>
 </li>
 <li>
 <p>Leitura do arquivo - <strong>LISTA</strong>:</p>
-<p><code>python
-lista_clientes = csv.reader(arqv_csv, delimiter=',')</code>
-- <strong>"delimiter" é o caractere que divide os valores</strong></p>
+<pre><code>```python
+lista_clientes = csv.reader(arqv_csv, delimiter=',')
+```
+</code></pre>
+<ul>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
 </li>
 <li>
 <p>Leitura do arquivo – <strong>DICIONÁRIO</strong>:</p>
-<p><code>python
-lista_clientes = csv.DictReader(arqv_csv, delimiter=',')</code>
-- <strong>"delimiter" é o caractere que divide os valores</strong></p>
+<pre><code>```python
+lista_clientes = csv.DictReader(arqv_csv, delimiter=',')
+```
+</code></pre>
+<ul>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
 </li>
 <li>
 <p>Escrita do arquivo - <strong>LISTA</strong>:</p>
-<p><code>python
+<pre><code>```python
 lista_pessoas = [['Ana', 'Itajaí', 'SC', '27', 'Veterinária'],
                  ['Rubens', 'São Paulo', 'SP', '43', 'Mecânico'],
                  ['Fabiana', 'Pinhais', 'PR', '70', 'Cozinheira']]
 escritor = csv.writer(arqv_csv, delimiter=',')
-escritor.writerows(lista_pessoas)</code>
-- <strong>Precisa ter o modo de abertura como "a" ou "w"</strong>
-- <strong>"delimiter" é o caractere que divide os valores</strong></p>
+escritor.writerows(lista_pessoas)
+```
+</code></pre>
+<ul>
+<li><strong>Precisa ter o modo de abertura como "a" ou "w"</strong></li>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
 </li>
 <li>
 <p>Escrita do arquivo - <strong>DICIONÁRIO</strong>:</p>
-<p><code>python
+<pre><code>```python
 dicionario_pessoas = [{'Nome': 'Ana', 'Cidade': 'Itajaí', 'Estado': 'SC', 'Idade': '27', 'Profissão': 'Veterinária'},
                       {'Nome': 'Rubens', 'Cidade': 'São Paulo', 'Estado': 'SP', 'Idade': '43', 'Profissão': 'Mecânico'},
                       {'Nome': 'Fabiana', 'Cidade': 'Pinhais', 'Estado': 'PR', 'Idade': '70', 'Profissão': 'Cozinheira'}]
 campos = ['Nome', 'Cidade', 'Estado', 'Idade', 'Profissão']
 escritor = csv.DictWriter(arqv_csv, delimiter=',', fieldnames=campos)
-escritor.writerows(dicionario_pessoas)</code>
-- <strong>Precisa ter o modo de abertura como "a" ou "w"</strong>
-- <strong>"delimiter" é o caractere que divide os valores</strong></p>
+escritor.writerows(dicionario_pessoas)
+```
+</code></pre>
+<ul>
+<li><strong>Precisa ter o modo de abertura como "a" ou "w"</strong></li>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
 </li>
 <li>
 <p>Fecha o arquivo</p>
-<p><code>python
-arqv_csv.close()</code></p>
-</li>
-</ul>
+<pre><code>```python
+arqv_csv.close()
+```
+</code></pre>
 </li>
 </ul>
               

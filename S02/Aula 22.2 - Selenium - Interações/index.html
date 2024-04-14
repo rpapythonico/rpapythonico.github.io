@@ -107,9 +107,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#apagando-e-escrevendo-em-um-campo">Apagando e escrevendo em um campo</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</a>
+    <li class="toctree-l3"><a class="reference internal" href="#movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#clicar-em-um-elemento">Clicar em um elemento:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#clicar-em-um-elemento">Clicar em um elemento</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#extrair-textos">Extrair textos</a>
     </li>
@@ -201,10 +201,10 @@ driver.find_element(By.ID, 'twotabsearchtextbox').clear()</code></p>
 <li>
 <p>Após o campo estar limpo e pronto para receber o texto, a escrita será realizada com o código:</p>
 <p><code>python
-driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Python')</code> </p>
+driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Python')</code></p>
 </li>
 </ul>
-<h2 id="movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</h2>
+<h2 id="movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll)</h2>
 <ul>
 <li>
 <p>Alguns elementos acabam não carregando até que a tela seja movimenta para próximo do mesmo. Para fazer isso, basta utilizar o código a seguir:</p>
@@ -212,7 +212,7 @@ driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Python')</code> </p
 driver.find_element(By.CLASS_NAME, 'navFooterBackToTopText').location_once_scrolled_into_view</code></p>
 </li>
 </ul>
-<h2 id="clicar-em-um-elemento">Clicar em um elemento:</h2>
+<h2 id="clicar-em-um-elemento">Clicar em um elemento</h2>
 <ul>
 <li>
 <p>Para acessar objetos na página, se faz necessário dar cliques e isso é permitido usando o comando:</p>
@@ -223,7 +223,7 @@ driver.find_element(By.ID, 'nav-search-submit-button').click()</code></p>
 <h2 id="extrair-textos">Extrair textos</h2>
 <ul>
 <li>
-<p>Quando uma tag possui texto entre a abertura e o fechamento, o mesmo poderá ser coletado através da seguinte funcionalidade:    </p>
+<p>Quando uma tag possui texto entre a abertura e o fechamento, o mesmo poderá ser coletado através da seguinte funcionalidade:</p>
 <p><code>python
 driver.find_element(By.ID, 'glow-ingress-line2').text</code></p>
 </li>
@@ -236,7 +236,7 @@ driver.find_element(By.ID, 'nav-logo-sprites').get_attribute('aria-label')</code
 <h2 id="printscreens">Printscreens</h2>
 <ul>
 <li>
-<p>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:    </p>
+<p>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:</p>
 <p><code>python
 driver.find_element(By.ID, 'navbar').screenshot('menu.png')</code></p>
 </li>
@@ -266,28 +266,34 @@ from selenium.webdriver.support.ui import Select</p>
 <ul>
 <li>
 <p>Algumas páginas web podem conter alertas emitidos via JavaScript. Essas são telinhas que não possuem especificamente uma TAG em HTML, mas o Selenium ainda consegue identíficá-las para poder interagir:</p>
-<ul>
+</li>
 <li>
 <p>Captura a caixa de diálogo:</p>
-<p><code>python
-alerta = driver.switch_to.alert</code></p>
+<pre><code>```python
+alerta = driver.switch_to.alert
+```
+</code></pre>
 </li>
 <li>
 <p>Aceita a caixa de diálogo:</p>
-<p><code>python
-alerta.accept();</code></p>
+<pre><code>```python
+alerta.accept();
+```
+</code></pre>
 </li>
 <li>
 <p>Recusa a caixa de diálogo:</p>
-<p><code>python
-alerta = driver.dismiss()</code></p>
+<pre><code>```python
+alerta = driver.dismiss()
+```
+</code></pre>
 </li>
 <li>
 <p>Escreve no campo da caixa de diálogo:</p>
-<p><code>python
-alerta.send_keys('seu texto')</code></p>
-</li>
-</ul>
+<pre><code>```python
+alerta.send_keys('seu texto')
+```
+</code></pre>
 </li>
 </ul>
               
