@@ -8,7 +8,7 @@
     <title>Interações - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,12 +34,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -79,7 +80,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -103,8 +104,6 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Interações</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#importando-a-funcionalidade-dos-localizadores-suportados">Importando a funcionalidade dos localizadores suportados</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#apagando-e-escrevendo-em-um-campo">Apagando e escrevendo em um campo</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</a>
@@ -162,7 +161,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -170,10 +169,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-          <li class="breadcrumb-item">Aula 22 - Selenium</li>
-      <li class="breadcrumb-item active">Interações</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+          <li>Aula 22 - Selenium &raquo;</li>
+      <li>Interações</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -183,113 +182,49 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="selenium-interacoes">Selenium - Interações</h1>
-<h2 id="importando-a-funcionalidade-dos-localizadores-suportados">Importando a funcionalidade dos localizadores suportados</h2>
-<ul>
-<li>Para que seja possível usar seletores de busca, o Selenium precisa da seguinte importação:
-    <code>python
-    from selenium.webdriver.common.by import By</code></li>
-</ul>
 <h2 id="apagando-e-escrevendo-em-um-campo">Apagando e escrevendo em um campo</h2>
-<ul>
-<li>
-<p>Durante a navegação em um site, existem formulários ou campos de busca que precisam ser preenchidos. Com isso, o primeiro passo para evitar problemas, é apagar o campo utilizando o seguinte comando:
-    <code>python
-    driver.find_element(By.ID, 'twotabsearchtextbox').clear()</code></p>
-</li>
-<li>
+<p>Durante a navegação em um site, existem formulátios ou campos de busca que precisam ser preenchidos. Com isso, o primeiro passo para evitar problemas, é apagar o campo utilizando o seguinte comando:
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('twotabsearchtextbox').clear()</code></pre></p>
 <p>Após o campo estar limpo e pronto para receber o texto, a escrita será realizada com o código:
-    <code>python
-    driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Python')</code> </p>
-</li>
-</ul>
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('twotabsearchtextbox').send_keys('Python')</code></pre></p>
 <h2 id="movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</h2>
-<ul>
-<li>Alguns elementos acabam não carregando até que a tela seja movimenta para próximo do mesmo. Para fazer isso, basta utilizar o código a seguir:
-    <code>python
-    driver.find_element(By.CLASS_NAME, 'navFooterBackToTopText').location_once_scrolled_into_view</code></li>
-</ul>
+<p>Alguns elementos acabam não carregando até que a tela seja movimenta para próximo do mesmo. Para fazer isso, basta utilizar o código a seguir:
+<pre class="highlight"><code class="language-python">driver.find_element_by_class_name('navFooterBackToTopText').location_once_scrolled_into_view</code></pre></p>
 <h2 id="clicar-em-um-elemento">Clicar em um elemento:</h2>
-<ul>
-<li>Para acessar objetos na página, se faz necessário dar cliques e isso é permitido usando o comando:
-    <code>python
-    driver.find_element(By.ID, 'nav-search-submit-button').click()</code></li>
-</ul>
+<p>Para acessar objetos na página, se faz necessário dar cliques e isso é permitido usando o comando:
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('nav-search-submit-button').click()</code></pre></p>
 <h2 id="extrair-textos">Extrair textos</h2>
-<ul>
-<li>
 <p>Quando uma tag possui texto entre a abertura e o fechamento, o mesmo poderá ser coletado através da seguinte funcionalidade:  <br />
-<code>python
-    driver.find_element(By.ID, 'glow-ingress-line2').text</code></p>
-</li>
-<li>
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('glow-ingress-line2').text</code></pre></p>
 <p>Caso não exista texto entre as tags, o mesmo poderá estar em algum atributo dela. Logo, para coletar direto de um atributo HTML, basta usar a seguinte função:
-    <code>python
-    driver.find_element(By.ID, 'nav-logo-sprites').get_attribute('aria-label')</code></p>
-</li>
-</ul>
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('nav-logo-sprites').get_attribute('aria-label')</code></pre></p>
 <h2 id="printscreens">Printscreens</h2>
 <ul>
-<li>
-<p>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:  <br />
-<code>python
-    driver.find_element(By.ID, 'navbar').screenshot('menu.png')</code></p>
-</li>
-<li>
-<p>Caso deseje tirar um print da página inteira conforme está sendo visto no navegador, basta utilizar a função a seguir:
-    <code>python
-    driver.save_screenshot("screenshot.png")</code></p>
-</li>
+<li>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:  <br />
+<pre class="highlight"><code class="language-python">driver.find_element_by_id('navbar').screenshot('menu.png')</code></pre>
+Caso deseje tirar um print da página inteira conforme está sendo visto no navegador, basta utilizar a função a seguir:
+<pre class="highlight"><code class="language-python">driver.save_screenshot("screenshot.png")</code></pre></li>
 </ul>
 <h2 id="dropdowns">Dropdowns</h2>
-<ul>
-<li>
 <p>Dentro do HTML, existe o conceito de dropdown, cujo botão permite ao usuário abrir uma lista de opções e escolher uma delas. Para que isso fique bem assertivo no Selenium, a função "Select" deverá ser importada e instanciada durante a execução. O uso dela pode ser visto melhor no código abaixo:
-    ```python
-    from selenium.webdriver.support.ui import Select</p>
-<p>dropdown = Select(driver.find_element(By.ID, 'searchDropdownBox'))</p>
-<h1 id="selecionar-pelo-texto-presente">Selecionar pelo texto presente</h1>
-<p>dropdown.select_by_visible_text('Computadores e Informática')</p>
-<h1 id="selecionar-pelo-atributo-value-do-html">Selecionar pelo atributo value do HTML</h1>
-<p>dropdown.select_by_value('search-alias=computers')</p>
-<h1 id="selecionar-pelo-numero-dele-na-lista">Selecionar pelo número dele na lista</h1>
-<p>dropdown.select_by_index(11)
-```</p>
-</li>
-</ul>
-<h2 id="alertas">Alertas</h2>
-<ul>
-<li>
-<p>Algumas páginas web podem conter alertas emitidos via JavaScript. Essas são telinhas que não possuem especificamente uma TAG em HTML, mas o Selenium ainda consegue identíficá-las para poder interagir:</p>
-<ul>
-<li>
-<p>Captura a caixa de diálogo:
-    <code>python
-    alerta = driver.switch_to.alert</code></p>
-</li>
-<li>
-<p>Aceita a caixa de diálogo:
-    <code>python
-    alerta.accept();</code></p>
-</li>
-<li>
-<p>Recusa a caixa de diálogo:
-    <code>python
-    alerta = driver.dismiss()</code></p>
-</li>
-<li>
-<p>Escreve no campo da caixa de diálogo:
-    <code>python
-    alerta.send_keys('seu texto')</code></p>
-</li>
-</ul>
-</li>
-</ul>
+<pre class="highlight"><code class="language-python">from selenium.webdriver.support.ui import Select
+
+dropdown = Select(driver.find_element_by_id('searchDropdownBox'))
+
+#Selecionar pelo texto presente
+dropdown.select_by_visible_text('Computadores e Informática')
+
+#Selecionar pelo atributo value do HTML
+dropdown.select_by_value('search-alias=computers')
+
+#Selecionar pelo número dele na lista
+dropdown.select_by_index(11)</code></pre></p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" class="btn btn-neutral float-left" title="Navegador"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%2023%20-%20BeautifulSoup/" class="btn btn-neutral float-right" title="Aula 23 - BeautifulSoup">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" class="btn btn-neutral float-left" title="Navegador"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%2023%20-%20BeautifulSoup/" class="btn btn-neutral float-right" title="Aula 23 - BeautifulSoup">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -299,7 +234,7 @@
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -309,26 +244,25 @@
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versões">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Aula%2023%20-%20BeautifulSoup/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%2023%20-%20BeautifulSoup/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

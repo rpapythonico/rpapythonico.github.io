@@ -8,7 +8,7 @@
     <title>Aula 7 - RegEx e APIs - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S01/Aula%207%20-%20RegEx%20e%20APIs/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,12 +34,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -79,7 +80,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Open/">Aula 14 - Open</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -142,6 +143,16 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#re">re:</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#apis">APIs:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#apis-para-brincar">APIs para "Brincar":</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aprender-regex">Aprender RegEx:</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
@@ -152,7 +163,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -160,9 +171,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 1</li>
-      <li class="breadcrumb-item active">Aula 7 - RegEx e APIs</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 1 &raquo;</li>
+      <li>Aula 7 - RegEx e APIs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -183,200 +194,204 @@
 <ul>
 <li>
 <p>Importar biblioteca:</p>
-<p><code>python
-import re</code></p>
+<pre class="highlight"><code class="language-python">import re</code></pre>
 </li>
 <li>
 <p>Criar padrão do RegEx à ser procurado:</p>
-<p><code>python
-tel_regex = re.compile(r'\(\d\d\) \d\d\d\d\d\-\d\d\d\d')</code></p>
+<pre class="highlight"><code class="language-python">tel_regex = re.compile(r'\(\d\d\) \d\d\d\d\d\-\d\d\d\d')</code></pre>
 </li>
 <li>
 <p>Buscar correspondência na string inteira:</p>
-<p><code>python
-coleta = tel_regex.search('Meu número é (41) 99123-4567')</code></p>
+<pre class="highlight"><code class="language-python">coleta = tel_regex.search('Meu número é (41) 99123-4567')</code></pre>
 </li>
 <li>
 <p>Coletar a única combinação completa:</p>
-<p>```python
-print(coleta.group(0))</p>
-<h1 id="output-41-99123-4567">output: (41) 99123-4567</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">print(coleta.group(0))
+# output: (41) 99123-4567</code></pre>
 </li>
 <li>
 <p>Fazer grupos com parênteses:</p>
-<p><code>python
-grupos_regex = re.compile(r'(\d{2}) (\d{4,5})\-(\d{4})')
-coleta = grupos_regex.search('Meu número é 41 99123-4567')</code></p>
+<pre class="highlight"><code class="language-python">grupos_regex = re.compile(r'(\d{2}) (\d{4,5})\-(\d{4})')
+coleta = grupos_regex.search('Meu número é 41 99123-4567')</code></pre>
 </li>
 <li>
 <p>Coletar dados dos grupos encapsulados pelo parênteses:</p>
-<p>```python</p>
-<h1 id="usando-index">Usando index</h1>
-<p>print(f'Este é o grupo 0: {coleta.group(0)}')</p>
-<h1 id="output-41-99123-4567_1">output: 41 99123-4567</h1>
-<p>print(f'Este é o grupo 1: {coleta.group(1)}')</p>
-<h1 id="output-41">output: 41</h1>
-<p>print(f'Este é o grupo 2: {coleta.group(2)}')</p>
-<h1 id="output-99123">output: 99123</h1>
-<p>print(f'Este é o grupo 3: {coleta.group(3)}')</p>
-<h1 id="output-4567">output: 4567</h1>
-<h1 id="tupla-com-os-valores-dos-grupos">Tupla com os valores dos grupos</h1>
-<p>coleta.groups()</p>
-<h1 id="output-41-99123-4567_2">output: ('41', '99123', '4567')</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python"># Usando index
+print(f'Este é o grupo 0: {coleta.group(0)}')
+# output: 41 99123-4567
+
+print(f'Este é o grupo 1: {coleta.group(1)}')
+# output: 41
+
+print(f'Este é o grupo 2: {coleta.group(2)}')
+# output: 99123
+
+print(f'Este é o grupo 3: {coleta.group(3)}')
+# output: 4567
+
+# Tupla com os valores dos grupos
+coleta.groups()
+# output: ('41', '99123', '4567')</code></pre>
 </li>
 <li>
 <p>Selecionar uma palavra ou outra:</p>
-<p>```python
-regex_ou = re.compile('Wilber|Thomas')</p>
-<p>coleta = regex_ou.search('Olá, meu nome é Wilber')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-wilber">output: Wilber</h1>
-<p>coleta = regex_ou.search('Olá, meu nome é Thomas')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-thomas">output: Thomas</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_ou = re.compile('Wilber|Thomas')
+
+coleta = regex_ou.search('Olá, meu nome é Wilber')
+
+print(coleta.group())
+# output: Wilber
+
+coleta = regex_ou.search('Olá, meu nome é Thomas')
+
+print(coleta.group())
+# output: Thomas</code></pre>
 </li>
 <li>
 <p>Selecionar parcialmente uma palavra ou outra:</p>
-<p>```python
-regex_ou = re.compile('Wil(ber|mar)')</p>
-<p>coleta = regex_ou.search('Olá, meu nome é Wilber')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-wilber_1">output: Wilber</h1>
-<p>coleta = regex_ou.search('Olá, meu nome é Wilmar')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-wilmar">output: Wilmar</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_ou = re.compile('Wil(ber|mar)')
+
+coleta = regex_ou.search('Olá, meu nome é Wilber')
+
+print(coleta.group())
+# output: Wilber
+
+coleta = regex_ou.search('Olá, meu nome é Wilmar')
+
+print(coleta.group())
+# output: Wilmar</code></pre>
 </li>
 <li>
 <p>Elemento opcional no meio de uma palavra/frase (existe ou não existe):</p>
-<p>```python
-regex_bat = re.compile(r'Bat(wo)?man')</p>
-<p>coleta = regex_bat.search('As aventuras de Batman')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-batman">output: Batman</h1>
-<p>coleta = regex_bat.search('As aventuras da Batwoman')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-batwoman">output: Batwoman</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_bat = re.compile(r'Bat(wo)?man')
+
+coleta = regex_bat.search('As aventuras de Batman')
+
+print(coleta.group())
+# output: Batman
+
+coleta = regex_bat.search('As aventuras da Batwoman')
+
+print(coleta.group())
+# output: Batwoman</code></pre>
 </li>
 <li>
 <p>Repetição indefinida (0 ou 1 até o infinito):</p>
-<p>```python</p>
-<h1 id="0-ate-o-infinito">0 até o infinito</h1>
-<p>regex_risada = re.compile(r'(HA)*')</p>
-<h1 id="1-ate-o-infinito">1 até o infinito</h1>
-<p>regex_risada = re.compile(r'(HA)+')</p>
-<p>coleta = regex_risada.search('HAHAHAHAHA! Está foi uma excelente piada!')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-hahahahaha">output: HAHAHAHAHA</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python"># 0 até o infinito
+regex_risada = re.compile(r'(HA)*')
+
+# 1 até o infinito
+regex_risada = re.compile(r'(HA)+')
+
+coleta = regex_risada.search('HAHAHAHAHA! Está foi uma excelente piada!')
+
+print(coleta.group())
+# output: HAHAHAHAHA</code></pre>
 </li>
 <li>
 <p>Localizar mais de uma correspondência (resultado em lista):</p>
-<p>```python
-tel_regex = re.compile(r'(\d{2}) \d{4,5}-\d{4}')</p>
-<p>coleta = tel_regex.findall('Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')</p>
-<p>print(coleta)</p>
-<h1 id="output-41-99123-4567-41-3123-4567">output: ['(41) 99123-4567', '(41) 3123-4567']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">tel_regex = re.compile(r'\(\d{2}\) \d{4,5}\-\d{4}')
+
+coleta = tel_regex.findall('Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')
+
+print(coleta)
+# output: ['(41) 99123-4567', '(41) 3123-4567']</code></pre>
 </li>
 <li>
 <p>Correspondência no início da frase/texto:</p>
-<p>```python
-regex_inicio = re.compile(r'^Sabia')</p>
-<p>coleta = regex_inicio.search('Sabia que o significado da vida, do universo e tudo mais é 42?')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-sabia">output: Sabia</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_inicio = re.compile(r'^Sabia')
+
+coleta = regex_inicio.search('Sabia que o significado da vida, do universo e tudo mais é 42?')
+
+print(coleta.group())
+# output: Sabia</code></pre>
 </li>
 <li>
 <p>Correspondência no final da frase/texto:</p>
-<p>```python
-regex_inicio = re.compile(r'\d{2}$')</p>
-<p>coleta = regex_inicio.search('O significado da vida, do universo e tudo mais é 42')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-42">output: 42</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_inicio = re.compile(r'\d{2}$')
+
+coleta = regex_inicio.search('O significado da vida, do universo e tudo mais é 42')
+
+print(coleta.group())
+# output: 42</code></pre>
 </li>
 <li>
 <p>Caractere coringa:</p>
-<p>```python
-regex_coringa = re.compile(r'.at')</p>
-<p>coleta = regex_coringa.findall('The cat with the hat hit a bat')</p>
-<p>print(coleta)</p>
-<h1 id="output-cat-hat-bat">output: ['cat', 'hat', 'bat']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_coringa = re.compile(r'.at')
+
+coleta = regex_coringa.findall('The cat with the hat hit a bat')
+
+print(coleta)
+# output: ['cat', 'hat', 'bat']</code></pre>
 </li>
 <li>
 <p>Correspondência sem saber a palavra, mas tendo uma frase padrão:</p>
-<p>```python
-regex_tudo = re.compile(r'Primeiro nome: (.<em>) Segundo Nome: (.</em>)')</p>
-<p>coleta = regex_tudo.search('Primeiro nome: Harry Segundo Nome: Potter')</p>
-<p>print(coleta.group(1))</p>
-<h1 id="output-harry">output: Harry</h1>
-<p>print(coleta.group(2))</p>
-<h1 id="output-potter">output: Potter</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_tudo = re.compile(r'Primeiro nome: (.*) Segundo Nome: (.*)')
+
+coleta = regex_tudo.search('Primeiro nome: Harry Segundo Nome: Potter')
+
+print(coleta.group(1))
+# output: Harry
+
+print(coleta.group(2))
+# output: Potter</code></pre>
 </li>
 <li>
 <p>Remover Case Sensitive (diferença entre maiúsculas e minúsculas) do RegEx:</p>
-<p>```python
-regex_cases = re.compile(r'metallica', re.IGNORECASE)</p>
-<p>coleta = regex_cases.search('METALLICA é uma banda de muito sucesso!')</p>
-<p>print(coleta.group())</p>
-<h1 id="output-metallica">output: METALLICA</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_cases = re.compile(r'metallica', re.IGNORECASE)
+
+coleta = regex_cases.search('METALLICA é uma banda de muito sucesso!')
+
+print(coleta.group())
+# output: METALLICA</code></pre>
 </li>
 <li>
 <p>Substituir valores:</p>
-<p>```python
-regex_sub = re.compile(r'\d')</p>
-<p>coleta = regex_sub.sub('*', 'Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')</p>
-<p>print(coleta)</p>
-<h1 id="output-meu-numero-residencial-e-e-meu-numero-de-celular-e-">output: Meu número residencial é (<strong>) </strong><strong><em>-</em></strong><em> e meu número de celular é (</em><em>) </em><strong><em>-</em></strong>*</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_sub = re.compile(r'\d')
+
+coleta = regex_sub.sub('*', 'Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')
+
+print(coleta)
+# output: Meu número residencial é (**) *****-**** e meu número de celular é (**) ****-****</code></pre>
 </li>
 <li>
 <p>Separar uma frase através de um padrão:</p>
-<p>```python
-regex_separador = re.compile(r'\s')</p>
-<p>coleta = regex_separador.split('METALLICA é uma banda de muito sucesso!')</p>
-<p>print(coleta)</p>
-<h1 id="output-metallica-e-uma-banda-de-muito-sucesso">output: ['METALLICA', 'é', 'uma', 'banda', 'de', 'muito', 'sucesso!']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_separador = re.compile(r'\s')
+
+coleta = regex_separador.split('METALLICA é uma banda de muito sucesso!')
+
+print(coleta)
+# output: ['METALLICA', 'é', 'uma', 'banda', 'de', 'muito', 'sucesso!']</code></pre>
 </li>
 <li>
 <p>Padrões prontos:</p>
 <ul>
 <li>
 <p>Buscar por CPF:</p>
-<p>```python
-regex_cpf = re.compile(r'\d{3}.?\d{3}.?\d{3}-?\d{2}')</p>
-<p>coleta = regex_cpf.findall('O seu CPF é 470.485.110-95 e o meu é 11745629009')</p>
-<p>print(coleta)</p>
-<h1 id="output-470485110-95-11745629009">output: ['470.485.110-95', '11745629009']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_cpf = re.compile(r'\d{3}\.?\d{3}\.?\d{3}\-?\d{2}')
+
+coleta = regex_cpf.findall('O seu CPF é 470.485.110-95 e o meu é 11745629009')
+
+print(coleta)
+# output: ['470.485.110-95', '11745629009']</code></pre>
 </li>
 <li>
 <p>Busca por telefone:</p>
-<p>```python
-regex_tel = re.compile(r'(?\d{2})?\s?\d{4,5}-?\d{4}')</p>
-<p>coleta = regex_tel.findall("O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.")</p>
-<p>print(coleta)</p>
-<h1 id="output-41-3123-4567-41-99123-4567-4131234567">output: ['(41) 3123-4567', '41 99123-4567', '4131234567']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_tel = re.compile(r'\(?\d{2}\)?\s?\d{4,5}\-?\d{4}')
+
+coleta = regex_tel.findall("O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.")
+
+print(coleta)
+# output: ['(41) 3123-4567', '41 99123-4567', '4131234567']</code></pre>
 </li>
 <li>
 <p>Busca por Email:</p>
-<p>```python
-regex_email = re.compile(r'(?:\w+.)<em>\w</em>\@\w*(?:.\w+)+')</p>
-<p>coleta = regex_email.findall('O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.')</p>
-<p>print(coleta)</p>
-<h1 id="output-tiarahessel9yahoocom-shaun_nitzsche96hotmailcom-alphonso19outlookcombr">output: ['tiara.hessel9@yahoo.com', 'shaun_nitzsche96@hotmail.com', 'alphonso19@outlook.com.br']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">regex_email = re.compile(r'(?:\w+\.)*\w*\@\w*(?:\.\w+)+')
+
+coleta = regex_email.findall('O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.')
+
+print(coleta)
+# output: ['tiara.hessel9@yahoo.com', 'shaun_nitzsche96@hotmail.com', 'alphonso19@outlook.com.br']</code></pre>
 </li>
 </ul>
 </li>
@@ -405,25 +420,29 @@ regex_email = re.compile(r'(?:\w+.)<em>\w</em>\@\w*(?:.\w+)+')</p>
 <ul>
 <li>
 <p>API de teste:</p>
-<p>```python
-import requests</p>
-<p>url = "https://reqres.in/api/users?page=2"</p>
-<p>response = requests.get(url)</p>
-<p>r_json = response.json()</p>
-<p>print(r_json['data'][0]['email'])</p>
-<h1 id="output-michaellawsonreqresin">output: michael.lawson@reqres.in</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">import requests
+
+url = "https://reqres.in/api/users?page=2"
+
+response = requests.get(url)
+
+r_json = response.json()
+
+print(r_json['data'][0]['email'])
+# output: michael.lawson@reqres.in</code></pre>
 </li>
 <li>
 <p>API de Universidades no Brasil:</p>
-<p>```python
-import requests</p>
-<p>url = "http://universities.hipolabs.com/search?country=brazil"</p>
-<p>response = requests.get(url)</p>
-<p>r_json = response.json()</p>
-<p>print(r_json[15]['name'])</p>
-<h1 id="output-universidade-regional-de-blumenau">output: Universidade Regional de Blumenau</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">import requests
+
+url = "http://universities.hipolabs.com/search?country=brazil"
+
+response = requests.get(url)
+
+r_json = response.json()
+
+print(r_json[15]['name'])
+# output: Universidade Regional de Blumenau</code></pre>
 </li>
 <li>
 <p>Exemplos GET:</p>
@@ -438,22 +457,25 @@ import requests</p>
 <li><strong>POST:</strong></li>
 <li>
 <p>Cadastrar usuário de teste:</p>
-<p>```python
-import requests
-import json</p>
-<p>url = "https://reqres.in/api/users"</p>
-<p>payload = json.dumps({
+<pre class="highlight"><code class="language-python">import requests
+import json
+
+url = "https://reqres.in/api/users"
+
+payload = json.dumps({
   "name": "Harry Potter",
   "job": "Desenvolvedor RPA"
 })
 headers = {
   'Content-Type': 'application/json'
-}</p>
-<p>response = requests.post(url, headers=headers, data=payload)</p>
-<p>r_json = response.json()</p>
-<p>print(r_json['job'])</p>
-<h1 id="output-desenvolvedor-rpa">output: Desenvolvedor RPA</h1>
-<p>```</p>
+}
+
+response = requests.post(url, headers=headers, data=payload)
+
+r_json = response.json()
+
+print(r_json['job'])
+# output: Desenvolvedor RPA</code></pre>
 </li>
 </ul>
 </li>
@@ -488,9 +510,9 @@ headers = {
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" class="btn btn-neutral float-left" title="Aula 5 - Selenium e BeautifulSoup"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/" class="btn btn-neutral float-right" title="Aula 8 - Email, DBs e OO">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" class="btn btn-neutral float-left" title="Aula 5 - Selenium e BeautifulSoup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/" class="btn btn-neutral float-right" title="Aula 8 - Email, DBs e OO">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -500,7 +522,7 @@ headers = {
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -510,26 +532,25 @@ headers = {
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versões">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

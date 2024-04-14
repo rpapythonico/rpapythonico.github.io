@@ -8,7 +8,7 @@
     <title>Aula 4 - Bibliotecas, Excel e TXTs - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,12 +34,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -79,7 +80,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Open/">Aula 14 - Open</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -136,6 +137,28 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#bibliotecas">Bibliotecas:</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-arquivos">Manipulação de Arquivos:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interacao-com-o-so">Interação com o SO:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas-excel">Bibliotecas Excel:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xlrd">xlrd;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#openpyxl">openpyxl;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pandas">pandas:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xlsxwriter">xlsxwriter:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#caracteres-especiais">Caracteres especiais:</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
@@ -150,7 +173,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -158,9 +181,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 1</li>
-      <li class="breadcrumb-item active">Aula 4 - Bibliotecas, Excel e TXTs</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 1 &raquo;</li>
+      <li>Aula 4 - Bibliotecas, Excel e TXTs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -175,24 +198,22 @@
 <li>Repositório das Bibliotecas: <a href="https://pypi.org/">https://pypi.org/</a></li>
 <li>
 <p>Comando para instalar bibliotecas externas:</p>
-<p>```bash
-pip install nome_da_biblioteca</p>
-<h1 id="ex-pip-install-openpyxl">Ex.: pip install openpyxl</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-bash">pip install nome_da_biblioteca
+# Ex.: pip install openpyxl</code></pre>
 </li>
 <li>
 <p>Comando para usar biblioteca no código</p>
-<p>```python</p>
-<h1 id="importa-a-biblioteca-com-todas-as-funcoes-dela">Importa a biblioteca com todas as funções dela</h1>
-<p>import nome_da_biblioteca</p>
-<h1 id="import-xlrd">import xlrd</h1>
-<h1 id="importa-a-biblioteca-e-permite-criar-um-apelido-pra-ela">Importa a biblioteca e permite criar um "apelido" pra ela</h1>
-<p>import nome_da_biblioteca as ndb</p>
-<h1 id="ex-import-pandas-as-pd">Ex.: import pandas as pd</h1>
-<h1 id="importa-uma-funcao-especifica-de-dentro-da-biblioteca">Importa uma função específica de dentro da biblioteca</h1>
-<p>from nome_da_biblioteca import funcao</p>
-<h1 id="ex-from-time-import-sleep">Ex.: from time import sleep</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python"># Importa a biblioteca com todas as funções dela
+import nome_da_biblioteca
+# import xlrd
+
+# Importa a biblioteca e permite criar um "apelido" pra ela
+import nome_da_biblioteca as ndb
+# Ex.: import pandas as pd
+
+# Importa uma função específica de dentro da biblioteca
+from nome_da_biblioteca import funcao
+# Ex.: from time import sleep</code></pre>
 </li>
 </ul>
 <h2 id="manipulacao-de-arquivos">Manipulação de Arquivos:</h2>
@@ -202,30 +223,25 @@ pip install nome_da_biblioteca</p>
 <ul>
 <li>
 <p>Para criar:</p>
-<p><code>python
-arqv = open('nome_do_arquivo.txt', 'w')</code></p>
+<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'w')</code></pre>
 </li>
 <li>
 <p>Para ler:</p>
-<p><code>python
-arqv = open('nome_do_arquivo.txt', 'r')</code></p>
+<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'r')</code></pre>
 </li>
 <li>
 <p>Para continuar um texto:</p>
-<p><code>python
-arqv = open('nome_do_arquivo.txt', 'a')</code></p>
+<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'a')</code></pre>
 </li>
 </ul>
 </li>
 <li>
 <p>Escrever dentro do .txt:</p>
-<p><code>python
-arqv.write('texto do arquivo')</code></p>
+<pre class="highlight"><code class="language-python">arqv.write('texto do arquivo')</code></pre>
 </li>
 <li>
 <p>Fechar o arquivo:</p>
-<p><code>python
-arqv.close()</code></p>
+<pre class="highlight"><code class="language-python">arqv.close()</code></pre>
 </li>
 </ul>
 <h2 id="interacao-com-o-so"><strong>Interação com o SO:</strong></h2>
@@ -235,28 +251,23 @@ arqv.close()</code></p>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import os</code></p>
+<pre class="highlight"><code class="language-python">import os</code></pre>
 </li>
 <li>
 <p>Renomear um arquivo:</p>
-<p><code>python
-os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></p>
+<pre class="highlight"><code class="language-python">os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></pre>
 </li>
 <li>
 <p>Remover um arquivo da pasta:</p>
-<p><code>python
-os.remove('arquivo_modificado.txt')</code></p>
+<pre class="highlight"><code class="language-python">os.remove('arquivo_modificado.txt')</code></pre>
 </li>
 <li>
 <p>Listar os arquivos presentes na pasta:</p>
-<p><code>python
-os.listdir('.')</code></p>
+<pre class="highlight"><code class="language-python">os.listdir('.')</code></pre>
 </li>
 <li>
 <p>Aponta a execução do Python para uma pasta em específico:</p>
-<p><code>python
-os.chdir('')</code></p>
+<pre class="highlight"><code class="language-python">os.chdir('')</code></pre>
 </li>
 </ul>
 </li>
@@ -265,13 +276,11 @@ os.chdir('')</code></p>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import glob</code></p>
+<pre class="highlight"><code class="language-python">import glob</code></pre>
 </li>
 <li>
 <p>Listar arquivos do diretório pela sua extensão:</p>
-<p><code>python
-glob.glob(r'.\*.txt')</code></p>
+<pre class="highlight"><code class="language-python">glob.glob(r'.\*.txt')</code></pre>
 </li>
 </ul>
 </li>
@@ -280,18 +289,15 @@ glob.glob(r'.\*.txt')</code></p>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import shutil</code></p>
+<pre class="highlight"><code class="language-python">import shutil</code></pre>
 </li>
 <li>
 <p>Movimentar um arquivo para outra pasta:</p>
-<p><code>python
-shutil.move('arquivo_modificado.txt', r'.\pasta_move\arquivo_modificado.txt')</code></p>
+<pre class="highlight"><code class="language-python">shutil.move('arquivo_modificado.txt', r'.\pasta_move\arquivo_modificado.txt')</code></pre>
 </li>
 <li>
 <p>Copiar um arquivo para outra pasta:</p>
-<p><code>python
-shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.txt')</code></p>
+<pre class="highlight"><code class="language-python">shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.txt')</code></pre>
 </li>
 </ul>
 </li>
@@ -301,94 +307,79 @@ shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import xlrd</code></p>
+<pre class="highlight"><code class="language-python">import xlrd</code></pre>
 </li>
 <li>
 <p>Abre um arquivo Excel (XLS):</p>
-<p><code>python
-wb = xlrd.open_workbook('banca_jornal.xls')</code></p>
+<pre class="highlight"><code class="language-python">wb = xlrd.open_workbook('banca_jornal.xls')</code></pre>
 </li>
 <li>
 <p>Seleciona a aba do Excel:</p>
-<p><code>python
-sheet = wb.sheet_by_name('Planilha1')</code></p>
+<pre class="highlight"><code class="language-python">sheet = wb.sheet_by_name('Planilha1')</code></pre>
 </li>
 <li>
 <p>Pega valores da primeira coluna:</p>
-<p><code>python
-for cell in sheet.col(0):
-    cell</code></p>
+<pre class="highlight"><code class="language-python">for cell in sheet.col(0):
+    cell</code></pre>
 </li>
 </ul>
 <h3 id="openpyxl">openpyxl;</h3>
 <ul>
 <li>
 <p>Importa a biblioteca:</p>
-<p><code>python
-import openpyxl</code></p>
+<pre class="highlight"><code class="language-python">import openpyxl</code></pre>
 </li>
 <li>
 <p>Abrir um arquivo Excel (XLS ou XLSX):</p>
-<p><code>python
-wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></p>
+<pre class="highlight"><code class="language-python">wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></pre>
 </li>
 <li>
 <p>Apresenta o nome de todas as abas do Excel aberto:</p>
-<p>```python
-wb.get_sheet_names()</p>
-<h1 id="output-planilha1">output: ['Planilha1']</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">wb.get_sheet_names()
+# output: ['Planilha1']</code></pre>
 </li>
 <li>
 <p>Seleciona a aba do Excel:</p>
-<p><code>python
-sheet = wb['Planilha1']</code></p>
+<pre class="highlight"><code class="language-python">sheet = wb['Planilha1']</code></pre>
 </li>
 <li>
 <p>Ler o valor da primeira célula (A1):</p>
-<p>```python
-sheet['A1'].value</p>
-<h1 id="output-chiclete">output: Chiclete</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">sheet['A1'].value
+# output: Chiclete</code></pre>
 </li>
 <li>
 <p>Apresentar números de linhas:</p>
-<p>```python
-sheet.max_row</p>
-<h1 id="output-6">output: 6</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python">sheet.max_row
+# output: 6</code></pre>
 </li>
 <li>
 <p>Percorre uma coluna inteira do Excel:</p>
-<p>```python</p>
-<h1 id="nesse-codigo-ele-nao-ira-pegar-o-cabecalho-da-tabela">Nesse código, ele não irá pegar o cabeçalho da tabela</h1>
-<h1 id="caso-queira-pegar-o-cabecalho-basta-trocar-o-numero-2-pelo-numero-1">Caso queira pegar o cabeçalho, basta trocar o número 2 pelo número 1</h1>
-<p>for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1)</p>
-<h1 id="output">output:</h1>
-<h1 id="chiclete">Chiclete</h1>
-<h1 id="barra-de-chocolate">Barra de Chocolate</h1>
-<h1 id="agua-mineral">Agua mineral</h1>
-<h1 id="jornal">Jornal</h1>
-<h1 id="salgadinho">Salgadinho</h1>
-<p>```</p>
+<pre class="highlight"><code class="language-python"># Nesse código, ele não irá pegar o cabeçalho da tabela
+# Caso queira pegar o cabeçalho, basta trocar o número 2 pelo número 1
+for linha in range(2, sheet.max_row+1):
+    nome = sheet.cell(linha, 1)
+
+# output:
+# Chiclete
+# Barra de Chocolate
+# Agua mineral
+# Jornal
+# Salgadinho</code></pre>
 </li>
 <li>
 <p>Pegar valores das três colunas, passando por todas as linhas:</p>
-<p>```python
-for linha in range(2, sheet.max_row+1):
+<pre class="highlight"><code class="language-python">for linha in range(2, sheet.max_row+1):
     nome = sheet.cell(linha, 1).value
     unidade = sheet.cell(linha, 2).value
     valor = sheet.cell(linha, 3).value
-    print(f'O produto {nome<em>} teve</em> {unidade} unidades vendidas no valor unitário de R${valor}')</p>
-<h1 id="output_1">output:</h1>
-<h1 id="o-produto-chiclete-foi-teve-45-unidades-vendidas-no-valor-unitario-de-r1">O produto Chiclete foi teve 45 unidades vendidas no valor unitário de R$1</h1>
-<h1 id="o-produto-barra-de-chocolate-foi-teve-23-unidades-vendidas-no-valor-unitario-de-r4">O produto Barra de Chocolate foi teve 23 unidades vendidas no valor unitário de R$4</h1>
-<h1 id="o-produto-agua-mineral-foi-teve-66-unidades-vendidas-no-valor-unitario-de-r2">O produto Agua mineral foi teve 66 unidades vendidas no valor unitário de R$2</h1>
-<h1 id="o-produto-jornal-foi-teve-4-unidades-vendidas-no-valor-unitario-de-r05">O produto Jornal foi teve 4 unidades vendidas no valor unitário de R$0.5</h1>
-<h1 id="o-produto-salgadinho-foi-teve-16-unidades-vendidas-no-valor-unitario-de-r25">O produto Salgadinho foi teve 16 unidades vendidas no valor unitário de R$2.5</h1>
-<p>```</p>
+    print(f'O produto {nome*} teve* {unidade} unidades vendidas no valor unitário de R${valor}')
+
+# output:
+# O produto Chiclete foi teve 45 unidades vendidas no valor unitário de R$1
+# O produto Barra de Chocolate foi teve 23 unidades vendidas no valor unitário de R$4
+# O produto Agua mineral foi teve 66 unidades vendidas no valor unitário de R$2
+# O produto Jornal foi teve 4 unidades vendidas no valor unitário de R$0.5
+# O produto Salgadinho foi teve 16 unidades vendidas no valor unitário de R$2.5</code></pre>
 </li>
 <li>
 <p>Fechar o arquivo Excel:</p>
@@ -401,75 +392,63 @@ for linha in range(2, sheet.max_row+1):
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import pandas as pd</code></p>
+<pre class="highlight"><code class="language-python">import pandas as pd</code></pre>
 </li>
 <li>
 <p>Ler arquivo Excel:</p>
-<p><code>python
-df = pd.read_excel('banca_jornal.xlsx')</code></p>
+<pre class="highlight"><code class="language-python">df = pd.read_excel('banca_jornal.xlsx')</code></pre>
 </li>
 <li>
 <p>Selecionar uma coluna:</p>
-<p><code>python
-df['Produto']</code></p>
+<pre class="highlight"><code class="language-python">df['Produto']</code></pre>
 </li>
 <li>
 <p>Apresenta as abas disponíveis do Excel:</p>
-<p><code>python
-pd.ExcelFile.sheet_names</code></p>
+<pre class="highlight"><code class="language-python">pd.ExcelFile.sheet_names</code></pre>
 </li>
 </ul>
 <h3 id="xlsxwriter">xlsxwriter:</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import xlsxwriter</code></p>
+<pre class="highlight"><code class="language-python">import xlsxwriter</code></pre>
 </li>
 <li>
 <p>Criar arquivo Excel:</p>
-<p><code>python
-wb = xlsxwriter.Woorkbook('alunos.xlsx')</code></p>
+<pre class="highlight"><code class="language-python">wb = xlsxwriter.Woorkbook('alunos.xlsx')</code></pre>
 </li>
 <li>
 <p>Criar aba no arquivo Excel:</p>
-<p><code>python
-ws = wb.add_worksheet('Planilha')</code></p>
+<pre class="highlight"><code class="language-python">ws = wb.add_worksheet('Planilha')</code></pre>
 </li>
 <li>
 <p>Colocar palavras em Negrito:</p>
-<p><code>python
-bold = wb.add_format({'bold':1})</code></p>
+<pre class="highlight"><code class="language-python">bold = wb.add_format({'bold':1})</code></pre>
 </li>
 <li>
 <p>Escreve cabeçalho em negrito no Excel:</p>
-<p><code>python
-ws.write('A1', 'Nome', bold)
+<pre class="highlight"><code class="language-python">ws.write('A1', 'Nome', bold)
 ws.write('B1', 'Idade', bold)
-ws.write('C1', 'Cidade', bold)</code></p>
+ws.write('C1', 'Cidade', bold)</code></pre>
 </li>
 <li>
 <p>Cria valores para serem adicionados em formato de tabela:</p>
-<p><code>python
-alunos = [('Thomas', '24', 'Curitiba'), ('Fernanda', '12', 'Sao Paulo'), ('Augusto', '56', 'Rio de Janeiro'), ('Marcela', '22', 'Maringa')]</code></p>
+<pre class="highlight"><code class="language-python">alunos = [('Thomas', '24', 'Curitiba'), ('Fernanda', '12', 'Sao Paulo'), ('Augusto', '56', 'Rio de Janeiro'), ('Marcela', '22', 'Maringa')]</code></pre>
 </li>
 <li>
 <p>Looping para escrever valores em formato de tabela:</p>
-<p>```python
-row = 1
-col = 0</p>
-<p>for aluno in alunos:
+<pre class="highlight"><code class="language-python">row = 1
+col = 0
+
+for aluno in alunos:
     ws.write_string(row, col, aluno[0])
     ws.write_string(row, col+1, aluno[1])
     ws.write_string(row, col+2, aluno[2])
-    row += 1
-```</p>
+    row += 1</code></pre>
 </li>
 <li>
 <p>Fechar e salvar o arquivo Excel:</p>
-<p><code>python
-wb.close()</code></p>
+<pre class="highlight"><code class="language-python">wb.close()</code></pre>
 </li>
 </ul>
 <h2 id="extras">Extras:</h2>
@@ -481,9 +460,9 @@ wb.close()</code></p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" class="btn btn-neutral float-left" title="Aula 3 - Funções, Manipulações e Erros"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" class="btn btn-neutral float-right" title="Aula 5 - Selenium e BeautifulSoup">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" class="btn btn-neutral float-left" title="Aula 3 - Funções, Manipulações e Erros"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" class="btn btn-neutral float-right" title="Aula 5 - Selenium e BeautifulSoup">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -493,7 +472,7 @@ wb.close()</code></p>
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -503,26 +482,25 @@ wb.close()</code></p>
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versões">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

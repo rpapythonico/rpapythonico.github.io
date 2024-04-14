@@ -8,7 +8,7 @@
     <title>Aula 24 - APIs - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2024%20-%20APIs/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,12 +34,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -79,7 +80,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -192,7 +193,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -200,9 +201,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 24 - APIs</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 24 - APIs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -241,20 +242,17 @@
 <h4 id="requests">requests</h4>
 <ul>
 <li>Instalando a "lib" requests
-  <code>bash
-  pip install requests</code></li>
+  <pre class="highlight"><code class="language-bash">pip install requests</code></pre></li>
 </ul>
 <h4 id="http">http</h4>
 <ul>
 <li>Importando a "lib" http.client
-  <code>python
-  from http.client import HTTPSConnection</code></li>
+  <pre class="highlight"><code class="language-python">from http.client import HTTPSConnection</code></pre></li>
 </ul>
 <h4 id="urllib">urllib</h4>
 <ul>
 <li>Importando a "lib" urllib.request
-  <code>python
-  from urllib.request import urlopen</code></li>
+  <pre class="highlight"><code class="language-python">from urllib.request import urlopen</code></pre></li>
 </ul>
 <h2 id="get">GET</h2>
 <h3 id="explicacao">Explicação</h3>
@@ -264,26 +262,22 @@
 <ol>
 <li>
 <p>Importando a "lib" requests
-    <code>python
-    import requests</code></p>
+    <pre class="highlight"><code class="language-python">import requests</code></pre></p>
 </li>
 <li>
 <p>Efetuando requisição
-    ```python
-    url = "http://universities.hipolabs.com/search?country=brazil"</p>
-<p>response = requests.get(url)
-```</p>
+    <pre class="highlight"><code class="language-python">url = "http://universities.hipolabs.com/search?country=brazil"
+
+response = requests.get(url)</code></pre></p>
 </li>
 <li>
 <p>Transformando o retorno em dicionário
-    <code>python
-    r_json = response.json()</code></p>
+    <pre class="highlight"><code class="language-python">r_json = response.json()</code></pre></p>
 </li>
 <li>
 <p>Interagindo com o retorno
-    <code>python
-    print(r_json[15]['name'])
-    # output: 'Universidade Regional de Blumenau'</code></p>
+    <pre class="highlight"><code class="language-python">print(r_json[15]['name'])
+# output: 'Universidade Regional de Blumenau'</code></pre></p>
 </li>
 </ol>
 <h3 id="apis-para-praticar">APIs Para Praticar</h3>
@@ -303,50 +297,44 @@ Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter 
 <ol>
 <li>
 <p>Importando a "lib" requests e JSON
-    <code>python
-    import requests
-    import json</code></p>
+    <pre class="highlight"><code class="language-python">import requests
+import json</code></pre></p>
 </li>
 <li>
 <p>Gerando "corpo" da API
-    <code>python
-    payload = json.dumps({
-      "name": "Harry Potter",
-      "job": "Desenvolvedor RPA"
-    })</code></p>
+    <pre class="highlight"><code class="language-python">payload = json.dumps({
+  "name": "Harry Potter",
+  "job": "Desenvolvedor RPA"
+})</code></pre></p>
 </li>
 <li>
 <p>Gerando os cabeçalhos da API
-    <code>python
-    headers = {
-      'Content-Type': 'application/json'
-    }</code></p>
+    <pre class="highlight"><code class="language-python">headers = {
+  'Content-Type': 'application/json'
+}</code></pre></p>
 </li>
 <li>
 <p>Efetuando requisição
-    ```python
-    url = "https://reqres.in/api/users"</p>
-<p>response = requests.post(url, headers=headers, data=payload)
-```</p>
+    <pre class="highlight"><code class="language-python">url = "https://reqres.in/api/users"
+
+response = requests.post(url, headers=headers, data=payload)</code></pre></p>
 </li>
 <li>
 <p>Transformando o retorno em dicionário
-    <code>python
-    r_json = response.json()</code></p>
+    <pre class="highlight"><code class="language-python">r_json = response.json()</code></pre></p>
 </li>
 <li>
 <p>Interagindo com o retorno
-    <code>python
-    print(r_json.get('createdAt'))
-    # output: '2022-05-23T19:53:22.594Z'</code></p>
+    <pre class="highlight"><code class="language-python">print(r_json.get('createdAt'))
+# output: '2022-05-23T19:53:22.594Z'</code></pre></p>
 </li>
 </ol>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%2023%20-%20BeautifulSoup/" class="btn btn-neutral float-left" title="Aula 23 - BeautifulSoup"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%2025.0%20-%20DBs%20-%20Geral/" class="btn btn-neutral float-right" title="Visão Geral">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%2023%20-%20BeautifulSoup/" class="btn btn-neutral float-left" title="Aula 23 - BeautifulSoup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%2025.0%20-%20DBs%20-%20Geral/" class="btn btn-neutral float-right" title="Visão Geral">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -356,7 +344,7 @@ Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter 
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -366,26 +354,25 @@ Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter 
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versões">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2023%20-%20BeautifulSoup/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%2023%20-%20BeautifulSoup/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Aula%2025.0%20-%20DBs%20-%20Geral/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%2025.0%20-%20DBs%20-%20Geral/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

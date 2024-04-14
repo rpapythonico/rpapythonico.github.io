@@ -8,7 +8,7 @@
     <title>Aula 18 - CSV - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2018%20-%20CSV/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,12 +34,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -79,7 +80,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -91,7 +92,7 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#explicacao">Explicação</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#comandos">Comandos</a>
+    <li class="toctree-l2"><a class="reference internal" href="#csv_1">CSV</a>
     </li>
     </ul>
                   </li>
@@ -152,7 +153,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -160,9 +161,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 18 - CSV</li>
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 18 - CSV</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -173,68 +174,35 @@
               
                 <h1 id="csv">CSV</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>Assim como os formatos xlsx e xls, também é possível ler arquivos gerados por programas ou sites que possuem os valores separadas por delimitadores (.csv).
-Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python. </p>
-<h2 id="comandos">Comandos</h2>
+<p>Assim como os formatos xlsx e xls, também é possível ler arquivos gerados por programas ou sites que possuem os valores separadas por delimitadores. </p>
+<h2 id="csv_1">CSV</h2>
 <ul>
 <li>
 <p>Utilizando a biblioteca CSV, é possível ler e escrever arquivos  no formato ".csv".</p>
 <ul>
-<li>Importação
-    <code>python
-    import csv</code></li>
 <li>
-<p>Abertura do arquivo
-    <code>python
-    arqv_csv = open('tabela_clientes.csv', 'r')</code></p>
+<p><strong>Importação</strong>:
+    <pre class="highlight"><code class="language-python">import csv</code></pre></p>
 </li>
 <li>
-<p>Leitura do arquivo - <strong>LISTA</strong>:
-    <code>python
-    lista_clientes = csv.reader(arqv_csv, delimiter=',')</code></p>
-<ul>
-<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
-</ul>
-</li>
-<li>
-<p>Leitura do arquivo – <strong>DICIONÁRIO</strong>:
-    <code>python
-    lista_clientes = csv.DictReader(arqv_csv, delimiter=',')</code></p>
-<ul>
-<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
-</ul>
-</li>
-<li>
-<p>Escrita do arquivo - <strong>LISTA</strong>:
-    <code>python
-    lista_pessoas = [['Ana', 'Itajaí', 'SC', '27', 'Veterinária'],
-                     ['Rubens', 'São Paulo', 'SP', '43', 'Mecânico'],
-                     ['Fabiana', 'Pinhais', 'PR', '70', 'Cozinheira']]
-    escritor = csv.writer(arqv_csv, delimiter=',')
-    escritor.writerows(lista_pessoas)</code></p>
-<ul>
-<li><strong>Precisa ter o modo de abertura como "a" ou "w"</strong></li>
-<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
-</ul>
-</li>
-<li>
-<p>Escrita do arquivo - <strong>DICIONÁRIO</strong>:
-    <code>python
-    dicionario_pessoas = [{'Nome': 'Ana', 'Cidade': 'Itajaí', 'Estado': 'SC', 'Idade': '27', 'Profissão': 'Veterinária'},
-                          {'Nome': 'Rubens', 'Cidade': 'São Paulo', 'Estado': 'SP', 'Idade': '43', 'Profissão': 'Mecânico'},
-                          {'Nome': 'Fabiana', 'Cidade': 'Pinhais', 'Estado': 'PR', 'Idade': '70', 'Profissão': 'Cozinheira'}]
-    campos = ['Nome', 'Cidade', 'Estado', 'Idade', 'Profissão']
-    escritor = csv.DictWriter(arqv_csv, delimiter=',', fieldnames=campos)
-    escritor.writerows(dicionario_pessoas)</code></p>
-<ul>
-<li><strong>Precisa ter o modo de abertura como "a" ou "w"</strong></li>
-<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
-</ul>
-</li>
-<li>
-<p>Fecha o arquivo
-    <code>python
-    arqv_csv.close()</code></p>
+<p><strong>Exemplo de leitura de um arquivo csv</strong>:
+    <pre class="highlight"><code class="language-python">import csv
+# Abertura do arquivo csv.
+csv_file = open('tabela_clientes.csv')
+# Leitura dos dados
+## Importante informar o delimiter corretamente, pois ele que é responsavel pela quebra das informações
+arquivo = csv.reader(csvfile, delimiter=',')
+# Dentro da variavel arquivo ficou armazenado uma lista de tuplas contendo todos os dados do csv
+for linha in arquivo:
+    # Com o for percorremos por todas as tuplas da lista, e conseguimos categorizar todos os elementos
+    cpf = linha[0]
+    nome = linha[1]
+    data_nascimento = linha[2]
+    telefone = linha[3]
+    email = linha[4]
+    cep = linha[5]
+print(cpf, nome, data_nascimento, telefone, email, cep)
+# output: '99070950600' 'Jorge Bernardo Teixeira' '22/07/1948' '82981039094' 'jjorgebernardoteixeira@unimedrio.com.br' '57010364'</code></pre></p>
 </li>
 </ul>
 </li>
@@ -242,9 +210,9 @@ Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python. </p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%2017%20-%20Pandas/" class="btn btn-neutral float-left" title="Aula 17 - Pandas"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%2019%20-%20Pdfs/" class="btn btn-neutral float-right" title="Aula 19 - Pdfs">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Aula%2017%20-%20Pandas/" class="btn btn-neutral float-left" title="Aula 17 - Pandas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Aula%2019%20-%20Pdfs/" class="btn btn-neutral float-right" title="Aula 19 - Pdfs">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -254,7 +222,7 @@ Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python. </p>
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -264,26 +232,25 @@ Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python. </p>
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versões">
+  <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2017%20-%20Pandas/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%2017%20-%20Pandas/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../Aula%2019%20-%20Pdfs/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%2019%20-%20Pdfs/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>
