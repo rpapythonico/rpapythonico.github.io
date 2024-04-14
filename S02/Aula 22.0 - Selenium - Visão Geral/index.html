@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -179,7 +179,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
           <li>Aula 22 - Selenium &raquo;</li>
       <li>Visão Geral</li>
@@ -265,38 +265,22 @@
 <p>A página web possui <strong>tags</strong> com seus respectivos <strong>atributos</strong> (HTML) que permitem adicionar funcionalidades e/ou estilos (CSS). Além disso, as páginas contém linguagens scriptadas que permitem monitorar ações e realizar determinadas atividades quando alguma interação for realizada, este é o caso da linguagem JavaScript. Através dele, é permitido efetuar “injeções” de scripts.</p>
 <p>Para entender melhor, o Selenium irá trabalhar com:</p>
 <ul>
-<li>id;<ul>
+<li>id;</li>
 <li>Atributo <strong>identificador</strong> de alguma tag. Geralmente são <strong>únicos</strong> e <strong>imutáveis</strong>.</li>
-</ul>
-</li>
-<li>name;<ul>
+<li>name;</li>
 <li>Atributo que <strong>nomifica</strong> uma tag. Geralmente são <strong>únicos</strong> e <strong>podem sofrer alteração</strong>.</li>
-</ul>
-</li>
-<li>class_name;<ul>
+<li>class_name;</li>
 <li>Atributo que permite classificar um <strong>grupo de tags</strong> com a mesma regra de estilização. Ou seja, pode ter <strong>um ou mais</strong>.</li>
-</ul>
-</li>
-<li>tag_name;<ul>
+<li>tag_name;</li>
 <li>Tag HTML do elemento à ser inspecionado.</li>
-</ul>
-</li>
-<li>partial_link_text;<ul>
+<li>partial_link_text;</li>
 <li>Parte do texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a>).</li>
-</ul>
-</li>
-<li>link_text;<ul>
+<li>link_text;</li>
 <li>Texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a>).</li>
-</ul>
-</li>
-<li>css_selector;<ul>
+<li>css_selector;</li>
 <li>Padrão de elementos/termos baseados em tags e atributos junto ao CSS.</li>
-</ul>
-</li>
-<li>xpath.<ul>
+<li>xpath.</li>
 <li>Padrão de elementos/termos baseados em tags e atributos.</li>
-</ul>
-</li>
 </ul>
 <h2 id="criando-css-selector">Criando CSS Selector</h2>
 <p>Sintaxe: <strong>tag[atributo="valor"]</strong></p>
@@ -317,51 +301,60 @@ Imagem retirada do site <a href="https://www.guru99.com/">guru99</a>.</p>
 <h3 id="css-selector">CSS Selector</h3>
 <ul>
 <li>
-<p>Coleta através do ID
-    <pre class="highlight"><code>#SIvCob
-
-ou
-
-div#SIvCob</code></pre></p>
+<p>Coleta através do ID</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>#SIvCob
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ou
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>div#SIvCob
+</code></pre></div>
 </li>
 <li>
-<p>Coleta através da CLASS NAME
-    <pre class="highlight"><code>.gb_Jd
-
-ou
-
-div.gb_Jd</code></pre></p>
+<p>Coleta através da CLASS NAME</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>.gb_Jd
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>ou
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>div.gb_Jd
+</code></pre></div>
 </li>
 <li>
-<p>Pesquisa com Sintaxe Completa
-    <pre class="highlight"><code>input[class="gLFyf gsfi"]</code></pre></p>
+<p>Pesquisa com Sintaxe Completa</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>input[class=&quot;gLFyf gsfi&quot;]
+</code></pre></div>
 </li>
 <li>
-<p>Pesquisa Utilizando uma Tag Filha
-    <pre class="highlight"><code>div[class="RNNXgb"] input</code></pre></p>
+<p>Pesquisa Utilizando uma Tag Filha</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>div[class=&quot;RNNXgb&quot;] input
+</code></pre></div>
 </li>
 <li>
-<p>Pesquisa Através da Parcela de um Texto Entre Tags
-    <pre class="highlight"><code>input[value*="Pesquisa"]</code></pre></p>
+<p>Pesquisa Através da Parcela de um Texto Entre Tags</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>input[value*=&quot;Pesquisa&quot;]
+</code></pre></div>
 </li>
 </ul>
 <h3 id="xpath">Xpath</h3>
 <ul>
 <li>
-<p>Pesquisa com Sintaxe Completa
-    <pre class="highlight"><code>//*[@id="SIvCob"]</code></pre></p>
+<p>Pesquisa com Sintaxe Completa</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>//*[@id=&quot;SIvCob&quot;]
+</code></pre></div>
 </li>
 <li>
-<p>Pesquisa Utilizando Tags Filhas
-    <pre class="highlight"><code>//div[@class="RNNXgb"]/div/div[2]/input</code></pre></p>
+<p>Pesquisa Utilizando Tags Filhas</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>//div[@class=&quot;RNNXgb&quot;]/div/div[2]/input
+</code></pre></div>
 </li>
 <li>
-<p>Pesquisa Através do Texto Entre Tags
-    <pre class="highlight"><code>//div[text()="Disponibilizado pelo Google em:  "]</code></pre></p>
+<p>Pesquisa Através do Texto Entre Tags</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>//div[text()=&quot;Disponibilizado pelo Google em:  &quot;]
+</code></pre></div>
 </li>
 <li>
-<p>Pesquisa Através da Parcela de um Texto Entre Tags
-    <pre class="highlight"><code>//div[contains(text(), 'Disponibilizado')]</code></pre></p>
+<p>Pesquisa Através da Parcela de um Texto Entre Tags</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>//div[contains(text(), &#39;Disponibilizado&#39;)]
+</code></pre></div>
 </li>
 </ul>
               

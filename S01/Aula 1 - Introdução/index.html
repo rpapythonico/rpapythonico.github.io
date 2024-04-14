@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -129,17 +129,31 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 1 - Introdução</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#instalacao">Instalação:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#instalacao">Instalação</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ides">IDEs:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#ides">IDEs</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#guia">Guia:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#guia">Guia</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#variaveis">Variáveis;</a>
+    <li class="toctree-l3"><a class="reference internal" href="#variaveis">Variáveis</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#print">print();</a>
+    <li class="toctree-l3"><a class="reference internal" href="#print">print()</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tipagem">Tipagem;</a>
+    <li class="toctree-l3"><a class="reference internal" href="#tipagem">Tipagem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tupla">Tupla</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lista">Lista</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#identacao">Identação</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#condicao">Condição</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#len">len()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#input">input()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comentarios">Comentários</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tupla">Tupla;</a>
     </li>
@@ -185,7 +199,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 1 &raquo;</li>
       <li>Aula 1 - Introdução</li>
     <li class="wy-breadcrumbs-aside">
@@ -197,186 +211,156 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-1-introducao">Aula 1 - Introdução</h1>
-<h2 id="instalacao">Instalação:</h2>
+<h2 id="instalacao">Instalação</h2>
 <ul>
-<li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a><ul>
+<li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
 <li>Download Python 3.10.2</li>
-</ul>
-</li>
-<li><a href="https://www.anaconda.com/products/individual#Downloads">https://www.anaconda.com/products/individual#Downloads</a><ul>
+<li><a href="https://www.anaconda.com/products/individual#Downloads">https://www.anaconda.com/products/individual#Downloads</a></li>
 <li>64-Bit Graphical Installer (510 MB)</li>
 </ul>
-</li>
-</ul>
-<h2 id="ides">IDEs:</h2>
+<h2 id="ides">IDEs</h2>
 <ul>
-<li>Google Collab:<ul>
+<li>Google Collab:</li>
 <li><a href="https://colab.research.google.com/">https://colab.research.google.com/</a></li>
-</ul>
-</li>
-<li>Jupyter Notebook:<ul>
+<li>Jupyter Notebook:</li>
 <li><a href="https://jupyter.org/install">https://jupyter.org/install</a></li>
-</ul>
-</li>
-<li>PyCharm:<ul>
+<li>PyCharm:</li>
 <li><a href="https://www.jetbrains.com/pt-br/pycharm/download/">https://www.jetbrains.com/pt-br/pycharm/download/</a></li>
-</ul>
-</li>
-<li>Visual Code:<ul>
+<li>Visual Code:</li>
 <li><a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></li>
 </ul>
-</li>
-</ul>
-<h2 id="guia">Guia:</h2>
-<h3 id="variaveis">Variáveis;</h3>
+<h2 id="guia">Guia</h2>
+<h3 id="variaveis">Variáveis</h3>
 <ul>
 <li>Armazenar valores para serem usados depois.</li>
 <li>O conceito na vida real se assemelha como um bolso de calça onde você pode guardar suas chaves.</li>
 </ul>
-<h3 id="print">print();</h3>
+<h3 id="print">print()</h3>
 <ul>
 <li>Emite dados na tela quando se quer apresentar algo ao usuário ou para testes;</li>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">texto = 'Hello World'
-print(texto)</code></pre>
-</li>
+<li>Ex.:</li>
 </ul>
-<h3 id="tipagem">Tipagem;</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="tipagem">Tipagem</h3>
 <ul>
-<li>int()<ul>
+<li>int()</li>
 <li>Valores numéricos inteiros (isto é, <strong>SEM</strong> casas decimais).</li>
-</ul>
-</li>
-<li>float()<ul>
+<li>float()</li>
 <li>Valores numéricos reais (isto é, <strong>COM</strong> casas decimais).</li>
-</ul>
-</li>
-<li>string()<ul>
+<li>string()</li>
 <li>Letras/texto.</li>
-</ul>
-</li>
-<li>bool()<ul>
+<li>bool()</li>
 <li>Validador.</li>
 <li>Verdadeiro ou Falso</li>
 <li>Sintaxe: True/False</li>
+<li>Ex.:</li>
 </ul>
-</li>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">valor = 1
-
-valor = int(valor)
-#output: 1
-
-valor = float(valor)
-#output: 1.0
-
-valor = string(valor)
-#output: '1'
-
-valor = bool(valor)
-#output: True</code></pre>
-</li>
-</ul>
-<h3 id="tupla">Tupla;</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">valor</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">valor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">#output: 1</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">valor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">#output: 1.0</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">valor</span> <span class="o">=</span> <span class="n">string</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#output: &#39;1&#39;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">valor</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1">#output: True</span>
+</code></pre></div>
+<h3 id="tupla">Tupla</h3>
 <ul>
 <li>( )</li>
 <li>São imutáveis;</li>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">#atribuição composta
-tupla_de_bandas = 'Led Zeppelin', 'The Doors', 'Black Sabbath'
-
-#ou
-
-tupla_de_bandas = ('Led Zeppelin', 'The Doors', 'Black Sabbath')</code></pre>
-</li>
+<li>Ex.:</li>
 </ul>
-<h3 id="lista">Lista:</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#atribuição composta</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">tupla_de_bandas</span> <span class="o">=</span> <span class="s1">&#39;Led Zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;The Doors&#39;</span><span class="p">,</span> <span class="s1">&#39;Black Sabbath&#39;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#ou</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">tupla_de_bandas</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Led Zeppelin&#39;</span><span class="p">,</span> <span class="s1">&#39;The Doors&#39;</span><span class="p">,</span> <span class="s1">&#39;Black Sabbath&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="lista">Lista</h3>
 <ul>
 <li>[ ]</li>
 <li>São mutáveis;</li>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">lista_de_livros = ['Harry Potter', 'Sherlock Holmes', 'Jogos Vorazes']</code></pre>
-</li>
+<li>Ex.:</li>
 </ul>
-<h3 id="identacao">Identação;</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">lista_de_livros</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Harry Potter&#39;</span><span class="p">,</span> <span class="s1">&#39;Sherlock Holmes&#39;</span><span class="p">,</span> <span class="s1">&#39;Jogos Vorazes&#39;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="identacao">Identação</h3>
 <ul>
 <li>Tab;</li>
 <li>Tabs definem o alinhamento dentro de alguma condição, looping ou função dentro do Python.</li>
 </ul>
-<h3 id="condicao">Condição;</h3>
+<h3 id="condicao">Condição</h3>
 <ul>
 <li>if, elif e else</li>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">idade = 17
-if idade idade &lt; 16:
-    print('Adolescente')
-elif idade &gt; 16 and &lt; 21:
-    print('Jovem')
-else:
-    print('Adulto')</code></pre>
-</li>
+<li>Ex.:</li>
 </ul>
-<h3 id="len">len();</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">17</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">if</span> <span class="n">idade</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adolescente&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">elif</span> <span class="n">idade</span> <span class="o">&gt;</span> <span class="mi">16</span> <span class="ow">and</span> <span class="o">&lt;</span> <span class="mi">21</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jovem&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Adulto&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="len">len()</h3>
 <ul>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">texto = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-len(texto)
-#output: 74</code></pre>
-</li>
+<li>Ex.:</li>
 </ul>
-<h3 id="input">input();</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&#39;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">len</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#output: 74</span>
+</code></pre></div>
+<h3 id="input">input()</h3>
 <ul>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">nome = input('Qual o seu nome? R: ')
-print(nome)</code></pre>
-</li>
+<li>Ex.:</li>
 </ul>
-<h3 id="comentarios">Comentários.</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Qual o seu nome? R: &#39;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="comentarios">Comentários</h3>
 <ul>
 <li>
 <h1 id="e">e "" ""</h1>
 </li>
-<li>Servem para criar "comentários" no código e assim facilitar a leitura dele por você mesmo ou outra pessoa.</li>
 <li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">#Essa variavel receberá um valor e já terá seu dado convertido para inteiro
-valor_dois = int(input('Insira um novo valor para a soma: '))
-
-#ou
-
-print('Inicial')
-"""Este
-é
-um
-comentário """
-''' '''
-print('Final')</code></pre>
+<p>Servem para criar "comentários" no código e assim facilitar a leitura dele por você mesmo ou outra pessoa.</p>
 </li>
+<li>Ex.:</li>
 </ul>
-<h2 id="colinha">Colinha:</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">#Essa variavel receberá um valor e já terá seu dado convertido para inteiro</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">valor_dois</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Insira um novo valor para a soma: &#39;</span><span class="p">))</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#ou</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inicial&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="sd">&quot;&quot;&quot;Este</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="sd">é</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="sd">um</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="sd">comentário &quot;&quot;&quot;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="sd">&#39;&#39;&#39; &#39;&#39;&#39;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Final&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="colinha">Colinha</h2>
 <ul>
 <li>'=' passa valores</li>
 <li>'==' compara se os valores são iguais</li>
 <li>'in' para checar algum valor</li>
 <li>'=== ' compara o valor e o tipo da variável</li>
 </ul>
-<h2 id="referencias">Referências:</h2>
+<h2 id="referencias">Referências</h2>
 <ul>
-<li>Automatize tarefas maçantes com Python<ul>
+<li>Automatize tarefas maçantes com Python</li>
 <li><a href="https://www.amazon.com.br/Automatize-tarefas-ma%C3%A7antes-com-Python-ebook/dp/B075JTQYB7">https://www.amazon.com.br/Automatize-tarefas-maçantes-com-Python-ebook/dp/B075JTQYB7</a></li>
-</ul>
-</li>
-<li>Curso Intensivo de Python<ul>
+<li>Curso Intensivo de Python</li>
 <li><a href="https://www.amazon.com.br/Curso-Intensivo-Python-Introdu%C3%A7%C3%A3o-Programa%C3%A7%C3%A3o/dp/8575225030/">https://www.amazon.com.br/Curso-Intensivo-Python-Introdução-Programação/dp/8575225030/</a></li>
-</ul>
-</li>
 </ul>
               
             </div>

@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -201,7 +201,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
       <li>Aula 24 - APIs</li>
     <li class="wy-breadcrumbs-aside">
@@ -222,7 +222,7 @@
 <li>O garçom coleta o prato pronto e leva para o cliente que pediu;</li>
 <li>O cliente final consome o prato preparado.</li>
 </ol>
-<p>A API seria basicamente isso, um serviço que leva um dado, processa e devolve o resultado. </p>
+<p>A API seria basicamente isso, um serviço que leva um dado, processa e devolve o resultado.</p>
 <p>As páginas webs são exemplos de serviços, onde o navegador envia o pedido e o servidor devolve o código da página para que seja renderizado como imagem ao usuário.</p>
 <h2 id="quais-os-tipos-de-apis">Quais os tipos de APIs?</h2>
 <p>As APIs possuem duas modalides, estas sendo REST ou SOAP.</p>
@@ -241,19 +241,22 @@
 <h3 id="codigo">Código</h3>
 <h4 id="requests">requests</h4>
 <ul>
-<li>Instalando a "lib" requests
-  <pre class="highlight"><code class="language-bash">pip install requests</code></pre></li>
+<li>Instalando a "lib" requests</li>
 </ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install requests
+</code></pre></div>
 <h4 id="http">http</h4>
 <ul>
-<li>Importando a "lib" http.client
-  <pre class="highlight"><code class="language-python">from http.client import HTTPSConnection</code></pre></li>
+<li>Importando a "lib" http.client</li>
 </ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">http.client</span> <span class="kn">import</span> <span class="n">HTTPSConnection</span>
+</code></pre></div>
 <h4 id="urllib">urllib</h4>
 <ul>
-<li>Importando a "lib" urllib.request
-  <pre class="highlight"><code class="language-python">from urllib.request import urlopen</code></pre></li>
+<li>Importando a "lib" urllib.request</li>
 </ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+</code></pre></div>
 <h2 id="get">GET</h2>
 <h3 id="explicacao">Explicação</h3>
 <p>As APIs do tipo GET são de modelagem simples, isso é, a requisição é feita somente tendo uma URL e nela podem ser passado parâmetros extras para serem efetuados filtros e ajustes no retorno devolvido por ela.</p>
@@ -261,23 +264,27 @@
 <h3 id="exemplo">Exemplo</h3>
 <ol>
 <li>
-<p>Importando a "lib" requests
-    <pre class="highlight"><code class="language-python">import requests</code></pre></p>
+<p>Importando a "lib" requests</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div>
 </li>
 <li>
-<p>Efetuando requisição
-    <pre class="highlight"><code class="language-python">url = "http://universities.hipolabs.com/search?country=brazil"
-
-response = requests.get(url)</code></pre></p>
+<p>Efetuando requisição</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://universities.hipolabs.com/search?country=brazil&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Transformando o retorno em dicionário
-    <pre class="highlight"><code class="language-python">r_json = response.json()</code></pre></p>
+<p>Transformando o retorno em dicionário</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">r_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
-<p>Interagindo com o retorno
-    <pre class="highlight"><code class="language-python">print(r_json[15]['name'])
-# output: 'Universidade Regional de Blumenau'</code></pre></p>
+<p>Interagindo com o retorno</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">r_json</span><span class="p">[</span><span class="mi">15</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># output: &#39;Universidade Regional de Blumenau&#39;</span>
+</code></pre></div>
 </li>
 </ol>
 <h3 id="apis-para-praticar">APIs Para Praticar</h3>
@@ -290,43 +297,49 @@ response = requests.get(url)</code></pre></p>
 </ul>
 <h2 id="post">POST</h2>
 <h3 id="explicacao_1">Explicação</h3>
-<p>O tipo POST permite a passagem de dados/parâmetros através de um "corpo" que fica "mascarado" durante o envio e o retorno. 
+<p>O tipo POST permite a passagem de dados/parâmetros através de um "corpo" que fica "mascarado" durante o envio e o retorno.
 Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter autenticações baseadas em Token.</p>
 <p><strong>Obs.:</strong> Os "corpos" geralmente são no formato JSON.</p>
 <h3 id="exemplo_1">Exemplo</h3>
 <ol>
 <li>
-<p>Importando a "lib" requests e JSON
-    <pre class="highlight"><code class="language-python">import requests
-import json</code></pre></p>
+<p>Importando a "lib" requests e JSON</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">json</span>
+</code></pre></div>
 </li>
 <li>
-<p>Gerando "corpo" da API
-    <pre class="highlight"><code class="language-python">payload = json.dumps({
-  "name": "Harry Potter",
-  "job": "Desenvolvedor RPA"
-})</code></pre></p>
+<p>Gerando "corpo" da API</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  <span class="s2">&quot;job&quot;</span><span class="p">:</span> <span class="s2">&quot;Desenvolvedor RPA&quot;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">})</span>
+</code></pre></div>
 </li>
 <li>
-<p>Gerando os cabeçalhos da API
-    <pre class="highlight"><code class="language-python">headers = {
-  'Content-Type': 'application/json'
-}</code></pre></p>
+<p>Gerando os cabeçalhos da API</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
-<p>Efetuando requisição
-    <pre class="highlight"><code class="language-python">url = "https://reqres.in/api/users"
-
-response = requests.post(url, headers=headers, data=payload)</code></pre></p>
+<p>Efetuando requisição</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://reqres.in/api/users&quot;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Transformando o retorno em dicionário
-    <pre class="highlight"><code class="language-python">r_json = response.json()</code></pre></p>
+<p>Transformando o retorno em dicionário</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">r_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
-<p>Interagindo com o retorno
-    <pre class="highlight"><code class="language-python">print(r_json.get('createdAt'))
-# output: '2022-05-23T19:53:22.594Z'</code></pre></p>
+<p>Interagindo com o retorno</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">r_json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;createdAt&#39;</span><span class="p">))</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># output: &#39;2022-05-23T19:53:22.594Z&#39;</span>
+</code></pre></div>
 </li>
 </ol>
               

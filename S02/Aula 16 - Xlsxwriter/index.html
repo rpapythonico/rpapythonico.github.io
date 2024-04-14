@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -161,7 +161,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
       <li>Aula 16 - Xlsxwriter</li>
     <li class="wy-breadcrumbs-aside">
@@ -179,46 +179,60 @@
 <h2 id="comandos">Comandos</h2>
 <ul>
 <li>
-<p>Instalação da biblioteca
-    <pre class="highlight"><code class="language-bash">pip install XlsxWriter</code></pre></p>
+<p>Instalação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install XlsxWriter
+</code></pre></div>
 </li>
 <li>
-<p>Importação da biblioteca
-    <pre class="highlight"><code class="language-python">from xlsxwriter import Workbook</code></pre></p>
+<p>Importação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">xlsxwriter</span> <span class="kn">import</span> <span class="n">Workbook</span>
+</code></pre></div>
 </li>
 <li>
-<p>Criação e abertura do arquivo Excel
-    <pre class="highlight"><code class="language-python">wb = Workbook('livros.xlsx')</code></pre></p>
+<p>Criação e abertura do arquivo Excel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">wb</span> <span class="o">=</span> <span class="n">Workbook</span><span class="p">(</span><span class="s1">&#39;livros.xlsx&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Criação de aba no Excel
-    <pre class="highlight"><code class="language-python">planilha = wb.add_worksheet('Livros')</code></pre></p>
+<p>Criação de aba no Excel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">planilha</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">add_worksheet</span><span class="p">(</span><span class="s1">&#39;Livros&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Criação do cabeçalho com letras em negrito
-    <pre class="highlight"><code class="language-python">bold = wb.add_format({'bold':1})
-planilha.write('A1', 'Nome', bold)
-planilha.write('B1', 'Autor', bold)
-planilha.write('C1', 'Data Lançamento', bold)
-planilha.write('D1', 'Pais de Origem', bold)
-planilha.write('E1', 'Genero', bold)</code></pre></p>
+<p>Criação do cabeçalho com letras em negrito</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">bold</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">&#39;bold&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;Autor&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;Data Lançamento&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;D1&#39;</span><span class="p">,</span> <span class="s1">&#39;Pais de Origem&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;Genero&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Criação de lista contendo tuplas com os dados a serem cadastrados
-    <pre class="highlight"><code class="language-python">livros = [('Harry Potter e a Pedra Filosofal ', 'J. K. Rowling', '26/07/1997', 'Inglaterra', 'Aventura/Fantasia'), ('Jogos Vorazes','Suzanne Collins', '14/09/2008', 'Estados Unidos', 'Aventura'),('Percy Jackson o Ladrao de Raios', 'Rick Riordan', '28/07/2005', 'Estados Unidos', 'Mitologia grega'), ('O Nevoeiro', 'Stephen King', '01/01/1980', 'Estados Unidos', 'Terror Psicologico'), ('Contos de Grimm', 'Jacob Grimm / Wilhelm Grimm', '20/12/1812', 'Alemanha', 'Contos de fadas')]</code></pre></p>
+<p>Criação de lista contendo tuplas com os dados a serem cadastrados</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">livros</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Harry Potter e a Pedra Filosofal &#39;</span><span class="p">,</span> <span class="s1">&#39;J. K. Rowling&#39;</span><span class="p">,</span> <span class="s1">&#39;26/07/1997&#39;</span><span class="p">,</span> <span class="s1">&#39;Inglaterra&#39;</span><span class="p">,</span> <span class="s1">&#39;Aventura/Fantasia&#39;</span><span class="p">),</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>          <span class="p">(</span><span class="s1">&#39;Jogos Vorazes&#39;</span><span class="p">,</span><span class="s1">&#39;Suzanne Collins&#39;</span><span class="p">,</span> <span class="s1">&#39;14/09/2008&#39;</span><span class="p">,</span> <span class="s1">&#39;Estados Unidos&#39;</span><span class="p">,</span> <span class="s1">&#39;Aventura&#39;</span><span class="p">),</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>          <span class="p">(</span><span class="s1">&#39;Percy Jackson o Ladrao de Raios&#39;</span><span class="p">,</span> <span class="s1">&#39;Rick Riordan&#39;</span><span class="p">,</span> <span class="s1">&#39;28/07/2005&#39;</span><span class="p">,</span> <span class="s1">&#39;Estados Unidos&#39;</span><span class="p">,</span> <span class="s1">&#39;Mitologia grega&#39;</span><span class="p">),</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>          <span class="p">(</span><span class="s1">&#39;O Nevoeiro&#39;</span><span class="p">,</span> <span class="s1">&#39;Stephen King&#39;</span><span class="p">,</span> <span class="s1">&#39;01/01/1980&#39;</span><span class="p">,</span> <span class="s1">&#39;Estados Unidos&#39;</span><span class="p">,</span> <span class="s1">&#39;Terror Psicologico&#39;</span><span class="p">),</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>          <span class="p">(</span><span class="s1">&#39;Contos de Grimm&#39;</span><span class="p">,</span> <span class="s1">&#39;Jacob Grimm / Wilhelm Grimm&#39;</span><span class="p">,</span> <span class="s1">&#39;20/12/1812&#39;</span><span class="p">,</span> <span class="s1">&#39;Alemanha&#39;</span><span class="p">,</span> <span class="s1">&#39;Contos de fadas&#39;</span><span class="p">)]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Escrita dos dados no arquivo Excel
-    <pre class="highlight"><code class="language-python">row, col = 1, 0
-for livro in livros:
-    sheet.write_string(row, col, livro[0])
-    sheet.write_string(row, col+1, livro[1])
-    sheet.write_string(row, col+2, livro[2])
-    row += 1</code></pre></p>
+<p>Escrita dos dados no arquivo Excel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">for</span> <span class="n">livro</span> <span class="ow">in</span> <span class="n">livros</span><span class="p">:</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">livro</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">livro</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">livro</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="n">livro</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">planilha</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="n">livro</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
 </li>
 <li>
-<p>Salvando e fechando o arquivo Excel
-    <pre class="highlight"><code class="language-python">wb.close()</code></pre></p>
+<p>Salvando e fechando o arquivo Excel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">wb</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
               

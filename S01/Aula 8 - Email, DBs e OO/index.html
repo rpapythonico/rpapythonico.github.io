@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -151,7 +151,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#utilitarios-db">Utilitários DB</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#orientacao-a-objeto">Orientação à Objeto:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#orientacao-a-objeto">Orientação à Objeto</a>
     </li>
     </ul>
                   </li>
@@ -169,7 +169,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 1 &raquo;</li>
       <li>Aula 8 - Email, DBs e OO</li>
     <li class="wy-breadcrumbs-aside">
@@ -183,114 +183,121 @@
                 <h1 id="aula-8-email-dbs-e-oo">Aula 8 - Email, DBs e OO</h1>
 <h2 id="smtplib">smtplib</h2>
 <ul>
-<li>
-<p><strong>Liberar Acesso ao SMTP do Gmail:</strong></p>
-<ul>
+<li><strong>Liberar Acesso ao SMTP do Gmail:</strong></li>
 <li><a href="https://myaccount.google.com/lesssecureapps">https://myaccount.google.com/lesssecureapps</a></li>
 <li>
 <p>Tela de ativação:</p>
-<p><img alt="acesso_menos_seguro.png" src="../../img/acesso_menos_seguro.png" /></p>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>![acesso_menos_seguro.png](../img/acesso_menos_seguro.png)
+</code></pre></div>
 </li>
 <li>
 <p><strong>Protocolos SMTP:</strong></p>
-<ul>
+</li>
 <li>Gmail: <a href="https://support.google.com/a/answer/176600?hl=pt#zippy=%2Cusar-o-servidor-smtp-do-gmail">https://support.google.com/a/answer/176600?hl=pt#zippy=%2Cusar-o-servidor-smtp-do-gmail</a><ul>
 <li>Link alternativo: <a href="https://support.google.com/mail/answer/7126229?hl=pt-BR">https://support.google.com/mail/answer/7126229?hl=pt-BR</a></li>
 </ul>
 </li>
-<li>Outlook: <a href="https://support.microsoft.com/pt-br/office/configura%C3%A7%C3%B5es-pop-imap-e-smtp-para-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040">https://support.microsoft.com/pt-br/office/configurações-pop-imap-e-smtp-para-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040</a></li>
-</ul>
+<li>
+<p>Outlook: <a href="https://support.microsoft.com/pt-br/office/configura%C3%A7%C3%B5es-pop-imap-e-smtp-para-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040">https://support.microsoft.com/pt-br/office/configurações-pop-imap-e-smtp-para-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040</a></p>
 </li>
 <li>
 <p>Importar as bibliotecas:</p>
-<pre class="highlight"><code class="language-python">import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.application import MIMEApplication</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">smtplib</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">email.mime.multipart</span> <span class="kn">import</span> <span class="n">MIMEMultipart</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">email.mime.application</span> <span class="kn">import</span> <span class="n">MIMEApplication</span>
+</code></pre></div>
 </li>
 <li>
 <p>Instanciar o email:</p>
-<pre class="highlight"><code class="language-python">mail = MIMEMultipart()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">mail</span> <span class="o">=</span> <span class="n">MIMEMultipart</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar o corpo do e-mail:</p>
-<pre class="highlight"><code class="language-python">payload = """Olá! Tudo bem?
-
-Este é um e-mail automático para testar o disparo de e-mail ensinado pelo curso de RPA Python!
-
-Atenciosamente,
-
-RPA Pythonico
-"""</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">payload</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Olá! Tudo bem?</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s2">Este é um e-mail automático para testar o disparo de e-mail ensinado pelo curso de RPA Python!</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="s2">Atenciosamente,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="s2">RPA Pythonico</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Configurar o e-mail que está enviando:</p>
-<pre class="highlight"><code class="language-python">mail['From'] = 'rpapythonico@gmail.com'</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;rpapythonico@gmail.com&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Configurar o(s) destinatário(s) do e-mail</p>
-<pre class="highlight"><code class="language-python"># UM destinatário
-mail['To'] = 'rpapythonico@gmail.com'
-
-# MAIS DE UM destinatário
-mail['To'] = 'rpapythonico@gmail.com,seu_email@provedor.com'</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># UM destinatário</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;rpapythonico@gmail.com&#39;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># MAIS DE UM destinatário</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;rpapythonico@gmail.com,seu_email@provedor.com&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Configurar o assunto do e-mail:</p>
-<pre class="highlight"><code class="language-python">mail['Subject'] = 'Email Automático - SMTPLIB'</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Email Automático - SMTPLIB&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Formatar o corpo do e-mail em formato de texto:</p>
-<pre class="highlight"><code class="language-python">mail.attach(MIMEText(payload, 'plain'))</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">mail</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">MIMEText</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="s1">&#39;plain&#39;</span><span class="p">))</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar conexão SMTP:</p>
-<pre class="highlight"><code class="language-python">server = smtplib.SMTP('smtp.gmail.com', '587')
-server.starttls()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">(</span><span class="s1">&#39;smtp.gmail.com&#39;</span><span class="p">,</span> <span class="s1">&#39;587&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">server</span><span class="o">.</span><span class="n">starttls</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Se autenticar no servidor SMTP:</p>
-<pre class="highlight"><code class="language-python">server.login(msg['From'], 'sua_senha')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">server</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="s1">&#39;sua_senha&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Enviar e-mail:</p>
 <ul>
 <li>
 <p><strong>SEM Anexo</strong></p>
-<pre class="highlight"><code class="language-python"># UM destinatário
-server.sendmail(mail['From'], mail['To'], mail.as_string())
-
-# MAIS DE UM destinatário
-server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># UM destinatário</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="n">mail</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">],</span> <span class="n">mail</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># MAIS DE UM destinatário</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="n">mail</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">),</span> <span class="n">mail</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+</code></pre></div>
 </li>
 <li>
 <p><strong>COM Anexo</strong></p>
-<pre class="highlight"><code class="language-python">file = open('seu_arquivo.py', 'rb')
-
-app = MIMEApplication(file.read(), 'py')
-app.add_header('Content-Disposition', 'attachment;filename=seu_arquivo.py')
-mail.attach(app)
-
-# UM destinatário
-server.sendmail(mail['From'], mail['To'], mail.as_string())
-
-# MAIS DE UM destinatário
-server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;seu_arquivo.py&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">app</span> <span class="o">=</span> <span class="n">MIMEApplication</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="s1">&#39;py&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">app</span><span class="o">.</span><span class="n">add_header</span><span class="p">(</span><span class="s1">&#39;Content-Disposition&#39;</span><span class="p">,</span> <span class="s1">&#39;attachment;filename=seu_arquivo.py&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">mail</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># UM destinatário</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="n">mail</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">],</span> <span class="n">mail</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="c1"># MAIS DE UM destinatário</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">server</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">mail</span><span class="p">[</span><span class="s1">&#39;From&#39;</span><span class="p">],</span> <span class="n">mail</span><span class="p">[</span><span class="s1">&#39;To&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">),</span> <span class="n">mail</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+</code></pre></div>
 </li>
 </ul>
 </li>
 <li>
 <p>Finalizar conexão SMTP:</p>
-<pre class="highlight"><code class="language-python">server.quit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">server</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="ferramentas-db">Ferramentas DB</h2>
 <ul>
-<li>
-<p><strong>MS SQL:</strong></p>
-<ul>
+<li><strong>MS SQL:</strong></li>
 <li>
 <p>Download SQL Server: <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">https://www.microsoft.com/pt-br/sql-server/sql-server-downloads</a></p>
 <ul>
@@ -330,192 +337,208 @@ server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())</code></p
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="sqlite3">sqlite3</h2>
 <ul>
 <li>
 <p>Importar biblioteca:</p>
-<pre class="highlight"><code class="language-python">import sqlite3</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar conexão:</p>
-<pre class="highlight"><code class="language-python">con = sqlite3.connect('example.db')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar cursor:</p>
-<pre class="highlight"><code class="language-python">cur = con.cursor()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar uma tabela:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''CREATE TABLE "TB_Cliente"( "CPF" INTEGER NOT NULL UNIQUE, "Nome_Completo" TEXT NOT NULL, "Data_Nascimento" TEXT NOT NULL, "Telefone" TEXT, "Email" TEXT, "CEP" TEXT NOT NULL, PRIMARY KEY("CPF"));''')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;CREATE TABLE &quot;TB_Cliente&quot;( &quot;CPF&quot; INTEGER NOT NULL UNIQUE, &quot;Nome_Completo&quot; TEXT NOT NULL, &quot;Data_Nascimento&quot; TEXT NOT NULL, &quot;Telefone&quot; TEXT, &quot;Email&quot; TEXT, &quot;CEP&quot; TEXT NOT NULL, PRIMARY KEY(&quot;CPF&quot;));&#39;&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Aprovar as interações com o banco de dados:</p>
-<pre class="highlight"><code class="language-python">con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir algum dado:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''INSERT INTO TB_Cliente VALUES (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355')''')
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;INSERT INTO TB_Cliente VALUES (20955758572, &#39;Laura Luana Assis&#39;, &#39;13/06/1948&#39;, &#39;68991361938&#39;, &#39;lauraluanaassis-91@naressi.com.br&#39;, &#39;69911355&#39;)&#39;&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir vários registros no banco:</p>
-<pre class="highlight"><code class="language-python">lista_registros = [(88190475789, 'José Hugo Manuel Porto', '11/07/1997', '41989320821', 'jjosehugomanuelporto@patriciagrillo.adv.br', '83309270'), (39962955106, 'Marina Carolina dos Santos', '26/09/1995', '81984235792', 'marinacarolinadossantos_@lukin4.com.br', '53350130'), (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355'), (76938977550, 'Yasmin Evelyn Maria Costa', '20/04/1959', '91998657654', 'yasminevelynmariacosta-88@yahoo.com.ar', '66810020'), (25373027375, 'Fernando Giovanni Bernardes', '02/03/1964', '81989889726', 'fernandogiovannibernardes-92@soulcomunicacao.com.br', '51180440'), (85775491947, 'Clarice Vitória Teixeira', '24/02/1958', '82996438794', 'claricevitoriateixeira-97@india.com', '57052605'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (90123303354, 'Carolina Cláudia Pietra da Rocha', '14/04/1952', '63992520221', 'carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br', '77017297'), (96558670801, 'Levi Theo Matheus Ramos', '04/04/1961', '22988505045', 'levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br', '28024123'), (57218723306, 'Davi Márcio Rafael Nogueira', '25/07/1997', '69991521228', 'davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br', '76964042')]
-cur.executemany("INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)", lista_registros)
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">lista_registros</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">88190475789</span><span class="p">,</span> <span class="s1">&#39;José Hugo Manuel Porto&#39;</span><span class="p">,</span> <span class="s1">&#39;11/07/1997&#39;</span><span class="p">,</span> <span class="s1">&#39;41989320821&#39;</span><span class="p">,</span> <span class="s1">&#39;jjosehugomanuelporto@patriciagrillo.adv.br&#39;</span><span class="p">,</span> <span class="s1">&#39;83309270&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">39962955106</span><span class="p">,</span> <span class="s1">&#39;Marina Carolina dos Santos&#39;</span><span class="p">,</span> <span class="s1">&#39;26/09/1995&#39;</span><span class="p">,</span> <span class="s1">&#39;81984235792&#39;</span><span class="p">,</span> <span class="s1">&#39;marinacarolinadossantos_@lukin4.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;53350130&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">20955758572</span><span class="p">,</span> <span class="s1">&#39;Laura Luana Assis&#39;</span><span class="p">,</span> <span class="s1">&#39;13/06/1948&#39;</span><span class="p">,</span> <span class="s1">&#39;68991361938&#39;</span><span class="p">,</span> <span class="s1">&#39;lauraluanaassis-91@naressi.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;69911355&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">76938977550</span><span class="p">,</span> <span class="s1">&#39;Yasmin Evelyn Maria Costa&#39;</span><span class="p">,</span> <span class="s1">&#39;20/04/1959&#39;</span><span class="p">,</span> <span class="s1">&#39;91998657654&#39;</span><span class="p">,</span> <span class="s1">&#39;yasminevelynmariacosta-88@yahoo.com.ar&#39;</span><span class="p">,</span> <span class="s1">&#39;66810020&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">25373027375</span><span class="p">,</span> <span class="s1">&#39;Fernando Giovanni Bernardes&#39;</span><span class="p">,</span> <span class="s1">&#39;02/03/1964&#39;</span><span class="p">,</span> <span class="s1">&#39;81989889726&#39;</span><span class="p">,</span> <span class="s1">&#39;fernandogiovannibernardes-92@soulcomunicacao.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;51180440&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">85775491947</span><span class="p">,</span> <span class="s1">&#39;Clarice Vitória Teixeira&#39;</span><span class="p">,</span> <span class="s1">&#39;24/02/1958&#39;</span><span class="p">,</span> <span class="s1">&#39;82996438794&#39;</span><span class="p">,</span> <span class="s1">&#39;claricevitoriateixeira-97@india.com&#39;</span><span class="p">,</span> <span class="s1">&#39;57052605&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4847726278</span><span class="p">,</span> <span class="s1">&#39;Kamilly Clara Caldeira&#39;</span><span class="p">,</span> <span class="s1">&#39;21/04/1982&#39;</span><span class="p">,</span> <span class="s1">&#39;27998331799&#39;</span><span class="p">,</span> <span class="s1">&#39;kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;29194248&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">90123303354</span><span class="p">,</span> <span class="s1">&#39;Carolina Cláudia Pietra da Rocha&#39;</span><span class="p">,</span> <span class="s1">&#39;14/04/1952&#39;</span><span class="p">,</span> <span class="s1">&#39;63992520221&#39;</span><span class="p">,</span> <span class="s1">&#39;carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;77017297&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">96558670801</span><span class="p">,</span> <span class="s1">&#39;Levi Theo Matheus Ramos&#39;</span><span class="p">,</span> <span class="s1">&#39;04/04/1961&#39;</span><span class="p">,</span> <span class="s1">&#39;22988505045&#39;</span><span class="p">,</span> <span class="s1">&#39;levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;28024123&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">57218723306</span><span class="p">,</span> <span class="s1">&#39;Davi Márcio Rafael Nogueira&#39;</span><span class="p">,</span> <span class="s1">&#39;25/07/1997&#39;</span><span class="p">,</span> <span class="s1">&#39;69991521228&#39;</span><span class="p">,</span> <span class="s1">&#39;davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;76964042&#39;</span><span class="p">)]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s2">&quot;INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)&quot;</span><span class="p">,</span> <span class="n">lista_registros</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Apagar algum dado:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''DELETE FROM TB_Cliente WHERE CPF = 88190475789''')
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;DELETE FROM TB_Cliente WHERE CPF = 88190475789&#39;&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Atualizar algum dado:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = 39962955106''')
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = 39962955106&#39;&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Ver um dado na tabela:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''SELECT * FROM TB_Cliente''')
-cur.fetchone()
-# output: (116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;SELECT * FROM TB_Cliente&#39;&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1"># output: (116415509, &#39;Analu Julia da Paz&#39;, &#39;05/04/1974&#39;, &#39;79982386771&#39;, &#39;aanalujuliadapaz@alwan.com.br&#39;, &#39;49026130&#39;)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Ver todos os dados da tabela:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''SELECT * FROM TB_Cliente''')
-cur.fetchall()
-# Realizado slice ([:3) no output para apresentar pequenos exemplos
-# output: [(116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (7287125803, 'Eduarda Emily Almada', '20/04/1941', '32985692709', 'eduardaemilyalmada_@peopleside.com.br', '36200142')]</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;SELECT * FROM TB_Cliente&#39;&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1"># Realizado slice ([:3) no output para apresentar pequenos exemplos</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># output: [(116415509, &#39;Analu Julia da Paz&#39;, &#39;05/04/1974&#39;, &#39;79982386771&#39;, &#39;aanalujuliadapaz@alwan.com.br&#39;, &#39;49026130&#39;), (4847726278, &#39;Kamilly Clara Caldeira&#39;, &#39;21/04/1982&#39;, &#39;27998331799&#39;, &#39;kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br&#39;, &#39;29194248&#39;), (7287125803, &#39;Eduarda Emily Almada&#39;, &#39;20/04/1941&#39;, &#39;32985692709&#39;, &#39;eduardaemilyalmada_@peopleside.com.br&#39;, &#39;36200142&#39;)]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechar conexão do banco de dados:</p>
-<pre class="highlight"><code class="language-python">con.close()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="pyodbc"><strong>pyodbc</strong></h2>
 <ul>
 <li>
 <p>Instalar biblioteca:</p>
-<pre class="highlight"><code class="language-bash">pip install pyodbc</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>pip install pyodbc
+</code></pre></div>
 </li>
 <li>
 <p>Importar biblioteca:</p>
-<pre class="highlight"><code class="language-python">import pyodbc</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">import</span> <span class="nn">pyodbc</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar conexão com o banco de dados:</p>
-<pre class="highlight"><code class="language-python"># Com credenciais
-conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente;UID=user;PWD=password')
-
-#Sem credenciais:
-conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Com credenciais</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">pyodbc</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente;UID=user;PWD=password&#39;</span><span class="p">)</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c1">#Sem credenciais:</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="n">conn</span> <span class="o">=</span> <span class="n">pyodbc</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="utilitarios-db">Utilitários DB</h2>
 <ul>
-<li>Visualizar bancos de dados:<ul>
+<li>Visualizar bancos de dados:</li>
 <li>DBeaver: <a href="https://dbeaver.io/?r=qal-sqle">https://dbeaver.io/?r=qal-sqle</a></li>
 <li>Beekeeper Studio: <a href="https://www.beekeeperstudio.io/">https://www.beekeeperstudio.io/</a></li>
 <li>SqlDbx: <a href="http://www.sqldbx.com/">http://www.sqldbx.com/</a></li>
-</ul>
-</li>
-<li>Outros Bancos de Dados:<ul>
+<li>Outros Bancos de Dados:</li>
 <li>MySQL: <a href="https://www.mysql.com/">https://www.mysql.com/</a></li>
 <li>PostgreSQL: <a href="https://www.postgresql.org/">https://www.postgresql.org/</a></li>
 <li>MariaDB: <a href="https://mariadb.org/">https://mariadb.org/</a></li>
 <li>MongoDB: <a href="https://www.mongodb.com/">https://www.mongodb.com/</a></li>
 <li>Apache Cassandra: <a href="https://cassandra.apache.org/_/download.html">https://cassandra.apache.org/</a></li>
 <li>Redis: <a href="https://redis.io/download">https://redis.io/download</a></li>
-</ul>
-</li>
-<li>"Minificar" a Query:<ul>
+<li>"Minificar" a Query:</li>
 <li>SQL-Minifier: <a href="https://www.webtoolkitonline.com/sql-minifier.html">https://www.webtoolkitonline.com/sql-minifier.html</a></li>
-</ul>
-</li>
-<li>Carregar a tabela:<ul>
+<li>Carregar a tabela:</li>
 <li>Necessário criar um arquivo ".db" e renomear dentro do arquivo.py</li>
 <li>Deixar os arquivos ".json", ".db" e ".py" na mesma pasta</li>
-<li>
-<p>Arquivos:</p>
-<p><a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO%201f458ef924dd473a952375a676f36154/Aula9.zip">Aula8.zip</a></p>
+<li>Arquivos:<div class="highlight"><pre><span></span><code>[Aula8.zip](Aula%208%20-%20Email,%20DBs%20e%20OO%201f458ef924dd473a952375a676f36154/Aula9.zip)
+</code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="orientacao-a-objeto">Orientação à Objeto:</h2>
+<h2 id="orientacao-a-objeto">Orientação à Objeto</h2>
 <ul>
 <li>
 <p>Criar uma classe:</p>
-<pre class="highlight"><code class="language-python">class Cachorro:</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">class</span> <span class="nc">Cachorro</span><span class="p">:</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar variáveis e ações da Classe ao chamá-la:</p>
-<pre class="highlight"><code class="language-python">    def __init__(self, nome, idade, raca='Vira-Lata'):
-      self._nome = nome.title()
-    self._idade = int(idade)
-    self._raca = raca.title()</code></pre>
-<ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">idade</span><span class="p">,</span> <span class="n">raca</span><span class="o">=</span><span class="s1">&#39;Vira-Lata&#39;</span><span class="p">):</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   <span class="bp">self</span><span class="o">.</span><span class="n">_nome</span> <span class="o">=</span> <span class="n">nome</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">idade</span><span class="p">)</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_raca</span> <span class="o">=</span> <span class="n">raca</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</code></pre></div>
+</li>
 <li>
 <p>Criar variáveis “privadas” da Classe:</p>
 <ul>
 <li>Usar parênteses;</li>
 </ul>
-<pre class="highlight"><code class="language-python">self._nome = nome.title()</code></pre>
-</li>
-</ul>
+<p><code>python
+    self._nome = nome.title()</code></p>
 </li>
 <li>
 <p>Inserir método de atualização do nome:</p>
-<pre class="highlight"><code class="language-python">    def atualiza_nome(self, novo_nome):
-      self._nome = novo_nome</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a> <span class="k">def</span> <span class="nf">atualiza_nome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">novo_nome</span><span class="p">):</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   <span class="bp">self</span><span class="o">.</span><span class="n">_nome</span> <span class="o">=</span> <span class="n">novo_nome</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir método de atualização da idade:</p>
-<pre class="highlight"><code class="language-python">    def atualiza_idade(self, nova_idade):
-      self._idade = nova_idade</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a> <span class="k">def</span> <span class="nf">atualiza_idade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nova_idade</span><span class="p">):</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>   <span class="bp">self</span><span class="o">.</span><span class="n">_idade</span> <span class="o">=</span> <span class="n">nova_idade</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir método de atualização da raça:</p>
-<pre class="highlight"><code class="language-python">    def atualiza_raca(self, nova_raca):
-      self._raca = nova_raca</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a> <span class="k">def</span> <span class="nf">atualiza_raca</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nova_raca</span><span class="p">):</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>   <span class="bp">self</span><span class="o">.</span><span class="n">_raca</span> <span class="o">=</span> <span class="n">nova_raca</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir método que imprime as descrições do cachorro:</p>
-<pre class="highlight"><code class="language-python">    def informacoes(self):
-      print(f'O cachorro da raça {self._raca} se chama {self._nome} e possui {self._idade} anos.')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a> <span class="k">def</span> <span class="nf">informacoes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O cachorro da raça </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_raca</span><span class="si">}</span><span class="s1"> se chama </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_nome</span><span class="si">}</span><span class="s1"> e possui </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_idade</span><span class="si">}</span><span class="s1"> anos.&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir método que faz o cachorro sentar:</p>
-<pre class="highlight"><code class="language-python">    def sentar(self):
-      print(f'O cachorro {self._nome} está sentado agora!')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a> <span class="k">def</span> <span class="nf">sentar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O cachorro </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_nome</span><span class="si">}</span><span class="s1"> está sentado agora!&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir método que faz o cachorro rolar:</p>
-<pre class="highlight"><code class="language-python">    def rolar(self):
-      print(f'O cachorro {self._nome} está rolando agora!')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a> <span class="k">def</span> <span class="nf">rolar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O cachorro </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_nome</span><span class="si">}</span><span class="s1"> está rolando agora!&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserir método que faz o cachorro deita:</p>
-<pre class="highlight"><code class="language-python">    def deitar(self):
-        print(f'O cachorro {self._nome} está deitado agora!')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a> <span class="k">def</span> <span class="nf">deitar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O cachorro </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_nome</span><span class="si">}</span><span class="s1"> está deitado agora!&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Importar uma Classe (vale destacar que para isso, você precisa estar no diretório em que foi criado o arquivo da classe):</p>
-<pre class="highlight"><code class="language-python">from classe_cachorro import Cachorro</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kn">from</span> <span class="nn">classe_cachorro</span> <span class="kn">import</span> <span class="n">Cachorro</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar um objeto na Classe:</p>
-<pre class="highlight"><code class="language-python">obj = Cachorro('Rex', 3, 'Shih Tzu')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">obj</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s1">&#39;Rex&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Shih Tzu&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Acessar funcionalidades da classe com o objeto criado:</p>
-<pre class="highlight"><code class="language-python">obj.informacoes()
-# output: O cachorro da raça Shih Tzu se chama Rex e possui 3 anos.</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">obj</span><span class="o">.</span><span class="n">informacoes</span><span class="p">()</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="c1"># output: O cachorro da raça Shih Tzu se chama Rex e possui 3 anos.</span>
+</code></pre></div>
 </li>
 <li>
 <p>Atualizar raça do cachorro contido no objeto:</p>
-<pre class="highlight"><code class="language-python">obj.atualiza_raca('Terrier')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">obj</span><span class="o">.</span><span class="n">atualiza_raca</span><span class="p">(</span><span class="s1">&#39;Terrier&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
               

@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -171,7 +171,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
           <li>Aula 3 - Variáveis &raquo;</li>
       <li>Visão Geral</li>
@@ -197,109 +197,105 @@
 <p>No Python é utilizado o formato <strong>snake_case</strong> para os casos onde possui uma nomenclatura composta (com mais de um palavra) e sempre será com <strong>letras minúsculas</strong>. Esse formato é chamado de <strong>"Pythonico"</strong>.</p>
 <p><strong>Obs.:</strong> Vale frisar que em âmbito corporativo, é sempre indicado usar termos em inglês para que o código fique de forma globalizada.</p>
 <h3 id="exemplo">Exemplo</h3>
-<pre class="highlight"><code class="language-python">nome = "João"
-# ou
-idade = 18
-# ou
-nome_do_arquivo = "boleto.pdf"
-# ou
-numero_do_contrato = 123456789</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;João&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">18</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">nome_do_arquivo</span> <span class="o">=</span> <span class="s2">&quot;boleto.pdf&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">numero_do_contrato</span> <span class="o">=</span> <span class="mi">123456789</span>
+</code></pre></div>
 <h1 id="quais-os-tipos-de-variaveis">Quais os tipos de variáveis?</h1>
 <ul>
-<li><strong>int</strong>(eger): São valores inteiros.<ul>
+<li><strong>int</strong>(eger): São valores inteiros.</li>
 <li>Ex.: 1, 1, 2, 3, 5, 8, ...</li>
-</ul>
-</li>
-<li><strong>str</strong>(ing): São palavras/textos.<ul>
+<li><strong>str</strong>(ing): São palavras/textos.</li>
 <li>Ex.: Lorem Ipsum</li>
-</ul>
-</li>
-<li><strong>float</strong>: São valores "quebrados", isto é, com casas decimais.<ul>
+<li><strong>float</strong>: São valores "quebrados", isto é, com casas decimais.</li>
 <li>Ex.: 3.14159265359</li>
-</ul>
-</li>
-<li><strong>bool</strong>(ean): São validações para perguntas fechadas, podendo ser "Verdadeiro" ou "Falso".<ul>
+<li><strong>bool</strong>(ean): São validações para perguntas fechadas, podendo ser "Verdadeiro" ou "Falso".</li>
 <li>Ex.: True, False.</li>
-</ul>
-</li>
 </ul>
 <h2 id="como-converter">Como converter?</h2>
 <ul>
-<li>
-<p>String para Integer:</p>
-<ul>
+<li>String para Integer:</li>
 <li>Vale destacar que isso só é permitido através de números no formato string para integer.</li>
-<li>Ex.:<pre><code>idade = int("12")
-</code></pre>
-</li>
-</ul>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code>    idade = int(&quot;12&quot;)
+</code></pre></div>
 </li>
 <li>
 <p>Integer para String:</p>
-<ul>
-<li>Ex.:<pre><code>cm = str(25)
-</code></pre>
 </li>
-</ul>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code>    cm = str(25)
+</code></pre></div>
 </li>
 <li>
 <p>Integer para Boolean</p>
-<ul>
+</li>
 <li>Vale destacar que essa conversão só irá funcionar efetivamente com os números <strong>0</strong> e <strong>1</strong>.<ul>
 <li>0: Não</li>
 <li>1: Sim</li>
 </ul>
 </li>
 <li><strong>Obs.:</strong> Caso deseje usar números maiores que 1, o resultado sempre será <strong>"True"</strong>.</li>
-<li>Ex.:<pre><code>variavel = bool(1)
-# ou
-variavel = bool(0)
-</code></pre>
-</li>
-</ul>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code>    variavel = bool(1)
+    # ou
+    variavel = bool(0)
+</code></pre></div>
 </li>
 <li>
 <p>Integer para Float</p>
-<ul>
-<li>Ex.:
-<pre class="highlight"><code class="language-python">volume = float(25)</code></pre></li>
-</ul>
+</li>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">volume</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Float para Integer</p>
-<ul>
-<li>Ex.:
-<pre class="highlight"><code class="language-python">pi = int(3.14)</code></pre></li>
-</ul>
+</li>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Float para String</p>
-<ul>
-<li>Ex.:
-<pre class="highlight"><code class="language-python">peso = str(78.6)</code></pre></li>
-</ul>
+</li>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">peso</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mf">78.6</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>String para Float</p>
-<ul>
-<li>Ex.:
-<pre class="highlight"><code class="language-python">altura = "1.82"
-altura = float(altura)
-# ou
-altura = "1,82"
-altura = altura.replace(',', '.')
-altura = float(altura)</code></pre></li>
-</ul>
+</li>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">altura</span> <span class="o">=</span> <span class="s2">&quot;1.82&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">altura</span> <span class="o">=</span> <span class="s2">&quot;1,82&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">altura</span> <span class="o">=</span> <span class="n">altura</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>String para Boolean</p>
-<ul>
+</li>
 <li>Essa conversão sempre irá validar se existe algum valor à ser convertido, logo, sempre será "True" se não estiver vazio.</li>
-<li>Ex.:
-    <pre class="highlight"><code class="language-python">teste = bool("valor")
+<li>Ex.:<div class="highlight"><pre><span></span><code>```python
+teste = bool(&quot;valor&quot;)
 # ou
-teste = bool()</code></pre></li>
-</ul>
+teste = bool()
+```
+</code></pre></div>
 </li>
 </ul>
               

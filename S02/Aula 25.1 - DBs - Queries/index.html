@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -167,7 +167,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
           <li>Aula 25 - Bancos de Dados &raquo;</li>
       <li>Queries</li>
@@ -181,21 +181,26 @@
               
                 <h1 id="bases-de-dados-queries">Bases de Dados - Queries</h1>
 <h2 id="query-para-criacao-de-tabela">Query para criação de tabela</h2>
-<pre class="highlight"><code class="language-sql">CREATE TABLE TB_NomeDesejado</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">TB_NomeDesejado</span><span class="w"></span>
+</code></pre></div>
 <h2 id="query-para-inserir-registros">Query para inserir registro(s)</h2>
-<pre class="highlight"><code class="language-sql">INSERT INTO TB_NomeTabela (coluna1, coluna2, coluna3)
-VALUES (valor1, valor2, valor3)</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">TB_NomeTabela</span><span class="w"> </span><span class="p">(</span><span class="n">coluna1</span><span class="p">,</span><span class="w"> </span><span class="n">coluna2</span><span class="p">,</span><span class="w"> </span><span class="n">coluna3</span><span class="p">)</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valor1</span><span class="p">,</span><span class="w"> </span><span class="n">valor2</span><span class="p">,</span><span class="w"> </span><span class="n">valor3</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
 <h2 id="query-para-deletar-registros">Query para deletar registro(s)</h2>
-<pre class="highlight"><code class="language-sql">DELETE FROM TB_NomeTabela
-WHERE coluna = valor</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TB_NomeTabela</span><span class="w"></span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">coluna</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valor</span><span class="w"></span>
+</code></pre></div>
 <h2 id="query-para-atualizar-registros">Query para atualizar registro(s)</h2>
-<pre class="highlight"><code class="language-sql">UPDATE TB_NomeTabela
-SET coluna = valorY
-WHERE coluna = valorX</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">TB_NomeTabela</span><span class="w"></span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">coluna</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valorY</span><span class="w"></span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">coluna</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valorX</span><span class="w"></span>
+</code></pre></div>
 <h2 id="query-para-efetuar-consultas">Query para efetuar consulta(s)</h2>
-<pre class="highlight"><code class="language-sql">SELECT *
-FROM TB_NomeTabela
--- Onde * representa todas as colunas</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">TB_NomeTabela</span><span class="w"></span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">-- Onde * representa todas as colunas</span>
+</code></pre></div>
               
             </div>
           </div><footer>

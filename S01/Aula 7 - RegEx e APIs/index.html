@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -139,9 +139,19 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 7 - RegEx e APIs</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#testar-regex">Testar RegEx:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#testar-regex">Testar RegEx</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#re">re:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#re">re</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#apis">APIs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#apis-para-brincar">APIs para "Brincar"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aprender-regex">Aprender RegEx</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#apis">APIs:</a>
     </li>
@@ -171,7 +181,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 1 &raquo;</li>
       <li>Aula 7 - RegEx e APIs</li>
     <li class="wy-breadcrumbs-aside">
@@ -183,230 +193,251 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-7-regex-e-apis">Aula 7 - RegEx e APIs</h1>
-<h2 id="testar-regex">Testar RegEx:</h2>
+<h2 id="testar-regex">Testar RegEx</h2>
 <ul>
 <li><a href="https://pythex.org/">https://pythex.org/</a></li>
 <li><a href="https://regex101.com/">https://regex101.com/</a></li>
 <li><a href="https://www.regexpal.com/">https://www.regexpal.com/</a></li>
 <li><a href="https://regexr.com/">https://regexr.com/</a></li>
 </ul>
-<h2 id="re">re:</h2>
+<h2 id="re">re</h2>
 <ul>
 <li>
 <p>Importar biblioteca:</p>
-<pre class="highlight"><code class="language-python">import re</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar padrão do RegEx à ser procurado:</p>
-<pre class="highlight"><code class="language-python">tel_regex = re.compile(r'\(\d\d\) \d\d\d\d\d\-\d\d\d\d')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">tel_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\(\d\d\) \d\d\d\d\d\-\d\d\d\d&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Buscar correspondência na string inteira:</p>
-<pre class="highlight"><code class="language-python">coleta = tel_regex.search('Meu número é (41) 99123-4567')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">tel_regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Meu número é (41) 99123-4567&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Coletar a única combinação completa:</p>
-<pre class="highlight"><code class="language-python">print(coleta.group(0))
-# output: (41) 99123-4567</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># output: (41) 99123-4567</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fazer grupos com parênteses:</p>
-<pre class="highlight"><code class="language-python">grupos_regex = re.compile(r'(\d{2}) (\d{4,5})\-(\d{4})')
-coleta = grupos_regex.search('Meu número é 41 99123-4567')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">grupos_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">) (\d{4,5})\-(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">grupos_regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Meu número é 41 99123-4567&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Coletar dados dos grupos encapsulados pelo parênteses:</p>
-<pre class="highlight"><code class="language-python"># Usando index
-print(f'Este é o grupo 0: {coleta.group(0)}')
-# output: 41 99123-4567
-
-print(f'Este é o grupo 1: {coleta.group(1)}')
-# output: 41
-
-print(f'Este é o grupo 2: {coleta.group(2)}')
-# output: 99123
-
-print(f'Este é o grupo 3: {coleta.group(3)}')
-# output: 4567
-
-# Tupla com os valores dos grupos
-coleta.groups()
-# output: ('41', '99123', '4567')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Usando index</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Este é o grupo 0: </span><span class="si">{</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># output: 41 99123-4567</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Este é o grupo 1: </span><span class="si">{</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># output: 41</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Este é o grupo 2: </span><span class="si">{</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># output: 99123</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Este é o grupo 3: </span><span class="si">{</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># output: 4567</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># Tupla com os valores dos grupos</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">coleta</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="c1"># output: (&#39;41&#39;, &#39;99123&#39;, &#39;4567&#39;)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Selecionar uma palavra ou outra:</p>
-<pre class="highlight"><code class="language-python">regex_ou = re.compile('Wilber|Thomas')
-
-coleta = regex_ou.search('Olá, meu nome é Wilber')
-
-print(coleta.group())
-# output: Wilber
-
-coleta = regex_ou.search('Olá, meu nome é Thomas')
-
-print(coleta.group())
-# output: Thomas</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">regex_ou</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Wilber|Thomas&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_ou</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Olá, meu nome é Wilber&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># output: Wilber</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_ou</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Olá, meu nome é Thomas&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># output: Thomas</span>
+</code></pre></div>
 </li>
 <li>
 <p>Selecionar parcialmente uma palavra ou outra:</p>
-<pre class="highlight"><code class="language-python">regex_ou = re.compile('Wil(ber|mar)')
-
-coleta = regex_ou.search('Olá, meu nome é Wilber')
-
-print(coleta.group())
-# output: Wilber
-
-coleta = regex_ou.search('Olá, meu nome é Wilmar')
-
-print(coleta.group())
-# output: Wilmar</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">regex_ou</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Wil(ber|mar)&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_ou</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Olá, meu nome é Wilber&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># output: Wilber</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_ou</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Olá, meu nome é Wilmar&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># output: Wilmar</span>
+</code></pre></div>
 </li>
 <li>
 <p>Elemento opcional no meio de uma palavra/frase (existe ou não existe):</p>
-<pre class="highlight"><code class="language-python">regex_bat = re.compile(r'Bat(wo)?man')
-
-coleta = regex_bat.search('As aventuras de Batman')
-
-print(coleta.group())
-# output: Batman
-
-coleta = regex_bat.search('As aventuras da Batwoman')
-
-print(coleta.group())
-# output: Batwoman</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">regex_bat</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)?man&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_bat</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;As aventuras de Batman&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># output: Batman</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_bat</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;As aventuras da Batwoman&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># output: Batwoman</span>
+</code></pre></div>
 </li>
 <li>
 <p>Repetição indefinida (0 ou 1 até o infinito):</p>
-<pre class="highlight"><code class="language-python"># 0 até o infinito
-regex_risada = re.compile(r'(HA)*')
-
-# 1 até o infinito
-regex_risada = re.compile(r'(HA)+')
-
-coleta = regex_risada.search('HAHAHAHAHA! Está foi uma excelente piada!')
-
-print(coleta.group())
-# output: HAHAHAHAHA</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 0 até o infinito</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">regex_risada</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(HA)*&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># 1 até o infinito</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">regex_risada</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(HA)+&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_risada</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;HAHAHAHAHA! Está foi uma excelente piada!&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># output: HAHAHAHAHA</span>
+</code></pre></div>
 </li>
 <li>
 <p>Localizar mais de uma correspondência (resultado em lista):</p>
-<pre class="highlight"><code class="language-python">tel_regex = re.compile(r'\(\d{2}\) \d{4,5}\-\d{4}')
-
-coleta = tel_regex.findall('Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')
-
-print(coleta)
-# output: ['(41) 99123-4567', '(41) 3123-4567']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">tel_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\(\d</span><span class="si">{2}</span><span class="s1">\) \d{4,5}\-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">tel_regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="p">)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># output: [&#39;(41) 99123-4567&#39;, &#39;(41) 3123-4567&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Correspondência no início da frase/texto:</p>
-<pre class="highlight"><code class="language-python">regex_inicio = re.compile(r'^Sabia')
-
-coleta = regex_inicio.search('Sabia que o significado da vida, do universo e tudo mais é 42?')
-
-print(coleta.group())
-# output: Sabia</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">regex_inicio</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^Sabia&#39;</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_inicio</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Sabia que o significado da vida, do universo e tudo mais é 42?&#39;</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># output: Sabia</span>
+</code></pre></div>
 </li>
 <li>
 <p>Correspondência no final da frase/texto:</p>
-<pre class="highlight"><code class="language-python">regex_inicio = re.compile(r'\d{2}$')
-
-coleta = regex_inicio.search('O significado da vida, do universo e tudo mais é 42')
-
-print(coleta.group())
-# output: 42</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">regex_inicio</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_inicio</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;O significado da vida, do universo e tudo mais é 42&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># output: 42</span>
+</code></pre></div>
 </li>
 <li>
 <p>Caractere coringa:</p>
-<pre class="highlight"><code class="language-python">regex_coringa = re.compile(r'.at')
-
-coleta = regex_coringa.findall('The cat with the hat hit a bat')
-
-print(coleta)
-# output: ['cat', 'hat', 'bat']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">regex_coringa</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.at&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_coringa</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;The cat with the hat hit a bat&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="p">)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1"># output: [&#39;cat&#39;, &#39;hat&#39;, &#39;bat&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Correspondência sem saber a palavra, mas tendo uma frase padrão:</p>
-<pre class="highlight"><code class="language-python">regex_tudo = re.compile(r'Primeiro nome: (.*) Segundo Nome: (.*)')
-
-coleta = regex_tudo.search('Primeiro nome: Harry Segundo Nome: Potter')
-
-print(coleta.group(1))
-# output: Harry
-
-print(coleta.group(2))
-# output: Potter</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">regex_tudo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Primeiro nome: (.*) Segundo Nome: (.*)&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_tudo</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Primeiro nome: Harry Segundo Nome: Potter&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1"># output: Harry</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1"># output: Potter</span>
+</code></pre></div>
 </li>
 <li>
 <p>Remover Case Sensitive (diferença entre maiúsculas e minúsculas) do RegEx:</p>
-<pre class="highlight"><code class="language-python">regex_cases = re.compile(r'metallica', re.IGNORECASE)
-
-coleta = regex_cases.search('METALLICA é uma banda de muito sucesso!')
-
-print(coleta.group())
-# output: METALLICA</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">regex_cases</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;metallica&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_cases</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;METALLICA é uma banda de muito sucesso!&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1"># output: METALLICA</span>
+</code></pre></div>
 </li>
 <li>
 <p>Substituir valores:</p>
-<pre class="highlight"><code class="language-python">regex_sub = re.compile(r'\d')
-
-coleta = regex_sub.sub('*', 'Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')
-
-print(coleta)
-# output: Meu número residencial é (**) *****-**** e meu número de celular é (**) ****-****</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">regex_sub</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d&#39;</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_sub</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567&#39;</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="p">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># output: Meu número residencial é (**) *****-**** e meu número de celular é (**) ****-****</span>
+</code></pre></div>
 </li>
 <li>
 <p>Separar uma frase através de um padrão:</p>
-<pre class="highlight"><code class="language-python">regex_separador = re.compile(r'\s')
-
-coleta = regex_separador.split('METALLICA é uma banda de muito sucesso!')
-
-print(coleta)
-# output: ['METALLICA', 'é', 'uma', 'banda', 'de', 'muito', 'sucesso!']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">regex_separador</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s&#39;</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">coleta</span> <span class="o">=</span> <span class="n">regex_separador</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;METALLICA é uma banda de muito sucesso!&#39;</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">coleta</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1"># output: [&#39;METALLICA&#39;, &#39;é&#39;, &#39;uma&#39;, &#39;banda&#39;, &#39;de&#39;, &#39;muito&#39;, &#39;sucesso!&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Padrões prontos:</p>
-<ul>
+</li>
 <li>
 <p>Buscar por CPF:</p>
-<pre class="highlight"><code class="language-python">regex_cpf = re.compile(r'\d{3}\.?\d{3}\.?\d{3}\-?\d{2}')
+<div class="highlight"><pre><span></span><code>```python
+regex_cpf = re.compile(r&#39;\d{3}\.?\d{3}\.?\d{3}\-?\d{2}&#39;)
 
-coleta = regex_cpf.findall('O seu CPF é 470.485.110-95 e o meu é 11745629009')
+coleta = regex_cpf.findall(&#39;O seu CPF é 470.485.110-95 e o meu é 11745629009&#39;)
 
 print(coleta)
-# output: ['470.485.110-95', '11745629009']</code></pre>
+# output: [&#39;470.485.110-95&#39;, &#39;11745629009&#39;]
+```
+</code></pre></div>
 </li>
 <li>
 <p>Busca por telefone:</p>
-<pre class="highlight"><code class="language-python">regex_tel = re.compile(r'\(?\d{2}\)?\s?\d{4,5}\-?\d{4}')
+<div class="highlight"><pre><span></span><code>```python
+regex_tel = re.compile(r&#39;\(?\d{2}\)?\s?\d{4,5}\-?\d{4}&#39;)
 
-coleta = regex_tel.findall("O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.")
+coleta = regex_tel.findall(&quot;O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.&quot;)
 
 print(coleta)
-# output: ['(41) 3123-4567', '41 99123-4567', '4131234567']</code></pre>
+# output: [&#39;(41) 3123-4567&#39;, &#39;41 99123-4567&#39;, &#39;4131234567&#39;]
+```
+</code></pre></div>
 </li>
 <li>
 <p>Busca por Email:</p>
-<pre class="highlight"><code class="language-python">regex_email = re.compile(r'(?:\w+\.)*\w*\@\w*(?:\.\w+)+')
+<div class="highlight"><pre><span></span><code>```python
+regex_email = re.compile(r&#39;(?:\w+\.)*\w*\@\w*(?:\.\w+)+&#39;)
 
-coleta = regex_email.findall('O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.')
+coleta = regex_email.findall(&#39;O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.&#39;)
 
 print(coleta)
-# output: ['tiara.hessel9@yahoo.com', 'shaun_nitzsche96@hotmail.com', 'alphonso19@outlook.com.br']</code></pre>
+# output: [&#39;tiara.hessel9@yahoo.com&#39;, &#39;shaun_nitzsche96@hotmail.com&#39;, &#39;alphonso19@outlook.com.br&#39;]
+```
+</code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="apis">APIs:</h2>
+<h2 id="apis">APIs</h2>
 <ul>
-<li><strong>REST:</strong><ul>
+<li><strong>REST:</strong></li>
 <li>Postman: <a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></li>
 <li>Insomnia: <a href="https://insomnia.rest/download">https://insomnia.rest/download</a></li>
-</ul>
-</li>
-<li><strong>SOAP:</strong><ul>
+<li><strong>SOAP:</strong></li>
 <li>SoapUI: <a href="https://www.soapui.org/downloads/soapui/">https://www.soapui.org/downloads/soapui/</a></li>
-</ul>
-</li>
 </ul>
 <p><strong>Bibliotecas:</strong></p>
 <ul>
@@ -415,34 +446,38 @@ print(coleta)
 </ul>
 <p><strong>Funcionalidades:</strong></p>
 <ul>
-<li>
-<p><strong>GET</strong></p>
-<ul>
+<li><strong>GET</strong></li>
 <li>
 <p>API de teste:</p>
-<pre class="highlight"><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code>```python
+import requests
 
-url = "https://reqres.in/api/users?page=2"
+url = &quot;https://reqres.in/api/users?page=2&quot;
 
 response = requests.get(url)
 
 r_json = response.json()
 
-print(r_json['data'][0]['email'])
-# output: michael.lawson@reqres.in</code></pre>
+print(r_json[&#39;data&#39;][0][&#39;email&#39;])
+# output: michael.lawson@reqres.in
+```
+</code></pre></div>
 </li>
 <li>
 <p>API de Universidades no Brasil:</p>
-<pre class="highlight"><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code>```python
+import requests
 
-url = "http://universities.hipolabs.com/search?country=brazil"
+url = &quot;http://universities.hipolabs.com/search?country=brazil&quot;
 
 response = requests.get(url)
 
 r_json = response.json()
 
-print(r_json[15]['name'])
-# output: Universidade Regional de Blumenau</code></pre>
+print(r_json[15][&#39;name&#39;])
+# output: Universidade Regional de Blumenau
+```
+</code></pre></div>
 </li>
 <li>
 <p>Exemplos GET:</p>
@@ -451,55 +486,52 @@ print(r_json[15]['name'])
 <li><a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></li>
 <li><a href="https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao">https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao</a></li>
 <li><a href="https://agify.io/">https://agify.io/</a></li>
-<li>https://github.com/Hipo/university-domains-list</li>
+<li><a href="https://github.com/Hipo/university-domains-list">https://github.com/Hipo/university-domains-list</a></li>
 </ul>
 </li>
 <li><strong>POST:</strong></li>
 <li>
 <p>Cadastrar usuário de teste:</p>
-<pre class="highlight"><code class="language-python">import requests
+<div class="highlight"><pre><span></span><code>```python
+import requests
 import json
 
-url = "https://reqres.in/api/users"
+url = &quot;https://reqres.in/api/users&quot;
 
 payload = json.dumps({
-  "name": "Harry Potter",
-  "job": "Desenvolvedor RPA"
+  &quot;name&quot;: &quot;Harry Potter&quot;,
+  &quot;job&quot;: &quot;Desenvolvedor RPA&quot;
 })
 headers = {
-  'Content-Type': 'application/json'
+  &#39;Content-Type&#39;: &#39;application/json&#39;
 }
 
 response = requests.post(url, headers=headers, data=payload)
 
 r_json = response.json()
 
-print(r_json['job'])
-# output: Desenvolvedor RPA</code></pre>
-</li>
-</ul>
+print(r_json[&#39;job&#39;])
+# output: Desenvolvedor RPA
+```
+</code></pre></div>
 </li>
 <li>
 <p>PUT:</p>
-<ul>
-<li>Serve para atualizar algum dado em base através de API.</li>
-</ul>
 </li>
-<li>DELETE:<ul>
+<li>Serve para atualizar algum dado em base através de API.</li>
+<li>DELETE:</li>
 <li>Serve para apagar algum dado em base através de API.</li>
 </ul>
-</li>
-</ul>
-<h2 id="extras">Extras:</h2>
-<h3 id="apis-para-brincar">APIs para "Brincar":</h3>
+<h2 id="extras">Extras</h2>
+<h3 id="apis-para-brincar">APIs para "Brincar"</h3>
 <ul>
 <li><a href="https://apipheny.io/free-api/">https://apipheny.io/free-api/</a></li>
-<li>https://github.com/public-apis/public-apis</li>
+<li><a href="https://github.com/public-apis/public-apis">https://github.com/public-apis/public-apis</a></li>
 <li><a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></li>
 <li><a href="https://reqres.in/">https://reqres.in/</a></li>
 <li><a href="https://gorest.co.in/">https://gorest.co.in/</a></li>
 </ul>
-<h3 id="aprender-regex">Aprender RegEx:</h3>
+<h3 id="aprender-regex">Aprender RegEx</h3>
 <ul>
 <li><a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></li>
 <li><a href="https://www.w3schools.com/python/python_regex.asp">https://www.w3schools.com/python/python_regex.asp</a></li>

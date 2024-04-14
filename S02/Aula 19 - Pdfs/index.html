@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -165,7 +165,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
       <li>Aula 19 - Pdfs</li>
     <li class="wy-breadcrumbs-aside">
@@ -183,83 +183,96 @@
 <h2 id="biblioteca-pdfminer">Biblioteca PDFminer</h2>
 <ul>
 <li>
-<p>Instalação da biblioteca
-    <pre class="highlight"><code class="language-bash">pip install pdfminer.six</code></pre></p>
+<p>Instalação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install pdfminer.six
+</code></pre></div>
 </li>
 <li>
-<p>Importação da biblioteca
-    <pre class="highlight"><code class="language-python">from pdfminer.high_level import extract_text</code></pre></p>
+<p>Importação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">pdfminer.high_level</span> <span class="kn">import</span> <span class="n">extract_text</span>
+</code></pre></div>
 </li>
 <li>
-<p>Abertura e extração do texto
-    <pre class="highlight"><code class="language-python">texto = extract_text('boleto.pdf')
-print(texto)
-# output: 
-#   Boleto de Pagamento
-#   Referente à: Produto Exemplo 1
-#   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20
-#   E-mail: contato@seuemail.com
-#   ...</code></pre></p>
+<p>Abertura e extração do texto</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="n">extract_text</span><span class="p">(</span><span class="s1">&#39;boleto.pdf&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># output: </span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#   Boleto de Pagamento</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">#   Referente à: Produto Exemplo 1</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">#   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">#   E-mail: contato@seuemail.com</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1">#   ...</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="biblioteca-pdfplumber">Biblioteca pdfplumber</h2>
 <ul>
 <li>
-<p>Instalação da biblioteca
-    <pre class="highlight"><code class="language-bash">pip install pdfplumber</code></pre></p>
+<p>Instalação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install pdfplumber
+</code></pre></div>
 </li>
 <li>
-<p>Importação da biblioteca
-    <pre class="highlight"><code class="language-python">import pdfplumber</code></pre></p>
+<p>Importação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">pdfplumber</span>
+</code></pre></div>
 </li>
 <li>
-<p>Abertura do arquivo
-    <pre class="highlight"><code class="language-python">pdf = pdfplumber.open('boleto.pdf')</code></pre></p>
+<p>Abertura do arquivo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">pdf</span> <span class="o">=</span> <span class="n">pdfplumber</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;boleto.pdf&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Seleção da página do documento à ser lida  <br />
-    <pre class="highlight"><code class="language-python">page = pdf.pages[0]</code></pre></p>
+<p>Seleção da página do documento à ser lida</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">page</span> <span class="o">=</span> <span class="n">pdf</span><span class="o">.</span><span class="n">pages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Extração do texto
-    <pre class="highlight"><code class="language-python">texto = page.extract_text()
-print(texto)
-# output: 
-#   Boleto de Pagamento
-#   Referente à: Produto Exemplo 1
-#   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20
-#   E-mail: contato@seuemail.com
-#   ...</code></pre></p>
+<p>Extração do texto</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">extract_text</span><span class="p">()</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># output: </span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#   Boleto de Pagamento</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1">#   Referente à: Produto Exemplo 1</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">#   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">#   E-mail: contato@seuemail.com</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1">#   ...</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="biblioteca-pymupdf">Biblioteca PyMuPDF</h2>
 <ul>
 <li>
-<p>Instalação da biblioteca
-    <pre class="highlight"><code class="language-bash">pip install PyMuPDF</code></pre></p>
+<p>Instalação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pip install PyMuPDF
+</code></pre></div>
 </li>
 <li>
-<p>Importação da biblioteca
-    <pre class="highlight"><code class="language-python">import fitz</code></pre></p>
+<p>Importação da biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">fitz</span>
+</code></pre></div>
 </li>
 <li>
-<p>Abertura do arquivo
-    <pre class="highlight"><code class="language-python">pdf = fitz.open('boleto.pdf')</code></pre></p>
+<p>Abertura do arquivo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">pdf</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;boleto.pdf&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Seleção da página do documento à ser lida
-    <pre class="highlight"><code class="language-python">page = doc.load_page(0)</code></pre></p>
+<p>Seleção da página do documento à ser lida</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">page</span> <span class="o">=</span> <span class="n">pdf</span><span class="o">.</span><span class="n">load_page</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Extração do texto
-    <pre class="highlight"><code class="language-python">texto = page.get_text()
-print(texto)
-# output: 
-#   Boleto de Pagamento
-#   Referente à: Produto Exemplo 1
-#   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20
-#   E-mail: contato@seuemail.com
-#   ...</code></pre></p>
+<p>Extração do texto</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># output: </span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">#   Boleto de Pagamento</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1">#   Referente à: Produto Exemplo 1</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">#   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1">#   E-mail: contato@seuemail.com</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1">#   ...</span>
+</code></pre></div>
 </li>
 </ul>
               

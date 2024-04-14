@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -161,7 +161,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
           <li>Aula 25 - Bancos de Dados &raquo;</li>
       <li>Python</li>
@@ -180,64 +180,77 @@
 <ul>
 <li>
 <p>Importar a biblioteca</p>
-<pre class="highlight"><code class="language-python">import sqlite3</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+</code></pre></div>
 </li>
 <li>
 <p>Abrir conexão com um banco de dados</p>
-<pre class="highlight"><code class="language-python">con = sqlite3.connect('example.db')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechado conexão com um banco de dados</p>
-<pre class="highlight"><code class="language-python">con.close()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Abrir cursor em um banco de dados</p>
 <p>O cursor em um banco de dados é o que permite a interatividade entre a linguagem de programação e banco de dados. Permitindo assim, consultas, inserções, exclusões e atualizações nos registros.</p>
-<pre class="highlight"><code class="language-python">cur = con.cursor()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechar cursor em um banco de dados</p>
-<pre class="highlight"><code class="language-python">cur.close()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criando uma tabela no banco de dados</p>
-<pre class="highlight"><code class="language-python">cur.execute('CREATE TABLE "TB_Cliente"( "CPF" INTEGER NOT NULL UNIQUE, "Nome_Completo" TEXT NOT NULL, "Data_Nascimento" TEXT NOT NULL, "Telefone" TEXT, "Email" TEXT, "CEP" TEXT NOT NULL, PRIMARY KEY("CPF"));')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;CREATE TABLE &quot;TB_Cliente&quot;( &quot;CPF&quot; INTEGER NOT NULL UNIQUE, &quot;Nome_Completo&quot; TEXT NOT NULL, &quot;Data_Nascimento&quot; TEXT NOT NULL, &quot;Telefone&quot; TEXT, &quot;Email&quot; TEXT, &quot;CEP&quot; TEXT NOT NULL, PRIMARY KEY(&quot;CPF&quot;));&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Inserindo um registro no banco de dados</p>
-<p><pre class="highlight"><code class="language-python">cur.execute("INSERT INTO TB_Cliente VALUES (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355')"))
-
-con.commit()</code></pre>
-- Inserindo vários registros no banco de dados</p>
-<pre class="highlight"><code class="language-python">lista_registros = [(88190475789, 'José Hugo Manuel Porto', '11/07/1997', '41989320821', 'jjosehugomanuelporto@patriciagrillo.adv.br', '83309270'), (39962955106, 'Marina Carolina dos Santos', '26/09/1995', '81984235792', 'marinacarolinadossantos_@lukin4.com.br', '53350130'), (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355'), (76938977550, 'Yasmin Evelyn Maria Costa', '20/04/1959', '91998657654', 'yasminevelynmariacosta-88@yahoo.com.ar', '66810020'), (25373027375, 'Fernando Giovanni Bernardes', '02/03/1964', '81989889726', 'fernandogiovannibernardes-92@soulcomunicacao.com.br', '51180440'), (85775491947, 'Clarice Vitória Teixeira', '24/02/1958', '82996438794', 'claricevitoriateixeira-97@india.com', '57052605'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (90123303354, 'Carolina Cláudia Pietra da Rocha', '14/04/1952', '63992520221', 'carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br', '77017297'), (96558670801, 'Levi Theo Matheus Ramos', '04/04/1961', '22988505045', 'levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br', '28024123'), (57218723306, 'Davi Márcio Rafael Nogueira', '25/07/1997', '69991521228', 'davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br', '76964042')]
-
-cur.executemany("INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)", lista_registros)
-
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO TB_Cliente VALUES (20955758572, &#39;Laura Luana Assis&#39;, &#39;13/06/1948&#39;, &#39;68991361938&#39;, &#39;lauraluanaassis-91@naressi.com.br&#39;, &#39;69911355&#39;)&quot;</span><span class="p">))</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>Inserindo vários registros no banco de dados</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">lista_registros</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">88190475789</span><span class="p">,</span> <span class="s1">&#39;José Hugo Manuel Porto&#39;</span><span class="p">,</span> <span class="s1">&#39;11/07/1997&#39;</span><span class="p">,</span> <span class="s1">&#39;41989320821&#39;</span><span class="p">,</span> <span class="s1">&#39;jjosehugomanuelporto@patriciagrillo.adv.br&#39;</span><span class="p">,</span> <span class="s1">&#39;83309270&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">39962955106</span><span class="p">,</span> <span class="s1">&#39;Marina Carolina dos Santos&#39;</span><span class="p">,</span> <span class="s1">&#39;26/09/1995&#39;</span><span class="p">,</span> <span class="s1">&#39;81984235792&#39;</span><span class="p">,</span> <span class="s1">&#39;marinacarolinadossantos_@lukin4.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;53350130&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">20955758572</span><span class="p">,</span> <span class="s1">&#39;Laura Luana Assis&#39;</span><span class="p">,</span> <span class="s1">&#39;13/06/1948&#39;</span><span class="p">,</span> <span class="s1">&#39;68991361938&#39;</span><span class="p">,</span> <span class="s1">&#39;lauraluanaassis-91@naressi.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;69911355&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">76938977550</span><span class="p">,</span> <span class="s1">&#39;Yasmin Evelyn Maria Costa&#39;</span><span class="p">,</span> <span class="s1">&#39;20/04/1959&#39;</span><span class="p">,</span> <span class="s1">&#39;91998657654&#39;</span><span class="p">,</span> <span class="s1">&#39;yasminevelynmariacosta-88@yahoo.com.ar&#39;</span><span class="p">,</span> <span class="s1">&#39;66810020&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">25373027375</span><span class="p">,</span> <span class="s1">&#39;Fernando Giovanni Bernardes&#39;</span><span class="p">,</span> <span class="s1">&#39;02/03/1964&#39;</span><span class="p">,</span> <span class="s1">&#39;81989889726&#39;</span><span class="p">,</span> <span class="s1">&#39;fernandogiovannibernardes-92@soulcomunicacao.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;51180440&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">85775491947</span><span class="p">,</span> <span class="s1">&#39;Clarice Vitória Teixeira&#39;</span><span class="p">,</span> <span class="s1">&#39;24/02/1958&#39;</span><span class="p">,</span> <span class="s1">&#39;82996438794&#39;</span><span class="p">,</span> <span class="s1">&#39;claricevitoriateixeira-97@india.com&#39;</span><span class="p">,</span> <span class="s1">&#39;57052605&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4847726278</span><span class="p">,</span> <span class="s1">&#39;Kamilly Clara Caldeira&#39;</span><span class="p">,</span> <span class="s1">&#39;21/04/1982&#39;</span><span class="p">,</span> <span class="s1">&#39;27998331799&#39;</span><span class="p">,</span> <span class="s1">&#39;kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;29194248&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">90123303354</span><span class="p">,</span> <span class="s1">&#39;Carolina Cláudia Pietra da Rocha&#39;</span><span class="p">,</span> <span class="s1">&#39;14/04/1952&#39;</span><span class="p">,</span> <span class="s1">&#39;63992520221&#39;</span><span class="p">,</span> <span class="s1">&#39;carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;77017297&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">96558670801</span><span class="p">,</span> <span class="s1">&#39;Levi Theo Matheus Ramos&#39;</span><span class="p">,</span> <span class="s1">&#39;04/04/1961&#39;</span><span class="p">,</span> <span class="s1">&#39;22988505045&#39;</span><span class="p">,</span> <span class="s1">&#39;levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;28024123&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">57218723306</span><span class="p">,</span> <span class="s1">&#39;Davi Márcio Rafael Nogueira&#39;</span><span class="p">,</span> <span class="s1">&#39;25/07/1997&#39;</span><span class="p">,</span> <span class="s1">&#39;69991521228&#39;</span><span class="p">,</span> <span class="s1">&#39;davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br&#39;</span><span class="p">,</span> <span class="s1">&#39;76964042&#39;</span><span class="p">)]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">cur</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s2">&quot;INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)&quot;</span><span class="p">,</span> <span class="n">lista_registros</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Apagar registro no banco de dados</p>
-<pre class="highlight"><code class="language-python">cur.execute("DELETE FROM TB_Cliente WHERE CPF = (?)",(88190475789,))
-
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;DELETE FROM TB_Cliente WHERE CPF = (?)&quot;</span><span class="p">,(</span><span class="mi">88190475789</span><span class="p">,))</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Atualizar registro no banco de dados</p>
-<pre class="highlight"><code class="language-python">cur.execute("UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = (?)", (39962955106,))
-
-con.commit()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = (?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">39962955106</span><span class="p">,))</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Efetuar consulta no banco de dados</p>
-<pre class="highlight"><code class="language-python">cur.execute("SELECT * FROM TB_Cliente")
-
-# Para receber UM registro localizado
-cur.fetchone()
-# output: (116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130')
-
-# Para receber TODOS os registros localizados
-cur.fetchall()
-# output: [(116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (7287125803, 'Eduarda Emily Almada', '20/04/1941', '32985692709', 'eduardaemilyalmada_@peopleside.com.br', '36200142')]</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM TB_Cliente&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Para receber UM registro localizado</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># output: (116415509, &#39;Analu Julia da Paz&#39;, &#39;05/04/1974&#39;, &#39;79982386771&#39;, &#39;aanalujuliadapaz@alwan.com.br&#39;, &#39;49026130&#39;)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Para receber TODOS os registros localizados</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># output: [(116415509, &#39;Analu Julia da Paz&#39;, &#39;05/04/1974&#39;, &#39;79982386771&#39;, &#39;aanalujuliadapaz@alwan.com.br&#39;, &#39;49026130&#39;), (4847726278, &#39;Kamilly Clara Caldeira&#39;, &#39;21/04/1982&#39;, &#39;27998331799&#39;, &#39;kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br&#39;, &#39;29194248&#39;), (7287125803, &#39;Eduarda Emily Almada&#39;, &#39;20/04/1941&#39;, &#39;32985692709&#39;, &#39;eduardaemilyalmada_@peopleside.com.br&#39;, &#39;36200142&#39;)]</span>
+</code></pre></div>
 </li>
 </ul>
               

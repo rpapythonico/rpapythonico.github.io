@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -165,7 +165,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
       <li>Aula 13 - Constants</li>
     <li class="wy-breadcrumbs-aside">
@@ -178,13 +178,14 @@
               
                 <h1 id="constants">Constants</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>Constantes são variaveis que percorrem todo o codigo tendo o mesmo valor. </p>
+<p>Constantes são variaveis que percorrem todo o codigo tendo o mesmo valor.</p>
 <p>Para isso,  basta criar um arquivo, digitar os valores desejados e em seguida realizar a importação dessas informações dentro do(s) código(s) desejado(s).</p>
 <h2 id="nomenclatura">Nomenclatura</h2>
 <p>A regra para essas variáveis é de SCREAMING_SNAKE_CASE (todas as letras maiúsculas).</p>
-<p>Ex:.
-<pre class="highlight"><code class="language-python">LOGIN_USER = "username"
-LOGIN_PASS = "password"</code></pre></p>
+<p>Ex:.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">LOGIN_USER</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">LOGIN_PASS</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
+</code></pre></div>
 <h2 id="exemplo-criacao-do-arquivo">Exemplo - Criação do arquivo</h2>
 <ol>
 <li>Gera um arquivo com extensão ".py";<ul>
@@ -192,28 +193,33 @@ LOGIN_PASS = "password"</code></pre></p>
 </ul>
 </li>
 <li>Instancia as variáveis utilizando letras maiúsculas e atribui os devidos valores.<ul>
-<li>Ex.:
-    <pre class="highlight"><code class="language-python">LOGIN_USER = "RPA_PYTHONICO"
-LOGIN_PASS = "SENHA@123"</code></pre></li>
+<li>
+<p>Ex.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">LOGIN_USER</span> <span class="o">=</span> <span class="s2">&quot;RPA_PYTHONICO&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">LOGIN_PASS</span> <span class="o">=</span> <span class="s2">&quot;SENHA@123&quot;</span>
+</code></pre></div>
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="exemplo-importacao-do-arquivo">Exemplo - Importação do arquivo</h2>
 <ol>
 <li>
-<p>Após criado o arquivo, basta importar o mesmo dentro de qualquer código em python;
-    <pre class="highlight"><code class="language-python">import sys
-# Comando responsavel por adiconar um caminho dentro do codigo.
-# Assim o python consegue identificar o arquivo e importar o mesmo.
-sys.path.append(r'CAMINHO ONDE ESTA LOCALIZADA NOSSA CONSTANTS')
-import constants as const</code></pre></p>
+<p>Após criado o arquivo, basta importar o mesmo dentro de qualquer código em python;</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Comando responsavel por adiconar um caminho dentro do codigo.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Assim o python consegue identificar o arquivo e importar o mesmo.</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;CAMINHO ONDE ESTA LOCALIZADA NOSSA CONSTANTS&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span> <span class="nn">constants</span> <span class="k">as</span> <span class="nn">const</span>
+</code></pre></div>
 </li>
 <li>
-<p>Com as variáveis importadas, basta usá-las.
-    <pre class="highlight"><code class="language-python">print(const.LOGIN_USER)
-# output: "RPA_PYTHONICO"
-print(const.LOGIN_PASS)
-# output: "SENHA@123"</code></pre></p>
+<p>Com as variáveis importadas, basta usá-las.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">LOGIN_USER</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># output: &quot;RPA_PYTHONICO&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">LOGIN_PASS</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># output: &quot;SENHA@123&quot;</span>
+</code></pre></div>
 </li>
 </ol>
               

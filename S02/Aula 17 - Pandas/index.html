@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -169,7 +169,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
       <li>Aula 17 - Pandas</li>
     <li class="wy-breadcrumbs-aside">
@@ -195,76 +195,90 @@
 <ul>
 <li>
 <p>Instalando a biblioteca</p>
-<pre class="highlight"><code class="language-bash">pip install pandas</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install pandas
+</code></pre></div>
 </li>
 <li>
-<p>Importando a biblioteca
-    <pre class="highlight"><code class="language-python">import pandas as pd</code></pre></p>
+<p>Importando a biblioteca</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</code></pre></div>
 </li>
 <li>
-<p>Lendo um arquivo Excel
-    <pre class="highlight"><code class="language-python">df = pd.read_excel("tabela_clientes.xlsx")</code></pre></p>
+<p>Lendo um arquivo Excel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;tabela_clientes.xlsx&quot;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Resumo das dimensões do DataFrame
-    <pre class="highlight"><code class="language-python">df.shape</code></pre></p>
+<p>Resumo das dimensões do DataFrame</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div>
 </li>
 <li>
-<p>Ver nome das colunas
-    <pre class="highlight"><code class="language-python">df.columns</code></pre></p>
+<p>Ver nome das colunas</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div>
 </li>
 <li>
 <p>Ver os primeiros resultados
-Como padrão a quantidades de linhas à ser trazido são cinco, porém esse valor pode ser alterado se preenchido os parênteses de acordo com o desejado.
-    <pre class="highlight"><code class="language-python">df.head()
-
-# ou
-
-df.head(20)</code></pre></p>
+Como padrão a quantidades de linhas à ser trazido são cinco, porém esse valor pode ser alterado se preenchido os parênteses de acordo com o desejado.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Ver os últimos resultados
-    <pre class="highlight"><code class="language-python">df.tail()</code></pre></p>
+<p>Ver os últimos resultados</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Selecionar uma coluna específica - pelo nome
 O segundo método apresentado no exemplo somente é permitido de usar em nomes de colunas sem espaço entre palavras.</p>
-<pre class="highlight"><code class="language-python">df["Nome_Completo"]
-
-# ou
-
-df.Nome_Completo</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Nome_Completo&quot;</span><span class="p">]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">df</span><span class="o">.</span><span class="n">Nome_Completo</span>
+</code></pre></div>
 </li>
 <li>
-<p>Selecionar o primeiro valor de uma coluna específica
-    <pre class="highlight"><code class="language-python">df["Nome_Completo"].values[0]</code></pre></p>
+<p>Selecionar o primeiro valor de uma coluna específica</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Nome_Completo&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Selecionar uma linha através do index
-    <pre class="highlight"><code class="language-python">df.iloc[0]</code></pre></p>
+<p>Selecionar uma linha através do index</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Selecionar uma linha e uma coluna através do index
-    <pre class="highlight"><code class="language-python">df.iloc[0,0]</code></pre></p>
+<p>Selecionar uma linha e uma coluna através do index</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Criando um DataFrame
-    <pre class="highlight"><code class="language-python">data = {
-    "Nome": ["Harry", "Hermione", "Rony", "Luna", "Neville"],
-    "Herbologia": [8,5,6,9,7],
-    "Alquimia": [7,9,5,4,7],
-    "Adivinhacao": [7,4,7,6,8]
-}
-
-df_hp = pd.DataFrame(data)</code></pre></p>
+<p>Criando um DataFrame</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="s2">&quot;Nome&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Harry&quot;</span><span class="p">,</span> <span class="s2">&quot;Hermione&quot;</span><span class="p">,</span> <span class="s2">&quot;Rony&quot;</span><span class="p">,</span> <span class="s2">&quot;Luna&quot;</span><span class="p">,</span> <span class="s2">&quot;Neville&quot;</span><span class="p">],</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="s2">&quot;Herbologia&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="s2">&quot;Alquimia&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="s2">&quot;Adivinhacao&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">df_hp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Estatísticas descritivas das colunas - media, desvio padrão, mínimo, máximo, etc ...
-    <pre class="highlight"><code class="language-python">df.describe()</code></pre></p>
+<p>Estatísticas descritivas das colunas - media, desvio padrão, mínimo, máximo, etc ...</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
-<p>Extraindo o DataFrame em um arquivo Excel
-    <pre class="highlight"><code class="language-python">df_hp.to_excel("Boletins_Alunos.xlsx", index=False)</code></pre></p>
+<p>Extraindo o DataFrame em um arquivo Excel</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">df_hp</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;Boletins_Alunos.xlsx&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
               

@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -62,9 +62,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#cortando-uma-string">Cortando uma String</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#localizar-uma-letra-ou-palavra">Localizar uma letra ou palavra:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#localizar-uma-letra-ou-palavra">Localizar uma letra ou palavra</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#checar-se-uma-palavra-existe-ou-nao-existe">Checar se uma palavra existe ou não existe:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#checar-se-uma-palavra-existe-ou-nao-existe">Checar se uma palavra existe ou não existe</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#deixar-um-texto-com-letras-maiusculas-ou-minusculas">Deixar um texto com letras maiúsculas ou minúsculas</a>
     </li>
@@ -76,9 +76,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#preenchimento-com-zeros">Preenchimento com zeros</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#limpas-espacos-indevidos-no-comeco-e-no-final-de-uma-palavratexto">Limpas espaços indevidos no começo e no final de uma palavra/texto:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#limpas-espacos-indevidos-no-comeco-e-no-final-de-uma-palavratexto">Limpas espaços indevidos no começo e no final de uma palavra/texto</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#trocar-ou-eliminar-alguma-palavra-ou-frase">Trocar ou eliminar alguma palavra ou frase:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#trocar-ou-eliminar-alguma-palavra-ou-frase">Trocar ou eliminar alguma palavra ou frase</a>
     </li>
     </ul>
                 </li>
@@ -179,7 +179,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
           <li>Aula 3 - Variáveis &raquo;</li>
       <li>Manipulação de Strings</li>
@@ -194,156 +194,196 @@
                 <h1 id="manipulacao-de-strings">Manipulação de Strings</h1>
 <h2 id="strings-vazias">Strings Vazias</h2>
 <p>Tem como objetivo esvaziar uma variável criada anteriormente ou servir como validação para caso não seja localizado nenhuma correspondência durante uma coleta de dados em <strong>strings</strong>.</p>
-<pre class="highlight"><code class="language-python">variavel_vazia = ""
-# ou
-variavel_vazia = None</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">variavel_vazia</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">variavel_vazia</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
 <h2 id="cortando-uma-string">Cortando uma String</h2>
 <ol>
-<li>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></pre></li>
 <li>
-<p>Cortar o texto selecionando do começo ao caractere "X":
-    <pre class="highlight"><code class="language-python">paragrafo[:50]
-# output: 'Lorem Ipsum is simply dummy text of the printing a'</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Cortar o texto selecionando do caractere "X" até o final:
-    <pre class="highlight"><code class="language-python">paragrafo[30:]
-# output: 'xt of the printing and typesetting industry.'</code></pre></p>
+<p>Cortar o texto selecionando do começo ao caractere "X":</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">paragrafo</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># output: &#39;Lorem Ipsum is simply dummy text of the printing a&#39;</span>
+</code></pre></div>
 </li>
-<li>Cortar o texto selecionando do caractere "X" até o "Y":
-    <pre class="highlight"><code class="language-python">paragrafo[30:50]
-# output: 'xt of the printing a'</code></pre></li>
+<li>
+<p>Cortar o texto selecionando do caractere "X" até o final:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">paragrafo</span><span class="p">[</span><span class="mi">30</span><span class="p">:]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># output: &#39;xt of the printing and typesetting industry.&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Cortar o texto selecionando do caractere "X" até o "Y":</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">paragrafo</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">50</span><span class="p">]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># output: &#39;xt of the printing a&#39;</span>
+</code></pre></div>
+</li>
 </ol>
-<h2 id="localizar-uma-letra-ou-palavra">Localizar uma letra ou palavra:</h2>
+<h2 id="localizar-uma-letra-ou-palavra">Localizar uma letra ou palavra</h2>
 <ol>
-<li>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></pre></li>
-<li>Buscar a letra ou palavra desejada:
-    <pre class="highlight"><code class="language-python">paragrafo.find('t')
-# output: 28
-paragrafo.find('printing')
-# output: 40</code></pre></li>
+<li>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Buscar a letra ou palavra desejada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># output: 28</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;printing&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># output: 40</span>
+</code></pre></div>
+</li>
 </ol>
-<h2 id="checar-se-uma-palavra-existe-ou-nao-existe">Checar se uma palavra existe ou não existe:</h2>
+<h2 id="checar-se-uma-palavra-existe-ou-nao-existe">Checar se uma palavra existe ou não existe</h2>
 <ol>
-<li>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></pre></li>
-<li>Buscar a letra ou palavra desejada:
-    <pre class="highlight"><code class="language-python">"Lorem Ipsum" in paragrafo
-# output: True
-"Python" not in paragrafo
-# output: True</code></pre></li>
+<li>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Buscar a letra ou palavra desejada:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="s2">&quot;Lorem Ipsum&quot;</span> <span class="ow">in</span> <span class="n">paragrafo</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># output: True</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="s2">&quot;Python&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paragrafo</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># output: True</span>
+</code></pre></div>
+</li>
 </ol>
 <h2 id="deixar-um-texto-com-letras-maiusculas-ou-minusculas">Deixar um texto com letras maiúsculas ou minúsculas</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Deixando letras <strong>maiúsculas</strong>:
-    <pre class="highlight"><code class="language-python">paragrafo.upper()
-# output: 'LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.'</code></pre></p>
+<p>Deixando letras <strong>maiúsculas</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># output: &#39;LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.&#39;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Deixando letras <strong>minúsculas</strong>:
-    <pre class="highlight"><code class="language-python">paragrafo.lower()
-# output: 'lorem ipsum is simply dummy text of the printing and typesetting industry.'</code></pre></p>
+<p>Deixando letras <strong>minúsculas</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># output: &#39;lorem ipsum is simply dummy text of the printing and typesetting industry.&#39;</span>
+</code></pre></div>
 </li>
 </ol>
 <h2 id="deixando-o-texto-em-formato-de-paragrafo-ou-titulo">Deixando o texto em formato de parágrafo ou título</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Deixando em formato de título:
-    <pre class="highlight"><code class="language-python">paragrafo.title()
-# output: 'Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.'</code></pre></p>
+<p>Deixando em formato de título:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># output: &#39;Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.&#39;</span>
+</code></pre></div>
 </li>
-<li>Deixando em formato de parágrafo:
-    <pre class="highlight"><code class="language-python">paragrafo.capitalize()
-# output: 'Lorem ipsum is simply dummy text of the printing and typesetting industry.'</code></pre></li>
+<li>
+<p>Deixando em formato de parágrafo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1"># output: &#39;Lorem ipsum is simply dummy text of the printing and typesetting industry.&#39;</span>
+</code></pre></div>
+</li>
 </ol>
 <h2 id="checagem-de-palavra-no-comeco-ou-no-final">Checagem de palavra no começo ou no final</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Validar uma palavra no começo:
-    <pre class="highlight"><code class="language-python">paragrafo.startswith("Lorem")
-# output: True
-
-paragrafo.startswith("Python")
-# output: False</code></pre></p>
+<p>Validar uma palavra no começo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Lorem&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># output: True</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># output: False</span>
+</code></pre></div>
 </li>
 <li>
-<p>Validar uma palavra no começo:
-    <pre class="highlight"><code class="language-python">paragrafo.endswith(".")
-# output: True
-
-paragrafo.endswith("ipsum")
-# output: False</code></pre></p>
+<p>Validar uma palavra no começo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># output: True</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;ipsum&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># output: False</span>
+</code></pre></div>
 </li>
 </ol>
 <h2 id="texto-para-lista-e-vice-e-versa">Texto para lista e vice e versa</h2>
 <ul>
 <li>
-<p>Separar uma string em list através de um delimitador:
-    <pre class="highlight"><code class="language-python">paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-
-paragrafo.split(" ")
-# output: ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry.']</code></pre></p>
+<p>Separar uma string em list através de um delimitador:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="s2">&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">paragrafo</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># output: [&#39;Lorem&#39;, &#39;Ipsum&#39;, &#39;is&#39;, &#39;simply&#39;, &#39;dummy&#39;, &#39;text&#39;, &#39;of&#39;, &#39;the&#39;, &#39;printing&#39;, &#39;and&#39;, &#39;typesetting&#39;, &#39;industry.&#39;]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Juntar uma list em string através de um delimitador:
-    <pre class="highlight"><code class="language-python">paragrafo = ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry.']
-
-";".join(paragrafo)
-# output: 'Lorem;Ipsum;is;simply;dummy;text;of;the;printing;and;typesetting;industry.'</code></pre></p>
+<p>Juntar uma list em string através de um delimitador:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">paragrafo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Lorem&#39;</span><span class="p">,</span> <span class="s1">&#39;Ipsum&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;simply&#39;</span><span class="p">,</span> <span class="s1">&#39;dummy&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;printing&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;typesetting&#39;</span><span class="p">,</span> <span class="s1">&#39;industry.&#39;</span><span class="p">]</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="s2">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paragrafo</span><span class="p">)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># output: &#39;Lorem;Ipsum;is;simply;dummy;text;of;the;printing;and;typesetting;industry.&#39;</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="preenchimento-com-zeros">Preenchimento com zeros</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">cpf_sem_mascara = "123456789"</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">cpf_sem_mascara</span> <span class="o">=</span> <span class="s2">&quot;123456789&quot;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Completar com zeros até chegar no limite de caracteres</p>
 <ul>
-<li>Esse limite é inserido durante a chamada da função.
-<pre class="highlight"><code class="language-python">cpf_sem_mascara.zfill(11)
-# output: '00123456789'</code></pre></li>
+<li>Esse limite é inserido durante a chamada da função.</li>
 </ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">cpf_sem_mascara</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1"># output: &#39;00123456789&#39;</span>
+</code></pre></div>
 </li>
 </ol>
-<h2 id="limpas-espacos-indevidos-no-comeco-e-no-final-de-uma-palavratexto">Limpas espaços indevidos no começo e no final de uma palavra/texto:</h2>
+<h2 id="limpas-espacos-indevidos-no-comeco-e-no-final-de-uma-palavratexto">Limpas espaços indevidos no começo e no final de uma palavra/texto</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">texto = "         O Real é a moeda corrente oficial da República Federativa do Brasil.         "</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;         O Real é a moeda corrente oficial da República Federativa do Brasil.         &quot;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Limpar espaços extras no começo e no final:
-    <pre class="highlight"><code class="language-python">texto.strip()
-# output: 'O Real (ISO 4217: BRL, abreviado como R$[4]) é a moeda corrente oficial da República Federativa do Brasil.'</code></pre></p>
+<p>Limpar espaços extras no começo e no final:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">texto</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1"># output: &#39;O Real (ISO 4217: BRL, abreviado como R$[4]) é a moeda corrente oficial da República Federativa do Brasil.&#39;</span>
+</code></pre></div>
 </li>
 </ol>
-<h2 id="trocar-ou-eliminar-alguma-palavra-ou-frase">Trocar ou eliminar alguma palavra ou frase:</h2>
+<h2 id="trocar-ou-eliminar-alguma-palavra-ou-frase">Trocar ou eliminar alguma palavra ou frase</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <pre class="highlight"><code class="language-python">texto = "O Real é a moeda corrente oficial da República Federativa do Brasil."</code></pre></p>
+<p>Gerar uma variável com o texto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;O Real é a moeda corrente oficial da República Federativa do Brasil.&quot;</span>
+</code></pre></div>
 </li>
 <li>
-<p>Substituir o(s) valor(es) desejado(s):
-    <pre class="highlight"><code class="language-python">texto.replace('Real', 'DÓLAR NÃO')
-# output: 'O DÓLAR NÃO é a moeda corrente oficial da República Federativa do Brasil.'</code></pre></p>
+<p>Substituir o(s) valor(es) desejado(s):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">texto</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Real&#39;</span><span class="p">,</span> <span class="s1">&#39;DÓLAR NÃO&#39;</span><span class="p">)</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1"># output: &#39;O DÓLAR NÃO é a moeda corrente oficial da República Federativa do Brasil.&#39;</span>
+</code></pre></div>
 </li>
 </ol>
               

@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -161,7 +161,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
       <li>Aula 18 - CSV</li>
     <li class="wy-breadcrumbs-aside">
@@ -174,37 +174,70 @@
               
                 <h1 id="csv">CSV</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>Assim como os formatos xlsx e xls, também é possível ler arquivos gerados por programas ou sites que possuem os valores separadas por delimitadores. </p>
-<h2 id="csv_1">CSV</h2>
+<p>Assim como os formatos xlsx e xls, também é possível ler arquivos gerados por programas ou sites que possuem os valores separadas por delimitadores (.csv).
+Para isso, basta utilizar a biblioteca CSV que já vem embarcada do Python.</p>
+<h2 id="comandos">Comandos</h2>
 <ul>
 <li>
 <p>Utilizando a biblioteca CSV, é possível ler e escrever arquivos  no formato ".csv".</p>
+</li>
+<li>
+<p>Importação</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">csv</span>
+</code></pre></div>
+</li>
+<li>
+<p>Abertura do arquivo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">arqv_csv</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tabela_clientes.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Leitura do arquivo - <strong>LISTA</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">lista_clientes</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">arqv_csv</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
-<li>
-<p><strong>Importação</strong>:
-    <pre class="highlight"><code class="language-python">import csv</code></pre></p>
-</li>
-<li>
-<p><strong>Exemplo de leitura de um arquivo csv</strong>:
-    <pre class="highlight"><code class="language-python">import csv
-# Abertura do arquivo csv.
-csv_file = open('tabela_clientes.csv')
-# Leitura dos dados
-## Importante informar o delimiter corretamente, pois ele que é responsavel pela quebra das informações
-arquivo = csv.reader(csvfile, delimiter=',')
-# Dentro da variavel arquivo ficou armazenado uma lista de tuplas contendo todos os dados do csv
-for linha in arquivo:
-    # Com o for percorremos por todas as tuplas da lista, e conseguimos categorizar todos os elementos
-    cpf = linha[0]
-    nome = linha[1]
-    data_nascimento = linha[2]
-    telefone = linha[3]
-    email = linha[4]
-    cep = linha[5]
-print(cpf, nome, data_nascimento, telefone, email, cep)
-# output: '99070950600' 'Jorge Bernardo Teixeira' '22/07/1948' '82981039094' 'jjorgebernardoteixeira@unimedrio.com.br' '57010364'</code></pre></p>
-</li>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
 </ul>
+</li>
+<li>
+<p>Leitura do arquivo – <strong>DICIONÁRIO</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">lista_clientes</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">arqv_csv</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
+</li>
+<li>
+<p>Escrita do arquivo - <strong>LISTA</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">lista_pessoas</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;Itajaí&#39;</span><span class="p">,</span> <span class="s1">&#39;SC&#39;</span><span class="p">,</span> <span class="s1">&#39;27&#39;</span><span class="p">,</span> <span class="s1">&#39;Veterinária&#39;</span><span class="p">],</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>                  <span class="p">[</span><span class="s1">&#39;Rubens&#39;</span><span class="p">,</span> <span class="s1">&#39;São Paulo&#39;</span><span class="p">,</span> <span class="s1">&#39;SP&#39;</span><span class="p">,</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span> <span class="s1">&#39;Mecânico&#39;</span><span class="p">],</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                  <span class="p">[</span><span class="s1">&#39;Fabiana&#39;</span><span class="p">,</span> <span class="s1">&#39;Pinhais&#39;</span><span class="p">,</span> <span class="s1">&#39;PR&#39;</span><span class="p">,</span> <span class="s1">&#39;70&#39;</span><span class="p">,</span> <span class="s1">&#39;Cozinheira&#39;</span><span class="p">]]</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">arqv_csv</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">escritor</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">lista_pessoas</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Precisa ter o modo de abertura como "a" ou "w"</strong></li>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
+</li>
+<li>
+<p>Escrita do arquivo - <strong>DICIONÁRIO</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">dicionario_pessoas</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="s1">&#39;Cidade&#39;</span><span class="p">:</span> <span class="s1">&#39;Itajaí&#39;</span><span class="p">,</span> <span class="s1">&#39;Estado&#39;</span><span class="p">:</span> <span class="s1">&#39;SC&#39;</span><span class="p">,</span> <span class="s1">&#39;Idade&#39;</span><span class="p">:</span> <span class="s1">&#39;27&#39;</span><span class="p">,</span> <span class="s1">&#39;Profissão&#39;</span><span class="p">:</span> <span class="s1">&#39;Veterinária&#39;</span><span class="p">},</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                  <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Rubens&#39;</span><span class="p">,</span> <span class="s1">&#39;Cidade&#39;</span><span class="p">:</span> <span class="s1">&#39;São Paulo&#39;</span><span class="p">,</span> <span class="s1">&#39;Estado&#39;</span><span class="p">:</span> <span class="s1">&#39;SP&#39;</span><span class="p">,</span> <span class="s1">&#39;Idade&#39;</span><span class="p">:</span> <span class="s1">&#39;43&#39;</span><span class="p">,</span> <span class="s1">&#39;Profissão&#39;</span><span class="p">:</span> <span class="s1">&#39;Mecânico&#39;</span><span class="p">},</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                  <span class="p">{</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Fabiana&#39;</span><span class="p">,</span> <span class="s1">&#39;Cidade&#39;</span><span class="p">:</span> <span class="s1">&#39;Pinhais&#39;</span><span class="p">,</span> <span class="s1">&#39;Estado&#39;</span><span class="p">:</span> <span class="s1">&#39;PR&#39;</span><span class="p">,</span> <span class="s1">&#39;Idade&#39;</span><span class="p">:</span> <span class="s1">&#39;70&#39;</span><span class="p">,</span> <span class="s1">&#39;Profissão&#39;</span><span class="p">:</span> <span class="s1">&#39;Cozinheira&#39;</span><span class="p">}]</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">campos</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Cidade&#39;</span><span class="p">,</span> <span class="s1">&#39;Estado&#39;</span><span class="p">,</span> <span class="s1">&#39;Idade&#39;</span><span class="p">,</span> <span class="s1">&#39;Profissão&#39;</span><span class="p">]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">arqv_csv</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">campos</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">escritor</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">dicionario_pessoas</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Precisa ter o modo de abertura como "a" ou "w"</strong></li>
+<li><strong>"delimiter" é o caractere que divide os valores</strong></li>
+</ul>
+</li>
+<li>
+<p>Fecha o arquivo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">arqv_csv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
               

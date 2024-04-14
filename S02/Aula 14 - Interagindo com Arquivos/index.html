@@ -8,7 +8,7 @@
     <title>Aula 14 - Aula 14 - Interagindo com Arquivos - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2014%20-%20Interagindo%20com%20Arquivos/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -160,9 +161,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 14 - Aula 14 - Interagindo com Arquivos</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 14 - Aula 14 - Interagindo com Arquivos</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -173,66 +174,63 @@
               
                 <h1 id="interagindo-com-arquivos">Interagindo com Arquivos</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>Outra funcionalidade para manipulação de arquivos é o comando Open. Essa função é nativa de dentro do python, ou seja, não há necessidade de importação. </p>
+<p>Outra funcionalidade para manipulação de arquivos é o comando Open. Essa função é nativa de dentro do python, ou seja, não há necessidade de importação.</p>
 <p>Basicamente sua função é abrir (praticamente qualquer) arquivo e conseguir trabalhar com os mesmos.</p>
 <h2 id="funcionalidades">Funcionalidades</h2>
 <ul>
-<li>
-<p>Abre o arquivo - sintaxe básica
-    <code>python
-    open("nome_do_arquivo.ext", "modo de execução")</code></p>
+<li>Abre o arquivo - sintaxe básica:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nome_do_arquivo.ext&quot;</span><span class="p">,</span> <span class="s2">&quot;modo de execução&quot;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>
 <p>Modos de execução:</p>
 <ul>
 <li>
-<p>Leitura (.txt, .json, .csv, etc...):
-<code>python
-arquivo = open("exemplo.txt", "r")
-conteudo = arquivo.read()</code></p>
+<p>Leitura (.txt, .json, .csv, etc...):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemplo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
-<p>Escrita (.txt):
-<code>python
-arquivo = open("exemplo.txt", "w")
-arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></p>
+<p>Escrita (.txt):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemplo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;2022_04_23_10:00 - Usuario conectado com sucesso </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Acrescentar (.txt):
-<code>python
-arquivo = open("exemplo.txt", "a")
-arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></p>
+<p>Acrescentar (.txt):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;exemplo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;2022_04_23_10:00 - Usuario conectado com sucesso </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Leitura de arquivo em formato bytes (imagens, pdfs, etc...):
-```python
-arquivo = open("python-logo.png", "rb")
-conteudo = arquivo.read()</p>
+<p>Leitura de arquivo em formato bytes (imagens, pdfs, etc...):</p>
 </li>
 </ul>
-<h1 id="bx89pngrnx1anx00x00x00rihdrx00x00x01x00x00x00rx08x06x00">b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x01"\x00\x00\x00R\x08\x06\x00...'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;python-logo.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># b&#39;\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x01&quot;\x00\x00\x00R\x08\x06\x00...&#39;</span>
+</code></pre></div>
 <ul>
-<li>Escrita de arquivo em formato bytes (imagens, pdfs, etc...):
-<code>python
-arquivo = open("captcha.png", "wb")
-arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></li>
+<li>Escrita de arquivo em formato bytes (imagens, pdfs, etc...):</li>
 </ul>
-</li>
-</ul>'1'
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;captcha.png&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;2022_04_23_10:00 - Usuario conectado com sucesso </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Fecha arquivo
-    <code>python
-    arquivo.close()</code></p>
-</li>
-<li>
-<p>Leitura/Escrita do arquivo usando <strong>Gerenciador de Contexto</strong>
-    <code>python
-    with open(r'log_2022_04_23.txt', 'w') as arquivo:
-        arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso\n')</code></p>
+<p>Fecha arquivo</p>
 </li>
 </ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">arquivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<ul>
+<li>Leitura/Escrita do arquivo usando <strong>Gerenciador de Contexto</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;log_2022_04_23.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">arquivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;2022_04_23_10:00 - Usuario conectado com sucesso</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
               
             </div>
           </div><footer>
@@ -269,15 +267,14 @@ arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></li>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

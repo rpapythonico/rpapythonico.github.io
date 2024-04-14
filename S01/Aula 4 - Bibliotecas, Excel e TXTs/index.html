@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -135,7 +135,29 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 4 - Bibliotecas, Excel e TXTs</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas">Bibliotecas:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas">Bibliotecas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-arquivos">Manipulação de Arquivos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interacao-com-o-so">Interação com o SO:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bibliotecas-excel">Bibliotecas Excel:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#xlrd">xlrd</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#openpyxl">openpyxl</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pandas">pandas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#xlsxwriter">xlsxwriter</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#caracteres-especiais">Caracteres especiais:</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-arquivos">Manipulação de Arquivos:</a>
     </li>
@@ -181,7 +203,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 1 &raquo;</li>
       <li>Aula 4 - Bibliotecas, Excel e TXTs</li>
     <li class="wy-breadcrumbs-aside">
@@ -193,265 +215,318 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-4-bibliotecas-excel-e-txts">Aula 4 - Bibliotecas, Excel e TXTs</h1>
-<h2 id="bibliotecas">Bibliotecas:</h2>
+<h2 id="bibliotecas">Bibliotecas</h2>
 <ul>
 <li>Repositório das Bibliotecas: <a href="https://pypi.org/">https://pypi.org/</a></li>
 <li>
 <p>Comando para instalar bibliotecas externas:</p>
-<pre class="highlight"><code class="language-bash">pip install nome_da_biblioteca
-# Ex.: pip install openpyxl</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install nome_da_biblioteca
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Ex.: pip install openpyxl</span>
+</code></pre></div>
 </li>
 <li>
 <p>Comando para usar biblioteca no código</p>
-<pre class="highlight"><code class="language-python"># Importa a biblioteca com todas as funções dela
-import nome_da_biblioteca
-# import xlrd
-
-# Importa a biblioteca e permite criar um "apelido" pra ela
-import nome_da_biblioteca as ndb
-# Ex.: import pandas as pd
-
-# Importa uma função específica de dentro da biblioteca
-from nome_da_biblioteca import funcao
-# Ex.: from time import sleep</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Importa a biblioteca com todas as funções dela</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">nome_da_biblioteca</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># import xlrd</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Importa a biblioteca e permite criar um &quot;apelido&quot; pra ela</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kn">import</span> <span class="nn">nome_da_biblioteca</span> <span class="k">as</span> <span class="nn">ndb</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Ex.: import pandas as pd</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># Importa uma função específica de dentro da biblioteca</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="kn">from</span> <span class="nn">nome_da_biblioteca</span> <span class="kn">import</span> <span class="n">funcao</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Ex.: from time import sleep</span>
+</code></pre></div>
 </li>
 </ul>
-<h2 id="manipulacao-de-arquivos">Manipulação de Arquivos:</h2>
+<h2 id="manipulacao-de-arquivos">Manipulação de Arquivos</h2>
 <ul>
-<li>
-<p>Abrir o arquivo:</p>
-<ul>
+<li>Abrir o arquivo:</li>
 <li>
 <p>Para criar:</p>
-<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'w')</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+arqv = open(&#39;nome_do_arquivo.txt&#39;, &#39;w&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Para ler:</p>
-<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'r')</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+arqv = open(&#39;nome_do_arquivo.txt&#39;, &#39;r&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Para continuar um texto:</p>
-<pre class="highlight"><code class="language-python">arqv = open('nome_do_arquivo.txt', 'a')</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>```python
+arqv = open(&#39;nome_do_arquivo.txt&#39;, &#39;a&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Escrever dentro do .txt:</p>
-<pre class="highlight"><code class="language-python">arqv.write('texto do arquivo')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">arqv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;texto do arquivo&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechar o arquivo:</p>
-<pre class="highlight"><code class="language-python">arqv.close()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">arqv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="interacao-com-o-so"><strong>Interação com o SO:</strong></h2>
 <ul>
-<li>
-<p>os:</p>
-<ul>
+<li>os:</li>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import os</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+import os
+```
+</code></pre></div>
 </li>
 <li>
 <p>Renomear um arquivo:</p>
-<pre class="highlight"><code class="language-python">os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+os.rename(&#39;arquivo_teste.txt&#39;, &#39;arquivo_modificado.txt&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Remover um arquivo da pasta:</p>
-<pre class="highlight"><code class="language-python">os.remove('arquivo_modificado.txt')</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+os.remove(&#39;arquivo_modificado.txt&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Listar os arquivos presentes na pasta:</p>
-<pre class="highlight"><code class="language-python">os.listdir('.')</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+os.listdir(&#39;.&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Aponta a execução do Python para uma pasta em específico:</p>
-<pre class="highlight"><code class="language-python">os.chdir('')</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>```python
+os.chdir(&#39;&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>glob:</p>
-<ul>
+</li>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import glob</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+import glob
+```
+</code></pre></div>
 </li>
 <li>
 <p>Listar arquivos do diretório pela sua extensão:</p>
-<pre class="highlight"><code class="language-python">glob.glob(r'.\*.txt')</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>```python
+glob.glob(r&#39;.\*.txt&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>shutil:</p>
-<ul>
+</li>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import shutil</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+import shutil
+```
+</code></pre></div>
 </li>
 <li>
 <p>Movimentar um arquivo para outra pasta:</p>
-<pre class="highlight"><code class="language-python">shutil.move('arquivo_modificado.txt', r'.\pasta_move\arquivo_modificado.txt')</code></pre>
+<div class="highlight"><pre><span></span><code>```python
+shutil.move(&#39;arquivo_modificado.txt&#39;, r&#39;.\pasta_move\arquivo_modificado.txt&#39;)
+```
+</code></pre></div>
 </li>
 <li>
 <p>Copiar um arquivo para outra pasta:</p>
-<pre class="highlight"><code class="language-python">shutil.copy(r'.\pasta_move\arquivo_modificado.txt', r'.\arquivo_modificado_copy.txt')</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>```python
+shutil.copy(r&#39;.\pasta_move\arquivo_modificado.txt&#39;, r&#39;.\arquivo_modificado_copy.txt&#39;)
+```
+</code></pre></div>
 </li>
 </ul>
 <h2 id="bibliotecas-excel"><strong>Bibliotecas Excel:</strong></h2>
-<h3 id="xlrd">xlrd;</h3>
+<h3 id="xlrd">xlrd</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import xlrd</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">import</span> <span class="nn">xlrd</span>
+</code></pre></div>
 </li>
 <li>
 <p>Abre um arquivo Excel (XLS):</p>
-<pre class="highlight"><code class="language-python">wb = xlrd.open_workbook('banca_jornal.xls')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">wb</span> <span class="o">=</span> <span class="n">xlrd</span><span class="o">.</span><span class="n">open_workbook</span><span class="p">(</span><span class="s1">&#39;banca_jornal.xls&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Seleciona a aba do Excel:</p>
-<pre class="highlight"><code class="language-python">sheet = wb.sheet_by_name('Planilha1')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">sheet</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">sheet_by_name</span><span class="p">(</span><span class="s1">&#39;Planilha1&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Pega valores da primeira coluna:</p>
-<pre class="highlight"><code class="language-python">for cell in sheet.col(0):
-    cell</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">sheet</span><span class="o">.</span><span class="n">col</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a> <span class="n">cell</span>
+</code></pre></div>
 </li>
 </ul>
-<h3 id="openpyxl">openpyxl;</h3>
+<h3 id="openpyxl">openpyxl</h3>
 <ul>
 <li>
 <p>Importa a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import openpyxl</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">import</span> <span class="nn">openpyxl</span>
+</code></pre></div>
 </li>
 <li>
 <p>Abrir um arquivo Excel (XLS ou XLSX):</p>
-<pre class="highlight"><code class="language-python">wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">wb</span> <span class="o">=</span> <span class="n">openpyxl</span><span class="o">.</span><span class="n">load_workbook</span><span class="p">(</span><span class="s1">&#39;banca_jornal.xlsx&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Apresenta o nome de todas as abas do Excel aberto:</p>
-<pre class="highlight"><code class="language-python">wb.get_sheet_names()
-# output: ['Planilha1']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">wb</span><span class="o">.</span><span class="n">get_sheet_names</span><span class="p">()</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1"># output: [&#39;Planilha1&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Seleciona a aba do Excel:</p>
-<pre class="highlight"><code class="language-python">sheet = wb['Planilha1']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">sheet</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Planilha1&#39;</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Ler o valor da primeira célula (A1):</p>
-<pre class="highlight"><code class="language-python">sheet['A1'].value
-# output: Chiclete</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">sheet</span><span class="p">[</span><span class="s1">&#39;A1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1"># output: Chiclete</span>
+</code></pre></div>
 </li>
 <li>
 <p>Apresentar números de linhas:</p>
-<pre class="highlight"><code class="language-python">sheet.max_row
-# output: 6</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">sheet</span><span class="o">.</span><span class="n">max_row</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1"># output: 6</span>
+</code></pre></div>
 </li>
 <li>
 <p>Percorre uma coluna inteira do Excel:</p>
-<pre class="highlight"><code class="language-python"># Nesse código, ele não irá pegar o cabeçalho da tabela
-# Caso queira pegar o cabeçalho, basta trocar o número 2 pelo número 1
-for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1)
-
-# output:
-# Chiclete
-# Barra de Chocolate
-# Agua mineral
-# Jornal
-# Salgadinho</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Nesse código, ele não irá pegar o cabeçalho da tabela</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1"># Caso queira pegar o cabeçalho, basta trocar o número 2 pelo número 1</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sheet</span><span class="o">.</span><span class="n">max_row</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a> <span class="n">nome</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="c1"># output:</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="c1"># Chiclete</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1"># Barra de Chocolate</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="c1"># Agua mineral</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="c1"># Jornal</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="c1"># Salgadinho</span>
+</code></pre></div>
 </li>
 <li>
 <p>Pegar valores das três colunas, passando por todas as linhas:</p>
-<pre class="highlight"><code class="language-python">for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1).value
-    unidade = sheet.cell(linha, 2).value
-    valor = sheet.cell(linha, 3).value
-    print(f'O produto {nome*} teve* {unidade} unidades vendidas no valor unitário de R${valor}')
-
-# output:
-# O produto Chiclete foi teve 45 unidades vendidas no valor unitário de R$1
-# O produto Barra de Chocolate foi teve 23 unidades vendidas no valor unitário de R$4
-# O produto Agua mineral foi teve 66 unidades vendidas no valor unitário de R$2
-# O produto Jornal foi teve 4 unidades vendidas no valor unitário de R$0.5
-# O produto Salgadinho foi teve 16 unidades vendidas no valor unitário de R$2.5</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sheet</span><span class="o">.</span><span class="n">max_row</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a> <span class="n">nome</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a> <span class="n">unidade</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a> <span class="n">valor</span> <span class="o">=</span> <span class="n">sheet</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O produto </span><span class="si">{</span><span class="n">nome</span><span class="o">*</span><span class="si">}</span><span class="s1"> teve* </span><span class="si">{</span><span class="n">unidade</span><span class="si">}</span><span class="s1"> unidades vendidas no valor unitário de R$</span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># output:</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="c1"># O produto Chiclete foi teve 45 unidades vendidas no valor unitário de R$1</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="c1"># O produto Barra de Chocolate foi teve 23 unidades vendidas no valor unitário de R$4</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="c1"># O produto Agua mineral foi teve 66 unidades vendidas no valor unitário de R$2</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="c1"># O produto Jornal foi teve 4 unidades vendidas no valor unitário de R$0.5</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="c1"># O produto Salgadinho foi teve 16 unidades vendidas no valor unitário de R$2.5</span>
+</code></pre></div>
 </li>
 <li>
-<p>Fechar o arquivo Excel:</p>
-<ul>
-<li></li>
-</ul>
+<p>Fechar o arquivo Excel
+    -</p>
 </li>
 </ul>
-<h3 id="pandas">pandas:</h3>
+<h3 id="pandas">pandas</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import pandas as pd</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</code></pre></div>
 </li>
 <li>
 <p>Ler arquivo Excel:</p>
-<pre class="highlight"><code class="language-python">df = pd.read_excel('banca_jornal.xlsx')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;banca_jornal.xlsx&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Selecionar uma coluna:</p>
-<pre class="highlight"><code class="language-python">df['Produto']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Produto&#39;</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Apresenta as abas disponíveis do Excel:</p>
-<pre class="highlight"><code class="language-python">pd.ExcelFile.sheet_names</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">pd</span><span class="o">.</span><span class="n">ExcelFile</span><span class="o">.</span><span class="n">sheet_names</span>
+</code></pre></div>
 </li>
 </ul>
-<h3 id="xlsxwriter">xlsxwriter:</h3>
+<h3 id="xlsxwriter">xlsxwriter</h3>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import xlsxwriter</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kn">import</span> <span class="nn">xlsxwriter</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar arquivo Excel:</p>
-<pre class="highlight"><code class="language-python">wb = xlsxwriter.Woorkbook('alunos.xlsx')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">wb</span> <span class="o">=</span> <span class="n">xlsxwriter</span><span class="o">.</span><span class="n">Woorkbook</span><span class="p">(</span><span class="s1">&#39;alunos.xlsx&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Criar aba no arquivo Excel:</p>
-<pre class="highlight"><code class="language-python">ws = wb.add_worksheet('Planilha')</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">add_worksheet</span><span class="p">(</span><span class="s1">&#39;Planilha&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Colocar palavras em Negrito:</p>
-<pre class="highlight"><code class="language-python">bold = wb.add_format({'bold':1})</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">bold</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">&#39;bold&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+</code></pre></div>
 </li>
 <li>
 <p>Escreve cabeçalho em negrito no Excel:</p>
-<pre class="highlight"><code class="language-python">ws.write('A1', 'Nome', bold)
-ws.write('B1', 'Idade', bold)
-ws.write('C1', 'Cidade', bold)</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;Idade&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="n">ws</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;Cidade&#39;</span><span class="p">,</span> <span class="n">bold</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Cria valores para serem adicionados em formato de tabela:</p>
-<pre class="highlight"><code class="language-python">alunos = [('Thomas', '24', 'Curitiba'), ('Fernanda', '12', 'Sao Paulo'), ('Augusto', '56', 'Rio de Janeiro'), ('Marcela', '22', 'Maringa')]</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">alunos</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span> <span class="s1">&#39;24&#39;</span><span class="p">,</span> <span class="s1">&#39;Curitiba&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Fernanda&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;Sao Paulo&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Augusto&#39;</span><span class="p">,</span> <span class="s1">&#39;56&#39;</span><span class="p">,</span> <span class="s1">&#39;Rio de Janeiro&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Marcela&#39;</span><span class="p">,</span> <span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;Maringa&#39;</span><span class="p">)]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Looping para escrever valores em formato de tabela:</p>
-<pre class="highlight"><code class="language-python">row = 1
-col = 0
-
-for aluno in alunos:
-    ws.write_string(row, col, aluno[0])
-    ws.write_string(row, col+1, aluno[1])
-    ws.write_string(row, col+2, aluno[2])
-    row += 1</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">row</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="k">for</span> <span class="n">aluno</span> <span class="ow">in</span> <span class="n">alunos</span><span class="p">:</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a> <span class="n">ws</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">aluno</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a> <span class="n">ws</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">aluno</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a> <span class="n">ws</span><span class="o">.</span><span class="n">write_string</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">aluno</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a> <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechar e salvar o arquivo Excel:</p>
-<pre class="highlight"><code class="language-python">wb.close()</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">wb</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
-<h2 id="extras">Extras:</h2>
+<h2 id="extras">Extras</h2>
 <h3 id="caracteres-especiais"><strong>Caracteres especiais:</strong></h3>
 <p><img alt="escape_caracter.png" src="../../img/escape_caracter.png" /></p>
 <ul>

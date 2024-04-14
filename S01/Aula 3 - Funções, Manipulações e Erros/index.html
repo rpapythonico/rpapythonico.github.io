@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -133,9 +133,15 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 3 - Funções, Manipulações e Erros</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#funcoes">Funções:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#funcoes">Funções</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-string">Manipulação de String:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-string">Manipulação de String</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#excecoeserros">Exceções/Erros</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#datetime">datetime</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#excecoeserros">Exceções/Erros:</a>
     </li>
@@ -167,7 +173,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 1 &raquo;</li>
       <li>Aula 3 - Funções, Manipulações e Erros</li>
     <li class="wy-breadcrumbs-aside">
@@ -179,285 +185,299 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-3-funcoes-manipulacoes-e-erros">Aula 3 - Funções, Manipulações e Erros</h1>
-<h2 id="funcoes">Funções:</h2>
+<h2 id="funcoes">Funções</h2>
 <ul>
-<li>def():<ul>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">def soma(num1, num2):
-    return num1 + num2</code></pre>
+<li>def():</li>
+<li>Ex.:<div class="highlight"><pre><span></span><code>````python
+def soma(num1, num2):
+ return num1 + num2
+```
+</code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="manipulacao-de-string">Manipulação de String:</h2>
+<h2 id="manipulacao-de-string">Manipulação de String</h2>
 <ul>
-<li>
-<p>Indexação e slicing [:]:</p>
-<ul>
+<li>Indexação e slicing [:]:</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Python é a melhor linguagem do mundo'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Python é a melhor linguagem do mundo&#39;
 
 frase[:6]
-# output: 'Python'
+# output: &#39;Python&#39;
 
 frase[31:]
-# output: 'mundo'
+# output: &#39;mundo&#39;
 
 frase[:]
-# output: 'Python é a melhor linguagem do mundo'</code></pre>
-</li>
-</ul>
+# output: &#39;Python é a melhor linguagem do mundo&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>.find():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase.find('mundo')
-# output: 31</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>```python
+frase.find(&#39;mundo&#39;)
+# output: 31
+```
+</code></pre></div>
 </li>
 <li>
 <p>None e vazio:</p>
-<ul>
+</li>
 <li>Apaga o valor de dentro de uma variável.</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = None</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code>```python
+frase = None
+```
+</code></pre></div>
 </li>
 <li>
 <p>in e not in</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Python é a melhor linguagem do mundo'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Python é a melhor linguagem do mundo&#39;
 
-'Python' in frase
+&#39;Python&#39; in frase
 # output: True
 
-'Python' not in frase
-# output: False</code></pre>
-</li>
-</ul>
+&#39;Python&#39; not in frase
+# output: False
+```
+</code></pre></div>
 </li>
 <li>
 <p>upper() e isupper()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Python é a melhor linguagem do mundo'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Python é a melhor linguagem do mundo&#39;
 
 frase.isupper()
 # output: False
 
 frase.upper()
-# output: 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'</code></pre>
-</li>
-</ul>
+# output: &#39;PYTHON É A MELHOR LINGUAGEM DO MUNDO&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>lower() e islower()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;PYTHON É A MELHOR LINGUAGEM DO MUNDO&#39;
 
 frase.islower()
 # output: False
 
 frase.lower()
-# output: 'python é a melhor linguagem do mundo'</code></pre>
-</li>
-</ul>
+# output: &#39;python é a melhor linguagem do mundo&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>startswith() e endswith()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Python é a melhor linguagem do mundo'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Python é a melhor linguagem do mundo&#39;
 
-frase.startswith('Python')
+frase.startswith(&#39;Python&#39;)
 # output: True
 
-frase.endswith('mundo')
-# output: True</code></pre>
-</li>
-</ul>
+frase.endswith(&#39;mundo&#39;)
+# output: True
+```
+</code></pre></div>
 </li>
 <li>
 <p>split() e join()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Python é a melhor linguagem do mundo'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Python é a melhor linguagem do mundo&#39;
 
-frase = palavra.split(' ')
-# output: ['Python', 'é', 'a', 'melhor', 'linguagem', 'do', 'mundo']
+frase = palavra.split(&#39; &#39;)
+# output: [&#39;Python&#39;, &#39;é&#39;, &#39;a&#39;, &#39;melhor&#39;, &#39;linguagem&#39;, &#39;do&#39;, &#39;mundo&#39;]
 
-';'.join(frase)
-#output: 'Python;é;a;melhor;linguagem;do;mundo'</code></pre>
-</li>
-</ul>
+&#39;;&#39;.join(frase)
+#output: &#39;Python;é;a;melhor;linguagem;do;mundo&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>rjust(), ljust() e center():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Python é a melhor linguagem do mundo'
+<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Python é a melhor linguagem do mundo&#39;
 
-frase.rjust(50,'-')
-# output: '--------------Python é a melhor linguagem do mundo'
+frase.rjust(50,&#39;-&#39;)
+# output: &#39;--------------Python é a melhor linguagem do mundo&#39;
 
-frase.ljust(50,'-')
-# output: 'Python é a melhor linguagem do mundo--------------'
+frase.ljust(50,&#39;-&#39;)
+# output: &#39;Python é a melhor linguagem do mundo--------------&#39;
 
-frase.center(50,'*')
-# output: '*******Python é a melhor linguagem do mundo*******'</code></pre>
-</li>
-</ul>
+frase.center(50,&#39;*&#39;)
+# output: &#39;*******Python é a melhor linguagem do mundo*******&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>zfill():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">cpf = '345678911'
+<div class="highlight"><pre><span></span><code>```python
+cpf = &#39;345678911&#39;
 
 cpf.zfill(11)
-# output: '00345678911'</code></pre>
-</li>
-</ul>
+# output: &#39;00345678911&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>strip(), rstrip() e lstrip():</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">nome = '          Harry Potter          '
+<div class="highlight"><pre><span></span><code>```python
+nome = &#39;          Harry Potter          &#39;
 
 nome.strip()
-# output: 'Harry Potter'
+# output: &#39;Harry Potter&#39;
 
 nome.rstrip()
-# output: '          Harry Potter'
+# output: &#39;          Harry Potter&#39;
 
 nome.lstrip()
-# output: 'Harry Potter          '</code></pre>
-</li>
-</ul>
+# output: &#39;Harry Potter          &#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>replace():</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<pre class="highlight"><code class="language-python">frase = 'Java é a melhor linguagem do mundo'
+</li>
+<li>Ex.:<div class="highlight"><pre><span></span><code>```python
+frase = &#39;Java é a melhor linguagem do mundo&#39;
 
-frase.replace('Java', 'Python')
-# output: 'Python é a melhor linguagem do mundo'</code></pre>
+frase.replace(&#39;Java&#39;, &#39;Python&#39;)
+# output: &#39;Python é a melhor linguagem do mundo&#39;
+```
+</code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="excecoeserros">Exceções/Erros:</h2>
+<h2 id="excecoeserros">Exceções/Erros</h2>
 <ul>
-<li>
-<p>try:, except:, else: e finally:</p>
-<ul>
+<li>try:, except:, else: e finally:</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">def divisao(valor1, valor2):
+<div class="highlight"><pre><span></span><code>```python
+def divisao(valor1, valor2):
   valor1 = str(valor1)
-  try: # É a etapa de tentativa. Se der sucesso, vai para o "else" e se der erro, irá para o "except"
+  try: # É a etapa de tentativa. Se der sucesso, vai para o &quot;else&quot; e se der erro, irá para o &quot;except&quot;
     valor1 = int(valor1)
     valor2 = int(valor2)
   except ZeroDivisionError as error: # Trata o erro de divisão por zero somente
-    print(f'{error}')
-    print(f'Não foi possível dividir o valor {valor1} pelo valor {valor2}')
-    except: # Trata qualquer erro que não esteja mapeado
-        print('Erro desconhecido e ele poderia ter parado o programa!')
-  else: # Se tudo der certo dentro do "try", o código continuará aqui
+    print(f&#39;{error}&#39;)
+    print(f&#39;Não foi possível dividir o valor {valor1} pelo valor {valor2}&#39;)
+ except: # Trata qualquer erro que não esteja mapeado
+  print(&#39;Erro desconhecido e ele poderia ter parado o programa!&#39;)
+  else: # Se tudo der certo dentro do &quot;try&quot;, o código continuará aqui
     return valor1 / valor2
   finally: # Essa ação abaixo será executada independente de sucesso ou erro
-    print('Isso aqui rodará independente do erro')
+    print(&#39;Isso aqui rodará independente do erro&#39;)
 
 num1= 25
 num2 = 0
 
 divisao(num1, num2)
-# output: 'Não foi possível dividir o valor 25 pelo valor 0'</code></pre>
-</li>
-</ul>
+# output: &#39;Não foi possível dividir o valor 25 pelo valor 0&#39;
+```
+</code></pre></div>
 </li>
 <li>
 <p>raise:</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')
+<div class="highlight"><pre><span></span><code>```python
+raise BaseException(&#39;Este é um erro personalizado caso caia em alguma condicional inválida!&#39;)
 # output: Traceback (most recent call last):
-#  File "&lt;pyshell#27&gt;", line 1, in &lt;module&gt;
-#    raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')
-# BaseException: Este é um erro personalizado caso caia em alguma condicional inválida!</code></pre>
-</li>
-</ul>
+#  File &quot;&lt;pyshell#27&gt;&quot;, line 1, in &lt;module&gt;
+#    raise BaseException(&#39;Este é um erro personalizado caso caia em alguma condicional inválida!&#39;)
+# BaseException: Este é um erro personalizado caso caia em alguma condicional inválida!
+```
+</code></pre></div>
 </li>
 <li>
 <p>Tipos de erros: <a href="https://www.programiz.com/python-programming/exceptions#built-in">https://www.programiz.com/python-programming/exceptions#built-in</a></p>
 </li>
 </ul>
-<h2 id="datetime">datetime:</h2>
+<h2 id="datetime">datetime</h2>
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import datetime</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span> <span class="nn">datetime</span>
+</code></pre></div>
 </li>
 <li>
 <p>Pegar a data ou data e hora do dia vigente:</p>
-<pre class="highlight"><code class="language-python">hoje = datetime.date.today()
-# output: datetime.date(2021, 10, 27)
-
-#ou
-
-hoje = datetime.datetime.today()
-# output: datetime.datetime(2021, 10, 27, 0, 6, 56, 978062)</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">hoje</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1"># output: datetime.date(2021, 10, 27)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1">#ou</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">hoje</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1"># output: datetime.datetime(2021, 10, 27, 0, 6, 56, 978062)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Converter a data para um formato visual e no formato string:</p>
-<pre class="highlight"><code class="language-python">hoje_formatado = hoje.strftime('%d/%m/%Y')
-# output: '27/10/2021'</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">hoje_formatado</span> <span class="o">=</span> <span class="n">hoje</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># output: &#39;27/10/2021&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Retornar a string para o formato datetime:</p>
-<pre class="highlight"><code class="language-python">data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')
-# output: datetime.datetime(2021, 10, 27, 0, 0)</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">data_antes</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">hoje_formatado</span><span class="p">,</span> <span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># output: datetime.datetime(2021, 10, 27, 0, 0)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Trazer a data de ontem ou de amanhã:</p>
-<pre class="highlight"><code class="language-python"># Dia anterior
-ontem = hoje - datetime.timedelta(days=1)
-# output: datetime.datetime(2021, 10, 26, 0, 6, 56, 978062)
-
-# Dia seguinte
-amanha = hoje + datetime.timedelta(days=1)
-# output: datetime.datetime(2021, 10, 28, 0, 6, 56, 978062)</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Dia anterior</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">ontem</span> <span class="o">=</span> <span class="n">hoje</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1"># output: datetime.datetime(2021, 10, 26, 0, 6, 56, 978062)</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Dia seguinte</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">amanha</span> <span class="o">=</span> <span class="n">hoje</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="c1"># output: datetime.datetime(2021, 10, 28, 0, 6, 56, 978062)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Calcular a diferença de dias de uma data para outra:</p>
-<pre class="highlight"><code class="language-python">(amanha - ontem).days
-# output: 2</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="n">amanha</span> <span class="o">-</span> <span class="n">ontem</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># output: 2</span>
+</code></pre></div>
 </li>
 </ul>
-<h2 id="extras">Extras:</h2>
+<h2 id="extras">Extras</h2>
 <p>Documentação datetime: <a href="https://docs.python.org/pt-br/3/library/datetime.html">https://docs.python.org/pt-br/3/library/datetime.html</a></p>
-<p>Tabela de símbolos para o strftime: <a href="https://www.programiz.com/python-programming/datetime/strftime#format-code">https://www.programiz.com/python-programming/datetime/strftime#format-code</a></p>
+<p>Tabela de símbolos para o strftime: <a href="https://www.programiz.com/python-programming/datetime/strftime#format-code">https://www.programiz.com/python-programming/datetime/strftime#format-code</a>
+````</p>
               
             </div>
           </div><footer>

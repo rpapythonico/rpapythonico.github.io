@@ -34,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -131,7 +131,15 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 2 - Listas, Dicionários e Loopings</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#lista">Lista:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#lista">Lista</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dicionario">Dicionário</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loopings">Loopings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for">For</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#dicionario">Dicionário:</a>
     </li>
@@ -169,7 +177,7 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 1 &raquo;</li>
       <li>Aula 2 - Listas, Dicionários e Loopings</li>
     <li class="wy-breadcrumbs-aside">
@@ -181,205 +189,212 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="aula-2-listas-dicionarios-e-loopings">Aula 2 - Listas, Dicionários e Loopings</h1>
-<h2 id="lista">Lista:</h2>
+<h2 id="lista">Lista</h2>
 <ul>
-<li>
-<p>list() ou [ ]</p>
-<ul>
+<li>list() ou [ ]</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">lista = ['Thomas', 'Wilber', 'Marcos', 'Pedro']</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span> <span class="s1">&#39;Wilber&#39;</span><span class="p">,</span> <span class="s1">&#39;Marcos&#39;</span><span class="p">,</span> <span class="s1">&#39;Pedro&#39;</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>.pop</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">lista.pop()
-print(lista)
-# output: ['Thomas', 'Wilber', 'Marcos']</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">lista</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># output: [&#39;Thomas&#39;, &#39;Wilber&#39;, &#39;Marcos&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>.append()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">lista.append('Fernando')
-print(lista)
-# output: ['Thomas', 'Wilber', 'Marcos', 'Fernando']</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Fernando&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># output: [&#39;Thomas&#39;, &#39;Wilber&#39;, &#39;Marcos&#39;, &#39;Fernando&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>.remove()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">lista.remove('Marcos')
-print(lista)
-# output: ['Thomas', 'Wilber', 'Fernando']</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">lista</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Marcos&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># output: [&#39;Thomas&#39;, &#39;Wilber&#39;, &#39;Fernando&#39;]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Slice:</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">print(lista[1:3])
-# output: ['Thomas', 'Wilber']</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># output: [&#39;Thomas&#39;, &#39;Wilber&#39;]</span>
+</code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="dicionario">Dicionário:</h2>
+<h2 id="dicionario">Dicionário</h2>
 <ul>
 <li>
 <p>dict() ou { }</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">fruta = {}
-fruta['maca'] = 'É uma fruta vermelha'
-fruta['limao'] = 'É uma fruta verde'
-fruta['banana'] = 'É uma fruta amarela'
-
-#ou
-
-fruta = {'maca': 'É uma fruta vermelha', 'limao': 'É uma fruta verde', 'banana': 'É uma fruta amarela'}</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">fruta</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">fruta</span><span class="p">[</span><span class="s1">&#39;maca&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;É uma fruta vermelha&#39;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">fruta</span><span class="p">[</span><span class="s1">&#39;limao&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;É uma fruta verde&#39;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">fruta</span><span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;É uma fruta amarela&#39;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">#ou</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">fruta</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;maca&#39;</span><span class="p">:</span> <span class="s1">&#39;É uma fruta vermelha&#39;</span><span class="p">,</span> <span class="s1">&#39;limao&#39;</span><span class="p">:</span> <span class="s1">&#39;É uma fruta verde&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="s1">&#39;É uma fruta amarela&#39;</span><span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
 <p>.keys()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">fruta.keys()
-# output: dict_keys(['maca', 'limao', 'banana'])</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">fruta</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># output: dict_keys([&#39;maca&#39;, &#39;limao&#39;, &#39;banana&#39;])</span>
+</code></pre></div>
 </li>
 <li>
 <p>.values()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">fruta.values()
-# output: dict_values(['É uma fruta vermelha', 'É uma fruta verde', 'É uma fruta amarela'])</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">fruta</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># output: dict_values([&#39;É uma fruta vermelha&#39;, &#39;É uma fruta verde&#39;, &#39;É uma fruta amarela&#39;])</span>
+</code></pre></div>
 </li>
 <li>
 <p>items()</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
-<pre class="highlight"><code class="language-python">fruta.items()
-# output: dict_items([('maca', 'É uma fruta vermelha'), ('limao', 'É uma fruta verde'), ('banana', 'É uma fruta amarela')])</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">fruta</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># output: dict_items([(&#39;maca&#39;, &#39;É uma fruta vermelha&#39;), (&#39;limao&#39;, &#39;É uma fruta verde&#39;), (&#39;banana&#39;, &#39;É uma fruta amarela&#39;)])</span>
+</code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="loopings">Loopings:</h2>
-<h3 id="for">For:</h3>
+<h2 id="loopings">Loopings</h2>
+<h3 id="for">For</h3>
 <ul>
-<li>
-<p>Looping com uma quantidade definida:</p>
-<pre class="highlight"><code class="language-python">for numero in range(5):
-    print(numero)
-
-# output:
-# 0
-# 1
-# 2
-# 3
-# 4</code></pre>
-</li>
-<li>
-<p>Looping usando um intervalo de números:</p>
-<pre class="highlight"><code class="language-python">for numero in range(3, 8):
-    print(numero)
-
-# output:
-# 3
-# 4
-# 5
-# 6
-# 7</code></pre>
-</li>
-<li>
-<p>Looping usando listas como delimitador:</p>
-<pre class="highlight"><code class="language-python">lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
-for filme in lista_de_filmes:
-    print(filme)
-
-# output:
-# Kill Bill
-# Pulp Fiction
-# Cães de Aluguel</code></pre>
-</li>
-<li>
-<p>Looping usando listas com seus respectivos índices:</p>
-<pre class="highlight"><code class="language-python">lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
-for indice, filme in enumerate(lista_de_filmes):
-print(indice, '-', filme)
-
-# output:
-# 0 - Kill Bill
-# 1 - Pulp Fiction
-# 2 - Cães de Aluguel</code></pre>
-</li>
+<li>Looping com uma quantidade definida:</li>
 </ul>
-<h3 id="while">While:</h3>
-<ul>
-<li>
-<p>Looping condicional utilizando incrementador:</p>
-<pre class="highlight"><code class="language-python">contador = 0
-while contador &lt; 5:
-    print(f'O contador é {contador} e ainda é menor que 5!')
-    contador+= 1
-
-# output:
-# O contador é 0 e ainda é menor que 5!
-# O contador é 1 e ainda é menor que 5!
-# O contador é 2 e ainda é menor que 5!
-# O contador é 3 e ainda é menor que 5!
-# O contador é 4 e ainda é menor que 5!</code></pre>
-</li>
-<li>
-<p>Looping condicional infinito com "input":</p>
-<pre class="highlight"><code class="language-python">nome = ''
-while nome != 'seu nome':
-    nome = input('Insira seu nome: ')
-print('Parabéns, você entendeu a brincadeira!')</code></pre>
-</li>
-<li>
-<p>Looping condicional infinito com "break" e "continue":</p>
-<pre class="highlight"><code class="language-python">valor = 0
-while True:
-    num = input('Insira um valor para a soma: ')
-    if num != 'q':
-        valor+=int(num)
-        print(f'\nAgora o valor é: {valor}\n')
-        continue
-    else:
-        break
-print('Looping encerrado!')
-
-# output:
-# Insira um valor para a soma: 2
-# Agora o valor é: 2
-# Insira um valor para a soma: 4
-# Agora o valor é: 6
-# Insira um valor para a soma: q
-# Looping encerrado!</code></pre>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>     <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="c1"># output:</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="c1"># 0</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="c1"># 1</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="c1"># 2</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="c1"># 3</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="c1"># 4</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="err">```</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="o">-</span> <span class="n">Looping</span> <span class="n">usando</span> <span class="n">um</span> <span class="n">intervalo</span> <span class="n">de</span> <span class="n">números</span><span class="p">:</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="err">```</span><span class="n">python</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>     <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    <span class="c1"># output:</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="c1"># 3</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    <span class="c1"># 4</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="c1"># 5</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    <span class="c1"># 6</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="c1"># 7</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    <span class="err">```</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="o">-</span> <span class="n">Looping</span> <span class="n">usando</span> <span class="n">listas</span> <span class="n">como</span> <span class="n">delimitador</span><span class="p">:</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="err">```</span><span class="n">python</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>    <span class="n">lista_de_filmes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kill Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;Pulp Fiction&#39;</span><span class="p">,</span> <span class="s1">&#39;Cães de Aluguel&#39;</span><span class="p">]</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    <span class="k">for</span> <span class="n">filme</span> <span class="ow">in</span> <span class="n">lista_de_filmes</span><span class="p">:</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">filme</span><span class="p">)</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    <span class="c1"># output:</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    <span class="c1"># Kill Bill</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>    <span class="c1"># Pulp Fiction</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>    <span class="c1"># Cães de Aluguel</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>    <span class="err">```</span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="o">-</span> <span class="n">Looping</span> <span class="n">usando</span> <span class="n">listas</span> <span class="n">com</span> <span class="n">seus</span> <span class="n">respectivos</span> <span class="n">índices</span><span class="p">:</span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="err">```</span><span class="n">python</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>    <span class="n">lista_de_filmes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kill Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;Pulp Fiction&#39;</span><span class="p">,</span> <span class="s1">&#39;Cães de Aluguel&#39;</span><span class="p">]</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>    <span class="k">for</span> <span class="n">indice</span><span class="p">,</span> <span class="n">filme</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista_de_filmes</span><span class="p">):</span>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">indice</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">filme</span><span class="p">)</span>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>    <span class="c1"># output:</span>
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>    <span class="c1"># 0 - Kill Bill</span>
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>    <span class="c1"># 1 - Pulp Fiction</span>
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>    <span class="c1"># 2 - Cães de Aluguel</span>
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>    <span class="err">```</span>
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a><span class="c1">### While:</span>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a><span class="o">-</span> <span class="n">Looping</span> <span class="n">condicional</span> <span class="n">utilizando</span> <span class="n">incrementador</span><span class="p">:</span>
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a>
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a><span class="err">```</span><span class="n">python</span>
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>    <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>    <span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O contador é </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s1"> e ainda é menor que 5!&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>     <span class="n">contador</span><span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>    <span class="c1"># output:</span>
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>    <span class="c1"># O contador é 0 e ainda é menor que 5!</span>
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>    <span class="c1"># O contador é 1 e ainda é menor que 5!</span>
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>    <span class="c1"># O contador é 2 e ainda é menor que 5!</span>
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>    <span class="c1"># O contador é 3 e ainda é menor que 5!</span>
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>    <span class="c1"># O contador é 4 e ainda é menor que 5!</span>
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>    <span class="err">```</span>
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a><span class="o">-</span> <span class="n">Looping</span> <span class="n">condicional</span> <span class="n">infinito</span> <span class="n">com</span> <span class="s2">&quot;input&quot;</span><span class="p">:</span>
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a><span class="err">```</span><span class="n">python</span>
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>    <span class="n">nome</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>    <span class="k">while</span> <span class="n">nome</span> <span class="o">!=</span> <span class="s1">&#39;seu nome&#39;</span><span class="p">:</span>
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>     <span class="n">nome</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Insira seu nome: &#39;</span><span class="p">)</span>
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns, você entendeu a brincadeira!&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>    <span class="err">```</span>
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a><span class="o">-</span> <span class="n">Looping</span> <span class="n">condicional</span> <span class="n">infinito</span> <span class="n">com</span> <span class="s2">&quot;break&quot;</span> <span class="n">e</span> <span class="s2">&quot;continue&quot;</span><span class="p">:</span>
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>
+<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>
+<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a><span class="err">```</span><span class="n">python</span>
+<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>    <span class="n">valor</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>     <span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Insira um valor para a soma: &#39;</span><span class="p">)</span>
+<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>     <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span>
+<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>      <span class="n">valor</span><span class="o">+=</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Agora o valor é: </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>      <span class="k">continue</span>
+<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>     <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-9-97" name="__codelineno-9-97" href="#__codelineno-9-97"></a>      <span class="k">break</span>
+<a id="__codelineno-9-98" name="__codelineno-9-98" href="#__codelineno-9-98"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Looping encerrado!&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-99" name="__codelineno-9-99" href="#__codelineno-9-99"></a>
+<a id="__codelineno-9-100" name="__codelineno-9-100" href="#__codelineno-9-100"></a>    <span class="c1"># output:</span>
+<a id="__codelineno-9-101" name="__codelineno-9-101" href="#__codelineno-9-101"></a>    <span class="c1"># Insira um valor para a soma: 2</span>
+<a id="__codelineno-9-102" name="__codelineno-9-102" href="#__codelineno-9-102"></a>    <span class="c1"># Agora o valor é: 2</span>
+<a id="__codelineno-9-103" name="__codelineno-9-103" href="#__codelineno-9-103"></a>    <span class="c1"># Insira um valor para a soma: 4</span>
+<a id="__codelineno-9-104" name="__codelineno-9-104" href="#__codelineno-9-104"></a>    <span class="c1"># Agora o valor é: 6</span>
+<a id="__codelineno-9-105" name="__codelineno-9-105" href="#__codelineno-9-105"></a>    <span class="c1"># Insira um valor para a soma: q</span>
+<a id="__codelineno-9-106" name="__codelineno-9-106" href="#__codelineno-9-106"></a>    <span class="c1"># Looping encerrado!</span>
+<a id="__codelineno-9-107" name="__codelineno-9-107" href="#__codelineno-9-107"></a>    <span class="err">```</span>
+</code></pre></div>
               
             </div>
           </div><footer>
