@@ -8,7 +8,7 @@
     <title>Visão Geral - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%203%20-%20Vari%C3%A1veis/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -96,7 +95,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -163,7 +162,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -171,10 +170,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-          <li>Aula 3 - Variáveis &raquo;</li>
-      <li>Visão Geral</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+          <li class="breadcrumb-item">Aula 3 - Variáveis</li>
+      <li class="breadcrumb-item active">Visão Geral</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -197,13 +196,15 @@
 <p>No Python é utilizado o formato <strong>snake_case</strong> para os casos onde possui uma nomenclatura composta (com mais de um palavra) e sempre será com <strong>letras minúsculas</strong>. Esse formato é chamado de <strong>"Pythonico"</strong>.</p>
 <p><strong>Obs.:</strong> Vale frisar que em âmbito corporativo, é sempre indicado usar termos em inglês para que o código fique de forma globalizada.</p>
 <h3 id="exemplo">Exemplo</h3>
-<pre class="highlight"><code class="language-python">nome = "João"
-# ou
-idade = 18
-# ou
-nome_do_arquivo = "boleto.pdf"
-# ou
-numero_do_contrato = 123456789</code></pre>
+<p>```python
+nome = "João"</p>
+<h1 id="ou">ou</h1>
+<p>idade = 18</p>
+<h1 id="ou_1">ou</h1>
+<p>nome_do_arquivo = "boleto.pdf"</p>
+<h1 id="ou_2">ou</h1>
+<p>numero_do_contrato = 123456789
+```</p>
 <h1 id="quais-os-tipos-de-variaveis">Quais os tipos de variáveis?</h1>
 <ul>
 <li><strong>int</strong>(eger): São valores inteiros.<ul>
@@ -262,52 +263,58 @@ variavel = bool(0)
 <p>Integer para Float</p>
 <ul>
 <li>Ex.:
-<pre class="highlight"><code class="language-python">volume = float(25)</code></pre></li>
+<code>python
+volume = float(25)</code></li>
 </ul>
 </li>
 <li>
 <p>Float para Integer</p>
 <ul>
 <li>Ex.:
-<pre class="highlight"><code class="language-python">pi = int(3.14)</code></pre></li>
+<code>python
+pi = int(3.14)</code></li>
 </ul>
 </li>
 <li>
 <p>Float para String</p>
 <ul>
 <li>Ex.:
-<pre class="highlight"><code class="language-python">peso = str(78.6)</code></pre></li>
+<code>python
+peso = str(78.6)</code></li>
 </ul>
 </li>
 <li>
 <p>String para Float</p>
 <ul>
 <li>Ex.:
-<pre class="highlight"><code class="language-python">altura = "1.82"
-altura = float(altura)
-# ou
-altura = "1,82"
-altura = altura.replace(',', '.')
-altura = float(altura)</code></pre></li>
+```python
+altura = "1.82"
+altura = float(altura)</li>
 </ul>
+<h1 id="ou_3">ou</h1>
+<p>altura = "1,82"
+altura = altura.replace(',', '.')
+altura = float(altura)
+```</p>
 </li>
 <li>
 <p>String para Boolean</p>
 <ul>
 <li>Essa conversão sempre irá validar se existe algum valor à ser convertido, logo, sempre será "True" se não estiver vazio.</li>
 <li>Ex.:
-    <pre class="highlight"><code class="language-python">teste = bool("valor")
-# ou
-teste = bool()</code></pre></li>
+    <code>python
+    teste = bool("valor")
+    # ou
+    teste = bool()</code></li>
 </ul>
 </li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%202%20-%20IDEs/" class="btn btn-neutral float-left" title="Aula 2 - IDEs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/" class="btn btn-neutral float-right" title="Manipulação de Strings">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%202%20-%20IDEs/" class="btn btn-neutral float-left" title="Aula 2 - IDEs"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/" class="btn btn-neutral float-right" title="Manipulação de Strings">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -317,7 +324,7 @@ teste = bool()</code></pre></li>
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -327,25 +334,26 @@ teste = bool()</code></pre></li>
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%202%20-%20IDEs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%202%20-%20IDEs/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

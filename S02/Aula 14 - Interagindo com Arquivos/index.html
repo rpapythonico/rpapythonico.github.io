@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%2014%20-%20Interagindo%20com%20Arquivos/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Aula 1 - Distribuições - RPA Pythonico</title>
+    <title>Aula 14 - Aula 14 - Interagindo com Arquivos - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Aula 1 - Distribui\u00e7\u00f5es";
-        var mkdocs_page_input_path = "S02\\Aula 1 - Distribui\u00e7\u00f5es.md";
-        var mkdocs_page_url = "/S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/";
+        var mkdocs_page_name = "Aula 14 - Aula 14 - Interagindo com Arquivos";
+        var mkdocs_page_input_path = "S02\\Aula 14 - Interagindo com Arquivos.md";
+        var mkdocs_page_url = "/S02/Aula%2014%20-%20Interagindo%20com%20Arquivos/";
       </script>
     
     <!--[if lt IE 9]>
@@ -47,15 +47,7 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 1 - Distribuições</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#explicacao">Explicação</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#nivel-inicianteintermediario">Nível Iniciante/Intermediário</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#nivel-avancado">Nível Avançado</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
                   </li>
@@ -87,7 +79,13 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#explicacao">Explicação</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funcionalidades">Funcionalidades</a>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -164,7 +162,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
           <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 1 - Distribuições</li>
+      <li class="breadcrumb-item active">Aula 14 - Aula 14 - Interagindo com Arquivos</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -173,32 +171,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="distribuicoes-do-python">Distribuições do Python</h1>
+                <h1 id="interagindo-com-arquivos">Interagindo com Arquivos</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>O Python contém algumas distribuições geradas pela comunidade e todas elas possuem um objetivo em particular. Elas trazem algumas funcionalidades já embarcadas, que na versão oficial precisariam ser instaladas manualmente caso houvesse necessidade.</p>
-<h2 id="nivel-inicianteintermediario">Nível Iniciante/Intermediário</h2>
-<p>As distribuições de nível iniciante/intermediário tem como objetivo trazer o Python na sua essência inicial, com suas funcionalidades básicas.</p>
+<p>Outra funcionalidade para manipulação de arquivos é o comando Open. Essa função é nativa de dentro do python, ou seja, não há necessidade de importação. </p>
+<p>Basicamente sua função é abrir (praticamente qualquer) arquivo e conseguir trabalhar com os mesmos.</p>
+<h2 id="funcionalidades">Funcionalidades</h2>
 <ul>
-<li><a href="https://www.python.org/downloads/">Python</a></li>
-<li><a href="https://www.portablepython.com/download/">Portable Python</a></li>
+<li>
+<p>Abre o arquivo - sintaxe básica
+    <code>python
+    open("nome_do_arquivo.ext", "modo de execução")</code></p>
+<ul>
+<li>
+<p>Modos de execução:</p>
+<ul>
+<li>
+<p>Leitura (.txt, .json, .csv, etc...):
+<code>python
+arquivo = open("exemplo.txt", "r")
+conteudo = arquivo.read()</code></p>
+</li>
+<li>
+<p>Escrita (.txt):
+<code>python
+arquivo = open("exemplo.txt", "w")
+arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></p>
+</li>
+<li>
+<p>Acrescentar (.txt):
+<code>python
+arquivo = open("exemplo.txt", "a")
+arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></p>
+</li>
+<li>
+<p>Leitura de arquivo em formato bytes (imagens, pdfs, etc...):
+```python
+arquivo = open("python-logo.png", "rb")
+conteudo = arquivo.read()</p>
+</li>
 </ul>
-<h2 id="nivel-avancado">Nível Avançado</h2>
-<p>As distribuições de nível avançado, possuem interfaces gráficas e/ou bibliotecas embarcadas que fazem uso de funcionalidades (geralmente) voltadas à Ciência dos Dados.</p>
+<h1 id="bx89pngrnx1anx00x00x00rihdrx00x00x01x00x00x00rx08x06x00">b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x01"\x00\x00\x00R\x08\x06\x00...'</h1>
+<p>```</p>
 <ul>
-<li><a href="https://www.anaconda.com/products/distribution#Downloads">Anaconda</a></li>
-<li><a href="https://python-xy.github.io/downloads.html">Python(x,y)</a></li>
-<li><a href="https://pypi.org/project/ipython/">IPython</a></li>
+<li>Escrita de arquivo em formato bytes (imagens, pdfs, etc...):
+<code>python
+arquivo = open("captcha.png", "wb")
+arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></li>
 </ul>
-<h1 id="referencias-bibliograficas">Referências Bibliográficas</h1>
-<ul>
-<li><a href="https://wiki.python.org/moin/PythonDistributions">Python Distributions</a></li>
+</li>
+</ul>
+</li>
+<li>
+<p>Fecha arquivo
+    <code>python
+    arquivo.close()</code></p>
+</li>
+<li>
+<p>Leitura/Escrita do arquivo usando <strong>Gerenciador de Contexto</strong>
+    <code>python
+    with open(r'log_2022_04_23.txt', 'w') as arquivo:
+        arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso\n')</code></p>
+</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/" class="btn btn-neutral float-left" title="Aula 0 - Instalação Python"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%202%20-%20IDEs/" class="btn btn-neutral float-right" title="Aula 2 - IDEs">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Aula%2013%20-%20Constants/" class="btn btn-neutral float-left" title="Aula 13 - Constants"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2015%20-%20Openpyxl/" class="btn btn-neutral float-right" title="Aula 15 - Openpyxl">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -222,10 +262,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%2013%20-%20Constants/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%202%20-%20IDEs/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%2015%20-%20Openpyxl/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>

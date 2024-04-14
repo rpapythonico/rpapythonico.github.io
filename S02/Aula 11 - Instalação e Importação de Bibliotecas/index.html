@@ -8,7 +8,7 @@
     <title>Aula 11 - Instalação e Importação de Bibliotecas - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -88,7 +87,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -155,7 +154,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -163,9 +162,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-      <li>Aula 11 - Instalação e Importação de Bibliotecas</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+      <li class="breadcrumb-item active">Aula 11 - Instalação e Importação de Bibliotecas</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -185,19 +184,23 @@
 <ul>
 <li>
 <p>Para instalar uma biblioteca:
-    <pre class="highlight"><code class="language-bash">pip install xlrd</code></pre></p>
+    <code>bash
+    pip install xlrd</code></p>
 </li>
 <li>
 <p>Para desinstalar uma biblioteca:
-    <pre class="highlight"><code class="language-bash">pip uninstall xlrd</code></pre></p>
+    <code>bash
+    pip uninstall xlrd</code></p>
 </li>
 <li>
 <p>Exportar todos os pacotes instalados:
-    <pre class="highlight"><code class="language-bash">pip freeze &gt; requirements.txt</code></pre></p>
+    <code>bash
+    pip freeze &gt; requirements.txt</code></p>
 </li>
 <li>
 <p>Importar todos os pacotes anteriormente extraídos:
-    <pre class="highlight"><code class="language-bash">pip install -r requirements.txt</code></pre></p>
+    <code>bash
+    pip install -r requirements.txt</code></p>
 </li>
 </ul>
 <h2 id="exemplos-import">Exemplos - <strong>import</strong></h2>
@@ -205,23 +208,26 @@
 <ul>
 <li>
 <p>Importar a biblioteca com todas as funções:
-    <pre class="highlight"><code class="language-python">import xlrd</code></pre></p>
+    <code>python
+    import xlrd</code></p>
 </li>
 <li>
 <p>Importar a biblioteca com "apelido":
-    <pre class="highlight"><code class="language-python">import pandas as pd</code></pre></p>
+    <code>python
+    import pandas as pd</code></p>
 </li>
 <li>
 <p>Importar uma função específica de dentro da biblioteca:
-    <pre class="highlight"><code class="language-python">from time import sleep</code></pre></p>
+    <code>python
+    from time import sleep</code></p>
 </li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" class="btn btn-neutral float-left" title="Aula 10 - Tratativas de Erros"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Aula%2012%20-%20Sistema%20Operacional/" class="btn btn-neutral float-right" title="Aula 12 - Sistema Operacional">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" class="btn btn-neutral float-left" title="Aula 10 - Tratativas de Erros"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2012%20-%20Sistema%20Operacional/" class="btn btn-neutral float-right" title="Aula 12 - Sistema Operacional">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -231,7 +237,7 @@
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -241,25 +247,26 @@
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%2012%20-%20Sistema%20Operacional/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Aula%2012%20-%20Sistema%20Operacional/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

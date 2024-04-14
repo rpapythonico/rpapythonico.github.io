@@ -8,7 +8,7 @@
     <title>Aula 15 - Openpyxl - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%2015%20-%20Openpyxl/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -80,7 +79,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 15 - Openpyxl</a>
     <ul class="current">
@@ -153,7 +152,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -161,9 +160,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-      <li>Aula 15 - Openpyxl</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+      <li class="breadcrumb-item active">Aula 15 - Openpyxl</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -178,73 +177,83 @@
 <h2 id="comandos">Comandos</h2>
 <ul>
 <li>Instalação da Biblioteca
-    <pre class="highlight"><code class="language-bash">pip install openpyxl</code></pre></li>
+    <code>bash
+    pip install openpyxl</code></li>
 <li>
 <p>Importação da Biblioteca
-    <pre class="highlight"><code class="language-python">import openpyxl</code></pre></p>
+    <code>python
+    import openpyxl</code></p>
 </li>
 <li>
 <p>Leitura do arquivo Excel
-    <pre class="highlight"><code class="language-python">wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></pre></p>
+    <code>python
+    wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></p>
 </li>
 <li>
 <p>Apresentação das abas disponíveis para acesso
-    <pre class="highlight"><code class="language-python">wb.sheetnames
-# output: ['Planilha1']</code></pre></p>
+    <code>python
+    wb.sheetnames
+    # output: ['Planilha1']</code></p>
 </li>
 <li>
 <p>Seleção da aba para consulta
-    <pre class="highlight"><code class="language-python">sheet = wb['Planilha1']</code></pre></p>
+    <code>python
+    sheet = wb['Planilha1']</code></p>
 </li>
 <li>
 <p>Seleção de uma célula específica
-    <pre class="highlight"><code class="language-python">sheet['A1'].value
-# output: Chiclete
-sheet['B1'].value
-# output: Barra de Chocolate</code></pre></p>
+    <code>python
+    sheet['A1'].value
+    # output: Chiclete
+    sheet['B1'].value
+    # output: Barra de Chocolate</code></p>
 </li>
 <li>
 <p>Apresentação da quantidade de linhas escritas
-    <pre class="highlight"><code class="language-python">sheet.max_row
-# output: 6</code></pre></p>
+    <code>python
+    sheet.max_row
+    # output: 6</code></p>
 </li>
 <li>
 <p>Interação com <strong>todas</strong> as linhas de <strong>uma</strong> coluna
-    <pre class="highlight"><code class="language-python">for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1).value
-    print(nome)
-# output:
-# Chiclete
-# Barra de Chocolate
-# Agua Mineral
-# Jornal
-# Salgadinho</code></pre></p>
+    <code>python
+    for linha in range(2, sheet.max_row+1):
+        nome = sheet.cell(linha, 1).value
+        print(nome)
+    # output:
+    # Chiclete
+    # Barra de Chocolate
+    # Agua Mineral
+    # Jornal
+    # Salgadinho</code></p>
 </li>
 <li>
 <p>Interação com <strong>todas</strong> as linhas de <strong>todas</strong> as colunas
-    <pre class="highlight"><code class="language-python">for linha in range(2, sheet.max_row+1):
-    nome = sheet.cell(linha, 1).value
-    unidade = sheet.cell(linha, 2).value
-    valor = sheet.cell(linha, 3).value
-    print(f"O produto {nome} teve {unidade} unidade(s) vendida(s) no valor unitário de R$ {valor}")
-# output:
-# O produto Chiclete teve 45 unidade(s) vendida(s) no valor unitário de R$1
-# O produto Barra de Chocolate teve 23 unidade(s) vendida(s) no valor unitário de R$4
-# O produto Agua mineral teve 66 unidade(s) vendida(s) no valor unitário de R$2
-# O produto Jornal teve 4 unidade(s) vendida(s) no valor unitário de R$0.5
-# O produto Salgadinho teve 16 unidade(s) vendida(s) no valor unitário de R$2.5 </code></pre></p>
+    <code>python
+    for linha in range(2, sheet.max_row+1):
+        nome = sheet.cell(linha, 1).value
+        unidade = sheet.cell(linha, 2).value
+        valor = sheet.cell(linha, 3).value
+        print(f"O produto {nome} teve {unidade} unidade(s) vendida(s) no valor unitário de R$ {valor}")
+    # output:
+    # O produto Chiclete teve 45 unidade(s) vendida(s) no valor unitário de R$1
+    # O produto Barra de Chocolate teve 23 unidade(s) vendida(s) no valor unitário de R$4
+    # O produto Agua mineral teve 66 unidade(s) vendida(s) no valor unitário de R$2
+    # O produto Jornal teve 4 unidade(s) vendida(s) no valor unitário de R$0.5
+    # O produto Salgadinho teve 16 unidade(s) vendida(s) no valor unitário de R$2.5</code></p>
 </li>
 <li>
 <p>Fecha o arquivo Excel
-    <pre class="highlight"><code class="language-python">wb.close()</code></pre></p>
+    <code>python
+    wb.close()</code></p>
 </li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%2014%20-%20Open/" class="btn btn-neutral float-left" title="Aula 14 - Open"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Aula%2016%20-%20Xlsxwriter/" class="btn btn-neutral float-right" title="Aula 16 - Xlsxwriter">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/" class="btn btn-neutral float-left" title="Aula 14 - Aula 14 - Interagindo com Arquivos"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2016%20-%20Xlsxwriter/" class="btn btn-neutral float-right" title="Aula 16 - Xlsxwriter">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -254,7 +263,7 @@ sheet['B1'].value
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -264,25 +273,26 @@ sheet['B1'].value
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2014%20-%20Open/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%2016%20-%20Xlsxwriter/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Aula%2016%20-%20Xlsxwriter/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

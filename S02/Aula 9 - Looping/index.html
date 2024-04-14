@@ -8,7 +8,7 @@
     <title>Aula 9 - Looping - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%209%20-%20Looping/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -96,7 +95,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -163,7 +162,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -171,9 +170,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-      <li>Aula 9 - Looping</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+      <li class="breadcrumb-item active">Aula 9 - Looping</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -191,55 +190,57 @@
 <ul>
 <li>
 <p>Looping com uma quantidade definida de iterações
-  <pre class="highlight"><code class="language-python">for numero in range(5):
-  print(numero)
-# output: 
-# 0
-# 1
-# 2
-# 3
-# 4</code></pre></p>
+  <code>python
+  for numero in range(5):
+    print(numero)
+  # output: 
+  # 0
+  # 1
+  # 2
+  # 3
+  # 4</code></p>
 </li>
 <li>
 <p>Looping usando intervalo de números
-  <pre class="highlight"><code class="language-python">for numero in range(3, 10):
-  print(numero)
-  # output:
-  # 3
-  # 4
-  # 5
-  # 6
-  # 7
-  # 8
-  # 9</code></pre></p>
+  <code>python
+  for numero in range(3, 10):
+    print(numero)
+    # output:
+    # 3
+    # 4
+    # 5
+    # 6
+    # 7
+    # 8
+    # 9</code></p>
 </li>
 <li>
 <p>Looping usando listas/tuplas como delimitador
-  <pre class="highlight"><code class="language-python">lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']
-
-# ou
-
-lista_de_filmes = ('Kill Bill', 'Madagascar', 'Harry Potter')
-
-for filme in lista_de_filmes:
-  print(filme)
-# output:
-# 'Kill Bill'
-# 'Madagascar'
-# 'Harry Potter'</code></pre></p>
-</li>
-<li>
-<p>Looping usando listas com seus respectivos índices
-  <pre class="highlight"><code class="language-python">lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']
-
-for indice, filme in enumerate(lista_de_filmes):
-  print(indice, '-', filme)
-# output: 
-# 0 - Kill Bill
-# 1 - Madagascar
-# 2 - Harry Potter</code></pre></p>
+  ```python
+  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</p>
 </li>
 </ul>
+<p># ou</p>
+<p>lista_de_filmes = ('Kill Bill', 'Madagascar', 'Harry Potter')</p>
+<p>for filme in lista_de_filmes:
+    print(filme)
+  # output:
+  # 'Kill Bill'
+  # 'Madagascar'
+  # 'Harry Potter'
+  ```</p>
+<ul>
+<li>Looping usando listas com seus respectivos índices
+  ```python
+  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</li>
+</ul>
+<p>for indice, filme in enumerate(lista_de_filmes):
+    print(indice, '-', filme)
+  # output: 
+  # 0 - Kill Bill
+  # 1 - Madagascar
+  # 2 - Harry Potter
+  ```</p>
 <h2 id="looping-while">Looping While</h2>
 <p>O comando while faz com que um conjunto de instruções seja executado enquanto uma condição é atendida.</p>
 <h3 id="exemplos_1">Exemplos</h3>
@@ -251,16 +252,17 @@ for indice, filme in enumerate(lista_de_filmes):
 <p>Cria-se uma condição para o looping em cima de uma variavel incrementavel. Toda vez que rodar o bloco de codigos, essa variável irá ter um valor somado. O looping rodará até que a condição passe a ser falsa.</p>
 </li>
 <li>Ex.:
-    <pre class="highlight"><code class="language-python">contador = 0
-while contador &lt; 5:
-  print(f'O valor do contador é {contador} e ainda é menor que 5!')
-  contador += 1
-# output:
-# O valor do contador é 0 e ainda é menor que 5!
-# O valor do contador é 1 e ainda é menor que 5!
-# O valor do contador é 2 e ainda é menor que 5!
-# O valor do contador é 3 e ainda é menor que 5!
-# O valor do contador é 4 e ainda é menor que 5!</code></pre></li>
+    <code>python
+    contador = 0
+    while contador &lt; 5:
+      print(f'O valor do contador é {contador} e ainda é menor que 5!')
+      contador += 1
+    # output:
+    # O valor do contador é 0 e ainda é menor que 5!
+    # O valor do contador é 1 e ainda é menor que 5!
+    # O valor do contador é 2 e ainda é menor que 5!
+    # O valor do contador é 3 e ainda é menor que 5!
+    # O valor do contador é 4 e ainda é menor que 5!</code></li>
 <li>
 <p><strong>Looping condicional infinito com 'input'</strong></p>
 </li>
@@ -269,11 +271,12 @@ while contador &lt; 5:
 </li>
 <li>
 <p>Ex.:
-    <pre class="highlight"><code class="language-python">comando = ''
-while comando != 'cancelar':
-  print('Programa rodando....')
-  comando = input('Você desejar cancelar? Se sim digite "cancelar": ').lower()
-print('Seu programa foi cancelado com sucesso!')</code></pre></p>
+    <code>python
+    comando = ''
+    while comando != 'cancelar':
+      print('Programa rodando....')
+      comando = input('Você desejar cancelar? Se sim digite "cancelar": ').lower()
+    print('Seu programa foi cancelado com sucesso!')</code></p>
 </li>
 <li>
 <p><strong>Looping condicional infinito com "break" e "continue"</strong></p>
@@ -282,24 +285,25 @@ print('Seu programa foi cancelado com sucesso!')</code></pre></p>
 <p>Este formato permite que a rotina rode eternamente. Isto ocorre, pois não é especificado nenhuma condição <strong>"False"</strong>, com isso, é necessário deixar implicito no codigo quando deve continuar rodando e quando deve parar a execução. Para isso, existem as palavras reservadas <strong>"break"</strong> e <strong>"continue"</strong>.</p>
 </li>
 <li>Ex."
-    <pre class="highlight"><code class="language-python">valor = 0
-while True:
-  num = input('Insira um valor para a soma: ')
-  if num != 'q':
-    valor += int(num)
-    print(f'\nAgora o valor é: {valor}\n')
-    continue
-  else:
-    print(f'Voce digitou "q" isso irá encerrar o programa.')
-    break
-print('Looping encerrado!')</code></pre></li>
+    <code>python
+    valor = 0
+    while True:
+      num = input('Insira um valor para a soma: ')
+      if num != 'q':
+        valor += int(num)
+        print(f'\nAgora o valor é: {valor}\n')
+        continue
+      else:
+        print(f'Voce digitou "q" isso irá encerrar o programa.')
+        break
+    print('Looping encerrado!')</code></li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/" class="btn btn-neutral float-left" title="Aula 8 - Funções"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" class="btn btn-neutral float-right" title="Aula 10 - Tratativas de Erros">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/" class="btn btn-neutral float-left" title="Aula 8 - Funções"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" class="btn btn-neutral float-right" title="Aula 10 - Tratativas de Erros">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -309,7 +313,7 @@ print('Looping encerrado!')</code></pre></li>
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -319,25 +323,26 @@ print('Looping encerrado!')</code></pre></li>
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Aula%2010%20-%20Tratativas%20de%20Erros/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

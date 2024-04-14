@@ -8,7 +8,7 @@
     <title>Navegador - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -80,7 +79,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -111,14 +110,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#acessar-um-site">Acessar um site</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#maximizar-a-janela-do-navegador">Maximizar a janela do navegador</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#colocar-um-tempo-para-carregamento-implicito">Colocar um tempo para carregamento - IMPLÍCITO</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#colocar-um-tempo-para-carregamento-explicito">Colocar um tempo para carregamento - EXPLÍCITO</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fechar-aba-do-navegador">Fechar aba do navegador</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fechar-navegador-e-seu-webdriver">Fechar navegador e seu webdriver</a>
     </li>
     </ul>
                 </li>
@@ -167,7 +158,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -175,10 +166,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-          <li>Aula 22 - Selenium &raquo;</li>
-      <li>Navegador</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+          <li class="breadcrumb-item">Aula 22 - Selenium</li>
+      <li class="breadcrumb-item active">Navegador</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -190,54 +181,63 @@
                 <h1 id="selenium-navegador">Selenium - Navegador</h1>
 <h2 id="instalacao-da-biblioteca">Instalação da biblioteca</h2>
 <p>Para instalar a lib, será usado o gerenciador de pacotes pip com o seguinte comando:</p>
-<pre class="highlight"><code class="language-bash">pip install selenium</code></pre>
+<p><code>bash
+pip install selenium</code></p>
 <h2 id="importar-a-biblioteca">Importar a biblioteca</h2>
 <p>Para importar o mínimo do Selenium, o comando será:
-<pre class="highlight"><code class="language-python">from selenium import webdriver</code></pre></p>
+<code>python
+from selenium import webdriver</code></p>
 <h2 id="abrir-o-webdriver">Abrir o Webdriver</h2>
 <p>Na nova versão do Selenium, o <strong>"executable_path"</strong> deixou de existir e precisa do <strong>Service</strong> para que o mesmo consiga abrir o navegador. </p>
 <p>Para abrí-lo no novo formato, deverá ser feito o seguinte código:
-<pre class="highlight"><code class="language-python">from selenium.webdriver.chrome.service import Service
-
-s_dir = Service('chromedriver.exe')
-driver = webdriver.Chrome(service=s_dir)</code></pre></p>
+```python
+from selenium.webdriver.chrome.service import Service</p>
+<p>s_dir = Service('chromedriver.exe')
+driver = webdriver.Chrome(service=s_dir)
+```</p>
 <p>Já a importação no formato antigo é realizado da seguinte maneira:
-<pre class="highlight"><code class="language-python">driver = webdriver.Chrome('chromedriver.exe')</code></pre></p>
+<code>python
+driver = webdriver.Chrome('chromedriver.exe')</code></p>
 <h2 id="acessar-um-site">Acessar um site</h2>
 <p>Com o "webdriver" salvo dentro da variável "driver", a mesma carrega muitas funcionalidades do navegador instanciado.</p>
 <p>O comando primordial é para acessar um site:
-<pre class="highlight"><code class="language-python">driver.get('https://www.amazon.com.br/')</code></pre></p>
+<code>python
+driver.get('https://www.amazon.com.br/')</code></p>
 <h2 id="maximizar-a-janela-do-navegador">Maximizar a janela do navegador</h2>
 <p>O navegador também possui a capacidade de ser minimizado ou maximizado e no Selenium os comandos são: 
-<pre class="highlight"><code class="language-python">driver.minimize_window()
-
-# ou
-
-driver.maximize_window()</code></pre></p>
+```python
+driver.minimize_window()</p>
+<h1 id="ou">ou</h1>
+<p>driver.maximize_window()
+```</p>
 <h2 id="colocar-um-tempo-para-carregamento-implicito">Colocar um tempo para carregamento - IMPLÍCITO</h2>
 <p>O carregamento implícito se aplica para todo e qualquer elemento na página. Então depois de instanciado uma vez, sempre que buscar alguma coisa na página, ele terá esse tempo máximo de espera para localizar o objeto.</p>
 <p>A sintaxe dele é:
-<pre class="highlight"><code class="language-python">driver.implicitly_wait(30)</code></pre></p>
+<code>python
+driver.implicitly_wait(30)</code></p>
 <h2 id="colocar-um-tempo-para-carregamento-explicito">Colocar um tempo para carregamento - EXPLÍCITO</h2>
 <p>Em casos onde apenas um elemento nos interessa, pode ser utilizado um carregamento explícito, isto é, no código será apontado exatamente qual o objeto que se deseja aguardar um tempo máximo até que ele apareça. Esse método não se aplica à página como um todo.</p>
 <p>A sintaxe dele é:
-<pre class="highlight"><code class="language-python">from selenium.webdriver.common.by import By
+```python
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabsearchtextbox')))</code></pre></p>
+from selenium.webdriver.support import expected_conditions as EC</p>
+<p>WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabsearchtextbox')))
+```</p>
 <h2 id="fechar-aba-do-navegador">Fechar aba do navegador</h2>
 <p>O navegador também permite abrir várias abas e caso seja necessário fechar uma delas, o comando a seguir encerrará aquela que está em uso:
-<pre class="highlight"><code class="language-python">driver.close()</code></pre></p>
+<code>python
+driver.close()</code></p>
 <h2 id="fechar-navegador-e-seu-webdriver">Fechar navegador e seu webdriver</h2>
 <p>Para que a instância do navegador seja encerrada totalmente, o comando a seguir precisa estar ao final do script:
-<pre class="highlight"><code class="language-python">driver.quit()</code></pre></p>
+<code>python
+driver.quit()</code></p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/" class="btn btn-neutral float-left" title="Visão Geral"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/" class="btn btn-neutral float-right" title="Interações">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/" class="btn btn-neutral float-left" title="Visão Geral"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/" class="btn btn-neutral float-right" title="Interações">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -247,7 +247,7 @@ WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabse
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -257,25 +257,26 @@ WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabse
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

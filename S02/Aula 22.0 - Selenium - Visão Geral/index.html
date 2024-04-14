@@ -8,7 +8,7 @@
     <title>Visão Geral - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -80,7 +79,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -171,7 +170,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -179,10 +178,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-          <li>Aula 22 - Selenium &raquo;</li>
-      <li>Visão Geral</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+          <li class="breadcrumb-item">Aula 22 - Selenium</li>
+      <li class="breadcrumb-item active">Visão Geral</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -282,11 +281,11 @@
 </ul>
 </li>
 <li>partial_link_text;<ul>
-<li>Parte do texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a>).</li>
+<li>Parte do texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a&gt;).</li>
 </ul>
 </li>
 <li>link_text;<ul>
-<li>Texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a>).</li>
+<li>Texto contido entre a tag de abertura e fechamento. Geralmente aparece em tags de link (\&lt;a&gt;).</li>
 </ul>
 </li>
 <li>css_selector;<ul>
@@ -318,58 +317,58 @@ Imagem retirada do site <a href="https://www.guru99.com/">guru99</a>.</p>
 <ul>
 <li>
 <p>Coleta através do ID
-    <pre class="highlight"><code>#SIvCob
-
-ou
-
-div#SIvCob</code></pre></p>
+    ```
+    #SIvCob</p>
+<p>ou</p>
+<p>div#SIvCob
+```</p>
 </li>
 <li>
 <p>Coleta através da CLASS NAME
-    <pre class="highlight"><code>.gb_Jd
-
-ou
-
-div.gb_Jd</code></pre></p>
+    ```
+    .gb_Jd</p>
+<p>ou</p>
+<p>div.gb_Jd
+```</p>
 </li>
 <li>
 <p>Pesquisa com Sintaxe Completa
-    <pre class="highlight"><code>input[class="gLFyf gsfi"]</code></pre></p>
+    <code>input[class="gLFyf gsfi"]</code></p>
 </li>
 <li>
 <p>Pesquisa Utilizando uma Tag Filha
-    <pre class="highlight"><code>div[class="RNNXgb"] input</code></pre></p>
+    <code>div[class="RNNXgb"] input</code></p>
 </li>
 <li>
 <p>Pesquisa Através da Parcela de um Texto Entre Tags
-    <pre class="highlight"><code>input[value*="Pesquisa"]</code></pre></p>
+    <code>input[value*="Pesquisa"]</code></p>
 </li>
 </ul>
 <h3 id="xpath">Xpath</h3>
 <ul>
 <li>
 <p>Pesquisa com Sintaxe Completa
-    <pre class="highlight"><code>//*[@id="SIvCob"]</code></pre></p>
+    <code>//*[@id="SIvCob"]</code></p>
 </li>
 <li>
 <p>Pesquisa Utilizando Tags Filhas
-    <pre class="highlight"><code>//div[@class="RNNXgb"]/div/div[2]/input</code></pre></p>
+    <code>//div[@class="RNNXgb"]/div/div[2]/input</code></p>
 </li>
 <li>
 <p>Pesquisa Através do Texto Entre Tags
-    <pre class="highlight"><code>//div[text()="Disponibilizado pelo Google em:  "]</code></pre></p>
+    <code>//div[text()="Disponibilizado pelo Google em:  "]</code></p>
 </li>
 <li>
 <p>Pesquisa Através da Parcela de um Texto Entre Tags
-    <pre class="highlight"><code>//div[contains(text(), 'Disponibilizado')]</code></pre></p>
+    <code>//div[contains(text(), 'Disponibilizado')]</code></p>
 </li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%2021%20-%20RegEx/" class="btn btn-neutral float-left" title="Aula 21 - RegEx"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" class="btn btn-neutral float-right" title="Navegador">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%2021%20-%20RegEx/" class="btn btn-neutral float-left" title="Aula 21 - RegEx"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" class="btn btn-neutral float-right" title="Navegador">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -379,7 +378,7 @@ div.gb_Jd</code></pre></p>
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -389,25 +388,26 @@ div.gb_Jd</code></pre></p>
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2021%20-%20RegEx/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%2021%20-%20RegEx/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

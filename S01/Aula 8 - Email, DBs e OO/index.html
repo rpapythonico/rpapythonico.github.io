@@ -8,7 +8,7 @@
     <title>Aula 8 - Email, DBs e OO - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -80,7 +79,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -143,16 +142,6 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#smtplib">smtplib</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ferramentas-db">Ferramentas DB</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sqlite3">sqlite3</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#pyodbc">pyodbc</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#utilitarios-db">Utilitários DB</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#orientacao-a-objeto">Orientação à Objeto:</a>
-    </li>
     </ul>
                   </li>
               </ul>
@@ -161,7 +150,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -169,9 +158,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 1 &raquo;</li>
-      <li>Aula 8 - Email, DBs e OO</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 1</li>
+      <li class="breadcrumb-item active">Aula 8 - Email, DBs e OO</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -205,85 +194,93 @@
 </li>
 <li>
 <p>Importar as bibliotecas:</p>
-<pre class="highlight"><code class="language-python">import smtplib
+<p><code>python
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from email.mime.application import MIMEApplication</code></pre>
+from email.mime.application import MIMEApplication</code></p>
 </li>
 <li>
 <p>Instanciar o email:</p>
-<pre class="highlight"><code class="language-python">mail = MIMEMultipart()</code></pre>
+<p><code>python
+mail = MIMEMultipart()</code></p>
 </li>
 <li>
 <p>Criar o corpo do e-mail:</p>
-<pre class="highlight"><code class="language-python">payload = """Olá! Tudo bem?
-
-Este é um e-mail automático para testar o disparo de e-mail ensinado pelo curso de RPA Python!
-
-Atenciosamente,
-
-RPA Pythonico
-"""</code></pre>
+<p>```python
+payload = """Olá! Tudo bem?</p>
+<p>Este é um e-mail automático para testar o disparo de e-mail ensinado pelo curso de RPA Python!</p>
+<p>Atenciosamente,</p>
+<p>RPA Pythonico
+"""
+```</p>
 </li>
 <li>
 <p>Configurar o e-mail que está enviando:</p>
-<pre class="highlight"><code class="language-python">mail['From'] = 'rpapythonico@gmail.com'</code></pre>
+<p><code>python
+mail['From'] = 'rpapythonico@gmail.com'</code></p>
 </li>
 <li>
 <p>Configurar o(s) destinatário(s) do e-mail</p>
-<pre class="highlight"><code class="language-python"># UM destinatário
-mail['To'] = 'rpapythonico@gmail.com'
-
-# MAIS DE UM destinatário
-mail['To'] = 'rpapythonico@gmail.com,seu_email@provedor.com'</code></pre>
+<p>```python</p>
+<h1 id="um-destinatario">UM destinatário</h1>
+<p>mail['To'] = 'rpapythonico@gmail.com'</p>
+<h1 id="mais-de-um-destinatario">MAIS DE UM destinatário</h1>
+<p>mail['To'] = 'rpapythonico@gmail.com,seu_email@provedor.com'
+```</p>
 </li>
 <li>
 <p>Configurar o assunto do e-mail:</p>
-<pre class="highlight"><code class="language-python">mail['Subject'] = 'Email Automático - SMTPLIB'</code></pre>
+<p><code>python
+mail['Subject'] = 'Email Automático - SMTPLIB'</code></p>
 </li>
 <li>
 <p>Formatar o corpo do e-mail em formato de texto:</p>
-<pre class="highlight"><code class="language-python">mail.attach(MIMEText(payload, 'plain'))</code></pre>
+<p><code>python
+mail.attach(MIMEText(payload, 'plain'))</code></p>
 </li>
 <li>
 <p>Criar conexão SMTP:</p>
-<pre class="highlight"><code class="language-python">server = smtplib.SMTP('smtp.gmail.com', '587')
-server.starttls()</code></pre>
+<p><code>python
+server = smtplib.SMTP('smtp.gmail.com', '587')
+server.starttls()</code></p>
 </li>
 <li>
 <p>Se autenticar no servidor SMTP:</p>
-<pre class="highlight"><code class="language-python">server.login(msg['From'], 'sua_senha')</code></pre>
+<p><code>python
+server.login(msg['From'], 'sua_senha')</code></p>
 </li>
 <li>
 <p>Enviar e-mail:</p>
 <ul>
 <li>
 <p><strong>SEM Anexo</strong></p>
-<pre class="highlight"><code class="language-python"># UM destinatário
-server.sendmail(mail['From'], mail['To'], mail.as_string())
-
-# MAIS DE UM destinatário
-server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())</code></pre>
+<p>```python</p>
+<h1 id="um-destinatario_1">UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'], mail.as_string())</p>
+<h1 id="mais-de-um-destinatario_1">MAIS DE UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())
+```</p>
 </li>
 <li>
 <p><strong>COM Anexo</strong></p>
-<pre class="highlight"><code class="language-python">file = open('seu_arquivo.py', 'rb')
-
-app = MIMEApplication(file.read(), 'py')
+<p>```python
+file = open('seu_arquivo.py', 'rb')</p>
+<p>app = MIMEApplication(file.read(), 'py')
 app.add_header('Content-Disposition', 'attachment;filename=seu_arquivo.py')
-mail.attach(app)
-
-# UM destinatário
-server.sendmail(mail['From'], mail['To'], mail.as_string())
-
-# MAIS DE UM destinatário
-server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())</code></pre>
+mail.attach(app)</p>
+<h1 id="um-destinatario_2">UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'], mail.as_string())</p>
+<h1 id="mais-de-um-destinatario_2">MAIS DE UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())
+```</p>
 </li>
 </ul>
 </li>
 <li>
 <p>Finalizar conexão SMTP:</p>
-<pre class="highlight"><code class="language-python">server.quit()</code></pre>
+<p><code>python
+server.quit()</code></p>
 </li>
 </ul>
 <h2 id="ferramentas-db">Ferramentas DB</h2>
@@ -336,80 +333,97 @@ server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())</code></p
 <ul>
 <li>
 <p>Importar biblioteca:</p>
-<pre class="highlight"><code class="language-python">import sqlite3</code></pre>
+<p><code>python
+import sqlite3</code></p>
 </li>
 <li>
 <p>Criar conexão:</p>
-<pre class="highlight"><code class="language-python">con = sqlite3.connect('example.db')</code></pre>
+<p><code>python
+con = sqlite3.connect('example.db')</code></p>
 </li>
 <li>
 <p>Criar cursor:</p>
-<pre class="highlight"><code class="language-python">cur = con.cursor()</code></pre>
+<p><code>python
+cur = con.cursor()</code></p>
 </li>
 <li>
 <p>Criar uma tabela:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''CREATE TABLE "TB_Cliente"( "CPF" INTEGER NOT NULL UNIQUE, "Nome_Completo" TEXT NOT NULL, "Data_Nascimento" TEXT NOT NULL, "Telefone" TEXT, "Email" TEXT, "CEP" TEXT NOT NULL, PRIMARY KEY("CPF"));''')</code></pre>
+<p><code>python
+cur.execute('''CREATE TABLE "TB_Cliente"( "CPF" INTEGER NOT NULL UNIQUE, "Nome_Completo" TEXT NOT NULL, "Data_Nascimento" TEXT NOT NULL, "Telefone" TEXT, "Email" TEXT, "CEP" TEXT NOT NULL, PRIMARY KEY("CPF"));''')</code></p>
 </li>
 <li>
 <p>Aprovar as interações com o banco de dados:</p>
-<pre class="highlight"><code class="language-python">con.commit()</code></pre>
+<p><code>python
+con.commit()</code></p>
 </li>
 <li>
 <p>Inserir algum dado:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''INSERT INTO TB_Cliente VALUES (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355')''')
-con.commit()</code></pre>
+<p><code>python
+cur.execute('''INSERT INTO TB_Cliente VALUES (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355')''')
+con.commit()</code></p>
 </li>
 <li>
 <p>Inserir vários registros no banco:</p>
-<pre class="highlight"><code class="language-python">lista_registros = [(88190475789, 'José Hugo Manuel Porto', '11/07/1997', '41989320821', 'jjosehugomanuelporto@patriciagrillo.adv.br', '83309270'), (39962955106, 'Marina Carolina dos Santos', '26/09/1995', '81984235792', 'marinacarolinadossantos_@lukin4.com.br', '53350130'), (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355'), (76938977550, 'Yasmin Evelyn Maria Costa', '20/04/1959', '91998657654', 'yasminevelynmariacosta-88@yahoo.com.ar', '66810020'), (25373027375, 'Fernando Giovanni Bernardes', '02/03/1964', '81989889726', 'fernandogiovannibernardes-92@soulcomunicacao.com.br', '51180440'), (85775491947, 'Clarice Vitória Teixeira', '24/02/1958', '82996438794', 'claricevitoriateixeira-97@india.com', '57052605'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (90123303354, 'Carolina Cláudia Pietra da Rocha', '14/04/1952', '63992520221', 'carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br', '77017297'), (96558670801, 'Levi Theo Matheus Ramos', '04/04/1961', '22988505045', 'levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br', '28024123'), (57218723306, 'Davi Márcio Rafael Nogueira', '25/07/1997', '69991521228', 'davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br', '76964042')]
+<p><code>python
+lista_registros = [(88190475789, 'José Hugo Manuel Porto', '11/07/1997', '41989320821', 'jjosehugomanuelporto@patriciagrillo.adv.br', '83309270'), (39962955106, 'Marina Carolina dos Santos', '26/09/1995', '81984235792', 'marinacarolinadossantos_@lukin4.com.br', '53350130'), (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355'), (76938977550, 'Yasmin Evelyn Maria Costa', '20/04/1959', '91998657654', 'yasminevelynmariacosta-88@yahoo.com.ar', '66810020'), (25373027375, 'Fernando Giovanni Bernardes', '02/03/1964', '81989889726', 'fernandogiovannibernardes-92@soulcomunicacao.com.br', '51180440'), (85775491947, 'Clarice Vitória Teixeira', '24/02/1958', '82996438794', 'claricevitoriateixeira-97@india.com', '57052605'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (90123303354, 'Carolina Cláudia Pietra da Rocha', '14/04/1952', '63992520221', 'carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br', '77017297'), (96558670801, 'Levi Theo Matheus Ramos', '04/04/1961', '22988505045', 'levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br', '28024123'), (57218723306, 'Davi Márcio Rafael Nogueira', '25/07/1997', '69991521228', 'davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br', '76964042')]
 cur.executemany("INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)", lista_registros)
-con.commit()</code></pre>
+con.commit()</code></p>
 </li>
 <li>
 <p>Apagar algum dado:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''DELETE FROM TB_Cliente WHERE CPF = 88190475789''')
-con.commit()</code></pre>
+<p><code>python
+cur.execute('''DELETE FROM TB_Cliente WHERE CPF = 88190475789''')
+con.commit()</code></p>
 </li>
 <li>
 <p>Atualizar algum dado:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = 39962955106''')
-con.commit()</code></pre>
+<p><code>python
+cur.execute('''UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = 39962955106''')
+con.commit()</code></p>
 </li>
 <li>
 <p>Ver um dado na tabela:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''SELECT * FROM TB_Cliente''')
-cur.fetchone()
-# output: (116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130')</code></pre>
+<p>```python
+cur.execute('''SELECT * FROM TB_Cliente''')
+cur.fetchone()</p>
+<h1 id="output-116415509-analu-julia-da-paz-05041974-79982386771-aanalujuliadapazalwancombr-49026130">output: (116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130')</h1>
+<p>```</p>
 </li>
 <li>
 <p>Ver todos os dados da tabela:</p>
-<pre class="highlight"><code class="language-python">cur.execute('''SELECT * FROM TB_Cliente''')
-cur.fetchall()
-# Realizado slice ([:3) no output para apresentar pequenos exemplos
-# output: [(116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (7287125803, 'Eduarda Emily Almada', '20/04/1941', '32985692709', 'eduardaemilyalmada_@peopleside.com.br', '36200142')]</code></pre>
+<p>```python
+cur.execute('''SELECT * FROM TB_Cliente''')
+cur.fetchall()</p>
+<h1 id="realizado-slice-3-no-output-para-apresentar-pequenos-exemplos">Realizado slice ([:3) no output para apresentar pequenos exemplos</h1>
+<h1 id="output-116415509-analu-julia-da-paz-05041974-79982386771-aanalujuliadapazalwancombr-49026130-4847726278-kamilly-clara-caldeira-21041982-27998331799-kamillyclaracaldeira__kamillyclaracaldeiracaferibeirocombr-29194248-7287125803-eduarda-emily-almada-20041941-32985692709-eduardaemilyalmada_peoplesidecombr-36200142">output: [(116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (7287125803, 'Eduarda Emily Almada', '20/04/1941', '32985692709', 'eduardaemilyalmada_@peopleside.com.br', '36200142')]</h1>
+<p>```</p>
 </li>
 <li>
 <p>Fechar conexão do banco de dados:</p>
-<pre class="highlight"><code class="language-python">con.close()</code></pre>
+<p><code>python
+con.close()</code></p>
 </li>
 </ul>
 <h2 id="pyodbc"><strong>pyodbc</strong></h2>
 <ul>
 <li>
 <p>Instalar biblioteca:</p>
-<pre class="highlight"><code class="language-bash">pip install pyodbc</code></pre>
+<p><code>bash
+pip install pyodbc</code></p>
 </li>
 <li>
 <p>Importar biblioteca:</p>
-<pre class="highlight"><code class="language-python">import pyodbc</code></pre>
+<p><code>python
+import pyodbc</code></p>
 </li>
 <li>
 <p>Criar conexão com o banco de dados:</p>
-<pre class="highlight"><code class="language-python"># Com credenciais
-conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente;UID=user;PWD=password')
-
-#Sem credenciais:
-conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente')</code></pre>
+<p>```python</p>
+<h1 id="com-credenciais">Com credenciais</h1>
+<p>conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente;UID=user;PWD=password')</p>
+<h1 id="sem-credenciais">Sem credenciais:</h1>
+<p>conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente')
+```</p>
 </li>
 </ul>
 <h2 id="utilitarios-db">Utilitários DB</h2>
@@ -447,82 +461,97 @@ conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente'
 <ul>
 <li>
 <p>Criar uma classe:</p>
-<pre class="highlight"><code class="language-python">class Cachorro:</code></pre>
+<p><code>python
+class Cachorro:</code></p>
 </li>
 <li>
 <p>Criar variáveis e ações da Classe ao chamá-la:</p>
-<pre class="highlight"><code class="language-python">    def __init__(self, nome, idade, raca='Vira-Lata'):
+<p><code>python
+    def __init__(self, nome, idade, raca='Vira-Lata'):
       self._nome = nome.title()
     self._idade = int(idade)
-    self._raca = raca.title()</code></pre>
+    self._raca = raca.title()</code></p>
 <ul>
 <li>
 <p>Criar variáveis “privadas” da Classe:</p>
 <ul>
 <li>Usar parênteses;</li>
 </ul>
-<pre class="highlight"><code class="language-python">self._nome = nome.title()</code></pre>
+<p><code>python
+self._nome = nome.title()</code></p>
 </li>
 </ul>
 </li>
 <li>
 <p>Inserir método de atualização do nome:</p>
-<pre class="highlight"><code class="language-python">    def atualiza_nome(self, novo_nome):
-      self._nome = novo_nome</code></pre>
+<p><code>python
+    def atualiza_nome(self, novo_nome):
+      self._nome = novo_nome</code></p>
 </li>
 <li>
 <p>Inserir método de atualização da idade:</p>
-<pre class="highlight"><code class="language-python">    def atualiza_idade(self, nova_idade):
-      self._idade = nova_idade</code></pre>
+<p><code>python
+    def atualiza_idade(self, nova_idade):
+      self._idade = nova_idade</code></p>
 </li>
 <li>
 <p>Inserir método de atualização da raça:</p>
-<pre class="highlight"><code class="language-python">    def atualiza_raca(self, nova_raca):
-      self._raca = nova_raca</code></pre>
+<p><code>python
+    def atualiza_raca(self, nova_raca):
+      self._raca = nova_raca</code></p>
 </li>
 <li>
 <p>Inserir método que imprime as descrições do cachorro:</p>
-<pre class="highlight"><code class="language-python">    def informacoes(self):
-      print(f'O cachorro da raça {self._raca} se chama {self._nome} e possui {self._idade} anos.')</code></pre>
+<p><code>python
+    def informacoes(self):
+      print(f'O cachorro da raça {self._raca} se chama {self._nome} e possui {self._idade} anos.')</code></p>
 </li>
 <li>
 <p>Inserir método que faz o cachorro sentar:</p>
-<pre class="highlight"><code class="language-python">    def sentar(self):
-      print(f'O cachorro {self._nome} está sentado agora!')</code></pre>
+<p><code>python
+    def sentar(self):
+      print(f'O cachorro {self._nome} está sentado agora!')</code></p>
 </li>
 <li>
 <p>Inserir método que faz o cachorro rolar:</p>
-<pre class="highlight"><code class="language-python">    def rolar(self):
-      print(f'O cachorro {self._nome} está rolando agora!')</code></pre>
+<p><code>python
+    def rolar(self):
+      print(f'O cachorro {self._nome} está rolando agora!')</code></p>
 </li>
 <li>
 <p>Inserir método que faz o cachorro deita:</p>
-<pre class="highlight"><code class="language-python">    def deitar(self):
-        print(f'O cachorro {self._nome} está deitado agora!')</code></pre>
+<p><code>python
+    def deitar(self):
+        print(f'O cachorro {self._nome} está deitado agora!')</code></p>
 </li>
 <li>
 <p>Importar uma Classe (vale destacar que para isso, você precisa estar no diretório em que foi criado o arquivo da classe):</p>
-<pre class="highlight"><code class="language-python">from classe_cachorro import Cachorro</code></pre>
+<p><code>python
+from classe_cachorro import Cachorro</code></p>
 </li>
 <li>
 <p>Criar um objeto na Classe:</p>
-<pre class="highlight"><code class="language-python">obj = Cachorro('Rex', 3, 'Shih Tzu')</code></pre>
+<p><code>python
+obj = Cachorro('Rex', 3, 'Shih Tzu')</code></p>
 </li>
 <li>
 <p>Acessar funcionalidades da classe com o objeto criado:</p>
-<pre class="highlight"><code class="language-python">obj.informacoes()
-# output: O cachorro da raça Shih Tzu se chama Rex e possui 3 anos.</code></pre>
+<p>```python
+obj.informacoes()</p>
+<h1 id="output-o-cachorro-da-raca-shih-tzu-se-chama-rex-e-possui-3-anos">output: O cachorro da raça Shih Tzu se chama Rex e possui 3 anos.</h1>
+<p>```</p>
 </li>
 <li>
 <p>Atualizar raça do cachorro contido no objeto:</p>
-<pre class="highlight"><code class="language-python">obj.atualiza_raca('Terrier')</code></pre>
+<p><code>python
+obj.atualiza_raca('Terrier')</code></p>
 </li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%207%20-%20RegEx%20e%20APIs/" class="btn btn-neutral float-left" title="Aula 7 - RegEx e APIs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%207%20-%20RegEx%20e%20APIs/" class="btn btn-neutral float-left" title="Aula 7 - RegEx e APIs"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
     </div>
 
   <hr/>
@@ -532,7 +561,7 @@ conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente'
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -542,23 +571,24 @@ conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente'
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%207%20-%20RegEx%20e%20APIs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%207%20-%20RegEx%20e%20APIs/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>

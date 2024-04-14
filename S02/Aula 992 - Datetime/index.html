@@ -8,7 +8,7 @@
     <title>Aula 991 - Datetime - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/S02/Aula%20992%20-%20Datetime/";
       </script>
     
-    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -34,12 +33,12 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
                 </li>
@@ -80,7 +79,7 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Open/">Aula 14 - Open</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2014%20-%20Interagindo%20com%20Arquivos/">Aula 14 - Aula 14 - Interagindo com Arquivos</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
                   </li>
@@ -153,7 +152,7 @@
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../..">RPA Pythonico</a>
         
@@ -161,9 +160,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Temporada 2 &raquo;</li>
-      <li>Aula 991 - Datetime</li>
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+      <li class="breadcrumb-item active">Aula 991 - Datetime</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -179,52 +178,64 @@
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<pre class="highlight"><code class="language-python">import datetime</code></pre>
+<p><code>python
+import datetime</code></p>
 </li>
 <li>
 <p>Coletar somente a data:</p>
-<pre class="highlight"><code class="language-python">hoje = datetime.date.today()
-# output: datetime.date(2022, 4, 15)</code></pre>
+<p>```python
+hoje = datetime.date.today()</p>
+<h1 id="output-datetimedate2022-4-15">output: datetime.date(2022, 4, 15)</h1>
+<p>```</p>
 </li>
 <li>
 <p>Coleta a data e hora do dia vigente:</p>
-<pre class="highlight"><code class="language-python">hoje = datetime.datetime.today()
-# output: datetime.datetime(2022, 4, 15, 23, 17, 18, 892310)</code></pre>
+<p>```python
+hoje = datetime.datetime.today()</p>
+<h1 id="output-datetimedatetime2022-4-15-23-17-18-892310">output: datetime.datetime(2022, 4, 15, 23, 17, 18, 892310)</h1>
+<p>```</p>
 </li>
 <li>
 <p>Converter a data para um formato visual e no formato string:</p>
 <p>A formatação de data "%d/%m/%Y" e "%Y/%m/%d" usadas nesse exemplo e no abaixo são tiradas diretamente da <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">documentação</a>.</p>
-<pre class="highlight"><code class="language-python">hoje_formatado = hoje.strftime('%d/%m/%Y')
-# output: '15/04/2022'</code></pre>
+<p>```python
+hoje_formatado = hoje.strftime('%d/%m/%Y')</p>
+<h1 id="output-15042022">output: '15/04/2022'</h1>
+<p>```</p>
 </li>
 <li>
 <p>Retornar a string para o formato datetime:</p>
-<pre class="highlight"><code class="language-python">data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')
-# output: datetime.datetime(2022, 4, 15, 0, 0)</code></pre>
+<p>```python
+data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')</p>
+<h1 id="output-datetimedatetime2022-4-15-0-0">output: datetime.datetime(2022, 4, 15, 0, 0)</h1>
+<p>```</p>
 </li>
 <li>
 <p>Trazer a data de ontem ou de amanhã:</p>
 <p>No uso do timedelta para calcular o dia anterior ou sucessor, é importante frisar que o símbolo de "+" é quem dita se irá operar pro passado ou futuro.</p>
-<pre class="highlight"><code class="language-python"># Dia anterior
-ontem = hoje - datetime.timedelta(days=1)
-# output: datetime.datetime(2021, 4, 14, 23, 17, 18, 892310)
-
-# Dia seguinte
-amanha = hoje + datetime.timedelta(days=1)
-# output: datetime.datetime(2021, 4, 16, 23, 17, 18, 892310)</code></pre>
+<p>```python</p>
+<h1 id="dia-anterior">Dia anterior</h1>
+<p>ontem = hoje - datetime.timedelta(days=1)</p>
+<h1 id="output-datetimedatetime2021-4-14-23-17-18-892310">output: datetime.datetime(2021, 4, 14, 23, 17, 18, 892310)</h1>
+<h1 id="dia-seguinte">Dia seguinte</h1>
+<p>amanha = hoje + datetime.timedelta(days=1)</p>
+<h1 id="output-datetimedatetime2021-4-16-23-17-18-892310">output: datetime.datetime(2021, 4, 16, 23, 17, 18, 892310)</h1>
+<p>```</p>
 </li>
 <li>
 <p>Calcular a diferença de dias de uma data para outra:</p>
-<pre class="highlight"><code class="language-python">(amanha - ontem).days
-# output: 2</code></pre>
+<p>```python
+(amanha - ontem).days</p>
+<h1 id="output-2">output: 2</h1>
+<p>```</p>
 </li>
 </ul>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/" class="btn btn-neutral float-left" title="Aula 26 - Orientação a Objetos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/" class="btn btn-neutral float-right" title="Aula 1 - Introdução">Next <span class="icon icon-circle-arrow-right"></span></a>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/" class="btn btn-neutral float-left" title="Aula 26 - Orientação a Objetos"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/" class="btn btn-neutral float-right" title="Aula 1 - Introdução">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -234,7 +245,7 @@ amanha = hoje + datetime.timedelta(days=1)
       <p>RPA Pythonico @ 2022</p>
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -244,25 +255,26 @@ amanha = hoje + datetime.timedelta(days=1)
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versões">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme_extra.js" defer></script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(false);
-        };
+        });
     </script>
 
 </body>
