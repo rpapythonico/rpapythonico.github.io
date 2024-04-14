@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%2010%20-%20Tratativas%20de%20Erros/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%20993%20-%20Gerenciador%20de%20Contexto/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Aula 10 - Tratativas de Erros - RPA Pythonico</title>
+    <title>Aula 993 - Gerenciador de Contexto - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Aula 10 - Tratativas de Erros";
-        var mkdocs_page_input_path = "S02\\Aula 10 - Tratativas de Erros.md";
-        var mkdocs_page_url = "/S02/Aula%2010%20-%20Tratativas%20de%20Erros/";
+        var mkdocs_page_name = "Aula 993 - Gerenciador de Contexto";
+        var mkdocs_page_input_path = "S02\\Aula 993 - Gerenciador de Contexto.md";
+        var mkdocs_page_url = "/S02/Aula%20993%20-%20Gerenciador%20de%20Contexto/";
       </script>
     
     <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -46,8 +46,8 @@
               </ul>
               <p class="caption"><span class="caption-text">Temporada 2</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Introdução</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Introdução</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
@@ -74,15 +74,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%209%20-%20Looping/">Aula 9 - Looping</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Aula 10 - Tratativas de Erros</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#tipos-de-erros">Tipos de Erros</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#explicacao">Explicação</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exemplo">Exemplo</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
                 </li>
@@ -142,15 +134,23 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="#">Extras</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Extras</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%20990%20-%20Datetime/">Aula 990 - Datetime</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%20991%20-%20Decoradores/">Aula 991 - Decoradores</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%20992%20-%20Fila%20e%20Threads/">Aula 992 - Fila e Threads</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Aula%20993%20-%20Gerenciador%20de%20Contexto/">Aula 993 - Gerenciador de Contexto</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Aula 993 - Gerenciador de Contexto</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#explicacao">Explicação</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paradigma-funcional">Paradigma Funcional</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#paradigma-de-orientacao-a-objetos">Paradigma de Orientação à Objetos</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%20994%20-%20List%20Comprehension%2C%20Map%20e%20Filter/">Aula 994 - List Comprehension, Map e Filter</a>
                 </li>
@@ -191,8 +191,8 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
           <li>Temporada 2 &raquo;</li>
-          <li>Introdução &raquo;</li>
-      <li>Aula 10 - Tratativas de Erros</li>
+          <li>Extras &raquo;</li>
+      <li>Aula 993 - Gerenciador de Contexto</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -201,75 +201,90 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="tratativas-de-erros">Tratativas de Erros</h1>
-<h2 id="tipos-de-erros">Tipos de Erros</h2>
-<ul>
-<li>Variável <strong>"nome"</strong> não declarada:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
-</code></pre></div>
-<p><img alt="NameError" src="../../img/NameError.png" /></p>
-<ul>
-<li>Soma entre <strong>"string"</strong> e <strong>"integer"</strong>:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="mi">2</span>
-</code></pre></div>
-<p><img alt="TypeError" src="../../img/TypeError.png" /></p>
-<ul>
-<li>Barra invertida como operador aritmético:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="mi">10</span> \ <span class="mi">0</span>
-</code></pre></div>
-<p><img alt="SyntaxError" src="../../img/SyntaxError.png" /></p>
-<ul>
-<li>Divisão de um valor por zero:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-</code></pre></div>
-<p><img alt="ZeroDivisionError" src="../../img/ZeroDivisionError.png" /></p>
+                <h1 id="gerenciador-de-contexto">Gerenciador de Contexto</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>Para que um código não "quebre" e acabe parando uma automação ou um script, é necessário fazer uma tratativa de erro. Para isso, o Python possui quatro palavras reservadas: <strong>try</strong>, <strong>except</strong>, <strong>else</strong> e <strong>finally</strong>.</p>
+<p>Um context manager no Python é um objeto que define métodos especiais <code>__enter__()</code> e <code>__exit__()</code> que permitem gerenciar recursos de maneira eficiente durante a execução de um bloco de código. Esses recursos podem ser qualquer coisa que precise ser aberto e fechado, como arquivos, conexões de rede, locks ou qualquer outro recurso que requer uma abertura e fechamento explícito.</p>
+<p>Os context managers são usados com a instrução <code>with</code>, que garante que o método <code>__exit__()</code> seja chamado quando o bloco de código dentro do <code>with</code> é concluído, mesmo que isso aconteça devido a uma exceção. Isso ajuda a garantir que os recursos sejam liberados corretamente e evita vazamentos de recursos, como arquivos não fechados ou conexões de rede abertas indefinidamente.</p>
+<h2 id="paradigma-funcional">Paradigma Funcional</h2>
 <ul>
-<li>try:</li>
-<li>Bloco que <strong>executará o código principal</strong>.</li>
-<li>except:</li>
-<li>Bloco que criará um <strong>caminho alternativo</strong> à tentativa realizada anteriormente <strong>em caso de falha</strong>;</li>
-<li>Pode ser especificada (<a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">conforme documentação</a>) ou de forma genérica.</li>
-<li>else:</li>
-<li>Bloco que efetuará a <strong>continuação do código</strong> escrito dentro do <strong>try</strong> em caso de sucesso.</li>
-<li>finally:</li>
-<li>Bloco que <strong>executará código independente</strong> do <strong>SUCESSO</strong> ou <strong>FALHA</strong></li>
+<li>
+<p>Importar a função <code>contextmanager</code> da biblioteca embarcada <code>contextlib</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+</code></pre></div>
+</li>
+<li>
+<p>Criar a função passando o decorador <code>@contextmanager</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@contextmanager</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">def</span> <span class="nf">banco</span><span class="p">(</span><span class="n">base_dados</span> <span class="o">=</span> <span class="s1">&#39;tutorial.db&#39;</span><span class="p">):</span>
+</code></pre></div>
+</li>
+<li>
+<p>Escrever o resto da função passando a funcionalidade <code>yield</code> no lugar do <code>return</code> garantindo que ela não se encerre, mas sim, devolva o cursor para uso externo e ao concluir os processamentos, retorne à função <code>banco</code> para fechar a conectividade.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">base_dados</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erro&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="k">yield</span> <span class="n">cursor</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>E para chamar a função utilizando a abertura e fechamento da conexão em Banco de Dados, basta utilizar a instrução <code>with</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">with</span> <span class="n">banco</span><span class="p">()</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;CREATE TABLE movie(title, year, score)&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
 </ul>
-<h2 id="exemplo">Exemplo</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">divisao</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="k">try</span><span class="p">:</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erro de Divisão por Zero!&#39;</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  <span class="k">except</span><span class="p">:</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erro não mapeado! E AGORA???&#39;</span><span class="p">)</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O resultado da divisão entre </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> e </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> é </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  <span class="k">finally</span><span class="p">:</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Independente do que acontecer, sempre estarei aqui!&#39;</span><span class="p">)</span>
+<h2 id="paradigma-de-orientacao-a-objetos">Paradigma de Orientação à Objetos</h2>
+<ul>
+<li>
+<p>Importar as bibliotecas desejadas no projeto:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
 </code></pre></div>
-<h1 id="personalizando-um-erro">Personalizando Um Erro</h1>
-<h2 id="explicacao_1">Explicação</h2>
-<p>O Python possui diversos erros já mapeados com textos prontos, porém é importante frisar que é possível personalizar a mensagem deles. Para isso, a linguagem conta com a palavra reservada <strong>raise</strong>.</p>
-<h2 id="exemplo_1">Exemplo</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">17</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  <span class="k">raise</span> <span class="ne">SystemError</span><span class="p">(</span><span class="s1">&#39;Acesso proibido!&#39;</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Acesso permitido!&#39;</span><span class="p">)</span>
+</li>
+<li>
+<p>Criar a classe instanciando a funcionalidade de inicialização:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">Banco</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_dados</span> <span class="o">=</span> <span class="s1">&#39;tutorial.db&#39;</span><span class="p">):</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">base_dados</span><span class="p">)</span>
 </code></pre></div>
+</li>
+<li>
+<p>Escrever a função <code>__enter__</code> que fará a abertura do cursor e devolverá o mesmo para uso externo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span>
+</code></pre></div>
+</li>
+<li>
+<p>Implementar a função <code>__exit__</code> para que seja chamada assim que todo o uso do cursor acima tenha sido concluído:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>E para chamar a função utilizando a abertura e fechamento da conexão em Banco de Dados, basta utilizar a instrução <code>with</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">with</span> <span class="n">Banco</span><span class="p">()</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;INSERT INTO movie VALUES</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="s2">                (&#39;Monty Python and the Holy Grail&#39;, 1975, 8.2),</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="s2">                (&#39;And Now Something Different&#39;, 1971, 7.5)&quot;&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
-        <a href="../Aula%209%20-%20Looping/" class="btn btn-neutral float-left" title="Aula 9 - Looping"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
-        <a href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/" class="btn btn-neutral float-right" title="Aula 11 - Instalação e Importação de Bibliotecas">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Aula%20992%20-%20Fila%20e%20Threads/" class="btn btn-neutral float-left" title="Aula 992 - Fila e Threads"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%20994%20-%20List%20Comprehension%2C%20Map%20e%20Filter/" class="btn btn-neutral float-right" title="Aula 994 - List Comprehension, Map e Filter">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -293,10 +308,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Aula%209%20-%20Looping/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+      <span><a href="../Aula%20992%20-%20Fila%20e%20Threads/" style="color: #fcfcfc">&laquo; Anterior</a></span>
     
     
-      <span><a href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+      <span><a href="../Aula%20994%20-%20List%20Comprehension%2C%20Map%20e%20Filter/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
     
   </span>
 </div>

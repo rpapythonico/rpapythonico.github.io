@@ -201,7 +201,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://rpapythonico.github.io/S02/Aula%20992%20-%20Datetime/</loc>
+         <loc>https://rpapythonico.github.io/S02/Aula%20990%20-%20Datetime/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rpapythonico.github.io/S02/Aula%20991%20-%20Decoradores/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rpapythonico.github.io/S02/Aula%20992%20-%20Fila%20e%20Threads/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rpapythonico.github.io/S02/Aula%20993%20-%20Gerenciador%20de%20Contexto/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rpapythonico.github.io/S02/Aula%20994%20-%20List%20Comprehension%2C%20Map%20e%20Filter/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://rpapythonico.github.io/S02/Aula%20995%20-%20Serializa%C3%A7%C3%A3o/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
