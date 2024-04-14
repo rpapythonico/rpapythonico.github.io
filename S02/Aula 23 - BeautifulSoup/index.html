@@ -8,7 +8,7 @@
     <title>Aula 23 - BeautifulSoup - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2023%20-%20BeautifulSoup/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -127,6 +128,18 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#formatar-o-codigo-de-html-para-parsear">Formatar o código de HTML para “parsear”</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acessar-uma-tag-diretamente">Acessar uma TAG diretamente</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acessar-o-primeiro-elemento-atraves-dos-seus-atributos-basicos-id-ou-class">Acessar o PRIMEIRO elemento através dos seus atributos básicos (ID  ou CLASS)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#buscar-algum-elemento-atraves-do-seu-texto-entre-tags">Buscar algum elemento através do seu texto (entre TAGs)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#buscar-mais-de-um-elemento-na-pagina">Buscar mais de um elemento na página</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ver-atributos-da-tag-de-html">Ver atributos da TAG de HTML</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pegar-atributos-da-tag-de-html">Pegar atributos da TAG de HTML</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -178,9 +191,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 23 - BeautifulSoup</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 23 - BeautifulSoup</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -200,20 +213,20 @@
 <ol>
 <li>
 <p>Importar biblioteca para "baixar" o HTML da página:  </p>
-<p><code>python
-from urllib.request import urlopen</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+</code></pre></div>
 </li>
 <li>
 <p>Efetuar requisição da página HTML:</p>
-<p><code>python
-html = urlopen('https://quotes.toscrape.com/')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">html</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;https://quotes.toscrape.com/&#39;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>
 <p><strong>Resolvendo problema de certificado SSL (se houver):</strong></p>
-<p>```python
-import ssl</p>
-<p>ssl._create_default_https_context = ssl._create_unverified_context
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">ssl</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">ssl</span><span class="o">.</span><span class="n">_create_default_https_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">_create_unverified_context</span>
+</code></pre></div>
 <ul>
 <li>Outras formas de resolver o erro de certificado SSL: <a href="https://exerror.com/urlopen-error-ssl-certificate_verify_failed-certificate-verify-failed/">https://exerror.com/urlopen-error-ssl-certificate_verify_failed-certificate-verify-failed/</a></li>
 </ul>
@@ -225,71 +238,73 @@ import ssl</p>
 <ol>
 <li>
 <p>Instalação da "lib" usando o gerenciador de pacotes "pip":</p>
-<p><code>bash
-pip install requests</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip install requests
+</code></pre></div>
 </li>
 <li>
 <p>Importação da “lib”:</p>
-<p><code>python
-import requests</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div>
 </li>
 <li>
 <p>Download da página HTML:</p>
-<p><code>python
-html = requests.get('https://quotes.toscrape.com/')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">html</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://quotes.toscrape.com/&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ol>
 <h2 id="efetuando-parse-no-html">Efetuando "parse" no HTML</h2>
 <h3 id="instalacao-do-parser-do-html-utilizando-o-gerenciador-de-pacotes-pip">Instalação do “parser” do HTML utilizando o gerenciador de pacotes "pip"</h3>
-<p><code>bash
-pip install beautifulsoup4</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip install beautifulsoup4
+</code></pre></div>
 <h3 id="importacao-do-parser-de-html">Importação do “parser” de HTML</h3>
-<p><code>python
-from bs4 import BeautifulSoup</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</code></pre></div>
 <h3 id="formatar-o-codigo-de-html-para-parsear">Formatar o código de HTML para “parsear”</h3>
-<p>```python</p>
-<h1 id="formato-para-quem-usou-urllib">Formato para quem usou urllib</h1>
-<p>soup = BeautifulSoup(html.read(), 'html.parser')</p>
-<h1 id="formato-para-quem-usou-requests">Formato para quem usou requests</h1>
-<p>soup = BeautifulSoup(html.text, 'html.parser')
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Formato para quem usou urllib</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Formato para quem usou requests</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="acessar-uma-tag-diretamente">Acessar uma TAG diretamente</h3>
-<p>```python
-soup.h1</p>
-<h1 id="output">output:</h1>
-<h1 id="_1"><h1></h1>
-<h1 id="quotes-to-scrape"><a href="/" style="text-decoration: none">Quotes to Scrape</a></h1>
-<h1 id="_2"></h1></h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">h1</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># output:</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># &lt;h1&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># &lt;a href=&quot;/&quot; style=&quot;text-decoration: none&quot;&gt;Quotes to Scrape&lt;/a&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># &lt;/h1&gt;</span>
+</code></pre></div>
 <h3 id="acessar-o-primeiro-elemento-atraves-dos-seus-atributos-basicos-id-ou-class">Acessar o <strong>PRIMEIRO</strong> elemento através dos seus atributos básicos (ID  ou CLASS)</h3>
-<p>```python
-soup.find(class_='text')</p>
-<h1 id="output_1">output:</h1>
-<h1 id="the-world-as-we-have-created-it-is-a-process-of-our-thinking-it-cannot-be-changed-without-changing-our-thinking"><span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span></h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># output:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># &lt;span class=&quot;text&quot; itemprop=&quot;text&quot;&gt;“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”&lt;/span&gt;</span>
+</code></pre></div>
 <h3 id="buscar-algum-elemento-atraves-do-seu-texto-entre-tags">Buscar algum elemento através do seu texto (entre TAGs)</h3>
-<p>```python
-soup.find(text="deep-thoughts")</p>
-<h1 id="output-deep-thoughts">output: 'deep-thoughts'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;deep-thoughts&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># output: &#39;deep-thoughts&#39;</span>
+</code></pre></div>
 <h3 id="buscar-mais-de-um-elemento-na-pagina">Buscar mais de um elemento na página</h3>
-<p>```python
-soup.find_all(class_='text')</p>
-<h1 id="ou">ou</h1>
-<p>soup.find_all('span', {'class': 'text'})</p>
-<h1 id="output-the-world-as-we-have-created-it-is-a-process-of-our-thinking-it-cannot-be-changed-without-changing-our-thinking-it-is-our-choices-harry-that-show-what-we-truly-are-far-more-than-our-abilities">output: [<span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span>, <span class="text" itemprop="text">“It is our choices, Harry, that show what we truly are, far more than our abilities.”</span>, ... ]</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">})</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># output: [&lt;span class=&quot;text&quot; itemprop=&quot;text&quot;&gt;“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”&lt;/span&gt;, &lt;span class=&quot;text&quot; itemprop=&quot;text&quot;&gt;“It is our choices, Harry, that show what we truly are, far more than our abilities.”&lt;/span&gt;, ... ]</span>
+</code></pre></div>
 <h3 id="ver-atributos-da-tag-de-html">Ver atributos da TAG de HTML</h3>
-<p>```python
-div = soup.find('div', {'class': 'quote'})
-div.attrs</p>
-<h1 id="output-class-quote-itemscope-itemtype-httpschemaorgcreativework">output: {'class': ['quote'], 'itemscope': '', 'itemtype': 'http://schema.org/CreativeWork'}</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;quote&#39;</span><span class="p">})</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">div</span><span class="o">.</span><span class="n">attrs</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># output: {&#39;class&#39;: [&#39;quote&#39;], &#39;itemscope&#39;: &#39;&#39;, &#39;itemtype&#39;: &#39;http://schema.org/CreativeWork&#39;}</span>
+</code></pre></div>
 <h3 id="pegar-atributos-da-tag-de-html">Pegar atributos da TAG de HTML</h3>
-<p>```python
-soup.find('div', {'class': 'quote'}).get('itemtype')</p>
-<h1 id="output-httpschemaorgcreativework">output: 'http://schema.org/CreativeWork'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;quote&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemtype&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># output: &#39;http://schema.org/CreativeWork&#39;</span>
+</code></pre></div>
               
             </div>
           </div><footer>
@@ -326,15 +341,14 @@ soup.find('div', {'class': 'quote'}).get('itemtype')</p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

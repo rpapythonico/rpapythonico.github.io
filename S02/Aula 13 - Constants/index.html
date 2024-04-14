@@ -8,7 +8,7 @@
     <title>Aula 13 - Constants - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2013%20-%20Constants/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -164,9 +165,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 13 - Constants</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 13 - Constants</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -182,9 +183,9 @@
 <h2 id="nomenclatura">Nomenclatura</h2>
 <p>A regra para essas variáveis é de SCREAMING_SNAKE_CASE (todas as letras maiúsculas).</p>
 <p>Ex:.</p>
-<p><code>python
-LOGIN_USER = "username"
-LOGIN_PASS = "password"</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">LOGIN_USER</span> <span class="o">=</span> <span class="s2">&quot;username&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">LOGIN_PASS</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
+</code></pre></div>
 <h2 id="exemplo-criacao-do-arquivo">Exemplo - Criação do arquivo</h2>
 <ol>
 <li>Gera um arquivo com extensão ".py";<ul>
@@ -194,9 +195,9 @@ LOGIN_PASS = "password"</code></p>
 <li>Instancia as variáveis utilizando letras maiúsculas e atribui os devidos valores.<ul>
 <li>
 <p>Ex.:</p>
-<p><code>python
-LOGIN_USER = "RPA_PYTHONICO"
-LOGIN_PASS = "SENHA@123"</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">LOGIN_USER</span> <span class="o">=</span> <span class="s2">&quot;RPA_PYTHONICO&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">LOGIN_PASS</span> <span class="o">=</span> <span class="s2">&quot;SENHA@123&quot;</span>
+</code></pre></div>
 </li>
 </ul>
 </li>
@@ -205,22 +206,20 @@ LOGIN_PASS = "SENHA@123"</code></p>
 <ol>
 <li>
 <p>Após criado o arquivo, basta importar o mesmo dentro de qualquer código em python;</p>
-<p>```python
-import sys</p>
-<h1 id="comando-responsavel-por-adiconar-um-caminho-dentro-do-codigo">Comando responsavel por adiconar um caminho dentro do codigo.</h1>
-<h1 id="assim-o-python-consegue-identificar-o-arquivo-e-importar-o-mesmo">Assim o python consegue identificar o arquivo e importar o mesmo.</h1>
-<p>sys.path.append(r'CAMINHO ONDE ESTA LOCALIZADA NOSSA CONSTANTS')
-import constants as const
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Comando responsavel por adiconar um caminho dentro do codigo.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Assim o python consegue identificar o arquivo e importar o mesmo.</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;CAMINHO ONDE ESTA LOCALIZADA NOSSA CONSTANTS&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span> <span class="nn">constants</span> <span class="k">as</span> <span class="nn">const</span>
+</code></pre></div>
 </li>
 <li>
 <p>Com as variáveis importadas, basta usá-las.</p>
-<p>```python
-print(const.LOGIN_USER)</p>
-<h1 id="output-rpa_pythonico">output: "RPA_PYTHONICO"</h1>
-<p>print(const.LOGIN_PASS)</p>
-<h1 id="output-senha123">output: "SENHA@123"</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">LOGIN_USER</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># output: &quot;RPA_PYTHONICO&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">const</span><span class="o">.</span><span class="n">LOGIN_PASS</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># output: &quot;SENHA@123&quot;</span>
+</code></pre></div>
 </li>
 </ol>
               
@@ -259,15 +258,14 @@ print(const.LOGIN_USER)</p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

@@ -8,7 +8,7 @@
     <title>Aula 24 - APIs - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2024%20-%20APIs/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -141,6 +142,16 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exemplo">Exemplo</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#apis-para-praticar">APIs Para Praticar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#post">POST</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#explicacao_1">Explicação</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplo_1">Exemplo</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -190,9 +201,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 24 - APIs</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 24 - APIs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -232,20 +243,20 @@
 <ul>
 <li>Instalando a "lib" requests</li>
 </ul>
-<p><code>bash
-  pip install requests</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install requests
+</code></pre></div>
 <h4 id="http">http</h4>
 <ul>
 <li>Importando a "lib" http.client</li>
 </ul>
-<p><code>python
-  from http.client import HTTPSConnection</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">http.client</span> <span class="kn">import</span> <span class="n">HTTPSConnection</span>
+</code></pre></div>
 <h4 id="urllib">urllib</h4>
 <ul>
 <li>Importando a "lib" urllib.request</li>
 </ul>
-<p><code>python
-  from urllib.request import urlopen</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+</code></pre></div>
 <h2 id="get">GET</h2>
 <h3 id="explicacao">Explicação</h3>
 <p>As APIs do tipo GET são de modelagem simples, isso é, a requisição é feita somente tendo uma URL e nela podem ser passado parâmetros extras para serem efetuados filtros e ajustes no retorno devolvido por ela.</p>
@@ -254,27 +265,26 @@
 <ol>
 <li>
 <p>Importando a "lib" requests</p>
-<p><code>python
-import requests</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div>
 </li>
 <li>
 <p>Efetuando requisição</p>
-<p>```python
-url = "http://universities.hipolabs.com/search?country=brazil"</p>
-<p>response = requests.get(url)
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://universities.hipolabs.com/search?country=brazil&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Transformando o retorno em dicionário</p>
-<p><code>python
-r_json = response.json()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">r_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Interagindo com o retorno</p>
-<p>```python
-print(r_json[15]['name'])</p>
-<h1 id="output-universidade-regional-de-blumenau">output: 'Universidade Regional de Blumenau'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">r_json</span><span class="p">[</span><span class="mi">15</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># output: &#39;Universidade Regional de Blumenau&#39;</span>
+</code></pre></div>
 </li>
 </ol>
 <h3 id="apis-para-praticar">APIs Para Praticar</h3>
@@ -294,43 +304,42 @@ Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter 
 <ol>
 <li>
 <p>Importando a "lib" requests e JSON</p>
-<p><code>python
-import requests
-import json</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">json</span>
+</code></pre></div>
 </li>
 <li>
 <p>Gerando "corpo" da API</p>
-<p><code>python
-payload = json.dumps({
-  "name": "Harry Potter",
-  "job": "Desenvolvedor RPA"
-})</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Harry Potter&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  <span class="s2">&quot;job&quot;</span><span class="p">:</span> <span class="s2">&quot;Desenvolvedor RPA&quot;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">})</span>
+</code></pre></div>
 </li>
 <li>
 <p>Gerando os cabeçalhos da API</p>
-<p><code>python
-headers = {
-  'Content-Type': 'application/json'
-}</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
 <p>Efetuando requisição</p>
-<p>```python
-url = "https://reqres.in/api/users"</p>
-<p>response = requests.post(url, headers=headers, data=payload)
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://reqres.in/api/users&quot;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Transformando o retorno em dicionário</p>
-<p><code>python
-r_json = response.json()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">r_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Interagindo com o retorno</p>
-<p>```python
-print(r_json.get('createdAt'))</p>
-<h1 id="output-2022-05-23t195322594z">output: '2022-05-23T19:53:22.594Z'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">r_json</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;createdAt&#39;</span><span class="p">))</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># output: &#39;2022-05-23T19:53:22.594Z&#39;</span>
+</code></pre></div>
 </li>
 </ol>
               
@@ -369,15 +378,14 @@ print(r_json.get('createdAt'))</p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

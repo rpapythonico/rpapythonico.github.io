@@ -8,7 +8,7 @@
     <title>Aula 12 - Sistema Operacional - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2012%20-%20Sistema%20Operacional/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -82,6 +83,18 @@
     <li class="toctree-l2"><a class="reference internal" href="#biblioteca-os">Biblioteca - OS</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#exemplos">Exemplos</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#biblioteca-glob">Biblioteca - glob</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplos_1">Exemplos</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#biblioteca-shutil">Biblioteca - Shutil</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplos_2">Exemplos</a>
     </li>
         </ul>
     </li>
@@ -164,9 +177,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 12 - Sistema Operacional</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 12 - Sistema Operacional</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -185,37 +198,35 @@
 <ul>
 <li>
 <p>Importa a Biblioteca</p>
-<p><code>python
-import os</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">os</span>
+</code></pre></div>
 </li>
 <li>
 <p>Aponta a execução do Python para uma pasta em especifico</p>
-<p><code>python
-os.chdir(r'C:\Users\user\Documents\Code\Python')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\user\Documents\Code\Python&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Localiza a pasta de execução do Python</p>
-<p>```python
-os.getcwd()</p>
-<h1 id="output-cusersuserdocumentscodepython">output: 'C:\Users\user\Documents\Code\Python'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># output: &#39;C:\Users\user\Documents\Code\Python&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Lista os arquivos presentes na pasta</p>
-<p>```python
-os.listdir(r'C:\Users\user\Documents\Code\Python')</p>
-<h1 id="output-arquivo_umtxt-arquivo_doistxt-arquivos_trestxt">output: ['arquivo_um.txt', 'arquivo_dois.txt', arquivos_tres.txt]</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\user\Documents\Code\Python&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># output: [&#39;arquivo_um.txt&#39;, &#39;arquivo_dois.txt&#39;, arquivos_tres.txt]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Renomeia um arquivo</p>
-<p><code>python
-os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;arquivo_teste.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;arquivo_modificado.txt&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Remove um arquivo</p>
-<p><code>python
-os.remove('arquivo_modificado.txt')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;arquivo_modificado.txt&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="biblioteca-glob">Biblioteca - <strong>glob</strong></h2>
@@ -224,20 +235,19 @@ os.remove('arquivo_modificado.txt')</code></p>
 <ul>
 <li>
 <p>Instalando a Biblioteca</p>
-<p><code>bash
-pip install glob</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip install glob
+</code></pre></div>
 </li>
 <li>
 <p>Importanto a Biblioteca</p>
-<p><code>python
-import glob</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">glob</span>
+</code></pre></div>
 </li>
 <li>
 <p>Buscando arquivos em um diretório através da extensão</p>
-<p>```python
-glob.glob(r'C:\Users\user\Documents\Code\Python*.txt')</p>
-<h1 id="output-cusersuserdocumentscodepythonarquivo_umtxt-cusersuserdocumentscodepythonarquivo_doistxt-cusersuserdocumentscodepythonarquivos_trestxt">output: ['C:\Users\user\Documents\Code\Python\arquivo_um.txt', 'C:\Users\user\Documents\Code\Python\arquivo_dois.txt', C:\Users\user\Documents\Code\Python\arquivos_tres.txt]</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\user\Documents\Code\Python\*.txt&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># output: [&#39;C:\Users\user\Documents\Code\Python\arquivo_um.txt&#39;, &#39;C:\Users\user\Documents\Code\Python\arquivo_dois.txt&#39;, C:\Users\user\Documents\Code\Python\arquivos_tres.txt] </span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="biblioteca-shutil">Biblioteca - <strong>Shutil</strong></h2>
@@ -246,24 +256,24 @@ glob.glob(r'C:\Users\user\Documents\Code\Python*.txt')</p>
 <ul>
 <li>
 <p>Importando a Biblioteca</p>
-<p><code>python
-import shutil</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">shutil</span>
+</code></pre></div>
 </li>
 <li>
 <p>Movimenta arquivos entre diretórios</p>
-<p><code>python
-shutil.move(
-    r'arquivo_modificado.txt',
-    r'.\pasta_move\arquivo_modificado.txt'
-    )</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="sa">r</span><span class="s1">&#39;arquivo_modificado.txt&#39;</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="sa">r</span><span class="s1">&#39;.\pasta_move\arquivo_modificado.txt&#39;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Copia arquivo de um diretório para outro</p>
-<p><code>python
-shutil.copy(
-    r'arquivo_modificado.txt',
-    r'.\pasta_move\arquivo_modificado.txt'
-    )</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="sa">r</span><span class="s1">&#39;arquivo_modificado.txt&#39;</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="sa">r</span><span class="s1">&#39;.\pasta_move\arquivo_modificado.txt&#39;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
               
@@ -302,15 +312,14 @@ shutil.copy(
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

@@ -8,7 +8,7 @@
     <title>Navegador - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -111,6 +112,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#maximizar-a-janela-do-navegador">Maximizar a janela do navegador</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#colocar-um-tempo-para-carregamento-implicito">Colocar um tempo para carregamento - IMPLÍCITO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#colocar-um-tempo-para-carregamento-explicito">Colocar um tempo para carregamento - EXPLÍCITO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fechar-aba-do-navegador">Fechar aba do navegador</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fechar-navegador-e-seu-webdriver">Fechar navegador e seu webdriver</a>
+    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
@@ -166,10 +175,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-          <li class="breadcrumb-item">Aula 22 - Selenium</li>
-      <li class="breadcrumb-item active">Navegador</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+          <li>Aula 22 - Selenium &raquo;</li>
+      <li>Navegador</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -181,57 +190,58 @@
                 <h1 id="selenium-navegador">Selenium - Navegador</h1>
 <h2 id="instalacao-da-biblioteca">Instalação da biblioteca</h2>
 <p>Para instalar a lib, será usado o gerenciador de pacotes pip com o seguinte comando:</p>
-<p><code>bash
-pip install selenium</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install selenium
+</code></pre></div>
 <h2 id="importar-a-biblioteca">Importar a biblioteca</h2>
 <p>Para importar o mínimo do Selenium, o comando será:</p>
-<p><code>python
-from selenium import webdriver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</code></pre></div>
 <h2 id="abrir-o-webdriver">Abrir o Webdriver</h2>
 <p>Na nova versão do Selenium, o <strong>"executable_path"</strong> deixou de existir e precisa do <strong>Service</strong> para que o mesmo consiga abrir o navegador.</p>
 <p>Para abrí-lo no novo formato, deverá ser feito o seguinte código:</p>
-<p>```python
-from selenium.webdriver.chrome.service import Service</p>
-<p>s_dir = Service('chromedriver.exe')
-driver = webdriver.Chrome(service=s_dir)
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.service</span> <span class="kn">import</span> <span class="n">Service</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">s_dir</span> <span class="o">=</span> <span class="n">Service</span><span class="p">(</span><span class="s1">&#39;chromedriver.exe&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">s_dir</span><span class="p">)</span>
+</code></pre></div>
 <p>Já a importação no formato antigo é realizado da seguinte maneira:</p>
-<p><code>python
-driver = webdriver.Chrome('chromedriver.exe')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="s1">&#39;chromedriver.exe&#39;</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="acessar-um-site">Acessar um site</h2>
 <p>Com o "webdriver" salvo dentro da variável "driver", a mesma carrega muitas funcionalidades do navegador instanciado.</p>
 <p>O comando primordial é para acessar um site:</p>
-<p><code>python
-driver.get('https://www.amazon.com.br/')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.amazon.com.br/&#39;</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="maximizar-a-janela-do-navegador">Maximizar a janela do navegador</h2>
 <p>O navegador também possui a capacidade de ser minimizado ou maximizado e no Selenium os comandos são:</p>
-<p>```python
-driver.minimize_window()</p>
-<h1 id="ou">ou</h1>
-<p>driver.maximize_window()
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">minimize_window</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">driver</span><span class="o">.</span><span class="n">maximize_window</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="colocar-um-tempo-para-carregamento-implicito">Colocar um tempo para carregamento - IMPLÍCITO</h2>
 <p>O carregamento implícito se aplica para todo e qualquer elemento na página. Então depois de instanciado uma vez, sempre que buscar alguma coisa na página, ele terá esse tempo máximo de espera para localizar o objeto.</p>
 <p>A sintaxe dele é:</p>
-<p><code>python
-driver.implicitly_wait(30)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">implicitly_wait</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="colocar-um-tempo-para-carregamento-explicito">Colocar um tempo para carregamento - EXPLÍCITO</h2>
 <p>Em casos onde apenas um elemento nos interessa, pode ser utilizado um carregamento explícito, isto é, no código será apontado exatamente qual o objeto que se deseja aguardar um tempo máximo até que ele apareça. Esse método não se aplica à página como um todo.</p>
 <p>A sintaxe dele é:</p>
-<p>```python
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC</p>
-<p>WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabsearchtextbox')))
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">EC</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">until</span><span class="p">(</span><span class="n">EC</span><span class="o">.</span><span class="n">presence_of_element_located</span><span class="p">((</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;twotabsearchtextbox&#39;</span><span class="p">)))</span>
+</code></pre></div>
 <h2 id="fechar-aba-do-navegador">Fechar aba do navegador</h2>
 <p>O navegador também permite abrir várias abas e caso seja necessário fechar uma delas, o comando a seguir encerrará aquela que está em uso:</p>
-<p><code>python
-driver.close()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="fechar-navegador-e-seu-webdriver">Fechar navegador e seu webdriver</h2>
 <p>Para que a instância do navegador seja encerrada totalmente, o comando a seguir precisa estar ao final do script:</p>
-<p><code>python
-driver.quit()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
               
             </div>
           </div><footer>
@@ -268,15 +278,14 @@ driver.quit()</code></p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

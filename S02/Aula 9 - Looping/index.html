@@ -8,7 +8,7 @@
     <title>Aula 9 - Looping - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%209%20-%20Looping/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -170,9 +171,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 9 - Looping</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 9 - Looping</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -190,55 +191,57 @@
 <ul>
 <li>Looping com uma quantidade definida de iterações</li>
 </ul>
-<p><code>python
-  for numero in range(5):
-    print(numero)
-  # output: 
-  # 0
-  # 1
-  # 2
-  # 3
-  # 4</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># output: </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 0</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 1</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># 2</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 3</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 4</span>
+</code></pre></div>
 <ul>
 <li>Looping usando intervalo de números</li>
 </ul>
-<p><code>python
-  for numero in range(3, 10):
-    print(numero)
-    # output:
-    # 3
-    # 4
-    # 5
-    # 6
-    # 7
-    # 8
-    # 9</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  <span class="c1"># output:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  <span class="c1"># 3</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="c1"># 4</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  <span class="c1"># 5</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  <span class="c1"># 6</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  <span class="c1"># 7</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>  <span class="c1"># 8</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  <span class="c1"># 9</span>
+</code></pre></div>
 <ul>
 <li>Looping usando listas/tuplas como delimitador</li>
 </ul>
-<p>```python
-  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</p>
-<p># ou</p>
-<p>lista_de_filmes = ('Kill Bill', 'Madagascar', 'Harry Potter')</p>
-<p>for filme in lista_de_filmes:
-    print(filme)
-  # output:
-  # 'Kill Bill'
-  # 'Madagascar'
-  # 'Harry Potter'
-  ```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">lista_de_filmes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kill Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;Madagascar&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry Potter&#39;</span><span class="p">]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">lista_de_filmes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Kill Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;Madagascar&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry Potter&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">for</span> <span class="n">filme</span> <span class="ow">in</span> <span class="n">lista_de_filmes</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">filme</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># output:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># &#39;Kill Bill&#39;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># &#39;Madagascar&#39;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># &#39;Harry Potter&#39;</span>
+</code></pre></div>
 <ul>
 <li>Looping usando listas com seus respectivos índices</li>
 </ul>
-<p>```python
-  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</p>
-<p>for indice, filme in enumerate(lista_de_filmes):
-    print(indice, '-', filme)
-  # output: 
-  # 0 - Kill Bill
-  # 1 - Madagascar
-  # 2 - Harry Potter
-  ```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">lista_de_filmes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kill Bill&#39;</span><span class="p">,</span> <span class="s1">&#39;Madagascar&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry Potter&#39;</span><span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">for</span> <span class="n">indice</span><span class="p">,</span> <span class="n">filme</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista_de_filmes</span><span class="p">):</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">indice</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">filme</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># output: </span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># 0 - Kill Bill</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 1 - Madagascar</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># 2 - Harry Potter</span>
+</code></pre></div>
 <h2 id="looping-while">Looping While</h2>
 <p>O comando while faz com que um conjunto de instruções seja executado enquanto uma condição é atendida.</p>
 <h3 id="exemplos_1">Exemplos</h3>
@@ -251,18 +254,17 @@
 </li>
 <li>
 <p>Ex.:</p>
-<p>```python
-contador = 0
-while contador &lt; 5:
-  print(f'O valor do contador é {contador} e ainda é menor que 5!')
-  contador += 1</p>
-<h1 id="output">output:</h1>
-<h1 id="o-valor-do-contador-e-0-e-ainda-e-menor-que-5">O valor do contador é 0 e ainda é menor que 5!</h1>
-<h1 id="o-valor-do-contador-e-1-e-ainda-e-menor-que-5">O valor do contador é 1 e ainda é menor que 5!</h1>
-<h1 id="o-valor-do-contador-e-2-e-ainda-e-menor-que-5">O valor do contador é 2 e ainda é menor que 5!</h1>
-<h1 id="o-valor-do-contador-e-3-e-ainda-e-menor-que-5">O valor do contador é 3 e ainda é menor que 5!</h1>
-<h1 id="o-valor-do-contador-e-4-e-ainda-e-menor-que-5">O valor do contador é 4 e ainda é menor que 5!</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O valor do contador é </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s1"> e ainda é menor que 5!&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># output:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># O valor do contador é 0 e ainda é menor que 5!</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># O valor do contador é 1 e ainda é menor que 5!</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># O valor do contador é 2 e ainda é menor que 5!</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># O valor do contador é 3 e ainda é menor que 5!</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># O valor do contador é 4 e ainda é menor que 5!</span>
+</code></pre></div>
 </li>
 <li>
 <p><strong>Looping condicional infinito com 'input'</strong></p>
@@ -272,12 +274,12 @@ while contador &lt; 5:
 </li>
 <li>
 <p>Ex.:</p>
-<p><code>python
-comando = ''
-while comando != 'cancelar':
-  print('Programa rodando....')
-  comando = input('Você desejar cancelar? Se sim digite "cancelar": ').lower()
-print('Seu programa foi cancelado com sucesso!')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">comando</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">while</span> <span class="n">comando</span> <span class="o">!=</span> <span class="s1">&#39;cancelar&#39;</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Programa rodando....&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  <span class="n">comando</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Você desejar cancelar? Se sim digite &quot;cancelar&quot;: &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Seu programa foi cancelado com sucesso!&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p><strong>Looping condicional infinito com "break" e "continue"</strong></p>
@@ -335,15 +337,14 @@ print('Seu programa foi cancelado com sucesso!')</code></p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

@@ -8,7 +8,7 @@
     <title>Aula 5 - Selenium e BeautifulSoup - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S01/Aula%205%20-%20Selenium%20e%20BeautifulSoup/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -140,6 +141,12 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#selenium">Selenium</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#beautifulsoup">BeautifulSoup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#xpath">Xpath</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extras">Extras</a>
+    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
@@ -160,9 +167,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 1</li>
-      <li class="breadcrumb-item active">Aula 5 - Selenium e BeautifulSoup</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 1 &raquo;</li>
+      <li>Aula 5 - Selenium e BeautifulSoup</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -197,249 +204,260 @@
 <ul>
 <li>
 <p>Instalação do Selenium:</p>
-<p><code>bash
-pip install selenium</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install selenium
+</code></pre></div>
 </li>
 <li>
 <p>Importação da biblioteca:</p>
-<p><code>python
-from selenium import webdriver</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+</code></pre></div>
 </li>
 <li>
 <p>Chamar navegadores com o(s) webdriver(s):</p>
-<p>```python</p>
-<h1 id="google-chrome">Google Chrome</h1>
-<p>driver = webdriver.Chrome('chromedriver.exe')</p>
-<h1 id="mozilla-firefox">Mozilla Firefox</h1>
-<p>driver = webdriver.Firefox('geckodriver.exe')</p>
-<h1 id="internet-explorer">Internet Explorer</h1>
-<p>driver = webdriver.Ie('IEDriverServer.exe')
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">#Google Chrome</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="s1">&#39;chromedriver.exe&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1">#Mozilla Firefox</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="s1">&#39;geckodriver.exe&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1">#Internet Explorer</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">(</span><span class="s1">&#39;IEDriverServer.exe&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Maximizar a janela do navegador:</p>
-<p><code>python
-driver.maximize_window()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">maximize_window</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Colocar um tempo para carregamento - IMPLÍCITO:</p>
-<p><code>python
-driver.implicitly_wait(30)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">implicitly_wait</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Colocar um tempo para carregamento - EXPLÍCITO:</p>
-<p>```python
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC</p>
-<p>WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabsearchtextbox')))
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">WebDriverWait</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support</span> <span class="kn">import</span> <span class="n">expected_conditions</span> <span class="k">as</span> <span class="n">EC</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">WebDriverWait</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">until</span><span class="p">(</span><span class="n">EC</span><span class="o">.</span><span class="n">presence_of_element_located</span><span class="p">((</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s1">&#39;twotabsearchtextbox&#39;</span><span class="p">)))</span>
+</code></pre></div>
 </li>
 <li>
 <p>Acessar um site:</p>
-<p><code>python
-driver.get('https://www.amazon.com.br/')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.amazon.com.br/&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Buscar elementos na página:</p>
-<p>```python</p>
-<h1 id="buscar-pela-class-do-elemento">Buscar pela class do elemento</h1>
-<p>driver.find_element_by_class_name('nav-input.nav-progressive-attribute')</p>
-<h1 id="buscar-pelo-id-do-elemento">Buscar pelo id do elemento</h1>
-<p>driver.find_element_by_id('twotabsearchtextbox')</p>
-<h1 id="buscar-pela-tag-do-elemento">Buscar pela tag do elemento</h1>
-<p>driver.find_element_by_tag_name('h1')</p>
-<h1 id="buscar-pelo-xpath-do-elemento">Buscar pelo xpath do elemento</h1>
-<p>driver.find_element_by_xpath('//input[@id="twotabsearchtextbox"]')</p>
-<h1 id="buscar-pelo-texto-completo-do-elemento">Buscar pelo texto completo do elemento:</h1>
-<p>driver.find_element_by_link_text('Todos')</p>
-<h1 id="buscar-pelo-texto-parcial-do-elemento">Buscar pelo texto parcial do elemento:</h1>
-<p>driver.find_element_by_partial_link_text('endereço').click()</p>
-<h1 id="buscar-pelo-seletor-css">Buscar pelo seletor CSS:</h1>
-<p>driver.find_element_by_css_selector('#searchDropdownBox')
-driver.find_element_by_css_selector('[name=url]')
-driver.find_element_by_css_selector('.nav-search-dropdown.searchSelect.nav-progressive-attrubute.nav-progressive-search-dropdown')
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">#Buscar pela class do elemento</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_class_name</span><span class="p">(</span><span class="s1">&#39;nav-input.nav-progressive-attribute&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1">#Buscar pelo id do elemento</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;twotabsearchtextbox&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">#Buscar pela tag do elemento</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_tag_name</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1">#Buscar pelo xpath do elemento</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s1">&#39;//input[@id=&quot;twotabsearchtextbox&quot;]&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1">#Buscar pelo texto completo do elemento:</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_link_text</span><span class="p">(</span><span class="s1">&#39;Todos&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c1">#Buscar pelo texto parcial do elemento:</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_partial_link_text</span><span class="p">(</span><span class="s1">&#39;endereço&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="c1">#Buscar pelo seletor CSS:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s1">&#39;#searchDropdownBox&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s1">&#39;[name=url]&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s1">&#39;.nav-search-dropdown.searchSelect.nav-progressive-attrubute.nav-progressive-search-dropdown&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Digita um valor no site:</p>
-<p><code>python
-driver.find_element_by_id('twotabsearchtextbox').send_keys('Python')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;twotabsearchtextbox&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Apagar um campo escrito:</p>
-<p><code>python
-driver.find_element_by_id('twotabsearchtextbox').clear()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;twotabsearchtextbox&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Clicar em um elemento:</p>
-<p><code>python
-driver.find_element_by_id('nav-search-submit-button').click()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;nav-search-submit-button&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Movimentar a tela para um elemento (scroll):</p>
-<p><code>python
-driver.find_element_by_class_name('navFooterBackToTopText').location_once_scrolled_into_view</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_class_name</span><span class="p">(</span><span class="s1">&#39;navFooterBackToTopText&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">location_once_scrolled_into_view</span>
+</code></pre></div>
 </li>
 <li>
 <p>Extrair texto:</p>
-<p><code>python
-driver.find_element_by_id('glow-ingress-line2').text</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;glow-ingress-line2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+</code></pre></div>
 </li>
 <li>
 <p>Coletar atributos do HTML:</p>
-<p><code>python
-driver.find_element_by_id('nav-logo-sprites').get_attribute('aria-label')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;nav-logo-sprites&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;aria-label&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Tirar print de um elemento ou do site:</p>
-<p>```python</p>
-<h1 id="print-do-elemento">Print do elemento</h1>
-<p>driver.find_element_by_id('navbar').screenshot('menu.png')</p>
-<h1 id="print-do-site">Print do site</h1>
-<p>driver.save_screenshot("screenshot.png")
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">#Print do elemento</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;navbar&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="s1">&#39;menu.png&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">#Print do site</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">driver</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="s2">&quot;screenshot.png&quot;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Selecionar uma opção no Dropdown:</p>
-<p>```python
-from selenium.webdriver.support.ui import Select</p>
-<p>dropdown = Select(driver.find_element_by_id('searchDropdownBox'))</p>
-<h1 id="selecionar-pelo-texto-presente">Selecionar pelo texto presente</h1>
-<p>dropdown.select_by_visible_text('Computadores e Informática')</p>
-<h1 id="selecionar-pelo-atributo-value-do-html">Selecionar pelo atributo value do HTML</h1>
-<p>dropdown.select_by_value('search-alias=computers')</p>
-<h1 id="selecionar-pelo-numero-dele-na-lista">Selecionar pelo número dele na lista</h1>
-<p>dropdown.select_by_index(11)
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span> <span class="nn">selenium.webdriver.support.ui</span> <span class="kn">import</span> <span class="n">Select</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">dropdown</span> <span class="o">=</span> <span class="n">Select</span><span class="p">(</span><span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_id</span><span class="p">(</span><span class="s1">&#39;searchDropdownBox&#39;</span><span class="p">))</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">#Selecionar pelo texto presente</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">dropdown</span><span class="o">.</span><span class="n">select_by_visible_text</span><span class="p">(</span><span class="s1">&#39;Computadores e Informática&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1">#Selecionar pelo atributo value do HTML</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="n">dropdown</span><span class="o">.</span><span class="n">select_by_value</span><span class="p">(</span><span class="s1">&#39;search-alias=computers&#39;</span><span class="p">)</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="c1">#Selecionar pelo número dele na lista</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="n">dropdown</span><span class="o">.</span><span class="n">select_by_index</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechar aba do navegador:</p>
-<p><code>python
-driver.close()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fechar navegador e seu webdriver:</p>
-<p><code>python
-driver.quit()</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="beautifulsoup">BeautifulSoup</h2>
 <ul>
 <li>
 <p>Importar biblioteca para "baixar" o HTML da página:</p>
-<p><code>python
-from urllib.request import urlopen</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+</code></pre></div>
 </li>
 <li>
 <p>Efetuar requisição da página HTML:</p>
-<p><code>python
-html = urlopen('https://quotes.toscrape.com/')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">html</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;https://quotes.toscrape.com/&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p><strong>Resolvendo problema de certificado SSL (se houver):</strong></p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
 ```
-</code></pre>
+</code></pre></div>
 <ul>
 <li>Outras formas de resolver o erro de certificado SSL: <a href="https://exerror.com/urlopen-error-ssl-certificate_verify_failed-certificate-verify-failed/">https://exerror.com/urlopen-error-ssl-certificate_verify_failed-certificate-verify-failed/</a></li>
 <li>Instalar o “parser” do HTML:</li>
 </ul>
-<p><code>bash
-pip install beautifulsoup4</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>pip install beautifulsoup4
+</code></pre></div>
 </li>
 <li>
 <p>Importar biblioteca do “parser” de HTML:</p>
-<p><code>python
-from bs4 import BeautifulSoup</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</code></pre></div>
 </li>
 <li>
 <p>Formatar o código de HTML para “parsear”:</p>
-<p><code>python
-soup = BeautifulSoup(html.read(), 'html.parser')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p><strong>ALTERNATIVA de biblioteca para "baixar" o html da página:</strong></p>
 </li>
 <li>
 <p>Instalação da "lib":</p>
-<pre><code>```bash
+<div class="highlight"><pre><span></span><code>```bash
 pip install requests
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Importação da “lib”:</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 import requests
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Efetuar requisição da página HTML:</p>
-<pre><code>```python
-html = requests.get('https://quotes.toscrape.com/')
+<div class="highlight"><pre><span></span><code>```python
+html = requests.get(&#39;https://quotes.toscrape.com/&#39;)
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Formatar o código de HTML para “parsear”:</p>
-<pre><code>```python
-soup = BeautifulSoup(html.text, 'html.parser')
+<div class="highlight"><pre><span></span><code>```python
+soup = BeautifulSoup(html.text, &#39;html.parser&#39;)
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Acessar uma TAG diretamente:</p>
-<p>```python
-soup.h1</p>
-<h1 id="output">output:</h1>
-<h1 id="_1"><h1></h1>
-<h1 id="quotes-to-scrape"><a href="/" style="text-decoration: none">Quotes to Scrape</a></h1>
-<h1 id="_2"></h1></h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">h1</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c1"># output:</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c1"># &lt;h1&gt;</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="c1"># &lt;a href=&quot;/&quot; style=&quot;text-decoration: none&quot;&gt;Quotes to Scrape&lt;/a&gt;</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1"># &lt;/h1&gt;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Acessar o <strong>PRIMEIRO</strong> elemento através dos seus atributos básicos (ID  ou CLASS):</p>
-<p>```python
-soup.find(class_='text')</p>
-<h1 id="output_1">output:</h1>
-<h1 id="the-world-as-we-have-created-it-is-a-process-of-our-thinking-it-cannot-be-changed-without-changing-our-thinking"><span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span></h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1"># output:</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1"># &lt;span class=&quot;text&quot; itemprop=&quot;text&quot;&gt;“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”&lt;/span&gt;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Buscar algum elemento através do seu texto (entre as TAGS):</p>
-<p>```python
-soup.find(text="deep-thoughts")</p>
-<h1 id="output-deep-thoughts">output: 'deep-thoughts'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;deep-thoughts&quot;</span><span class="p">)</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1"># output: &#39;deep-thoughts&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Buscar mais de um elemento na página:</p>
-<p>```python
-soup.find_all(class_='text')</p>
-<h1 id="ou">ou</h1>
-<p>soup.find_all('span', {'class': 'text'})</p>
-<h1 id="output-the-world-as-we-have-created-it-is-a-process-of-our-thinking-it-cannot-be-changed-without-changing-our-thinking-it-is-our-choices-harry-that-show-what-we-truly-are-far-more-than-our-abilities">output: [<span class="text" itemprop="text">“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”</span>, <span class="text" itemprop="text">“It is our choices, Harry, that show what we truly are, far more than our abilities.”</span>, ... ]</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">})</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="c1"># output: [&lt;span class=&quot;text&quot; itemprop=&quot;text&quot;&gt;“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”&lt;/span&gt;, &lt;span class=&quot;text&quot; itemprop=&quot;text&quot;&gt;“It is our choices, Harry, that show what we truly are, far more than our abilities.”&lt;/span&gt;, ... ]</span>
+</code></pre></div>
 </li>
 <li>
 <p>Ver atributos da TAG de HTML:</p>
-<p>```python
-div = soup.find('div', {'class': 'quote'})
-div.attrs</p>
-<h1 id="output-class-quote-itemscope-itemtype-httpschemaorgcreativework">output: {'class': ['quote'], 'itemscope': '', 'itemtype': 'http://schema.org/CreativeWork'}</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">div</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;quote&#39;</span><span class="p">})</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">div</span><span class="o">.</span><span class="n">attrs</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1"># output: {&#39;class&#39;: [&#39;quote&#39;], &#39;itemscope&#39;: &#39;&#39;, &#39;itemtype&#39;: &#39;http://schema.org/CreativeWork&#39;}</span>
+</code></pre></div>
 </li>
 <li>
 <p>Pegar atributos da TAG de HTML:</p>
-<p>```python
-soup.find('div', {'class': 'quote'}).get('itemtype')</p>
-<h1 id="output-httpschemaorgcreativework">output: 'http://schema.org/CreativeWork'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;quote&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemtype&#39;</span><span class="p">)</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="c1"># output: &#39;http://schema.org/CreativeWork&#39;</span>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="xpath">Xpath</h2>
@@ -496,15 +514,14 @@ soup.find('div', {'class': 'quote'}).get('itemtype')</p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

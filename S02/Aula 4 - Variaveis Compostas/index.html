@@ -8,7 +8,7 @@
     <title>Aula 4 - Variaveis Compostas - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%204%20-%20Variaveis%20Compostas/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -164,9 +165,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 4 - Variaveis Compostas</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 4 - Variaveis Compostas</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -184,176 +185,176 @@
 <li><strong>tuple</strong>: Armazena N valores e são <strong>imutáveis</strong>. É representada por <strong>parênteses</strong>.</li>
 <li>
 <p>Ex.:</p>
-<pre><code>```python
-frutas = ('Limão', 'Maça', 'Melancia', 'Banana')
+<div class="highlight"><pre><span></span><code>```python
+frutas = (&#39;Limão&#39;, &#39;Maça&#39;, &#39;Melancia&#39;, &#39;Banana&#39;)
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p><strong>list</strong>: Armazena N valores e são <strong>mutáveis</strong>. É representada por <strong>colchetes</strong>.</p>
 </li>
 <li>
 <p>Ex.:</p>
-<pre><code>```python
-nomes = ['Thomas', 'Matheus', 'Felipe', 'Fernanda']
+<div class="highlight"><pre><span></span><code>```python
+nomes = [&#39;Thomas&#39;, &#39;Matheus&#39;, &#39;Felipe&#39;, &#39;Fernanda&#39;]
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p><strong>set</strong>: Armazena N valores, são <strong>imutáveis</strong> e <strong>não</strong> permite <strong>duplicatas</strong>. É representada por <strong>chaves</strong>.</p>
 </li>
 <li>
 <p>Ex.:</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 numeros = {1, 2, 3, 4, 5}
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p><strong>dict</strong>: Armazena N valores, tendo como princípio uma <strong>chave e um valor</strong>, podendo também ter <strong>uma chave para vários valores</strong> (lista). É <strong>mutável</strong>. E é representada por <strong>chaves e dois pontos</strong>.</p>
 </li>
-<li>Ex.:<pre><code>```python
-objetos = {'Morango': 'É uma fruta', 'Caneca': 'É um objeto', 'Carro': 'É um automovel'}
+<li>Ex.:<div class="highlight"><pre><span></span><code>```python
+objetos = {&#39;Morango&#39;: &#39;É uma fruta&#39;, &#39;Caneca&#39;: &#39;É um objeto&#39;, &#39;Carro&#39;: &#39;É um automovel&#39;}
 ```
-</code></pre>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="listas">Listas</h2>
 <ul>
 <li>
 <p>Cria uma lista</p>
-<pre><code>```python
-alunos = ['Marcos', 'Henrique', 'Julia', 'Guilherme']
+<div class="highlight"><pre><span></span><code>```python
+alunos = [&#39;Marcos&#39;, &#39;Henrique&#39;, &#39;Julia&#39;, &#39;Guilherme&#39;]
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Retira um valor da lista pelo <strong>índice</strong></p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 alunos.pop(-1)
 print(alunos)
-# output: ['Marcos', 'Henrique', 'Julia']
+# output: [&#39;Marcos&#39;, &#39;Henrique&#39;, &#39;Julia&#39;]
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Retira um valor da lista pelo <strong>nome</strong></p>
-<pre><code>```python
-alunos.remove('Marcos')
+<div class="highlight"><pre><span></span><code>```python
+alunos.remove(&#39;Marcos&#39;)
 print(alunos)
-# output: ['Henrique', 'Julia']
+# output: [&#39;Henrique&#39;, &#39;Julia&#39;]
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Acrescenta um novo valor na lista</p>
-<pre><code>```python
-alunos.append('Renan')
+<div class="highlight"><pre><span></span><code>```python
+alunos.append(&#39;Renan&#39;)
 print(alunos)
-# output: ['Henrique', 'Julia', 'Renan']
+# output: [&#39;Henrique&#39;, &#39;Julia&#39;, &#39;Renan&#39;]
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Consulta valores na lista pelo índice</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 alunos[1]
-# output: 'Julia'
+# output: &#39;Julia&#39;
 alunos[1:3]
-# output: ['Julia', 'Renan']
+# output: [&#39;Julia&#39;, &#39;Renan&#39;]
 alunos[0]
-# output: 'Henrique'
+# output: &#39;Henrique&#39;
 alunos[-1]
-# output: 'Renan'
+# output: &#39;Renan&#39;
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Valida o tamanho da lista</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 len(alunos)
 # output: 3
 ```
-</code></pre>
+</code></pre></div>
 </li>
 </ul>
 <h2 id="dicionario">Dicionario</h2>
 <ul>
 <li>
 <p>Cria um dicionário</p>
-<pre><code>```python
-contatos = {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+<div class="highlight"><pre><span></span><code>```python
+contatos = {&#39;Marcos&#39;: &#39;1234-5678&#39;, &#39;Henrique&#39;: &#39;9999-9999&#39;, &#39;Julia&#39;: &#39;8765-4321&#39;, &#39;Guilherme&#39;: &#39;8877-7788&#39;}
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Emite todas as chaves do dicionário</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 contatos.keys()
-# output: dict_keys(['Marcos', 'Henrique', 'Julia', 'Guilherme'])
+# output: dict_keys([&#39;Marcos&#39;, &#39;Henrique&#39;, &#39;Julia&#39;, &#39;Guilherme&#39;])
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Emite todos os valores de cada chave do dicionário</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 contatos.values()
-# output: dict_values(['1234-5678', '9999-9999', '8765-4321', '8877-7788'])
+# output: dict_values([&#39;1234-5678&#39;, &#39;9999-9999&#39;, &#39;8765-4321&#39;, &#39;8877-7788&#39;])
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Emite todos os valores registrados no dicionario - (chave(s) e valor(es))</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 contatos.items()
-# output: dict_items([('Marcos', '1234-5678'), ('Henrique', '9999-9999'), ('Julia', '8765-4321'), ('Guilherme', '8877-7788')])
+# output: dict_items([(&#39;Marcos&#39;, &#39;1234-5678&#39;), (&#39;Henrique&#39;, &#39;9999-9999&#39;), (&#39;Julia&#39;, &#39;8765-4321&#39;), (&#39;Guilherme&#39;, &#39;8877-7788&#39;)])
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Deleta valores através da chave:</p>
-<pre><code>```python
-del(contatos['Marcos'])
-# output: {'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+<div class="highlight"><pre><span></span><code>```python
+del(contatos[&#39;Marcos&#39;])
+# output: {&#39;Henrique&#39;: &#39;9999-9999&#39;, &#39;Julia&#39;: &#39;8765-4321&#39;, &#39;Guilherme&#39;: &#39;8877-7788&#39;}
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Acessa valores de uma chave:</p>
-<pre><code>```python
-contatos.get('Julia')
-# output: '8765-4321'
+<div class="highlight"><pre><span></span><code>```python
+contatos.get(&#39;Julia&#39;)
+# output: &#39;8765-4321&#39;
 
 # ou
 
-contatos['Julia']
-# output: '8765-4321'
+contatos[&#39;Julia&#39;]
+# output: &#39;8765-4321&#39;
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Adiciona uma nova chave com seu respectivo valor</p>
-<pre><code>```python
-contatos['Ana'] = '0000-9999'
+<div class="highlight"><pre><span></span><code>```python
+contatos[&#39;Ana&#39;] = &#39;0000-9999&#39;
 print(contatos)
-# output: {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788', 'Ana': '0000-9999'}
+# output: {&#39;Marcos&#39;: &#39;1234-5678&#39;, &#39;Henrique&#39;: &#39;9999-9999&#39;, &#39;Julia&#39;: &#39;8765-4321&#39;, &#39;Guilherme&#39;: &#39;8877-7788&#39;, &#39;Ana&#39;: &#39;0000-9999&#39;}
 ```
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Cria um dicionário através de uma lista de tuplas</p>
-<pre><code>```python
+<div class="highlight"><pre><span></span><code>```python
 contatos_listas = [
-    ('Marcos', '1234-5678'),
-    ('Henrique', '9999-9999'),
-    ('Julia', '8765-4321'),
-    ('Guilherme', '8877-7788')
+    (&#39;Marcos&#39;, &#39;1234-5678&#39;),
+    (&#39;Henrique&#39;, &#39;9999-9999&#39;),
+    (&#39;Julia&#39;, &#39;8765-4321&#39;),
+    (&#39;Guilherme&#39;, &#39;8877-7788&#39;)
 ]
 contatos = dict(contatos_listas)
 print(contatos)
-# output: {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+# output: {&#39;Marcos&#39;: &#39;1234-5678&#39;, &#39;Henrique&#39;: &#39;9999-9999&#39;, &#39;Julia&#39;: &#39;8765-4321&#39;, &#39;Guilherme&#39;: &#39;8877-7788&#39;}
 ```
-</code></pre>
+</code></pre></div>
 </li>
 </ul>
               
@@ -392,15 +393,14 @@ print(contatos)
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

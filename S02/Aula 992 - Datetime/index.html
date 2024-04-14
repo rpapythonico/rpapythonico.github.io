@@ -8,7 +8,7 @@
     <title>Aula 991 - Datetime - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%20992%20-%20Datetime/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -160,9 +161,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 991 - Datetime</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 991 - Datetime</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -178,56 +179,51 @@
 <ul>
 <li>
 <p>Importar a biblioteca:</p>
-<p><code>python
-import datetime</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">datetime</span>
+</code></pre></div>
 </li>
 <li>
 <p>Coletar somente a data:</p>
-<p>```python
-hoje = datetime.date.today()</p>
-<h1 id="output-datetimedate2022-4-15">output: datetime.date(2022, 4, 15)</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">hoje</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># output: datetime.date(2022, 4, 15)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Coleta a data e hora do dia vigente:</p>
-<p>```python
-hoje = datetime.datetime.today()</p>
-<h1 id="output-datetimedatetime2022-4-15-23-17-18-892310">output: datetime.datetime(2022, 4, 15, 23, 17, 18, 892310)</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">hoje</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># output: datetime.datetime(2022, 4, 15, 23, 17, 18, 892310)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Converter a data para um formato visual e no formato string:</p>
 <p>A formatação de data "%d/%m/%Y" e "%Y/%m/%d" usadas nesse exemplo e no abaixo são tiradas diretamente da <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes">documentação</a>.</p>
-<p>```python
-hoje_formatado = hoje.strftime('%d/%m/%Y')</p>
-<h1 id="output-15042022">output: '15/04/2022'</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">hoje_formatado</span> <span class="o">=</span> <span class="n">hoje</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># output: &#39;15/04/2022&#39;</span>
+</code></pre></div>
 </li>
 <li>
 <p>Retornar a string para o formato datetime:</p>
-<p>```python
-data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')</p>
-<h1 id="output-datetimedatetime2022-4-15-0-0">output: datetime.datetime(2022, 4, 15, 0, 0)</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">data_antes</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">hoje_formatado</span><span class="p">,</span> <span class="s1">&#39;%Y/%m/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># output: datetime.datetime(2022, 4, 15, 0, 0)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Trazer a data de ontem ou de amanhã:</p>
 <p>No uso do timedelta para calcular o dia anterior ou sucessor, é importante frisar que o símbolo de "+" é quem dita se irá operar pro passado ou futuro.</p>
-<p>```python</p>
-<h1 id="dia-anterior">Dia anterior</h1>
-<p>ontem = hoje - datetime.timedelta(days=1)</p>
-<h1 id="output-datetimedatetime2021-4-14-23-17-18-892310">output: datetime.datetime(2021, 4, 14, 23, 17, 18, 892310)</h1>
-<h1 id="dia-seguinte">Dia seguinte</h1>
-<p>amanha = hoje + datetime.timedelta(days=1)</p>
-<h1 id="output-datetimedatetime2021-4-16-23-17-18-892310">output: datetime.datetime(2021, 4, 16, 23, 17, 18, 892310)</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Dia anterior</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">ontem</span> <span class="o">=</span> <span class="n">hoje</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># output: datetime.datetime(2021, 4, 14, 23, 17, 18, 892310)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Dia seguinte</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">amanha</span> <span class="o">=</span> <span class="n">hoje</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># output: datetime.datetime(2021, 4, 16, 23, 17, 18, 892310)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Calcular a diferença de dias de uma data para outra:</p>
-<p>```python
-(amanha - ontem).days</p>
-<h1 id="output-2">output: 2</h1>
-<p>```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="n">amanha</span> <span class="o">-</span> <span class="n">ontem</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># output: 2</span>
+</code></pre></div>
 </li>
 </ul>
               
@@ -266,15 +262,14 @@ data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')</p>
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

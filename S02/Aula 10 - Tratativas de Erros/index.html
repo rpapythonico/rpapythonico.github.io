@@ -8,7 +8,7 @@
     <title>Aula 10 - Tratativas de Erros - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%2010%20-%20Tratativas%20de%20Erros/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -162,9 +163,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-      <li class="breadcrumb-item active">Aula 10 - Tratativas de Erros</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+      <li>Aula 10 - Tratativas de Erros</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -178,26 +179,26 @@
 <ul>
 <li>Variável <strong>"nome"</strong> não declarada:</li>
 </ul>
-<p><code>python
-  print(nome)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</code></pre></div>
 <p><img alt="NameError" src="../../img/NameError.png" /></p>
 <ul>
 <li>Soma entre <strong>"string"</strong> e <strong>"integer"</strong>:</li>
 </ul>
-<p><code>python
-  '2' + 2</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre></div>
 <p><img alt="TypeError" src="../../img/TypeError.png" /></p>
 <ul>
 <li>Barra invertida como operador aritmético:</li>
 </ul>
-<p><code>python
-  10 \ 0</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="mi">10</span> \ <span class="mi">0</span>
+</code></pre></div>
 <p><img alt="SyntaxError" src="../../img/SyntaxError.png" /></p>
 <ul>
 <li>Divisão de um valor por zero:</li>
 </ul>
-<p><code>python
-  10 / 0</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+</code></pre></div>
 <p><img alt="ZeroDivisionError" src="../../img/ZeroDivisionError.png" /></p>
 <h2 id="explicacao">Explicação</h2>
 <p>Para que um código não "quebre" e acabe parando uma automação ou um script, é necessário fazer uma tratativa de erro. Para isso, o Python possui quatro palavras reservadas: <strong>try</strong>, <strong>except</strong>, <strong>else</strong> e <strong>finally</strong>.</p>
@@ -213,29 +214,29 @@
 <li>Bloco que <strong>executará código independente</strong> do <strong>SUCESSO</strong> ou <strong>FALHA</strong></li>
 </ul>
 <h2 id="exemplo">Exemplo</h2>
-<p><code>python
-def divisao(x, y):
-  try:
-    result = x / y
-  except ZeroDivisionError:
-    print('Erro de Divisão por Zero!')
-  except:
-    print('Erro não mapeado! E AGORA???')
-  else:
-    print(f'O resultado da divisão entre {x} e {y} é {result}')
-  finally:
-    print('Independente do que acontecer, sempre estarei aqui!')</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">divisao</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erro de Divisão por Zero!&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erro não mapeado! E AGORA???&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O resultado da divisão entre </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> e </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1"> é </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>  <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Independente do que acontecer, sempre estarei aqui!&#39;</span><span class="p">)</span>
+</code></pre></div>
 <h1 id="personalizando-um-erro">Personalizando Um Erro</h1>
 <h2 id="explicacao_1">Explicação</h2>
 <p>O Python possui diversos erros já mapeados com textos prontos, porém é importante frisar que é possível personalizar a mensagem deles. Para isso, a linguagem conta com a palavra reservada <strong>raise</strong>.</p>
 <h2 id="exemplo_1">Exemplo</h2>
-<p>```python
-idade = 17</p>
-<p>if idade &lt; 18:
-  raise SystemError('Acesso proibido!')
-else:
-  print('Acesso permitido!')
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">17</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  <span class="k">raise</span> <span class="ne">SystemError</span><span class="p">(</span><span class="s1">&#39;Acesso proibido!&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Acesso permitido!&#39;</span><span class="p">)</span>
+</code></pre></div>
               
             </div>
           </div><footer>
@@ -272,15 +273,14 @@ else:
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>

@@ -8,7 +8,7 @@
     <title>Visão Geral - RPA Pythonico</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,11 +17,12 @@
         var mkdocs_page_url = "/S02/Aula%203%20-%20Vari%C3%A1veis/";
       </script>
     
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -33,7 +34,7 @@
           <a href="../.." class="icon icon-home"> RPA Pythonico
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+      <input type="text" name="q" placeholder="Buscar documentos" title="Digite o termo a ser buscado aqui" />
   </form>
 </div>
       </div>
@@ -170,10 +171,10 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
-          <li class="breadcrumb-item">Temporada 2</li>
-          <li class="breadcrumb-item">Aula 3 - Variáveis</li>
-      <li class="breadcrumb-item active">Visão Geral</li>
+    <li><a href="../.." class="icon icon-home" alt="Documentos"></a> &raquo;</li>
+          <li>Temporada 2 &raquo;</li>
+          <li>Aula 3 - Variáveis &raquo;</li>
+      <li>Visão Geral</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -196,15 +197,14 @@
 <p>No Python é utilizado o formato <strong>snake_case</strong> para os casos onde possui uma nomenclatura composta (com mais de um palavra) e sempre será com <strong>letras minúsculas</strong>. Esse formato é chamado de <strong>"Pythonico"</strong>.</p>
 <p><strong>Obs.:</strong> Vale frisar que em âmbito corporativo, é sempre indicado usar termos em inglês para que o código fique de forma globalizada.</p>
 <h3 id="exemplo">Exemplo</h3>
-<p>```python
-nome = "João"</p>
-<h1 id="ou">ou</h1>
-<p>idade = 18</p>
-<h1 id="ou_1">ou</h1>
-<p>nome_do_arquivo = "boleto.pdf"</p>
-<h1 id="ou_2">ou</h1>
-<p>numero_do_contrato = 123456789
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;João&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">18</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">nome_do_arquivo</span> <span class="o">=</span> <span class="s2">&quot;boleto.pdf&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># ou</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">numero_do_contrato</span> <span class="o">=</span> <span class="mi">123456789</span>
+</code></pre></div>
 <h1 id="quais-os-tipos-de-variaveis">Quais os tipos de variáveis?</h1>
 <ul>
 <li><strong>int</strong>(eger): São valores inteiros.</li>
@@ -222,16 +222,16 @@ nome = "João"</p>
 <li>Vale destacar que isso só é permitido através de números no formato string para integer.</li>
 <li>
 <p>Ex.:</p>
-<pre><code>    idade = int("12")
-</code></pre>
+<div class="highlight"><pre><span></span><code>    idade = int(&quot;12&quot;)
+</code></pre></div>
 </li>
 <li>
 <p>Integer para String:</p>
 </li>
 <li>
 <p>Ex.:</p>
-<pre><code>    cm = str(25)
-</code></pre>
+<div class="highlight"><pre><span></span><code>    cm = str(25)
+</code></pre></div>
 </li>
 <li>
 <p>Integer para Boolean</p>
@@ -244,59 +244,58 @@ nome = "João"</p>
 <li><strong>Obs.:</strong> Caso deseje usar números maiores que 1, o resultado sempre será <strong>"True"</strong>.</li>
 <li>
 <p>Ex.:</p>
-<pre><code>    variavel = bool(1)
+<div class="highlight"><pre><span></span><code>    variavel = bool(1)
     # ou
     variavel = bool(0)
-</code></pre>
+</code></pre></div>
 </li>
 <li>
 <p>Integer para Float</p>
 </li>
 <li>
 <p>Ex.:</p>
-<p><code>python
-volume = float(25)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">volume</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Float para Integer</p>
 </li>
 <li>
 <p>Ex.:</p>
-<p><code>python
-pi = int(3.14)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>Float para String</p>
 </li>
 <li>
 <p>Ex.:</p>
-<p><code>python
-peso = str(78.6)</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">peso</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mf">78.6</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>String para Float</p>
 </li>
 <li>
 <p>Ex.:</p>
-<p>```python
-altura = "1.82"
-altura = float(altura)</p>
-<h1 id="ou_3">ou</h1>
-<p>altura = "1,82"
-altura = altura.replace(',', '.')
-altura = float(altura)
-```</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">altura</span> <span class="o">=</span> <span class="s2">&quot;1.82&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># ou</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">altura</span> <span class="o">=</span> <span class="s2">&quot;1,82&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">altura</span> <span class="o">=</span> <span class="n">altura</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>String para Boolean</p>
 </li>
 <li>Essa conversão sempre irá validar se existe algum valor à ser convertido, logo, sempre será "True" se não estiver vazio.</li>
-<li>Ex.:<pre><code>```python
-teste = bool("valor")
+<li>Ex.:<div class="highlight"><pre><span></span><code>```python
+teste = bool(&quot;valor&quot;)
 # ou
 teste = bool()
 ```
-</code></pre>
+</code></pre></div>
 </li>
 </ul>
               
@@ -335,15 +334,14 @@ teste = bool()
     
   </span>
 </div>
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "../..";</script>
-    <script src="../../js/theme_extra.js"></script>
-    <script src="../../js/theme.js"></script>
-      <script src="../../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(false);
-        });
+        };
     </script>
 
 </body>
