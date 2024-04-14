@@ -172,58 +172,31 @@
                 <h1 id="aula-2-listas-dicionarios-e-loopings">Aula 2 - Listas, Dicionários e Loopings</h1>
 <h2 id="lista">Lista:</h2>
 <ul>
-<li>
-<p>list() ou [ ]</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p><code>python
-lista = ['Thomas', 'Wilber', 'Marcos', 'Pedro']</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>.pop</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-lista.pop()
-print(lista)</p>
-<h1 id="output-thomas-wilber-marcos">output: ['Thomas', 'Wilber', 'Marcos']</h1>
-<p>```</p>
-</li>
-</ul>
-</li>
-<li>
-<p>.append()</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-lista.append('Fernando')
-print(lista)</p>
-<h1 id="output-thomas-wilber-marcos-fernando">output: ['Thomas', 'Wilber', 'Marcos', 'Fernando']</h1>
-<p>```</p>
-</li>
-</ul>
-</li>
-<li>
-<p>.remove()</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-lista.remove('Marcos')
-print(lista)</p>
-<h1 id="output-thomas-wilber-fernando">output: ['Thomas', 'Wilber', 'Fernando']</h1>
-<p>```</p>
-</li>
-</ul>
-</li>
+<li>list() ou [ ]</li>
+<li>Ex.:
+    <code>python
+    lista = ['Thomas', 'Wilber', 'Marcos', 'Pedro']</code></li>
+<li>.pop</li>
+<li>Ex.:
+    <code>python
+    lista.pop()
+    print(lista)
+    # output: ['Thomas', 'Wilber', 'Marcos']</code></li>
+<li>.append()</li>
+<li>Ex.:
+    <code>python
+    lista.append('Fernando')
+    print(lista)
+    # output: ['Thomas', 'Wilber', 'Marcos', 'Fernando']</code></li>
+<li>.remove()</li>
+<li>Ex.:
+    <code>python
+    lista.remove('Marcos')
+    print(lista)
+    # output: ['Thomas', 'Wilber', 'Fernando']</code></li>
 <li>
 <p>Slice:</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
 <p>```python
@@ -232,13 +205,11 @@ print(lista[1:3])</p>
 <p>```</p>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="dicionario">Dicionário:</h2>
 <ul>
 <li>
 <p>dict() ou { }</p>
-<ul>
+</li>
 <li>
 <p>Ex.:</p>
 <p>```python
@@ -250,147 +221,129 @@ fruta['banana'] = 'É uma fruta amarela'</p>
 <p>fruta = {'maca': 'É uma fruta vermelha', 'limao': 'É uma fruta verde', 'banana': 'É uma fruta amarela'}
 ```</p>
 </li>
-</ul>
-</li>
 <li>
 <p>.keys()</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-fruta.keys()</p>
-<h1 id="output-dict_keysmaca-limao-banana">output: dict_keys(['maca', 'limao', 'banana'])</h1>
-<p>```</p>
 </li>
-</ul>
-</li>
-<li>
-<p>.values()</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-fruta.values()</p>
-<h1 id="output-dict_valuese-uma-fruta-vermelha-e-uma-fruta-verde-e-uma-fruta-amarela">output: dict_values(['É uma fruta vermelha', 'É uma fruta verde', 'É uma fruta amarela'])</h1>
-<p>```</p>
-</li>
-</ul>
-</li>
-<li>
-<p>items()</p>
-<ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-fruta.items()</p>
-<h1 id="output-dict_itemsmaca-e-uma-fruta-vermelha-limao-e-uma-fruta-verde-banana-e-uma-fruta-amarela">output: dict_items([('maca', 'É uma fruta vermelha'), ('limao', 'É uma fruta verde'), ('banana', 'É uma fruta amarela')])</h1>
-<p>```</p>
-</li>
-</ul>
-</li>
+<li>Ex.:
+    <code>python
+    fruta.keys()
+    # output: dict_keys(['maca', 'limao', 'banana'])</code></li>
+<li>.values()</li>
+<li>Ex.:
+    <code>python
+    fruta.values()
+    # output: dict_values(['É uma fruta vermelha', 'É uma fruta verde', 'É uma fruta amarela'])</code></li>
+<li>items()</li>
+<li>Ex.:
+    <code>python
+    fruta.items()
+    # output: dict_items([('maca', 'É uma fruta vermelha'), ('limao', 'É uma fruta verde'), ('banana', 'É uma fruta amarela')])</code></li>
 </ul>
 <h2 id="loopings">Loopings:</h2>
 <h3 id="for">For:</h3>
 <ul>
-<li>
-<p>Looping com uma quantidade definida:</p>
-<p>```python
-for numero in range(5):
-    print(numero)</p>
-<h1 id="output">output:</h1>
-<h1 id="0">0</h1>
-<h1 id="1">1</h1>
-<h1 id="2">2</h1>
-<h1 id="3">3</h1>
-<h1 id="4">4</h1>
-<p>```</p>
-</li>
-<li>
-<p>Looping usando um intervalo de números:</p>
-<p>```python
-for numero in range(3, 8):
-    print(numero)</p>
-<h1 id="output_1">output:</h1>
-<h1 id="3_1">3</h1>
-<h1 id="4_1">4</h1>
-<h1 id="5">5</h1>
-<h1 id="6">6</h1>
-<h1 id="7">7</h1>
-<p>```</p>
-</li>
-<li>
-<p>Looping usando listas como delimitador:</p>
-<p>```python
-lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
-for filme in lista_de_filmes:
-    print(filme)</p>
-<h1 id="output_2">output:</h1>
-<h1 id="kill-bill">Kill Bill</h1>
-<h1 id="pulp-fiction">Pulp Fiction</h1>
-<h1 id="caes-de-aluguel">Cães de Aluguel</h1>
-<p>```</p>
-</li>
-<li>
-<p>Looping usando listas com seus respectivos índices:</p>
-<p>```python
-lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
-for indice, filme in enumerate(lista_de_filmes):
-print(indice, '-', filme)</p>
-<h1 id="output_3">output:</h1>
-<h1 id="0-kill-bill">0 - Kill Bill</h1>
-<h1 id="1-pulp-fiction">1 - Pulp Fiction</h1>
-<h1 id="2-caes-de-aluguel">2 - Cães de Aluguel</h1>
-<p>```</p>
-</li>
+<li>Looping com uma quantidade definida:</li>
 </ul>
+<p>````python
+    for numero in range(5):
+        print(numero)</p>
+<pre><code># output:
+# 0
+# 1
+# 2
+# 3
+# 4
+```
+</code></pre>
+<ul>
+<li>Looping usando um intervalo de números:</li>
+</ul>
+<p>```python
+    for numero in range(3, 8):
+        print(numero)</p>
+<pre><code># output:
+# 3
+# 4
+# 5
+# 6
+# 7
+```
+</code></pre>
+<ul>
+<li>Looping usando listas como delimitador:</li>
+</ul>
+<p>```python
+    lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
+    for filme in lista_de_filmes:
+        print(filme)</p>
+<pre><code># output:
+# Kill Bill
+# Pulp Fiction
+# Cães de Aluguel
+```
+</code></pre>
+<ul>
+<li>Looping usando listas com seus respectivos índices:</li>
+</ul>
+<p>```python
+    lista_de_filmes = ['Kill Bill', 'Pulp Fiction', 'Cães de Aluguel']
+    for indice, filme in enumerate(lista_de_filmes):
+    print(indice, '-', filme)</p>
+<pre><code># output:
+# 0 - Kill Bill
+# 1 - Pulp Fiction
+# 2 - Cães de Aluguel
+```
+</code></pre>
 <h3 id="while">While:</h3>
 <ul>
-<li>
-<p>Looping condicional utilizando incrementador:</p>
-<p>```python
-contador = 0
-while contador &lt; 5:
-    print(f'O contador é {contador} e ainda é menor que 5!')
-    contador+= 1</p>
-<h1 id="output_4">output:</h1>
-<h1 id="o-contador-e-0-e-ainda-e-menor-que-5">O contador é 0 e ainda é menor que 5!</h1>
-<h1 id="o-contador-e-1-e-ainda-e-menor-que-5">O contador é 1 e ainda é menor que 5!</h1>
-<h1 id="o-contador-e-2-e-ainda-e-menor-que-5">O contador é 2 e ainda é menor que 5!</h1>
-<h1 id="o-contador-e-3-e-ainda-e-menor-que-5">O contador é 3 e ainda é menor que 5!</h1>
-<h1 id="o-contador-e-4-e-ainda-e-menor-que-5">O contador é 4 e ainda é menor que 5!</h1>
-<p>```</p>
-</li>
-<li>
-<p>Looping condicional infinito com "input":</p>
-<p><code>python
-nome = ''
-while nome != 'seu nome':
-    nome = input('Insira seu nome: ')
-print('Parabéns, você entendeu a brincadeira!')</code></p>
-</li>
-<li>
-<p>Looping condicional infinito com "break" e "continue":</p>
-<p>```python
-valor = 0
-while True:
-    num = input('Insira um valor para a soma: ')
-    if num != 'q':
-        valor+=int(num)
-        print(f'\nAgora o valor é: {valor}\n')
-        continue
-    else:
-        break
-print('Looping encerrado!')</p>
-<h1 id="output_5">output:</h1>
-<h1 id="insira-um-valor-para-a-soma-2">Insira um valor para a soma: 2</h1>
-<h1 id="agora-o-valor-e-2">Agora o valor é: 2</h1>
-<h1 id="insira-um-valor-para-a-soma-4">Insira um valor para a soma: 4</h1>
-<h1 id="agora-o-valor-e-6">Agora o valor é: 6</h1>
-<h1 id="insira-um-valor-para-a-soma-q">Insira um valor para a soma: q</h1>
-<h1 id="looping-encerrado">Looping encerrado!</h1>
-<p>```</p>
-</li>
+<li>Looping condicional utilizando incrementador:</li>
 </ul>
+<p>```python
+    contador = 0
+    while contador &lt; 5:
+        print(f'O contador é {contador} e ainda é menor que 5!')
+        contador+= 1</p>
+<pre><code># output:
+# O contador é 0 e ainda é menor que 5!
+# O contador é 1 e ainda é menor que 5!
+# O contador é 2 e ainda é menor que 5!
+# O contador é 3 e ainda é menor que 5!
+# O contador é 4 e ainda é menor que 5!
+```
+</code></pre>
+<ul>
+<li>Looping condicional infinito com "input":</li>
+</ul>
+<p><code>python
+    nome = ''
+    while nome != 'seu nome':
+        nome = input('Insira seu nome: ')
+    print('Parabéns, você entendeu a brincadeira!')</code></p>
+<ul>
+<li>Looping condicional infinito com "break" e "continue":</li>
+</ul>
+<p>```python
+    valor = 0
+    while True:
+        num = input('Insira um valor para a soma: ')
+        if num != 'q':
+            valor+=int(num)
+            print(f'\nAgora o valor é: {valor}\n')
+            continue
+        else:
+            break
+    print('Looping encerrado!')</p>
+<pre><code># output:
+# Insira um valor para a soma: 2
+# Agora o valor é: 2
+# Insira um valor para a soma: 4
+# Agora o valor é: 6
+# Insira um valor para a soma: q
+# Looping encerrado!
+```
+</code></pre>
+<p>````</p>
               
             </div>
           </div><footer>

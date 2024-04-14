@@ -141,16 +141,6 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exemplo">Exemplo</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#apis-para-praticar">APIs Para Praticar</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#post">POST</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#explicacao_1">Explicação</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exemplo_1">Exemplo</a>
-    </li>
         </ul>
     </li>
     </ul>
@@ -246,16 +236,16 @@
 </ul>
 <h4 id="http">http</h4>
 <ul>
-<li>Importando a "lib" http.client
-  <code>python
-  from http.client import HTTPSConnection</code></li>
+<li>Importando a "lib" http.client</li>
 </ul>
+<p><code>python
+  from http.client import HTTPSConnection</code></p>
 <h4 id="urllib">urllib</h4>
 <ul>
-<li>Importando a "lib" urllib.request
-  <code>python
-  from urllib.request import urlopen</code></li>
+<li>Importando a "lib" urllib.request</li>
 </ul>
+<p><code>python
+  from urllib.request import urlopen</code></p>
 <h2 id="get">GET</h2>
 <h3 id="explicacao">Explicação</h3>
 <p>As APIs do tipo GET são de modelagem simples, isso é, a requisição é feita somente tendo uma URL e nela podem ser passado parâmetros extras para serem efetuados filtros e ajustes no retorno devolvido por ela.</p>
@@ -263,27 +253,28 @@
 <h3 id="exemplo">Exemplo</h3>
 <ol>
 <li>
-<p>Importando a "lib" requests
-    <code>python
-    import requests</code></p>
+<p>Importando a "lib" requests</p>
+<p><code>python
+import requests</code></p>
 </li>
 <li>
-<p>Efetuando requisição
-    ```python
-    url = "http://universities.hipolabs.com/search?country=brazil"</p>
+<p>Efetuando requisição</p>
+<p>```python
+url = "http://universities.hipolabs.com/search?country=brazil"</p>
 <p>response = requests.get(url)
 ```</p>
 </li>
 <li>
-<p>Transformando o retorno em dicionário
-    <code>python
-    r_json = response.json()</code></p>
+<p>Transformando o retorno em dicionário</p>
+<p><code>python
+r_json = response.json()</code></p>
 </li>
 <li>
-<p>Interagindo com o retorno
-    <code>python
-    print(r_json[15]['name'])
-    # output: 'Universidade Regional de Blumenau'</code></p>
+<p>Interagindo com o retorno</p>
+<p>```python
+print(r_json[15]['name'])</p>
+<h1 id="output-universidade-regional-de-blumenau">output: 'Universidade Regional de Blumenau'</h1>
+<p>```</p>
 </li>
 </ol>
 <h3 id="apis-para-praticar">APIs Para Praticar</h3>
@@ -302,43 +293,44 @@ Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter 
 <h3 id="exemplo_1">Exemplo</h3>
 <ol>
 <li>
-<p>Importando a "lib" requests e JSON
-    <code>python
-    import requests
-    import json</code></p>
+<p>Importando a "lib" requests e JSON</p>
+<p><code>python
+import requests
+import json</code></p>
 </li>
 <li>
-<p>Gerando "corpo" da API
-    <code>python
-    payload = json.dumps({
-      "name": "Harry Potter",
-      "job": "Desenvolvedor RPA"
-    })</code></p>
+<p>Gerando "corpo" da API</p>
+<p><code>python
+payload = json.dumps({
+  "name": "Harry Potter",
+  "job": "Desenvolvedor RPA"
+})</code></p>
 </li>
 <li>
-<p>Gerando os cabeçalhos da API
-    <code>python
-    headers = {
-      'Content-Type': 'application/json'
-    }</code></p>
+<p>Gerando os cabeçalhos da API</p>
+<p><code>python
+headers = {
+  'Content-Type': 'application/json'
+}</code></p>
 </li>
 <li>
-<p>Efetuando requisição
-    ```python
-    url = "https://reqres.in/api/users"</p>
+<p>Efetuando requisição</p>
+<p>```python
+url = "https://reqres.in/api/users"</p>
 <p>response = requests.post(url, headers=headers, data=payload)
 ```</p>
 </li>
 <li>
-<p>Transformando o retorno em dicionário
-    <code>python
-    r_json = response.json()</code></p>
+<p>Transformando o retorno em dicionário</p>
+<p><code>python
+r_json = response.json()</code></p>
 </li>
 <li>
-<p>Interagindo com o retorno
-    <code>python
-    print(r_json.get('createdAt'))
-    # output: '2022-05-23T19:53:22.594Z'</code></p>
+<p>Interagindo com o retorno</p>
+<p>```python
+print(r_json.get('createdAt'))</p>
+<h1 id="output-2022-05-23t195322594z">output: '2022-05-23T19:53:22.594Z'</h1>
+<p>```</p>
 </li>
 </ol>
               

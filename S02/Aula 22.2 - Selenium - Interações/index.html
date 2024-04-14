@@ -185,67 +185,73 @@
                 <h1 id="selenium-interacoes">Selenium - Interações</h1>
 <h2 id="importando-a-funcionalidade-dos-localizadores-suportados">Importando a funcionalidade dos localizadores suportados</h2>
 <ul>
-<li>Para que seja possível usar seletores de busca, o Selenium precisa da seguinte importação:
-    <code>python
-    from selenium.webdriver.common.by import By</code></li>
+<li>
+<p>Para que seja possível usar seletores de busca, o Selenium precisa da seguinte importação:</p>
+<p><code>python
+from selenium.webdriver.common.by import By</code></p>
+</li>
 </ul>
 <h2 id="apagando-e-escrevendo-em-um-campo">Apagando e escrevendo em um campo</h2>
 <ul>
 <li>
-<p>Durante a navegação em um site, existem formulários ou campos de busca que precisam ser preenchidos. Com isso, o primeiro passo para evitar problemas, é apagar o campo utilizando o seguinte comando:
-    <code>python
-    driver.find_element(By.ID, 'twotabsearchtextbox').clear()</code></p>
+<p>Durante a navegação em um site, existem formulários ou campos de busca que precisam ser preenchidos. Com isso, o primeiro passo para evitar problemas, é apagar o campo utilizando o seguinte comando:</p>
+<p><code>python
+driver.find_element(By.ID, 'twotabsearchtextbox').clear()</code></p>
 </li>
 <li>
-<p>Após o campo estar limpo e pronto para receber o texto, a escrita será realizada com o código:
-    <code>python
-    driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Python')</code> </p>
+<p>Após o campo estar limpo e pronto para receber o texto, a escrita será realizada com o código:</p>
+<p><code>python
+driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Python')</code> </p>
 </li>
 </ul>
 <h2 id="movimentar-a-tela-para-um-elemento-scroll">Movimentar a tela para um elemento (scroll):</h2>
 <ul>
-<li>Alguns elementos acabam não carregando até que a tela seja movimenta para próximo do mesmo. Para fazer isso, basta utilizar o código a seguir:
-    <code>python
-    driver.find_element(By.CLASS_NAME, 'navFooterBackToTopText').location_once_scrolled_into_view</code></li>
+<li>
+<p>Alguns elementos acabam não carregando até que a tela seja movimenta para próximo do mesmo. Para fazer isso, basta utilizar o código a seguir:</p>
+<p><code>python
+driver.find_element(By.CLASS_NAME, 'navFooterBackToTopText').location_once_scrolled_into_view</code></p>
+</li>
 </ul>
 <h2 id="clicar-em-um-elemento">Clicar em um elemento:</h2>
 <ul>
-<li>Para acessar objetos na página, se faz necessário dar cliques e isso é permitido usando o comando:
-    <code>python
-    driver.find_element(By.ID, 'nav-search-submit-button').click()</code></li>
+<li>
+<p>Para acessar objetos na página, se faz necessário dar cliques e isso é permitido usando o comando:</p>
+<p><code>python
+driver.find_element(By.ID, 'nav-search-submit-button').click()</code></p>
+</li>
 </ul>
 <h2 id="extrair-textos">Extrair textos</h2>
 <ul>
 <li>
-<p>Quando uma tag possui texto entre a abertura e o fechamento, o mesmo poderá ser coletado através da seguinte funcionalidade:  <br />
-<code>python
-    driver.find_element(By.ID, 'glow-ingress-line2').text</code></p>
+<p>Quando uma tag possui texto entre a abertura e o fechamento, o mesmo poderá ser coletado através da seguinte funcionalidade:    </p>
+<p><code>python
+driver.find_element(By.ID, 'glow-ingress-line2').text</code></p>
 </li>
 <li>
-<p>Caso não exista texto entre as tags, o mesmo poderá estar em algum atributo dela. Logo, para coletar direto de um atributo HTML, basta usar a seguinte função:
-    <code>python
-    driver.find_element(By.ID, 'nav-logo-sprites').get_attribute('aria-label')</code></p>
+<p>Caso não exista texto entre as tags, o mesmo poderá estar em algum atributo dela. Logo, para coletar direto de um atributo HTML, basta usar a seguinte função:</p>
+<p><code>python
+driver.find_element(By.ID, 'nav-logo-sprites').get_attribute('aria-label')</code></p>
 </li>
 </ul>
 <h2 id="printscreens">Printscreens</h2>
 <ul>
 <li>
-<p>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:  <br />
-<code>python
-    driver.find_element(By.ID, 'navbar').screenshot('menu.png')</code></p>
+<p>Para tirar um print de algum elemento específico do HTML, existe o seguinte código:    </p>
+<p><code>python
+driver.find_element(By.ID, 'navbar').screenshot('menu.png')</code></p>
 </li>
 <li>
-<p>Caso deseje tirar um print da página inteira conforme está sendo visto no navegador, basta utilizar a função a seguir:
-    <code>python
-    driver.save_screenshot("screenshot.png")</code></p>
+<p>Caso deseje tirar um print da página inteira conforme está sendo visto no navegador, basta utilizar a função a seguir:</p>
+<p><code>python
+driver.save_screenshot("screenshot.png")</code></p>
 </li>
 </ul>
 <h2 id="dropdowns">Dropdowns</h2>
 <ul>
 <li>
-<p>Dentro do HTML, existe o conceito de dropdown, cujo botão permite ao usuário abrir uma lista de opções e escolher uma delas. Para que isso fique bem assertivo no Selenium, a função "Select" deverá ser importada e instanciada durante a execução. O uso dela pode ser visto melhor no código abaixo:
-    ```python
-    from selenium.webdriver.support.ui import Select</p>
+<p>Dentro do HTML, existe o conceito de dropdown, cujo botão permite ao usuário abrir uma lista de opções e escolher uma delas. Para que isso fique bem assertivo no Selenium, a função "Select" deverá ser importada e instanciada durante a execução. O uso dela pode ser visto melhor no código abaixo:</p>
+<p>```python
+from selenium.webdriver.support.ui import Select</p>
 <p>dropdown = Select(driver.find_element(By.ID, 'searchDropdownBox'))</p>
 <h1 id="selecionar-pelo-texto-presente">Selecionar pelo texto presente</h1>
 <p>dropdown.select_by_visible_text('Computadores e Informática')</p>
@@ -262,24 +268,24 @@
 <p>Algumas páginas web podem conter alertas emitidos via JavaScript. Essas são telinhas que não possuem especificamente uma TAG em HTML, mas o Selenium ainda consegue identíficá-las para poder interagir:</p>
 <ul>
 <li>
-<p>Captura a caixa de diálogo:
-    <code>python
-    alerta = driver.switch_to.alert</code></p>
+<p>Captura a caixa de diálogo:</p>
+<p><code>python
+alerta = driver.switch_to.alert</code></p>
 </li>
 <li>
-<p>Aceita a caixa de diálogo:
-    <code>python
-    alerta.accept();</code></p>
+<p>Aceita a caixa de diálogo:</p>
+<p><code>python
+alerta.accept();</code></p>
 </li>
 <li>
-<p>Recusa a caixa de diálogo:
-    <code>python
-    alerta = driver.dismiss()</code></p>
+<p>Recusa a caixa de diálogo:</p>
+<p><code>python
+alerta = driver.dismiss()</code></p>
 </li>
 <li>
-<p>Escreve no campo da caixa de diálogo:
-    <code>python
-    alerta.send_keys('seu texto')</code></p>
+<p>Escreve no campo da caixa de diálogo:</p>
+<p><code>python
+alerta.send_keys('seu texto')</code></p>
 </li>
 </ul>
 </li>

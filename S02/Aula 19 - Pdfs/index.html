@@ -95,10 +95,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#biblioteca-pdfminer">Biblioteca PDFminer</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#biblioteca-pdfplumber">Biblioteca pdfplumber</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#biblioteca-pymupdf">Biblioteca PyMuPDF</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2020%20-%20Email/">Aula 20 - Email</a>
@@ -187,21 +183,22 @@
     pip install pdfminer.six</code></p>
 </li>
 <li>
-<p>Importação da biblioteca
-    <code>python
-    from pdfminer.high_level import extract_text</code></p>
+<p>Importação da biblioteca</p>
+<p><code>python
+from pdfminer.high_level import extract_text</code></p>
 </li>
 <li>
-<p>Abertura e extração do texto
-    <code>python
-    texto = extract_text('boleto.pdf')
-    print(texto)
-    # output: 
-    #   Boleto de Pagamento
-    #   Referente à: Produto Exemplo 1
-    #   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20
-    #   E-mail: contato@seuemail.com
-    #   ...</code></p>
+<p>Abertura e extração do texto</p>
+<p>```python
+texto = extract_text('boleto.pdf')
+print(texto)</p>
+<h1 id="output">output:</h1>
+<h1 id="boleto-de-pagamento">Boleto de Pagamento</h1>
+<h1 id="referente-a-produto-exemplo-1">Referente à: Produto Exemplo 1</h1>
+<h1 id="emitido-por-seu-nome-ou-o-de-sua-empresa-cnpj-225175270001-20">Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20</h1>
+<h1 id="e-mail-contatoseuemailcom">E-mail: contato@seuemail.com</h1>
+<h1 id="_1">...</h1>
+<p>```</p>
 </li>
 </ul>
 <h2 id="biblioteca-pdfplumber">Biblioteca pdfplumber</h2>
@@ -212,31 +209,30 @@
     pip install pdfplumber</code></p>
 </li>
 <li>
-<p>Importação da biblioteca
-    <code>python
-    import pdfplumber</code></p>
+<p>Importação da biblioteca</p>
+<p><code>python
+import pdfplumber</code>
+- Abertura do arquivo</p>
+<p><code>python
+pdf = pdfplumber.open('boleto.pdf')</code></p>
 </li>
 <li>
-<p>Abertura do arquivo
-    <code>python
-    pdf = pdfplumber.open('boleto.pdf')</code></p>
+<p>Seleção da página do documento à ser lida    </p>
+<p><code>python
+page = pdf.pages[0]</code></p>
 </li>
 <li>
-<p>Seleção da página do documento à ser lida  <br />
-<code>python
-    page = pdf.pages[0]</code></p>
-</li>
-<li>
-<p>Extração do texto
-    <code>python
-    texto = page.extract_text()
-    print(texto)
-    # output: 
-    #   Boleto de Pagamento
-    #   Referente à: Produto Exemplo 1
-    #   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20
-    #   E-mail: contato@seuemail.com
-    #   ...</code></p>
+<p>Extração do texto</p>
+<p>```python
+texto = page.extract_text()
+print(texto)</p>
+<h1 id="output_1">output:</h1>
+<h1 id="boleto-de-pagamento_1">Boleto de Pagamento</h1>
+<h1 id="referente-a-produto-exemplo-1_1">Referente à: Produto Exemplo 1</h1>
+<h1 id="emitido-por-seu-nome-ou-o-de-sua-empresa-cnpj-225175270001-20_1">Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20</h1>
+<h1 id="e-mail-contatoseuemailcom_1">E-mail: contato@seuemail.com</h1>
+<h1 id="_2">...</h1>
+<p>```</p>
 </li>
 </ul>
 <h2 id="biblioteca-pymupdf">Biblioteca PyMuPDF</h2>
@@ -247,31 +243,32 @@
     pip install PyMuPDF</code></p>
 </li>
 <li>
-<p>Importação da biblioteca
-    <code>python
-    import fitz</code></p>
+<p>Importação da biblioteca</p>
+<p><code>python
+import fitz</code></p>
 </li>
 <li>
-<p>Abertura do arquivo
-    <code>python
-    pdf = fitz.open('boleto.pdf')</code></p>
+<p>Abertura do arquivo</p>
+<p><code>python
+pdf = fitz.open('boleto.pdf')</code></p>
 </li>
 <li>
-<p>Seleção da página do documento à ser lida
-    <code>python
-    page = pdf.load_page(0)</code></p>
+<p>Seleção da página do documento à ser lida</p>
+<p><code>python
+page = pdf.load_page(0)</code></p>
 </li>
 <li>
-<p>Extração do texto
-    <code>python
-    texto = page.get_text()
-    print(texto)
-    # output: 
-    #   Boleto de Pagamento
-    #   Referente à: Produto Exemplo 1
-    #   Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20
-    #   E-mail: contato@seuemail.com
-    #   ...</code></p>
+<p>Extração do texto</p>
+<p>```python
+texto = page.get_text()
+print(texto)</p>
+<h1 id="output_2">output:</h1>
+<h1 id="boleto-de-pagamento_2">Boleto de Pagamento</h1>
+<h1 id="referente-a-produto-exemplo-1_2">Referente à: Produto Exemplo 1</h1>
+<h1 id="emitido-por-seu-nome-ou-o-de-sua-empresa-cnpj-225175270001-20_2">Emitido por: Seu nome ou o de sua empresa - CNPJ 22.517.527/0001-20</h1>
+<h1 id="e-mail-contatoseuemailcom_2">E-mail: contato@seuemail.com</h1>
+<h1 id="_3">...</h1>
+<p>```</p>
 </li>
 </ul>
               

@@ -184,53 +184,53 @@
 <p><code>bash
 pip install selenium</code></p>
 <h2 id="importar-a-biblioteca">Importar a biblioteca</h2>
-<p>Para importar o mínimo do Selenium, o comando será:
-<code>python
+<p>Para importar o mínimo do Selenium, o comando será:</p>
+<p><code>python
 from selenium import webdriver</code></p>
 <h2 id="abrir-o-webdriver">Abrir o Webdriver</h2>
 <p>Na nova versão do Selenium, o <strong>"executable_path"</strong> deixou de existir e precisa do <strong>Service</strong> para que o mesmo consiga abrir o navegador. </p>
-<p>Para abrí-lo no novo formato, deverá ser feito o seguinte código:
-```python
+<p>Para abrí-lo no novo formato, deverá ser feito o seguinte código:</p>
+<p>```python
 from selenium.webdriver.chrome.service import Service</p>
 <p>s_dir = Service('chromedriver.exe')
 driver = webdriver.Chrome(service=s_dir)
 ```</p>
-<p>Já a importação no formato antigo é realizado da seguinte maneira:
-<code>python
+<p>Já a importação no formato antigo é realizado da seguinte maneira:</p>
+<p><code>python
 driver = webdriver.Chrome('chromedriver.exe')</code></p>
 <h2 id="acessar-um-site">Acessar um site</h2>
 <p>Com o "webdriver" salvo dentro da variável "driver", a mesma carrega muitas funcionalidades do navegador instanciado.</p>
-<p>O comando primordial é para acessar um site:
-<code>python
+<p>O comando primordial é para acessar um site:</p>
+<p><code>python
 driver.get('https://www.amazon.com.br/')</code></p>
 <h2 id="maximizar-a-janela-do-navegador">Maximizar a janela do navegador</h2>
-<p>O navegador também possui a capacidade de ser minimizado ou maximizado e no Selenium os comandos são: 
-```python
+<p>O navegador também possui a capacidade de ser minimizado ou maximizado e no Selenium os comandos são: </p>
+<p>```python
 driver.minimize_window()</p>
 <h1 id="ou">ou</h1>
 <p>driver.maximize_window()
 ```</p>
 <h2 id="colocar-um-tempo-para-carregamento-implicito">Colocar um tempo para carregamento - IMPLÍCITO</h2>
 <p>O carregamento implícito se aplica para todo e qualquer elemento na página. Então depois de instanciado uma vez, sempre que buscar alguma coisa na página, ele terá esse tempo máximo de espera para localizar o objeto.</p>
-<p>A sintaxe dele é:
-<code>python
+<p>A sintaxe dele é:</p>
+<p><code>python
 driver.implicitly_wait(30)</code></p>
 <h2 id="colocar-um-tempo-para-carregamento-explicito">Colocar um tempo para carregamento - EXPLÍCITO</h2>
 <p>Em casos onde apenas um elemento nos interessa, pode ser utilizado um carregamento explícito, isto é, no código será apontado exatamente qual o objeto que se deseja aguardar um tempo máximo até que ele apareça. Esse método não se aplica à página como um todo.</p>
-<p>A sintaxe dele é:
-```python
+<p>A sintaxe dele é:</p>
+<p>```python
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC</p>
 <p>WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'twotabsearchtextbox')))
 ```</p>
 <h2 id="fechar-aba-do-navegador">Fechar aba do navegador</h2>
-<p>O navegador também permite abrir várias abas e caso seja necessário fechar uma delas, o comando a seguir encerrará aquela que está em uso:
-<code>python
+<p>O navegador também permite abrir várias abas e caso seja necessário fechar uma delas, o comando a seguir encerrará aquela que está em uso:</p>
+<p><code>python
 driver.close()</code></p>
 <h2 id="fechar-navegador-e-seu-webdriver">Fechar navegador e seu webdriver</h2>
-<p>Para que a instância do navegador seja encerrada totalmente, o comando a seguir precisa estar ao final do script:
-<code>python
+<p>Para que a instância do navegador seja encerrada totalmente, o comando a seguir precisa estar ao final do script:</p>
+<p><code>python
 driver.quit()</code></p>
               
             </div>

@@ -300,8 +300,8 @@ print(coleta)</p>
 <h1 id="output-meu-numero-residencial-e-41-99123-4567-e-meu-numero-de-celular-e-41-3123-4567_1">output: 'Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567'</h1>
 <p>```</p>
 <h3 id="buscando-por-cpfs">Buscando por CPFs</h3>
-<p>Padrão pronto de RegEx para extrações de CPFs nos variados formatos à estarem presentes.
-```python
+<p>Padrão pronto de RegEx para extrações de CPFs nos variados formatos à estarem presentes.</p>
+<p>```python
 frase = "O seu CPF é 470.485.110-95 e o meu é 11745629009"
 regex_cpf = re.compile(r"\d{3}.?\d{3}.?\d{3}-?\d{2}")
 coleta = regex_cpf.findall(frase)

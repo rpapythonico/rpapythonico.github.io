@@ -173,65 +173,62 @@
               
                 <h1 id="interagindo-com-arquivos">Interagindo com Arquivos</h1>
 <h2 id="explicacao">Explicação</h2>
-<p>Outra funcionalidade para manipulação de arquivos é o comando Open. Essa função é nativa de dentro do python, ou seja, não há necessidade de importação. </p>
+<p>Outra funcionalidade para manipulação de arquivos é o comando Open. Essa função é nativa de dentro do python, ou seja, não há necessidade de importação.</p>
 <p>Basicamente sua função é abrir (praticamente qualquer) arquivo e conseguir trabalhar com os mesmos.</p>
 <h2 id="funcionalidades">Funcionalidades</h2>
 <ul>
-<li>
-<p>Abre o arquivo - sintaxe básica
-    <code>python
-    open("nome_do_arquivo.ext", "modo de execução")</code></p>
+<li>Abre o arquivo - sintaxe básica:</li>
+</ul>
+<p><code>python
+  open("nome_do_arquivo.ext", "modo de execução")</code></p>
 <ul>
 <li>
 <p>Modos de execução:</p>
 <ul>
 <li>
-<p>Leitura (.txt, .json, .csv, etc...):
-<code>python
+<p>Leitura (.txt, .json, .csv, etc...):</p>
+<p><code>python
 arquivo = open("exemplo.txt", "r")
 conteudo = arquivo.read()</code></p>
 </li>
 <li>
-<p>Escrita (.txt):
-<code>python
+<p>Escrita (.txt):</p>
+<p><code>python
 arquivo = open("exemplo.txt", "w")
 arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></p>
 </li>
 <li>
-<p>Acrescentar (.txt):
-<code>python
+<p>Acrescentar (.txt):</p>
+<p><code>python
 arquivo = open("exemplo.txt", "a")
 arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></p>
 </li>
 <li>
-<p>Leitura de arquivo em formato bytes (imagens, pdfs, etc...):
-```python
-arquivo = open("python-logo.png", "rb")
-conteudo = arquivo.read()</p>
+<p>Leitura de arquivo em formato bytes (imagens, pdfs, etc...):</p>
 </li>
 </ul>
-<h1 id="bx89pngrnx1anx00x00x00rihdrx00x00x01x00x00x00rx08x06x00">b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x01"\x00\x00\x00R\x08\x06\x00...'</h1>
-<p>```</p>
+<p><code>python
+  arquivo = open("python-logo.png", "rb")
+  conteudo = arquivo.read()
+  # b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x01"\x00\x00\x00R\x08\x06\x00...'</code></p>
 <ul>
 <li>Escrita de arquivo em formato bytes (imagens, pdfs, etc...):
-<code>python
-arquivo = open("captcha.png", "wb")
-arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></li>
-</ul>
-</li>
+  <code>python
+  arquivo = open("captcha.png", "wb")
+  arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso \n')</code></li>
 </ul>
 </li>
 <li>
-<p>Fecha arquivo
-    <code>python
-    arquivo.close()</code></p>
+<p>Fecha arquivo</p>
 </li>
-<li>
-<p>Leitura/Escrita do arquivo usando <strong>Gerenciador de Contexto</strong>
-    <code>python
-    with open(r'log_2022_04_23.txt', 'w') as arquivo:
-        arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso\n')</code></p>
-</li>
+</ul>
+<p><code>python
+  arquivo.close()</code></p>
+<ul>
+<li>Leitura/Escrita do arquivo usando <strong>Gerenciador de Contexto</strong>
+  <code>python
+  with open(r'log_2022_04_23.txt', 'w') as arquivo:
+      arquivo.write('2022_04_23_10:00 - Usuario conectado com sucesso\n')</code></li>
 </ul>
               
             </div>

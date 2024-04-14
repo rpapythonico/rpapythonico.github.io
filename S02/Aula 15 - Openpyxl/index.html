@@ -180,72 +180,77 @@
     <code>bash
     pip install openpyxl</code></li>
 <li>
-<p>Importação da Biblioteca
-    <code>python
-    import openpyxl</code></p>
+<p>Importação da Biblioteca</p>
+<p><code>python
+import openpyxl</code></p>
 </li>
 <li>
-<p>Leitura do arquivo Excel
-    <code>python
-    wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></p>
+<p>Leitura do arquivo Excel</p>
+<p><code>python
+wb = openpyxl.load_workbook('banca_jornal.xlsx')</code></p>
 </li>
 <li>
-<p>Apresentação das abas disponíveis para acesso
-    <code>python
-    wb.sheetnames
-    # output: ['Planilha1']</code></p>
+<p>Apresentação das abas disponíveis para acesso</p>
+<p>```python
+wb.sheetnames</p>
+<h1 id="output-planilha1">output: ['Planilha1']</h1>
+<p>```</p>
 </li>
 <li>
-<p>Seleção da aba para consulta
-    <code>python
-    sheet = wb['Planilha1']</code></p>
+<p>Seleção da aba para consulta</p>
+<p><code>python
+sheet = wb['Planilha1']</code></p>
 </li>
 <li>
-<p>Seleção de uma célula específica
-    <code>python
-    sheet['A1'].value
-    # output: Chiclete
-    sheet['B1'].value
-    # output: Barra de Chocolate</code></p>
+<p>Seleção de uma célula específica</p>
+<p>```python
+sheet['A1'].value</p>
+<h1 id="output-chiclete">output: Chiclete</h1>
+<p>sheet['B1'].value</p>
+<h1 id="output-barra-de-chocolate">output: Barra de Chocolate</h1>
+<p>```</p>
 </li>
 <li>
-<p>Apresentação da quantidade de linhas escritas
-    <code>python
-    sheet.max_row
-    # output: 6</code></p>
+<p>Apresentação da quantidade de linhas escritas</p>
+<p>```python
+sheet.max_row</p>
+<h1 id="output-6">output: 6</h1>
+<p>```</p>
 </li>
 <li>
-<p>Interação com <strong>todas</strong> as linhas de <strong>uma</strong> coluna
-    <code>python
-    for linha in range(2, sheet.max_row+1):
-        nome = sheet.cell(linha, 1).value
-        print(nome)
-    # output:
-    # Chiclete
-    # Barra de Chocolate
-    # Agua Mineral
-    # Jornal
-    # Salgadinho</code></p>
+<p>Interação com <strong>todas</strong> as linhas de <strong>uma</strong> coluna</p>
+<p>```python
+for linha in range(2, sheet.max_row+1):
+    nome = sheet.cell(linha, 1).value
+    print(nome)</p>
+<h1 id="output">output:</h1>
+<h1 id="chiclete">Chiclete</h1>
+<h1 id="barra-de-chocolate">Barra de Chocolate</h1>
+<h1 id="agua-mineral">Agua Mineral</h1>
+<h1 id="jornal">Jornal</h1>
+<h1 id="salgadinho">Salgadinho</h1>
+<p>```</p>
 </li>
 <li>
-<p>Interação com <strong>todas</strong> as linhas de <strong>todas</strong> as colunas
-    <code>python
-    for linha in range(2, sheet.max_row+1):
-        nome = sheet.cell(linha, 1).value
-        unidade = sheet.cell(linha, 2).value
-        valor = sheet.cell(linha, 3).value
-        print(f"O produto {nome} teve {unidade} unidade(s) vendida(s) no valor unitário de R$ {valor}")
-    # output:
-    # O produto Chiclete teve 45 unidade(s) vendida(s) no valor unitário de R$1
-    # O produto Barra de Chocolate teve 23 unidade(s) vendida(s) no valor unitário de R$4
-    # O produto Agua mineral teve 66 unidade(s) vendida(s) no valor unitário de R$2
-    # O produto Jornal teve 4 unidade(s) vendida(s) no valor unitário de R$0.5
-    # O produto Salgadinho teve 16 unidade(s) vendida(s) no valor unitário de R$2.5</code></p>
+<p>Interação com <strong>todas</strong> as linhas de <strong>todas</strong> as colunas</p>
+<p>```python
+for linha in range(2, sheet.max_row+1):
+    nome = sheet.cell(linha, 1).value
+    unidade = sheet.cell(linha, 2).value
+    valor = sheet.cell(linha, 3).value
+    print(f"O produto {nome} teve {unidade} unidade(s) vendida(s) no valor unitário de R$ {valor}")</p>
+<h1 id="output_1">output:</h1>
+<h1 id="o-produto-chiclete-teve-45-unidades-vendidas-no-valor-unitario-de-r1">O produto Chiclete teve 45 unidade(s) vendida(s) no valor unitário de R$1</h1>
+<h1 id="o-produto-barra-de-chocolate-teve-23-unidades-vendidas-no-valor-unitario-de-r4">O produto Barra de Chocolate teve 23 unidade(s) vendida(s) no valor unitário de R$4</h1>
+<h1 id="o-produto-agua-mineral-teve-66-unidades-vendidas-no-valor-unitario-de-r2">O produto Agua mineral teve 66 unidade(s) vendida(s) no valor unitário de R$2</h1>
+<h1 id="o-produto-jornal-teve-4-unidades-vendidas-no-valor-unitario-de-r05">O produto Jornal teve 4 unidade(s) vendida(s) no valor unitário de R$0.5</h1>
+<h1 id="o-produto-salgadinho-teve-16-unidades-vendidas-no-valor-unitario-de-r25">O produto Salgadinho teve 16 unidade(s) vendida(s) no valor unitário de R$2.5</h1>
+<p>```</p>
 </li>
 <li>
-<p>Fecha o arquivo Excel
-    <code>python
-    wb.close()</code></p>
+<p>Fecha o arquivo Excel</p>
+<p><code>python
+wb.close()</code></p>
 </li>
 </ul>
               

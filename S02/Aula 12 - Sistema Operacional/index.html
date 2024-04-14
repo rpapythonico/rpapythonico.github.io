@@ -85,18 +85,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#biblioteca-glob">Biblioteca - glob</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#exemplos_1">Exemplos</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#biblioteca-shutil">Biblioteca - Shutil</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#exemplos_2">Exemplos</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
@@ -195,35 +183,37 @@
 <p>A biblioteca OS é a responsavel por trabalhar com o sistema operacional dentro do Python.</p>
 <h3 id="exemplos">Exemplos</h3>
 <ul>
-<li>Importa a Biblioteca
-    <code>python
-    import os</code></li>
 <li>
-<p>Aponta a execução do Python para uma pasta em especifico
-    <code>python
-    os.chdir(r'C:\Users\user\Documents\Code\Python')</code></p>
+<p>Importa a Biblioteca</p>
+<p><code>python
+import os</code>
+- Aponta a execução do Python para uma pasta em especifico</p>
+<p><code>python
+os.chdir(r'C:\Users\user\Documents\Code\Python')</code></p>
 </li>
 <li>
-<p>Localiza a pasta de execução do Python
-    <code>python
-    os.getcwd()
-    # output: 'C:\Users\user\Documents\Code\Python'</code></p>
+<p>Localiza a pasta de execução do Python</p>
+<p>```python
+os.getcwd()</p>
+<h1 id="output-cusersuserdocumentscodepython">output: 'C:\Users\user\Documents\Code\Python'</h1>
+<p>```</p>
 </li>
 <li>
-<p>Lista os arquivos presentes na pasta
-    <code>python
-    os.listdir(r'C:\Users\user\Documents\Code\Python')
-    # output: ['arquivo_um.txt', 'arquivo_dois.txt', arquivos_tres.txt]</code></p>
+<p>Lista os arquivos presentes na pasta</p>
+<p>```python
+os.listdir(r'C:\Users\user\Documents\Code\Python')</p>
+<h1 id="output-arquivo_umtxt-arquivo_doistxt-arquivos_trestxt">output: ['arquivo_um.txt', 'arquivo_dois.txt', arquivos_tres.txt]</h1>
+<p>```</p>
 </li>
 <li>
-<p>Renomeia um arquivo
-    <code>python
-    os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></p>
+<p>Renomeia um arquivo</p>
+<p><code>python
+os.rename('arquivo_teste.txt', 'arquivo_modificado.txt')</code></p>
 </li>
 <li>
-<p>Remove um arquivo
-    <code>python
-    os.remove('arquivo_modificado.txt')</code></p>
+<p>Remove um arquivo</p>
+<p><code>python
+os.remove('arquivo_modificado.txt')</code></p>
 </li>
 </ul>
 <h2 id="biblioteca-glob">Biblioteca - <strong>glob</strong></h2>
@@ -236,39 +226,40 @@
     pip install glob</code></p>
 </li>
 <li>
-<p>Importanto a Biblioteca
-    <code>python
-    import glob</code></p>
+<p>Importanto a Biblioteca</p>
+<p><code>python
+import glob</code>
+- Buscando arquivos em um diretório através da extensão</p>
+<p>```python
+glob.glob(r'C:\Users\user\Documents\Code\Python*.txt')</p>
+<h1 id="output-cusersuserdocumentscodepythonarquivo_umtxt-cusersuserdocumentscodepythonarquivo_doistxt-cusersuserdocumentscodepythonarquivos_trestxt">output: ['C:\Users\user\Documents\Code\Python\arquivo_um.txt', 'C:\Users\user\Documents\Code\Python\arquivo_dois.txt', C:\Users\user\Documents\Code\Python\arquivos_tres.txt]</h1>
+<p>```</p>
 </li>
-<li>Buscando arquivos em um diretório através da extensão
-    <code>python
-    glob.glob(r'C:\Users\user\Documents\Code\Python\*.txt')
-    # output: ['C:\Users\user\Documents\Code\Python\arquivo_um.txt', 'C:\Users\user\Documents\Code\Python\arquivo_dois.txt', C:\Users\user\Documents\Code\Python\arquivos_tres.txt]</code></li>
 </ul>
 <h2 id="biblioteca-shutil">Biblioteca - <strong>Shutil</strong></h2>
 <p>Biblioteca voltada à manipulação de arquivos e pastas.</p>
 <h3 id="exemplos_2">Exemplos</h3>
 <ul>
 <li>
-<p>Importando a Biblioteca
-    <code>python
-    import shutil</code></p>
+<p>Importando a Biblioteca</p>
+<p><code>python
+import shutil</code></p>
 </li>
 <li>
-<p>Movimenta arquivos entre diretórios
-    <code>python
-    shutil.move(
-        r'arquivo_modificado.txt',
-        r'.\pasta_move\arquivo_modificado.txt'
-        )</code></p>
+<p>Movimenta arquivos entre diretórios</p>
+<p><code>python
+shutil.move(
+    r'arquivo_modificado.txt',
+    r'.\pasta_move\arquivo_modificado.txt'
+    )</code></p>
 </li>
 <li>
-<p>Copia arquivo de um diretório para outro
-    <code>python
-    shutil.copy(
-        r'arquivo_modificado.txt',
-        r'.\pasta_move\arquivo_modificado.txt'
-        )</code></p>
+<p>Copia arquivo de um diretório para outro</p>
+<p><code>python
+shutil.copy(
+    r'arquivo_modificado.txt',
+    r'.\pasta_move\arquivo_modificado.txt'
+    )</code></p>
 </li>
 </ul>
               

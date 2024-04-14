@@ -183,55 +183,55 @@
     pip install XlsxWriter</code></p>
 </li>
 <li>
-<p>Importação da biblioteca
-    <code>python
-    from xlsxwriter import Workbook</code></p>
+<p>Importação da biblioteca</p>
+<p><code>python
+from xlsxwriter import Workbook</code></p>
 </li>
 <li>
-<p>Criação e abertura do arquivo Excel
-    <code>python
-    wb = Workbook('livros.xlsx')</code></p>
+<p>Criação e abertura do arquivo Excel</p>
+<p><code>python
+wb = Workbook('livros.xlsx')</code></p>
 </li>
 <li>
-<p>Criação de aba no Excel
-    <code>python
-    planilha = wb.add_worksheet('Livros')</code></p>
+<p>Criação de aba no Excel</p>
+<p><code>python
+planilha = wb.add_worksheet('Livros')</code></p>
 </li>
 <li>
-<p>Criação do cabeçalho com letras em negrito
-    <code>python
-    bold = wb.add_format({'bold':1})
-    planilha.write('A1', 'Nome', bold)
-    planilha.write('B1', 'Autor', bold)
-    planilha.write('C1', 'Data Lançamento', bold)
-    planilha.write('D1', 'Pais de Origem', bold)
-    planilha.write('E1', 'Genero', bold)</code></p>
+<p>Criação do cabeçalho com letras em negrito</p>
+<p><code>python
+bold = wb.add_format({'bold':1})
+planilha.write('A1', 'Nome', bold)
+planilha.write('B1', 'Autor', bold)
+planilha.write('C1', 'Data Lançamento', bold)
+planilha.write('D1', 'Pais de Origem', bold)
+planilha.write('E1', 'Genero', bold)</code></p>
 </li>
 <li>
-<p>Criação de lista contendo tuplas com os dados a serem cadastrados
-    <code>python
-    livros = [('Harry Potter e a Pedra Filosofal ', 'J. K. Rowling', '26/07/1997', 'Inglaterra', 'Aventura/Fantasia'),
-              ('Jogos Vorazes','Suzanne Collins', '14/09/2008', 'Estados Unidos', 'Aventura'),
-              ('Percy Jackson o Ladrao de Raios', 'Rick Riordan', '28/07/2005', 'Estados Unidos', 'Mitologia grega'),
-              ('O Nevoeiro', 'Stephen King', '01/01/1980', 'Estados Unidos', 'Terror Psicologico'),
-              ('Contos de Grimm', 'Jacob Grimm / Wilhelm Grimm', '20/12/1812', 'Alemanha', 'Contos de fadas')]</code></p>
+<p>Criação de lista contendo tuplas com os dados a serem cadastrados</p>
+<p><code>python
+livros = [('Harry Potter e a Pedra Filosofal ', 'J. K. Rowling', '26/07/1997', 'Inglaterra', 'Aventura/Fantasia'),
+          ('Jogos Vorazes','Suzanne Collins', '14/09/2008', 'Estados Unidos', 'Aventura'),
+          ('Percy Jackson o Ladrao de Raios', 'Rick Riordan', '28/07/2005', 'Estados Unidos', 'Mitologia grega'),
+          ('O Nevoeiro', 'Stephen King', '01/01/1980', 'Estados Unidos', 'Terror Psicologico'),
+          ('Contos de Grimm', 'Jacob Grimm / Wilhelm Grimm', '20/12/1812', 'Alemanha', 'Contos de fadas')]</code></p>
 </li>
 <li>
-<p>Escrita dos dados no arquivo Excel
-    <code>python
-    row = 1
-    col = 0
-    for livro in livros:
-    planilha.write_string(row, col, livro[0])
-    planilha.write_string(row, col+1, livro[1])
-    planilha.write_string(row, col+2, livro[2])
-    planilha.write_string(row, col+3, livro[3])
-    planilha.write_string(row, col+4, livro[4]) row += 1</code></p>
+<p>Escrita dos dados no arquivo Excel</p>
+<p><code>python
+row = 1
+col = 0
+for livro in livros:
+planilha.write_string(row, col, livro[0])
+planilha.write_string(row, col+1, livro[1])
+planilha.write_string(row, col+2, livro[2])
+planilha.write_string(row, col+3, livro[3])
+planilha.write_string(row, col+4, livro[4]) row += 1</code></p>
 </li>
 <li>
-<p>Salvando e fechando o arquivo Excel
-    <code>python
-    wb.close()</code></p>
+<p>Salvando e fechando o arquivo Excel</p>
+<p><code>python
+wb.close()</code></p>
 </li>
 </ul>
               

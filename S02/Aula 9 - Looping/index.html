@@ -188,9 +188,9 @@
 <p>Permite percorrer os itens de uma coleção e para cada um deles executar o bloco de códigos declarado dentro da estrutura do looping.</p>
 <h3 id="exemplos">Exemplos</h3>
 <ul>
-<li>
-<p>Looping com uma quantidade definida de iterações
-  <code>python
+<li>Looping com uma quantidade definida de iterações</li>
+</ul>
+<p><code>python
   for numero in range(5):
     print(numero)
   # output: 
@@ -199,10 +199,10 @@
   # 2
   # 3
   # 4</code></p>
-</li>
-<li>
-<p>Looping usando intervalo de números
-  <code>python
+<ul>
+<li>Looping usando intervalo de números</li>
+</ul>
+<p><code>python
   for numero in range(3, 10):
     print(numero)
     # output:
@@ -213,13 +213,11 @@
     # 7
     # 8
     # 9</code></p>
-</li>
-<li>
-<p>Looping usando listas/tuplas como delimitador
-  ```python
-  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</p>
-</li>
+<ul>
+<li>Looping usando listas/tuplas como delimitador</li>
 </ul>
+<p>```python
+  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</p>
 <p># ou</p>
 <p>lista_de_filmes = ('Kill Bill', 'Madagascar', 'Harry Potter')</p>
 <p>for filme in lista_de_filmes:
@@ -230,10 +228,10 @@
   # 'Harry Potter'
   ```</p>
 <ul>
-<li>Looping usando listas com seus respectivos índices
-  ```python
-  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</li>
+<li>Looping usando listas com seus respectivos índices</li>
 </ul>
+<p>```python
+  lista_de_filmes = ['Kill Bill', 'Madagascar', 'Harry Potter']</p>
 <p>for indice, filme in enumerate(lista_de_filmes):
     print(indice, '-', filme)
   # output: 
@@ -251,32 +249,33 @@
 <li>
 <p>Cria-se uma condição para o looping em cima de uma variavel incrementavel. Toda vez que rodar o bloco de codigos, essa variável irá ter um valor somado. O looping rodará até que a condição passe a ser falsa.</p>
 </li>
-<li>Ex.:
-    <code>python
-    contador = 0
-    while contador &lt; 5:
-      print(f'O valor do contador é {contador} e ainda é menor que 5!')
-      contador += 1
-    # output:
-    # O valor do contador é 0 e ainda é menor que 5!
-    # O valor do contador é 1 e ainda é menor que 5!
-    # O valor do contador é 2 e ainda é menor que 5!
-    # O valor do contador é 3 e ainda é menor que 5!
-    # O valor do contador é 4 e ainda é menor que 5!</code></li>
 <li>
-<p><strong>Looping condicional infinito com 'input'</strong></p>
+<p>Ex.:</p>
+<p>```python
+contador = 0
+while contador &lt; 5:
+  print(f'O valor do contador é {contador} e ainda é menor que 5!')
+  contador += 1</p>
+<h1 id="output">output:</h1>
+<h1 id="o-valor-do-contador-e-0-e-ainda-e-menor-que-5">O valor do contador é 0 e ainda é menor que 5!</h1>
+<h1 id="o-valor-do-contador-e-1-e-ainda-e-menor-que-5">O valor do contador é 1 e ainda é menor que 5!</h1>
+<h1 id="o-valor-do-contador-e-2-e-ainda-e-menor-que-5">O valor do contador é 2 e ainda é menor que 5!</h1>
+<h1 id="o-valor-do-contador-e-3-e-ainda-e-menor-que-5">O valor do contador é 3 e ainda é menor que 5!</h1>
+<h1 id="o-valor-do-contador-e-4-e-ainda-e-menor-que-5">O valor do contador é 4 e ainda é menor que 5!</h1>
+<p>```
+- <strong>Looping condicional infinito com 'input'</strong></p>
 </li>
 <li>
 <p>O comando input permite que o usuario escreva valores para dentro do codigo durante a execução, com isso, no momento em que o usuario colocar a informação desejada, o looping encerrará a rotina.</p>
 </li>
 <li>
-<p>Ex.:
-    <code>python
-    comando = ''
-    while comando != 'cancelar':
-      print('Programa rodando....')
-      comando = input('Você desejar cancelar? Se sim digite "cancelar": ').lower()
-    print('Seu programa foi cancelado com sucesso!')</code></p>
+<p>Ex.:</p>
+<p><code>python
+comando = ''
+while comando != 'cancelar':
+  print('Programa rodando....')
+  comando = input('Você desejar cancelar? Se sim digite "cancelar": ').lower()
+print('Seu programa foi cancelado com sucesso!')</code></p>
 </li>
 <li>
 <p><strong>Looping condicional infinito com "break" e "continue"</strong></p>
@@ -284,8 +283,9 @@
 <li>
 <p>Este formato permite que a rotina rode eternamente. Isto ocorre, pois não é especificado nenhuma condição <strong>"False"</strong>, com isso, é necessário deixar implicito no codigo quando deve continuar rodando e quando deve parar a execução. Para isso, existem as palavras reservadas <strong>"break"</strong> e <strong>"continue"</strong>.</p>
 </li>
-<li>Ex."
-    <code>python
+<li>Ex."</li>
+</ul>
+<p><code>python
     valor = 0
     while True:
       num = input('Insira um valor para a soma: ')
@@ -296,8 +296,7 @@
       else:
         print(f'Voce digitou "q" isso irá encerrar o programa.')
         break
-    print('Looping encerrado!')</code></li>
-</ul>
+    print('Looping encerrado!')</code></p>
               
             </div>
           </div><footer>

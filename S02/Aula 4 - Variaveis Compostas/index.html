@@ -184,33 +184,33 @@
 <li>
 <p><strong>tuple</strong>: Armazena N valores e são <strong>imutáveis</strong>. É representada por <strong>parênteses</strong>.</p>
 <ul>
-<li>Ex.: <pre><code>frutas = ('Limão', 'Maça', 'Melancia', 'Banana')
-</code></pre>
-</li>
+<li>Ex.: 
+    <code>python
+    frutas = ('Limão', 'Maça', 'Melancia', 'Banana')</code></li>
 </ul>
 </li>
 <li>
 <p><strong>list</strong>: Armazena N valores e são <strong>mutáveis</strong>. É representada por <strong>colchetes</strong>.</p>
 <ul>
-<li>Ex.: <pre><code>nomes = ['Thomas', 'Matheus', 'Felipe', 'Fernanda']
-</code></pre>
-</li>
+<li>Ex.: 
+    <code>python
+    nomes = ['Thomas', 'Matheus', 'Felipe', 'Fernanda']</code></li>
 </ul>
 </li>
 <li>
 <p><strong>set</strong>: Armazena N valores, são <strong>imutáveis</strong> e <strong>não</strong> permite <strong>duplicatas</strong>. É representada por <strong>chaves</strong>.</p>
 <ul>
-<li>Ex.: <pre><code>numeros = {1, 2, 3, 4, 5}
-</code></pre>
-</li>
+<li>Ex.: 
+    <code>python
+    numeros = {1, 2, 3, 4, 5}</code></li>
 </ul>
 </li>
 <li>
 <p><strong>dict</strong>: Armazena N valores, tendo como princípio uma <strong>chave e um valor</strong>, podendo também ter <strong>uma chave para vários valores</strong> (lista). É <strong>mutável</strong>. E é representada por <strong>chaves e dois pontos</strong>.</p>
 <ul>
-<li>Ex.: <pre><code>objetos = {'Morango': 'É uma fruta', 'Caneca': 'É um objeto', 'Carro': 'É um automovel'}
-</code></pre>
-</li>
+<li>Ex.: 
+    <code>python
+    objetos = {'Morango': 'É uma fruta', 'Caneca': 'É um objeto', 'Carro': 'É um automovel'}</code></li>
 </ul>
 </li>
 </ul>
@@ -218,33 +218,42 @@
 <ul>
 <li>
 <p>Cria uma lista</p>
-<pre><code>alunos = ['Marcos', 'Henrique', 'Julia', 'Guilherme']
+<pre><code>```python
+alunos = ['Marcos', 'Henrique', 'Julia', 'Guilherme']
+```
 </code></pre>
 </li>
 <li>
 <p>Retira um valor da lista pelo <strong>índice</strong></p>
-<pre><code>alunos.pop(-1)
+<pre><code>```python
+alunos.pop(-1)
 print(alunos)
 # output: ['Marcos', 'Henrique', 'Julia']
+```
 </code></pre>
 </li>
 <li>
 <p>Retira um valor da lista pelo <strong>nome</strong></p>
-<pre><code>alunos.remove('Marcos')
+<pre><code>```python
+alunos.remove('Marcos')
 print(alunos)
 # output: ['Henrique', 'Julia']
+```
 </code></pre>
 </li>
 <li>
 <p>Acrescenta um novo valor na lista</p>
-<pre><code>alunos.append('Renan')
+<pre><code>```python
+alunos.append('Renan')
 print(alunos)
 # output: ['Henrique', 'Julia', 'Renan']
+```
 </code></pre>
 </li>
 <li>
 <p>Consulta valores na lista pelo índice</p>
-<pre><code>alunos[1]
+<pre><code>```python
+alunos[1]
 # output: 'Julia'
 alunos[1:3]
 # output: ['Julia', 'Renan']
@@ -252,12 +261,15 @@ alunos[0]
 # output: 'Henrique'
 alunos[-1]
 # output: 'Renan'
+```
 </code></pre>
 </li>
 <li>
 <p>Valida o tamanho da lista</p>
-<pre><code>len(alunos)
+<pre><code>```python
+len(alunos)
 # output: 3
+```
 </code></pre>
 </li>
 </ul>
@@ -265,54 +277,69 @@ alunos[-1]
 <ul>
 <li>
 <p>Cria um dicionário</p>
-<pre><code>contatos = {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+<pre><code>```python
+contatos = {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+```
 </code></pre>
 </li>
 <li>
 <p>Emite todas as chaves do dicionário</p>
-<pre><code>contatos.keys()
+<pre><code>```python
+contatos.keys()
 # output: dict_keys(['Marcos', 'Henrique', 'Julia', 'Guilherme'])
+```
 </code></pre>
 </li>
 <li>
 <p>Emite todos os valores de cada chave do dicionário</p>
-<pre><code>contatos.values()
+<pre><code>```python
+contatos.values()
 # output: dict_values(['1234-5678', '9999-9999', '8765-4321', '8877-7788'])
+```
 </code></pre>
 </li>
 <li>
 <p>Emite todos os valores registrados no dicionario - (chave(s) e valor(es))</p>
-<pre><code>contatos.items()
+<pre><code>```python
+contatos.items()
 # output: dict_items([('Marcos', '1234-5678'), ('Henrique', '9999-9999'), ('Julia', '8765-4321'), ('Guilherme', '8877-7788')])
+```
 </code></pre>
 </li>
 <li>
 <p>Deleta valores através da chave:</p>
-<pre><code>del(contatos['Marcos'])
+<pre><code>```python
+del(contatos['Marcos'])
 # output: {'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+```
 </code></pre>
 </li>
 <li>
 <p>Acessa valores de uma chave:</p>
-<pre><code>contatos.get('Julia')
+<pre><code>```python
+contatos.get('Julia')
 # output: '8765-4321'
 
 # ou
 
 contatos['Julia']
 # output: '8765-4321'
+```
 </code></pre>
 </li>
 <li>
 <p>Adiciona uma nova chave com seu respectivo valor</p>
-<pre><code>contatos['Ana'] = '0000-9999'
+<pre><code>```python
+contatos['Ana'] = '0000-9999'
 print(contatos)
 # output: {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788', 'Ana': '0000-9999'}
+```
 </code></pre>
 </li>
 <li>
 <p>Cria um dicionário através de uma lista de tuplas</p>
-<pre><code>contatos_listas = [
+<pre><code>```python
+contatos_listas = [
     ('Marcos', '1234-5678'),
     ('Henrique', '9999-9999'),
     ('Julia', '8765-4321'),
@@ -321,6 +348,7 @@ print(contatos)
 contatos = dict(contatos_listas)
 print(contatos)
 # output: {'Marcos': '1234-5678', 'Henrique': '9999-9999', 'Julia': '8765-4321', 'Guilherme': '8877-7788'}
+```
 </code></pre>
 </li>
 </ul>

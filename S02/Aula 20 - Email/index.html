@@ -204,21 +204,21 @@
     pip install smtplib</code></p>
 </li>
 <li>
-<p>Importação das bibliotecas
-    <code>python
-    from email.message import EmailMessage
-    import smtplib
-    import os</code></p>
+<p>Importação das bibliotecas</p>
+<p><code>python
+from email.message import EmailMessage
+import smtplib
+import os</code></p>
 </li>
 <li>
-<p>Geração do objeto de e-mail
-    <code>python
-    msg = EmailMessage()</code></p>
+<p>Geração do objeto de e-mail</p>
+<p><code>python
+msg = EmailMessage()</code></p>
 </li>
 <li>
-<p>Geração do corpo do e-mail com texto
-    ```python
-    payload = """Olá! Tudo bem?</p>
+<p>Geração do corpo do e-mail com texto</p>
+<p>```python
+payload = """Olá! Tudo bem?</p>
 <p>Este é um e-mail automático para testar o disparo de e-mail ensinado pelo curso de RPA Python!</p>
 <p>Atenciosamente,</p>
 <p>RPA Pythonico
@@ -227,36 +227,36 @@ msg.set_content(payload)
 ```</p>
 </li>
 <li>
-<p>Atribuição de dados para disparo do e-mail (De, Para e Assunto)
-    ```python
-    msg['From'] = email</p>
+<p>Atribuição de dados para disparo do e-mail (De, Para e Assunto)</p>
+<p>```python
+msg['From'] = email</p>
 <p>msg['To'] = 'seu_email@provedor.com'</p>
 <p>msg['Subject'] = 'Email Automatico - SMTPLIB'
 ```</p>
 </li>
 <li>
-<p>Criação da conexão SMTP
-    <code>python
-    smtp = smtplib.SMTP('smtp.gmail.com', 587)
-    smtp.starttls()
-    smtp.login('seu_email@provedor.com', 'sua_senha')</code></p>
+<p>Criação da conexão SMTP</p>
+<p><code>python
+smtp = smtplib.SMTP('smtp.gmail.com', 587)
+smtp.starttls()
+smtp.login('seu_email@provedor.com', 'sua_senha')</code></p>
 </li>
 <li>
-<p>Inserção de anexo no e-mail
-    <code>python
-    with open('foto_email.png', 'rb') as file:
-        file_data = file.read()
-    msg.add_attachment(file_data, maintype='image',  subtype='png')</code></p>
+<p>Inserção de anexo no e-mail</p>
+<p><code>python
+with open('foto_email.png', 'rb') as file:
+    file_data = file.read()
+msg.add_attachment(file_data, maintype='image',  subtype='png')</code></p>
 </li>
 <li>
-<p>Disparo do e-mail via SMTP
-    <code>python
-    smtp.send_message(msg)</code></p>
+<p>Disparo do e-mail via SMTP</p>
+<p><code>python
+smtp.send_message(msg)</code></p>
 </li>
 <li>
-<p>Finalização da conexão SMTP
-    <code>python
-    smtp.quit()</code></p>
+<p>Finalização da conexão SMTP</p>
+<p><code>python
+smtp.quit()</code></p>
 </li>
 </ol>
               

@@ -181,8 +181,8 @@
 <p>Para isso,  basta criar um arquivo, digitar os valores desejados e em seguida realizar a importação dessas informações dentro do(s) código(s) desejado(s).</p>
 <h2 id="nomenclatura">Nomenclatura</h2>
 <p>A regra para essas variáveis é de SCREAMING_SNAKE_CASE (todas as letras maiúsculas).</p>
-<p>Ex:.
-<code>python
+<p>Ex:.</p>
+<p><code>python
 LOGIN_USER = "username"
 LOGIN_PASS = "password"</code></p>
 <h2 id="exemplo-criacao-do-arquivo">Exemplo - Criação do arquivo</h2>
@@ -192,31 +192,35 @@ LOGIN_PASS = "password"</code></p>
 </ul>
 </li>
 <li>Instancia as variáveis utilizando letras maiúsculas e atribui os devidos valores.<ul>
-<li>Ex.:
-    <code>python
-    LOGIN_USER = "RPA_PYTHONICO"
-    LOGIN_PASS = "SENHA@123"</code></li>
+<li>
+<p>Ex.:</p>
+<p><code>python
+LOGIN_USER = "RPA_PYTHONICO"
+LOGIN_PASS = "SENHA@123"</code></p>
+</li>
 </ul>
 </li>
 </ol>
 <h2 id="exemplo-importacao-do-arquivo">Exemplo - Importação do arquivo</h2>
 <ol>
 <li>
-<p>Após criado o arquivo, basta importar o mesmo dentro de qualquer código em python;
-    <code>python
-    import sys
-    # Comando responsavel por adiconar um caminho dentro do codigo.
-    # Assim o python consegue identificar o arquivo e importar o mesmo.
-    sys.path.append(r'CAMINHO ONDE ESTA LOCALIZADA NOSSA CONSTANTS')
-    import constants as const</code></p>
+<p>Após criado o arquivo, basta importar o mesmo dentro de qualquer código em python;</p>
+<p>```python
+import sys</p>
+<h1 id="comando-responsavel-por-adiconar-um-caminho-dentro-do-codigo">Comando responsavel por adiconar um caminho dentro do codigo.</h1>
+<h1 id="assim-o-python-consegue-identificar-o-arquivo-e-importar-o-mesmo">Assim o python consegue identificar o arquivo e importar o mesmo.</h1>
+<p>sys.path.append(r'CAMINHO ONDE ESTA LOCALIZADA NOSSA CONSTANTS')
+import constants as const
+```</p>
 </li>
 <li>
-<p>Com as variáveis importadas, basta usá-las.
-    <code>python
-    print(const.LOGIN_USER)
-    # output: "RPA_PYTHONICO"
-    print(const.LOGIN_PASS)
-    # output: "SENHA@123"</code></p>
+<p>Com as variáveis importadas, basta usá-las.</p>
+<p>```python
+print(const.LOGIN_USER)</p>
+<h1 id="output-rpa_pythonico">output: "RPA_PYTHONICO"</h1>
+<p>print(const.LOGIN_PASS)</p>
+<h1 id="output-senha123">output: "SENHA@123"</h1>
+<p>```</p>
 </li>
 </ol>
               

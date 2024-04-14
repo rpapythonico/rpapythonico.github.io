@@ -180,109 +180,122 @@ variavel_vazia = ""</p>
 ```</p>
 <h2 id="cortando-uma-string">Cortando uma String</h2>
 <ol>
-<li>Gerar uma variável com o texto:
-    <code>python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></li>
 <li>
-<p>Cortar o texto selecionando do começo ao caractere "X":
-    <code>python
-    paragrafo[:50]
-    # output: 'Lorem Ipsum is simply dummy text of the printing a'</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code>
+2. Cortar o texto selecionando do começo ao caractere "X":</p>
+<p>```python
+paragrafo[:50]</p>
+<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-a">output: 'Lorem Ipsum is simply dummy text of the printing a'</h1>
+<p>```</p>
 </li>
 <li>
-<p>Cortar o texto selecionando do caractere "X" até o final:
-    <code>python
-    paragrafo[30:]
-    # output: 'xt of the printing and typesetting industry.'</code></p>
+<p>Cortar o texto selecionando do caractere "X" até o final:</p>
+<p>```python
+paragrafo[30:]</p>
+<h1 id="output-xt-of-the-printing-and-typesetting-industry">output: 'xt of the printing and typesetting industry.'</h1>
+<p>```
+4. Cortar o texto selecionando do caractere "X" até o "Y":</p>
+<p>```python
+paragrafo[30:50]</p>
+<h1 id="output-xt-of-the-printing-a">output: 'xt of the printing a'</h1>
+<p>```</p>
 </li>
-<li>Cortar o texto selecionando do caractere "X" até o "Y":
-    <code>python
-    paragrafo[30:50]
-    # output: 'xt of the printing a'</code></li>
 </ol>
 <h2 id="localizar-uma-letra-ou-palavra">Localizar uma letra ou palavra:</h2>
 <ol>
-<li>Gerar uma variável com o texto:
-    <code>python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></li>
-<li>Buscar a letra ou palavra desejada:
-    <code>python
-    paragrafo.find('t')
-    # output: 28
-    paragrafo.find('printing')
-    # output: 40</code></li>
+<li>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code>
+2. Buscar a letra ou palavra desejada:</p>
+<p>```python
+paragrafo.find('t')</p>
+<h1 id="output-28">output: 28</h1>
+<p>paragrafo.find('printing')</p>
+<h1 id="output-40">output: 40</h1>
+<p>```</p>
+</li>
 </ol>
 <h2 id="checar-se-uma-palavra-existe-ou-nao-existe">Checar se uma palavra existe ou não existe:</h2>
 <ol>
-<li>Gerar uma variável com o texto:
-    <code>python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></li>
-<li>Buscar a letra ou palavra desejada:
-    <code>python
-    "Lorem Ipsum" in paragrafo
-    # output: True
-    "Python" not in paragrafo
-    # output: True</code></li>
+<li>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code>
+2. Buscar a letra ou palavra desejada:</p>
+<p>```python
+"Lorem Ipsum" in paragrafo</p>
+<h1 id="output-true">output: True</h1>
+<p>"Python" not in paragrafo</p>
+<h1 id="output-true_1">output: True</h1>
+<p>```</p>
+</li>
 </ol>
 <h2 id="deixar-um-texto-com-letras-maiusculas-ou-minusculas">Deixar um texto com letras maiúsculas ou minúsculas</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <code>python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></p>
 </li>
 <li>
-<p>Deixando letras <strong>maiúsculas</strong>:
-    <code>python
-    paragrafo.upper()
-    # output: 'LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.'</code></p>
+<p>Deixando letras <strong>maiúsculas</strong>:</p>
+<p>```python
+paragrafo.upper()</p>
+<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry">output: 'LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.'</h1>
+<p>```</p>
 </li>
 <li>
-<p>Deixando letras <strong>minúsculas</strong>:
-    <code>python
-    paragrafo.lower()
-    # output: 'lorem ipsum is simply dummy text of the printing and typesetting industry.'</code></p>
+<p>Deixando letras <strong>minúsculas</strong>:</p>
+<p>```python
+paragrafo.lower()</p>
+<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry_1">output: 'lorem ipsum is simply dummy text of the printing and typesetting industry.'</h1>
+<p>```</p>
 </li>
 </ol>
 <h2 id="deixando-o-texto-em-formato-de-paragrafo-ou-titulo">Deixando o texto em formato de parágrafo ou título</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <code>python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></p>
 </li>
 <li>
-<p>Deixando em formato de título:
-    <code>python
-    paragrafo.title()
-    # output: 'Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.'</code></p>
+<p>Deixando em formato de título:</p>
+<p>```python
+paragrafo.title()</p>
+<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry_2">output: 'Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.'</h1>
+<p>```
+3. Deixando em formato de parágrafo:</p>
+<p>```python
+paragrafo.capitalize()</p>
+<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry_3">output: 'Lorem ipsum is simply dummy text of the printing and typesetting industry.'</h1>
+<p>```</p>
 </li>
-<li>Deixando em formato de parágrafo:
-    <code>python
-    paragrafo.capitalize()
-    # output: 'Lorem ipsum is simply dummy text of the printing and typesetting industry.'</code></li>
 </ol>
 <h2 id="checagem-de-palavra-no-comeco-ou-no-final">Checagem de palavra no começo ou no final</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <code>python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</code></p>
 </li>
 <li>
-<p>Validar uma palavra no começo:
-    ```python
-    paragrafo.startswith("Lorem")
-    # output: True</p>
+<p>Validar uma palavra no começo:</p>
+<p>```python
+paragrafo.startswith("Lorem")</p>
+<h1 id="output-true_2">output: True</h1>
 <p>paragrafo.startswith("Python")</p>
 <h1 id="output-false">output: False</h1>
 <p>```</p>
 </li>
 <li>
-<p>Validar uma palavra no começo:
-    ```python
-    paragrafo.endswith(".")
-    # output: True</p>
+<p>Validar uma palavra no começo:</p>
+<p>```python
+paragrafo.endswith(".")</p>
+<h1 id="output-true_3">output: True</h1>
 <p>paragrafo.endswith("ipsum")</p>
 <h1 id="output-false_1">output: False</h1>
 <p>```</p>
@@ -291,17 +304,17 @@ variavel_vazia = ""</p>
 <h2 id="texto-para-lista-e-vice-e-versa">Texto para lista e vice e versa</h2>
 <ul>
 <li>
-<p>Separar uma string em list através de um delimitador:
-    ```python
-    paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+<p>Separar uma string em list através de um delimitador:</p>
+<p>```python
+paragrafo = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
 <p>paragrafo.split(" ")</p>
-<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry">output: ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry.']</h1>
+<h1 id="output-lorem-ipsum-is-simply-dummy-text-of-the-printing-and-typesetting-industry_4">output: ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry.']</h1>
 <p>```</p>
 </li>
 <li>
-<p>Juntar uma list em string através de um delimitador:
-    ```python
-    paragrafo = ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry.']</p>
+<p>Juntar uma list em string através de um delimitador:</p>
+<p>```python
+paragrafo = ['Lorem', 'Ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry.']</p>
 <p>";".join(paragrafo)</p>
 <h1 id="output-loremipsumissimplydummytextoftheprintingandtypesettingindustry">output: 'Lorem;Ipsum;is;simply;dummy;text;of;the;printing;and;typesetting;industry.'</h1>
 <p>```</p>
@@ -310,17 +323,17 @@ variavel_vazia = ""</p>
 <h2 id="preenchimento-com-zeros">Preenchimento com zeros</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <code>python
-    cpf_sem_mascara = "123456789"</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+cpf_sem_mascara = "123456789"</code></p>
 </li>
 <li>
 <p>Completar com zeros até chegar no limite de caracteres</p>
 <ul>
-<li>Esse limite é inserido durante a chamada da função.
-```python
-cpf_sem_mascara.zfill(11)</li>
+<li>Esse limite é inserido durante a chamada da função.</li>
 </ul>
+<p>```python
+cpf_sem_mascara.zfill(11)</p>
 <h1 id="output-00123456789">output: '00123456789'</h1>
 <p>```</p>
 </li>
@@ -328,29 +341,31 @@ cpf_sem_mascara.zfill(11)</li>
 <h2 id="limpas-espacos-indevidos-no-comeco-e-no-final-de-uma-palavratexto">Limpas espaços indevidos no começo e no final de uma palavra/texto:</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <code>python
-    texto = "         O Real é a moeda corrente oficial da República Federativa do Brasil.         "</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+texto = "         O Real é a moeda corrente oficial da República Federativa do Brasil.         "</code></p>
 </li>
 <li>
-<p>Limpar espaços extras no começo e no final:
-    <code>python
-    texto.strip()
-    # output: 'O Real (ISO 4217: BRL, abreviado como R$[4]) é a moeda corrente oficial da República Federativa do Brasil.'</code></p>
+<p>Limpar espaços extras no começo e no final:</p>
+<p>```python
+texto.strip()</p>
+<h1 id="output-o-real-iso-4217-brl-abreviado-como-r4-e-a-moeda-corrente-oficial-da-republica-federativa-do-brasil">output: 'O Real (ISO 4217: BRL, abreviado como R$[4]) é a moeda corrente oficial da República Federativa do Brasil.'</h1>
+<p>```</p>
 </li>
 </ol>
 <h2 id="trocar-ou-eliminar-alguma-palavra-ou-frase">Trocar ou eliminar alguma palavra ou frase:</h2>
 <ol>
 <li>
-<p>Gerar uma variável com o texto:
-    <code>python
-    texto = "O Real é a moeda corrente oficial da República Federativa do Brasil."</code></p>
+<p>Gerar uma variável com o texto:</p>
+<p><code>python
+texto = "O Real é a moeda corrente oficial da República Federativa do Brasil."</code></p>
 </li>
 <li>
-<p>Substituir o(s) valor(es) desejado(s):
-    <code>python
-    texto.replace('Real', 'DÓLAR NÃO')
-    # output: 'O DÓLAR NÃO é a moeda corrente oficial da República Federativa do Brasil.'</code></p>
+<p>Substituir o(s) valor(es) desejado(s):</p>
+<p>```python
+texto.replace('Real', 'DÓLAR NÃO')</p>
+<h1 id="output-o-dolar-nao-e-a-moeda-corrente-oficial-da-republica-federativa-do-brasil">output: 'O DÓLAR NÃO é a moeda corrente oficial da República Federativa do Brasil.'</h1>
+<p>```</p>
 </li>
 </ol>
               

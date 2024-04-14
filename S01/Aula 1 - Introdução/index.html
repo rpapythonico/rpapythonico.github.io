@@ -140,6 +140,20 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tipagem">Tipagem;</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tupla">Tupla;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lista">Lista:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#identacao">Identação;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#condicao">Condição;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#len">len();</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#input">input();</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comentarios">Comentários.</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -184,33 +198,21 @@
                 <h1 id="aula-1-introducao">Aula 1 - Introdução</h1>
 <h2 id="instalacao">Instalação:</h2>
 <ul>
-<li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a><ul>
+<li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
 <li>Download Python 3.10.2</li>
-</ul>
-</li>
-<li><a href="https://www.anaconda.com/products/individual#Downloads">https://www.anaconda.com/products/individual#Downloads</a><ul>
+<li><a href="https://www.anaconda.com/products/individual#Downloads">https://www.anaconda.com/products/individual#Downloads</a></li>
 <li>64-Bit Graphical Installer (510 MB)</li>
-</ul>
-</li>
 </ul>
 <h2 id="ides">IDEs:</h2>
 <ul>
-<li>Google Collab:<ul>
+<li>Google Collab:</li>
 <li><a href="https://colab.research.google.com/">https://colab.research.google.com/</a></li>
-</ul>
-</li>
-<li>Jupyter Notebook:<ul>
+<li>Jupyter Notebook:</li>
 <li><a href="https://jupyter.org/install">https://jupyter.org/install</a></li>
-</ul>
-</li>
-<li>PyCharm:<ul>
+<li>PyCharm:</li>
 <li><a href="https://www.jetbrains.com/pt-br/pycharm/download/">https://www.jetbrains.com/pt-br/pycharm/download/</a></li>
-</ul>
-</li>
-<li>Visual Code:<ul>
+<li>Visual Code:</li>
 <li><a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></li>
-</ul>
-</li>
 </ul>
 <h2 id="guia">Guia:</h2>
 <h3 id="variaveis">Variáveis;</h3>
@@ -221,71 +223,55 @@
 <h3 id="print">print();</h3>
 <ul>
 <li>Emite dados na tela quando se quer apresentar algo ao usuário ou para testes;</li>
-<li>
-<p>Ex.:</p>
-<p><code>python
-texto = 'Hello World'
-print(texto)</code></p>
-</li>
+<li>Ex.:
+  <code>python
+  texto = 'Hello World'
+  print(texto)</code></li>
 </ul>
 <h3 id="tipagem">Tipagem;</h3>
 <ul>
-<li>int()<ul>
+<li>int()</li>
 <li>Valores numéricos inteiros (isto é, <strong>SEM</strong> casas decimais).</li>
-</ul>
-</li>
-<li>float()<ul>
+<li>float()</li>
 <li>Valores numéricos reais (isto é, <strong>COM</strong> casas decimais).</li>
-</ul>
-</li>
-<li>string()<ul>
+<li>string()</li>
 <li>Letras/texto.</li>
-</ul>
-</li>
-<li>bool()<ul>
+<li>bool()</li>
 <li>Validador.</li>
 <li>Verdadeiro ou Falso</li>
 <li>Sintaxe: True/False</li>
+<li>Ex.:
+  ```python
+  valor = 1</li>
 </ul>
-</li>
-<li>
-<p>Ex.:</p>
-<p>```python
-valor = 1</p>
-<p>valor = int(valor)</p>
-<h1 id="output-1">output: 1</h1>
-<p>valor = float(valor)</p>
-<h1 id="output-10">output: 1.0</h1>
-<p>valor = string(valor)</p>
-<h1 id="output-1_1">output: '1'</h1>
-<p>valor = bool(valor)</p>
-<h1 id="output-true">output: True</h1>
-<p>```</p>
-</li>
-</ul>
+<p>valor = int(valor)
+  #output: 1</p>
+<p>valor = float(valor)
+  #output: 1.0</p>
+<p>valor = string(valor)
+  #output: '1'</p>
+<p>valor = bool(valor)
+  #output: True
+  ```</p>
 <h3 id="tupla">Tupla;</h3>
 <ul>
 <li>( )</li>
 <li>São imutáveis;</li>
-<li>
-<p>Ex.:</p>
-<p>```python</p>
-<h1 id="atribuicao-composta">atribuição composta</h1>
-<p>tupla_de_bandas = 'Led Zeppelin', 'The Doors', 'Black Sabbath'</p>
-<h1 id="ou">ou</h1>
-<p>tupla_de_bandas = ('Led Zeppelin', 'The Doors', 'Black Sabbath')
-```</p>
-</li>
+<li>Ex.:
+  ```python
+  #atribuição composta
+  tupla_de_bandas = 'Led Zeppelin', 'The Doors', 'Black Sabbath'</li>
 </ul>
+<p>#ou</p>
+<p>tupla_de_bandas = ('Led Zeppelin', 'The Doors', 'Black Sabbath')
+  ```</p>
 <h3 id="lista">Lista:</h3>
 <ul>
 <li>[ ]</li>
 <li>São mutáveis;</li>
-<li>
-<p>Ex.:</p>
-<p><code>python
-lista_de_livros = ['Harry Potter', 'Sherlock Holmes', 'Jogos Vorazes']</code></p>
-</li>
+<li>Ex.:
+  <code>python
+  lista_de_livros = ['Harry Potter', 'Sherlock Holmes', 'Jogos Vorazes']</code></li>
 </ul>
 <h3 id="identacao">Identação;</h3>
 <ul>
@@ -295,37 +281,30 @@ lista_de_livros = ['Harry Potter', 'Sherlock Holmes', 'Jogos Vorazes']</code></p
 <h3 id="condicao">Condição;</h3>
 <ul>
 <li>if, elif e else</li>
-<li>
-<p>Ex.:</p>
-<p><code>python
-idade = 17
-if idade idade &lt; 16:
+<li>Ex.:
+  <code>python
+  idade = 17
+  if idade idade &lt; 16:
     print('Adolescente')
-elif idade &gt; 16 and &lt; 21:
+  elif idade &gt; 16 and &lt; 21:
     print('Jovem')
-else:
-    print('Adulto')</code></p>
-</li>
+  else:
+    print('Adulto')</code></li>
 </ul>
 <h3 id="len">len();</h3>
 <ul>
-<li>
-<p>Ex.:</p>
-<p>```python
-texto = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-len(texto)</p>
-<h1 id="output-74">output: 74</h1>
-<p>```</p>
-</li>
+<li>Ex.:
+  <code>python
+  texto = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+  len(texto)
+  #output: 74</code></li>
 </ul>
 <h3 id="input">input();</h3>
 <ul>
-<li>
-<p>Ex.:</p>
-<p><code>python
-nome = input('Qual o seu nome? R: ')
-print(nome)</code></p>
-</li>
+<li>Ex.:
+  <code>python
+  nome = input('Qual o seu nome? R: ')
+  print(nome)</code></li>
 </ul>
 <h3 id="comentarios">Comentários.</h3>
 <ul>
@@ -333,22 +312,20 @@ print(nome)</code></p>
 <h1 id="e">e "" ""</h1>
 </li>
 <li>Servem para criar "comentários" no código e assim facilitar a leitura dele por você mesmo ou outra pessoa.</li>
-<li>
-<p>Ex.:</p>
-<p>```python</p>
-<h1 id="essa-variavel-recebera-um-valor-e-ja-tera-seu-dado-convertido-para-inteiro">Essa variavel receberá um valor e já terá seu dado convertido para inteiro</h1>
-<p>valor_dois = int(input('Insira um novo valor para a soma: '))</p>
-<h1 id="ou_1">ou</h1>
-<p>print('Inicial')
-"""Este
-é
-um
-comentário """
-''' '''
-print('Final')
-```</p>
-</li>
+<li>Ex.:
+  ```python
+  #Essa variavel receberá um valor e já terá seu dado convertido para inteiro
+  valor_dois = int(input('Insira um novo valor para a soma: '))</li>
 </ul>
+<p>#ou</p>
+<p>print('Inicial')
+  """Este
+  é
+  um
+  comentário """
+  ''' '''
+  print('Final')
+  ```</p>
 <h2 id="colinha">Colinha:</h2>
 <ul>
 <li>'=' passa valores</li>
@@ -358,14 +335,10 @@ print('Final')
 </ul>
 <h2 id="referencias">Referências:</h2>
 <ul>
-<li>Automatize tarefas maçantes com Python<ul>
+<li>Automatize tarefas maçantes com Python</li>
 <li><a href="https://www.amazon.com.br/Automatize-tarefas-ma%C3%A7antes-com-Python-ebook/dp/B075JTQYB7">https://www.amazon.com.br/Automatize-tarefas-maçantes-com-Python-ebook/dp/B075JTQYB7</a></li>
-</ul>
-</li>
-<li>Curso Intensivo de Python<ul>
+<li>Curso Intensivo de Python</li>
 <li><a href="https://www.amazon.com.br/Curso-Intensivo-Python-Introdu%C3%A7%C3%A3o-Programa%C3%A7%C3%A3o/dp/8575225030/">https://www.amazon.com.br/Curso-Intensivo-Python-Introdução-Programação/dp/8575225030/</a></li>
-</ul>
-</li>
 </ul>
               
             </div>
