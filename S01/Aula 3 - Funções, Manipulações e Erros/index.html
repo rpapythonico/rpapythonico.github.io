@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 3 - Funções, Manipulações e Erros - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 3 - Func\u0327o\u0303es, Manipulac\u0327o\u0303es e Erros";
+        var mkdocs_page_input_path = "S01\\Aula 3 - Func\u0327o\u0303es, Manipulac\u0327o\u0303es e Erros.md";
+        var mkdocs_page_url = "/S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../S02/Aula 14 - Open.md">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 3 - Funções, Manipulações e Erros</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#funcoes">Funções:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#manipulacao-de-string">Manipulação de String:</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 1</li>
+      <li class="breadcrumb-item active">Aula 3 - Funções, Manipulações e Erros</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aula-3-funcoes-manipulacoes-e-erros">Aula 3 - Funções, Manipulações e Erros</h1>
+<h2 id="funcoes">Funções:</h2>
+<ul>
+<li>def():<ul>
+<li>
+<p>Ex.:</p>
+<p><code>python
+def soma(num1, num2):
+    return num1 + num2</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="manipulacao-de-string">Manipulação de String:</h2>
+<ul>
+<li>
+<p>Indexação e slicing [:]:</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Python é a melhor linguagem do mundo'</p>
+<p>frase[:6]</p>
+<h1 id="output-python">output: 'Python'</h1>
+<p>frase[31:]</p>
+<h1 id="output-mundo">output: 'mundo'</h1>
+<p>frase[:]</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo">output: 'Python é a melhor linguagem do mundo'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>.find():</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase.find('mundo')</p>
+<h1 id="output-31">output: 31</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>None e vazio:</p>
+<ul>
+<li>Apaga o valor de dentro de uma variável.</li>
+<li>
+<p>Ex.:</p>
+<p><code>python
+frase = None</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>in e not in</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Python é a melhor linguagem do mundo'</p>
+<p>'Python' in frase</p>
+<h1 id="output-true">output: True</h1>
+<p>'Python' not in frase</p>
+<h1 id="output-false">output: False</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>upper() e isupper()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Python é a melhor linguagem do mundo'</p>
+<p>frase.isupper()</p>
+<h1 id="output-false_1">output: False</h1>
+<p>frase.upper()</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo_1">output: 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>lower() e islower()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'PYTHON É A MELHOR LINGUAGEM DO MUNDO'</p>
+<p>frase.islower()</p>
+<h1 id="output-false_2">output: False</h1>
+<p>frase.lower()</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo_2">output: 'python é a melhor linguagem do mundo'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>startswith() e endswith()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Python é a melhor linguagem do mundo'</p>
+<p>frase.startswith('Python')</p>
+<h1 id="output-true_1">output: True</h1>
+<p>frase.endswith('mundo')</p>
+<h1 id="output-true_2">output: True</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>split() e join()</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Python é a melhor linguagem do mundo'</p>
+<p>frase = palavra.split(' ')</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo_3">output: ['Python', 'é', 'a', 'melhor', 'linguagem', 'do', 'mundo']</h1>
+<p>';'.join(frase)</p>
+<h1 id="output-pythoneamelhorlinguagemdomundo">output: 'Python;é;a;melhor;linguagem;do;mundo'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>rjust(), ljust() e center():</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Python é a melhor linguagem do mundo'</p>
+<p>frase.rjust(50,'-')</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo_4">output: '--------------Python é a melhor linguagem do mundo'</h1>
+<p>frase.ljust(50,'-')</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo-">output: 'Python é a melhor linguagem do mundo--------------'</h1>
+<p>frase.center(50,'*')</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo_5">output: '<strong><em>*</em></strong>Python é a melhor linguagem do mundo<strong><em>*</em></strong>'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>zfill():</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+cpf = '345678911'</p>
+<p>cpf.zfill(11)</p>
+<h1 id="output-00345678911">output: '00345678911'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>strip(), rstrip() e lstrip():</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+nome = '          Harry Potter          '</p>
+<p>nome.strip()</p>
+<h1 id="output-harry-potter">output: 'Harry Potter'</h1>
+<p>nome.rstrip()</p>
+<h1 id="output-harry-potter_1">output: '          Harry Potter'</h1>
+<p>nome.lstrip()</p>
+<h1 id="output-harry-potter_2">output: 'Harry Potter          '</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>replace():</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+frase = 'Java é a melhor linguagem do mundo'</p>
+<p>frase.replace('Java', 'Python')</p>
+<h1 id="output-python-e-a-melhor-linguagem-do-mundo_6">output: 'Python é a melhor linguagem do mundo'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="excecoeserros">Exceções/Erros:</h2>
+<ul>
+<li>
+<p>try:, except:, else: e finally:</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+def divisao(valor1, valor2):
+  valor1 = str(valor1)
+  try: # É a etapa de tentativa. Se der sucesso, vai para o "else" e se der erro, irá para o "except"
+    valor1 = int(valor1)
+    valor2 = int(valor2)
+  except ZeroDivisionError as error: # Trata o erro de divisão por zero somente
+    print(f'{error}')
+    print(f'Não foi possível dividir o valor {valor1} pelo valor {valor2}')
+    except: # Trata qualquer erro que não esteja mapeado
+        print('Erro desconhecido e ele poderia ter parado o programa!')
+  else: # Se tudo der certo dentro do "try", o código continuará aqui
+    return valor1 / valor2
+  finally: # Essa ação abaixo será executada independente de sucesso ou erro
+    print('Isso aqui rodará independente do erro')</p>
+<p>num1= 25
+num2 = 0</p>
+<p>divisao(num1, num2)</p>
+<h1 id="output-nao-foi-possivel-dividir-o-valor-25-pelo-valor-0">output: 'Não foi possível dividir o valor 25 pelo valor 0'</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>raise:</p>
+<ul>
+<li>
+<p>Ex.:</p>
+<p>```python
+raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')</p>
+<h1 id="output-traceback-most-recent-call-last">output: Traceback (most recent call last):</h1>
+<h1 id="file-line-1-in">File "<pyshell#27>", line 1, in <module></h1>
+<h1 id="raise-baseexceptioneste-e-um-erro-personalizado-caso-caia-em-alguma-condicional-invalida">raise BaseException('Este é um erro personalizado caso caia em alguma condicional inválida!')</h1>
+<h1 id="baseexception-este-e-um-erro-personalizado-caso-caia-em-alguma-condicional-invalida">BaseException: Este é um erro personalizado caso caia em alguma condicional inválida!</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Tipos de erros: <a href="https://www.programiz.com/python-programming/exceptions#built-in">https://www.programiz.com/python-programming/exceptions#built-in</a></p>
+</li>
+</ul>
+<h2 id="datetime">datetime:</h2>
+<ul>
+<li>
+<p>Importar a biblioteca:</p>
+<p><code>python
+import datetime</code></p>
+</li>
+<li>
+<p>Pegar a data ou data e hora do dia vigente:</p>
+<p>```python
+hoje = datetime.date.today()</p>
+<h1 id="output-datetimedate2021-10-27">output: datetime.date(2021, 10, 27)</h1>
+<h1 id="ou">ou</h1>
+<p>hoje = datetime.datetime.today()</p>
+<h1 id="output-datetimedatetime2021-10-27-0-6-56-978062">output: datetime.datetime(2021, 10, 27, 0, 6, 56, 978062)</h1>
+<p>```</p>
+</li>
+<li>
+<p>Converter a data para um formato visual e no formato string:</p>
+<p>```python
+hoje_formatado = hoje.strftime('%d/%m/%Y')</p>
+<h1 id="output-27102021">output: '27/10/2021'</h1>
+<p>```</p>
+</li>
+<li>
+<p>Retornar a string para o formato datetime:</p>
+<p>```python
+data_antes = datetime.datetime.strptime(hoje_formatado, '%Y/%m/%d')</p>
+<h1 id="output-datetimedatetime2021-10-27-0-0">output: datetime.datetime(2021, 10, 27, 0, 0)</h1>
+<p>```</p>
+</li>
+<li>
+<p>Trazer a data de ontem ou de amanhã:</p>
+<p>```python</p>
+<h1 id="dia-anterior">Dia anterior</h1>
+<p>ontem = hoje - datetime.timedelta(days=1)</p>
+<h1 id="output-datetimedatetime2021-10-26-0-6-56-978062">output: datetime.datetime(2021, 10, 26, 0, 6, 56, 978062)</h1>
+<h1 id="dia-seguinte">Dia seguinte</h1>
+<p>amanha = hoje + datetime.timedelta(days=1)</p>
+<h1 id="output-datetimedatetime2021-10-28-0-6-56-978062">output: datetime.datetime(2021, 10, 28, 0, 6, 56, 978062)</h1>
+<p>```</p>
+</li>
+<li>
+<p>Calcular a diferença de dias de uma data para outra:</p>
+<p>```python
+(amanha - ontem).days</p>
+<h1 id="output-2">output: 2</h1>
+<p>```</p>
+</li>
+</ul>
+<h2 id="extras">Extras:</h2>
+<p>Documentação datetime: <a href="https://docs.python.org/pt-br/3/library/datetime.html">https://docs.python.org/pt-br/3/library/datetime.html</a></p>
+<p>Tabela de símbolos para o strftime: <a href="https://www.programiz.com/python-programming/datetime/strftime#format-code">https://www.programiz.com/python-programming/datetime/strftime#format-code</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/" class="btn btn-neutral float-left" title="Aula 2 - Listas, Dicionários e Loopings"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/" class="btn btn-neutral float-right" title="Aula 4 - Bibliotecas, Excel e TXTs">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versões">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

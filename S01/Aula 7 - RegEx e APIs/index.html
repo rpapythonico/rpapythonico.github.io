@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S01/Aula%207%20-%20RegEx%20e%20APIs/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 7 - RegEx e APIs - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 7 - RegEx e APIs";
+        var mkdocs_page_input_path = "S01\\Aula 7 - RegEx e APIs.md";
+        var mkdocs_page_url = "/S01/Aula%207%20-%20RegEx%20e%20APIs/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../S02/Aula 14 - Open.md">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 7 - RegEx e APIs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#testar-regex">Testar RegEx:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#re">re:</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 1</li>
+      <li class="breadcrumb-item active">Aula 7 - RegEx e APIs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aula-7-regex-e-apis">Aula 7 - RegEx e APIs</h1>
+<h2 id="testar-regex">Testar RegEx:</h2>
+<ul>
+<li><a href="https://pythex.org/">https://pythex.org/</a></li>
+<li><a href="https://regex101.com/">https://regex101.com/</a></li>
+<li><a href="https://www.regexpal.com/">https://www.regexpal.com/</a></li>
+<li><a href="https://regexr.com/">https://regexr.com/</a></li>
+</ul>
+<h2 id="re">re:</h2>
+<ul>
+<li>
+<p>Importar biblioteca:</p>
+<p><code>python
+import re</code></p>
+</li>
+<li>
+<p>Criar padrão do RegEx à ser procurado:</p>
+<p><code>python
+tel_regex = re.compile(r'\(\d\d\) \d\d\d\d\d\-\d\d\d\d')</code></p>
+</li>
+<li>
+<p>Buscar correspondência na string inteira:</p>
+<p><code>python
+coleta = tel_regex.search('Meu número é (41) 99123-4567')</code></p>
+</li>
+<li>
+<p>Coletar a única combinação completa:</p>
+<p>```python
+print(coleta.group(0))</p>
+<h1 id="output-41-99123-4567">output: (41) 99123-4567</h1>
+<p>```</p>
+</li>
+<li>
+<p>Fazer grupos com parênteses:</p>
+<p><code>python
+grupos_regex = re.compile(r'(\d{2}) (\d{4,5})\-(\d{4})')
+coleta = grupos_regex.search('Meu número é 41 99123-4567')</code></p>
+</li>
+<li>
+<p>Coletar dados dos grupos encapsulados pelo parênteses:</p>
+<p>```python</p>
+<h1 id="usando-index">Usando index</h1>
+<p>print(f'Este é o grupo 0: {coleta.group(0)}')</p>
+<h1 id="output-41-99123-4567_1">output: 41 99123-4567</h1>
+<p>print(f'Este é o grupo 1: {coleta.group(1)}')</p>
+<h1 id="output-41">output: 41</h1>
+<p>print(f'Este é o grupo 2: {coleta.group(2)}')</p>
+<h1 id="output-99123">output: 99123</h1>
+<p>print(f'Este é o grupo 3: {coleta.group(3)}')</p>
+<h1 id="output-4567">output: 4567</h1>
+<h1 id="tupla-com-os-valores-dos-grupos">Tupla com os valores dos grupos</h1>
+<p>coleta.groups()</p>
+<h1 id="output-41-99123-4567_2">output: ('41', '99123', '4567')</h1>
+<p>```</p>
+</li>
+<li>
+<p>Selecionar uma palavra ou outra:</p>
+<p>```python
+regex_ou = re.compile('Wilber|Thomas')</p>
+<p>coleta = regex_ou.search('Olá, meu nome é Wilber')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-wilber">output: Wilber</h1>
+<p>coleta = regex_ou.search('Olá, meu nome é Thomas')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-thomas">output: Thomas</h1>
+<p>```</p>
+</li>
+<li>
+<p>Selecionar parcialmente uma palavra ou outra:</p>
+<p>```python
+regex_ou = re.compile('Wil(ber|mar)')</p>
+<p>coleta = regex_ou.search('Olá, meu nome é Wilber')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-wilber_1">output: Wilber</h1>
+<p>coleta = regex_ou.search('Olá, meu nome é Wilmar')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-wilmar">output: Wilmar</h1>
+<p>```</p>
+</li>
+<li>
+<p>Elemento opcional no meio de uma palavra/frase (existe ou não existe):</p>
+<p>```python
+regex_bat = re.compile(r'Bat(wo)?man')</p>
+<p>coleta = regex_bat.search('As aventuras de Batman')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-batman">output: Batman</h1>
+<p>coleta = regex_bat.search('As aventuras da Batwoman')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-batwoman">output: Batwoman</h1>
+<p>```</p>
+</li>
+<li>
+<p>Repetição indefinida (0 ou 1 até o infinito):</p>
+<p>```python</p>
+<h1 id="0-ate-o-infinito">0 até o infinito</h1>
+<p>regex_risada = re.compile(r'(HA)*')</p>
+<h1 id="1-ate-o-infinito">1 até o infinito</h1>
+<p>regex_risada = re.compile(r'(HA)+')</p>
+<p>coleta = regex_risada.search('HAHAHAHAHA! Está foi uma excelente piada!')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-hahahahaha">output: HAHAHAHAHA</h1>
+<p>```</p>
+</li>
+<li>
+<p>Localizar mais de uma correspondência (resultado em lista):</p>
+<p>```python
+tel_regex = re.compile(r'(\d{2}) \d{4,5}-\d{4}')</p>
+<p>coleta = tel_regex.findall('Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')</p>
+<p>print(coleta)</p>
+<h1 id="output-41-99123-4567-41-3123-4567">output: ['(41) 99123-4567', '(41) 3123-4567']</h1>
+<p>```</p>
+</li>
+<li>
+<p>Correspondência no início da frase/texto:</p>
+<p>```python
+regex_inicio = re.compile(r'^Sabia')</p>
+<p>coleta = regex_inicio.search('Sabia que o significado da vida, do universo e tudo mais é 42?')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-sabia">output: Sabia</h1>
+<p>```</p>
+</li>
+<li>
+<p>Correspondência no final da frase/texto:</p>
+<p>```python
+regex_inicio = re.compile(r'\d{2}$')</p>
+<p>coleta = regex_inicio.search('O significado da vida, do universo e tudo mais é 42')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-42">output: 42</h1>
+<p>```</p>
+</li>
+<li>
+<p>Caractere coringa:</p>
+<p>```python
+regex_coringa = re.compile(r'.at')</p>
+<p>coleta = regex_coringa.findall('The cat with the hat hit a bat')</p>
+<p>print(coleta)</p>
+<h1 id="output-cat-hat-bat">output: ['cat', 'hat', 'bat']</h1>
+<p>```</p>
+</li>
+<li>
+<p>Correspondência sem saber a palavra, mas tendo uma frase padrão:</p>
+<p>```python
+regex_tudo = re.compile(r'Primeiro nome: (.<em>) Segundo Nome: (.</em>)')</p>
+<p>coleta = regex_tudo.search('Primeiro nome: Harry Segundo Nome: Potter')</p>
+<p>print(coleta.group(1))</p>
+<h1 id="output-harry">output: Harry</h1>
+<p>print(coleta.group(2))</p>
+<h1 id="output-potter">output: Potter</h1>
+<p>```</p>
+</li>
+<li>
+<p>Remover Case Sensitive (diferença entre maiúsculas e minúsculas) do RegEx:</p>
+<p>```python
+regex_cases = re.compile(r'metallica', re.IGNORECASE)</p>
+<p>coleta = regex_cases.search('METALLICA é uma banda de muito sucesso!')</p>
+<p>print(coleta.group())</p>
+<h1 id="output-metallica">output: METALLICA</h1>
+<p>```</p>
+</li>
+<li>
+<p>Substituir valores:</p>
+<p>```python
+regex_sub = re.compile(r'\d')</p>
+<p>coleta = regex_sub.sub('*', 'Meu número residencial é (41) 99123-4567 e meu número de celular é (41) 3123-4567')</p>
+<p>print(coleta)</p>
+<h1 id="output-meu-numero-residencial-e-e-meu-numero-de-celular-e-">output: Meu número residencial é (<strong>) </strong><strong><em>-</em></strong><em> e meu número de celular é (</em><em>) </em><strong><em>-</em></strong>*</h1>
+<p>```</p>
+</li>
+<li>
+<p>Separar uma frase através de um padrão:</p>
+<p>```python
+regex_separador = re.compile(r'\s')</p>
+<p>coleta = regex_separador.split('METALLICA é uma banda de muito sucesso!')</p>
+<p>print(coleta)</p>
+<h1 id="output-metallica-e-uma-banda-de-muito-sucesso">output: ['METALLICA', 'é', 'uma', 'banda', 'de', 'muito', 'sucesso!']</h1>
+<p>```</p>
+</li>
+<li>
+<p>Padrões prontos:</p>
+<ul>
+<li>
+<p>Buscar por CPF:</p>
+<p>```python
+regex_cpf = re.compile(r'\d{3}.?\d{3}.?\d{3}-?\d{2}')</p>
+<p>coleta = regex_cpf.findall('O seu CPF é 470.485.110-95 e o meu é 11745629009')</p>
+<p>print(coleta)</p>
+<h1 id="output-470485110-95-11745629009">output: ['470.485.110-95', '11745629009']</h1>
+<p>```</p>
+</li>
+<li>
+<p>Busca por telefone:</p>
+<p>```python
+regex_tel = re.compile(r'(?\d{2})?\s?\d{4,5}-?\d{4}')</p>
+<p>coleta = regex_tel.findall("O seu telefone fixo é (41) 3123-4567, já o celular é 41 99123-4567 e o meu seria 4131234567.")</p>
+<p>print(coleta)</p>
+<h1 id="output-41-3123-4567-41-99123-4567-4131234567">output: ['(41) 3123-4567', '41 99123-4567', '4131234567']</h1>
+<p>```</p>
+</li>
+<li>
+<p>Busca por Email:</p>
+<p>```python
+regex_email = re.compile(r'(?:\w+.)<em>\w</em>\@\w*(?:.\w+)+')</p>
+<p>coleta = regex_email.findall('O seu e-mail é tiara.hessel9@yahoo.com, o meu e-mail é shaun_nitzsche96@hotmail.com e acredito que podemos criar um e-mail em conjunto chamado alphonso19@outlook.com.br.')</p>
+<p>print(coleta)</p>
+<h1 id="output-tiarahessel9yahoocom-shaun_nitzsche96hotmailcom-alphonso19outlookcombr">output: ['tiara.hessel9@yahoo.com', 'shaun_nitzsche96@hotmail.com', 'alphonso19@outlook.com.br']</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="apis">APIs:</h2>
+<ul>
+<li><strong>REST:</strong><ul>
+<li>Postman: <a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a></li>
+<li>Insomnia: <a href="https://insomnia.rest/download">https://insomnia.rest/download</a></li>
+</ul>
+</li>
+<li><strong>SOAP:</strong><ul>
+<li>SoapUI: <a href="https://www.soapui.org/downloads/soapui/">https://www.soapui.org/downloads/soapui/</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Bibliotecas:</strong></p>
+<ul>
+<li>requests</li>
+<li>json</li>
+</ul>
+<p><strong>Funcionalidades:</strong></p>
+<ul>
+<li>
+<p><strong>GET</strong></p>
+<ul>
+<li>
+<p>API de teste:</p>
+<p>```python
+import requests</p>
+<p>url = "https://reqres.in/api/users?page=2"</p>
+<p>response = requests.get(url)</p>
+<p>r_json = response.json()</p>
+<p>print(r_json['data'][0]['email'])</p>
+<h1 id="output-michaellawsonreqresin">output: michael.lawson@reqres.in</h1>
+<p>```</p>
+</li>
+<li>
+<p>API de Universidades no Brasil:</p>
+<p>```python
+import requests</p>
+<p>url = "http://universities.hipolabs.com/search?country=brazil"</p>
+<p>response = requests.get(url)</p>
+<p>r_json = response.json()</p>
+<p>print(r_json[15]['name'])</p>
+<h1 id="output-universidade-regional-de-blumenau">output: Universidade Regional de Blumenau</h1>
+<p>```</p>
+</li>
+<li>
+<p>Exemplos GET:</p>
+<ul>
+<li><a href="https://viacep.com.br/">https://viacep.com.br/</a></li>
+<li><a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></li>
+<li><a href="https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao">https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao</a></li>
+<li><a href="https://agify.io/">https://agify.io/</a></li>
+<li>https://github.com/Hipo/university-domains-list</li>
+</ul>
+</li>
+<li><strong>POST:</strong></li>
+<li>
+<p>Cadastrar usuário de teste:</p>
+<p>```python
+import requests
+import json</p>
+<p>url = "https://reqres.in/api/users"</p>
+<p>payload = json.dumps({
+  "name": "Harry Potter",
+  "job": "Desenvolvedor RPA"
+})
+headers = {
+  'Content-Type': 'application/json'
+}</p>
+<p>response = requests.post(url, headers=headers, data=payload)</p>
+<p>r_json = response.json()</p>
+<p>print(r_json['job'])</p>
+<h1 id="output-desenvolvedor-rpa">output: Desenvolvedor RPA</h1>
+<p>```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>PUT:</p>
+<ul>
+<li>Serve para atualizar algum dado em base através de API.</li>
+</ul>
+</li>
+<li>DELETE:<ul>
+<li>Serve para apagar algum dado em base através de API.</li>
+</ul>
+</li>
+</ul>
+<h2 id="extras">Extras:</h2>
+<h3 id="apis-para-brincar">APIs para "Brincar":</h3>
+<ul>
+<li><a href="https://apipheny.io/free-api/">https://apipheny.io/free-api/</a></li>
+<li>https://github.com/public-apis/public-apis</li>
+<li><a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a></li>
+<li><a href="https://reqres.in/">https://reqres.in/</a></li>
+<li><a href="https://gorest.co.in/">https://gorest.co.in/</a></li>
+</ul>
+<h3 id="aprender-regex">Aprender RegEx:</h3>
+<ul>
+<li><a href="https://docs.python.org/3/library/re.html">https://docs.python.org/3/library/re.html</a></li>
+<li><a href="https://www.w3schools.com/python/python_regex.asp">https://www.w3schools.com/python/python_regex.asp</a></li>
+<li><a href="https://medium.com/xp-inc/regex-um-guia-pratico-para-express%C3%B5es-regulares-1ac5fa4dd39f">https://medium.com/xp-inc/regex-um-guia-pratico-para-express%C3%B5es-regulares-<em>1ac5fa4dd39f</em></a></li>
+<li><a href="https://digitalinnovation.one/artigos/regex-regular-expression-ou-expressao-regular">https://digitalinnovation.one/artigos/regex-regular-expression-ou-expressao-regular</a></li>
+<li><a href="https://cheatography.com/davechild/cheat-sheets/regular-expressions/">https://cheatography.com/davechild/cheat-sheets/regular-expressions/</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" class="btn btn-neutral float-left" title="Aula 5 - Selenium e BeautifulSoup"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/" class="btn btn-neutral float-right" title="Aula 8 - Email, DBs e OO">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versões">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

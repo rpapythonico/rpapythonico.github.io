@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 8 - Email, DBs e OO - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 8 - Email, DBs e OO";
+        var mkdocs_page_input_path = "S01\\Aula 8 - Email, DBs e OO.md";
+        var mkdocs_page_url = "/S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../S02/Aula 14 - Open.md">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S02/Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S02/Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 8 - Email, DBs e OO</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#smtplib">smtplib</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 1</li>
+      <li class="breadcrumb-item active">Aula 8 - Email, DBs e OO</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="aula-8-email-dbs-e-oo">Aula 8 - Email, DBs e OO</h1>
+<h2 id="smtplib">smtplib</h2>
+<ul>
+<li>
+<p><strong>Liberar Acesso ao SMTP do Gmail:</strong></p>
+<ul>
+<li><a href="https://myaccount.google.com/lesssecureapps">https://myaccount.google.com/lesssecureapps</a></li>
+<li>
+<p>Tela de ativação:</p>
+<p><img alt="acesso_menos_seguro.png" src="../../img/acesso_menos_seguro.png" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Protocolos SMTP:</strong></p>
+<ul>
+<li>Gmail: <a href="https://support.google.com/a/answer/176600?hl=pt#zippy=%2Cusar-o-servidor-smtp-do-gmail">https://support.google.com/a/answer/176600?hl=pt#zippy=%2Cusar-o-servidor-smtp-do-gmail</a><ul>
+<li>Link alternativo: <a href="https://support.google.com/mail/answer/7126229?hl=pt-BR">https://support.google.com/mail/answer/7126229?hl=pt-BR</a></li>
+</ul>
+</li>
+<li>Outlook: <a href="https://support.microsoft.com/pt-br/office/configura%C3%A7%C3%B5es-pop-imap-e-smtp-para-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040">https://support.microsoft.com/pt-br/office/configurações-pop-imap-e-smtp-para-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040</a></li>
+</ul>
+</li>
+<li>
+<p>Importar as bibliotecas:</p>
+<p><code>python
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication</code></p>
+</li>
+<li>
+<p>Instanciar o email:</p>
+<p><code>python
+mail = MIMEMultipart()</code></p>
+</li>
+<li>
+<p>Criar o corpo do e-mail:</p>
+<p>```python
+payload = """Olá! Tudo bem?</p>
+<p>Este é um e-mail automático para testar o disparo de e-mail ensinado pelo curso de RPA Python!</p>
+<p>Atenciosamente,</p>
+<p>RPA Pythonico
+"""
+```</p>
+</li>
+<li>
+<p>Configurar o e-mail que está enviando:</p>
+<p><code>python
+mail['From'] = 'rpapythonico@gmail.com'</code></p>
+</li>
+<li>
+<p>Configurar o(s) destinatário(s) do e-mail</p>
+<p>```python</p>
+<h1 id="um-destinatario">UM destinatário</h1>
+<p>mail['To'] = 'rpapythonico@gmail.com'</p>
+<h1 id="mais-de-um-destinatario">MAIS DE UM destinatário</h1>
+<p>mail['To'] = 'rpapythonico@gmail.com,seu_email@provedor.com'
+```</p>
+</li>
+<li>
+<p>Configurar o assunto do e-mail:</p>
+<p><code>python
+mail['Subject'] = 'Email Automático - SMTPLIB'</code></p>
+</li>
+<li>
+<p>Formatar o corpo do e-mail em formato de texto:</p>
+<p><code>python
+mail.attach(MIMEText(payload, 'plain'))</code></p>
+</li>
+<li>
+<p>Criar conexão SMTP:</p>
+<p><code>python
+server = smtplib.SMTP('smtp.gmail.com', '587')
+server.starttls()</code></p>
+</li>
+<li>
+<p>Se autenticar no servidor SMTP:</p>
+<p><code>python
+server.login(msg['From'], 'sua_senha')</code></p>
+</li>
+<li>
+<p>Enviar e-mail:</p>
+<ul>
+<li>
+<p><strong>SEM Anexo</strong></p>
+<p>```python</p>
+<h1 id="um-destinatario_1">UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'], mail.as_string())</p>
+<h1 id="mais-de-um-destinatario_1">MAIS DE UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())
+```</p>
+</li>
+<li>
+<p><strong>COM Anexo</strong></p>
+<p>```python
+file = open('seu_arquivo.py', 'rb')</p>
+<p>app = MIMEApplication(file.read(), 'py')
+app.add_header('Content-Disposition', 'attachment;filename=seu_arquivo.py')
+mail.attach(app)</p>
+<h1 id="um-destinatario_2">UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'], mail.as_string())</p>
+<h1 id="mais-de-um-destinatario_2">MAIS DE UM destinatário</h1>
+<p>server.sendmail(mail['From'], mail['To'].split(","), mail.as_string())
+```</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Finalizar conexão SMTP:</p>
+<p><code>python
+server.quit()</code></p>
+</li>
+</ul>
+<h2 id="ferramentas-db">Ferramentas DB</h2>
+<ul>
+<li>
+<p><strong>MS SQL:</strong></p>
+<ul>
+<li>
+<p>Download SQL Server: <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads">https://www.microsoft.com/pt-br/sql-server/sql-server-downloads</a></p>
+<ul>
+<li>Selecionar a edição "Desenvolvedor"/"Developer".</li>
+<li>Link direto: <a href="https://go.microsoft.com/fwlink/?linkid=866662">https://go.microsoft.com/fwlink/?linkid=866662</a></li>
+</ul>
+</li>
+<li>
+<p>SQL Management Studio:</p>
+<ul>
+<li>Página de download: <a href="https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15">https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15</a></li>
+<li>Link direto: <a href="https://aka.ms/ssmsfullsetup">https://aka.ms/ssmsfullsetup</a></li>
+</ul>
+</li>
+<li>Biblioteca pyodbc:<ul>
+<li>Documentação pyodbc: <a href="https://github.com/mkleehammer/pyodbc/wiki">https://github.com/mkleehammer/pyodbc/wiki</a></li>
+<li>Repositório pyodbc: <a href="https://github.com/mkleehammer/pyodbc/">https://github.com/mkleehammer/pyodbc/</a></li>
+</ul>
+</li>
+<li><strong>SQLite:</strong></li>
+<li>Programas pra usar o SQLite:<ul>
+<li>SQLite Browser: <a href="https://sqlitebrowser.org/dl/">https://sqlitebrowser.org/dl/</a></li>
+<li>SQLite Studio: <a href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a></li>
+</ul>
+</li>
+<li>Programa para ler um arquivo ".db" do SQLite:<ul>
+<li>SQLite Viewer Online: <a href="https://inloop.github.io/sqlite-viewer/">https://inloop.github.io/sqlite-viewer/</a></li>
+</ul>
+</li>
+<li>Site SQLite:<ul>
+<li><a href="https://www.sqlite.org/index.html">https://www.sqlite.org/index.html</a></li>
+</ul>
+</li>
+<li>Documentação sqlite3:<ul>
+<li><a href="https://docs.python.org/3/library/sqlite3.html">https://docs.python.org/3/library/sqlite3.html</a></li>
+<li><a href="https://www.sqlitetutorial.net/">https://www.sqlitetutorial.net/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="sqlite3">sqlite3</h2>
+<ul>
+<li>
+<p>Importar biblioteca:</p>
+<p><code>python
+import sqlite3</code></p>
+</li>
+<li>
+<p>Criar conexão:</p>
+<p><code>python
+con = sqlite3.connect('example.db')</code></p>
+</li>
+<li>
+<p>Criar cursor:</p>
+<p><code>python
+cur = con.cursor()</code></p>
+</li>
+<li>
+<p>Criar uma tabela:</p>
+<p><code>python
+cur.execute('''CREATE TABLE "TB_Cliente"( "CPF" INTEGER NOT NULL UNIQUE, "Nome_Completo" TEXT NOT NULL, "Data_Nascimento" TEXT NOT NULL, "Telefone" TEXT, "Email" TEXT, "CEP" TEXT NOT NULL, PRIMARY KEY("CPF"));''')</code></p>
+</li>
+<li>
+<p>Aprovar as interações com o banco de dados:</p>
+<p><code>python
+con.commit()</code></p>
+</li>
+<li>
+<p>Inserir algum dado:</p>
+<p><code>python
+cur.execute('''INSERT INTO TB_Cliente VALUES (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355')''')
+con.commit()</code></p>
+</li>
+<li>
+<p>Inserir vários registros no banco:</p>
+<p><code>python
+lista_registros = [(88190475789, 'José Hugo Manuel Porto', '11/07/1997', '41989320821', 'jjosehugomanuelporto@patriciagrillo.adv.br', '83309270'), (39962955106, 'Marina Carolina dos Santos', '26/09/1995', '81984235792', 'marinacarolinadossantos_@lukin4.com.br', '53350130'), (20955758572, 'Laura Luana Assis', '13/06/1948', '68991361938', 'lauraluanaassis-91@naressi.com.br', '69911355'), (76938977550, 'Yasmin Evelyn Maria Costa', '20/04/1959', '91998657654', 'yasminevelynmariacosta-88@yahoo.com.ar', '66810020'), (25373027375, 'Fernando Giovanni Bernardes', '02/03/1964', '81989889726', 'fernandogiovannibernardes-92@soulcomunicacao.com.br', '51180440'), (85775491947, 'Clarice Vitória Teixeira', '24/02/1958', '82996438794', 'claricevitoriateixeira-97@india.com', '57052605'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (90123303354, 'Carolina Cláudia Pietra da Rocha', '14/04/1952', '63992520221', 'carolinaclaudiapietradarocha__carolinaclaudiapietradarocha@riguetti.com.br', '77017297'), (96558670801, 'Levi Theo Matheus Ramos', '04/04/1961', '22988505045', 'levitheomatheusramos..levitheomatheusramos@cordeiromaquinas.com.br', '28024123'), (57218723306, 'Davi Márcio Rafael Nogueira', '25/07/1997', '69991521228', 'davimarciorafaelnogueira..davimarciorafaelnogueira@silnave.com.br', '76964042')]
+cur.executemany("INSERT INTO TB_Cliente VALUES (?, ?, ?, ?, ?, ?)", lista_registros)
+con.commit()</code></p>
+</li>
+<li>
+<p>Apagar algum dado:</p>
+<p><code>python
+cur.execute('''DELETE FROM TB_Cliente WHERE CPF = 88190475789''')
+con.commit()</code></p>
+</li>
+<li>
+<p>Atualizar algum dado:</p>
+<p><code>python
+cur.execute('''UPDATE TB_Cliente SET Telefone = NULL, Email = NULL WHERE CPF = 39962955106''')
+con.commit()</code></p>
+</li>
+<li>
+<p>Ver um dado na tabela:</p>
+<p>```python
+cur.execute('''SELECT * FROM TB_Cliente''')
+cur.fetchone()</p>
+<h1 id="output-116415509-analu-julia-da-paz-05041974-79982386771-aanalujuliadapazalwancombr-49026130">output: (116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130')</h1>
+<p>```</p>
+</li>
+<li>
+<p>Ver todos os dados da tabela:</p>
+<p>```python
+cur.execute('''SELECT * FROM TB_Cliente''')
+cur.fetchall()</p>
+<h1 id="realizado-slice-3-no-output-para-apresentar-pequenos-exemplos">Realizado slice ([:3) no output para apresentar pequenos exemplos</h1>
+<h1 id="output-116415509-analu-julia-da-paz-05041974-79982386771-aanalujuliadapazalwancombr-49026130-4847726278-kamilly-clara-caldeira-21041982-27998331799-kamillyclaracaldeira__kamillyclaracaldeiracaferibeirocombr-29194248-7287125803-eduarda-emily-almada-20041941-32985692709-eduardaemilyalmada_peoplesidecombr-36200142">output: [(116415509, 'Analu Julia da Paz', '05/04/1974', '79982386771', 'aanalujuliadapaz@alwan.com.br', '49026130'), (4847726278, 'Kamilly Clara Caldeira', '21/04/1982', '27998331799', 'kamillyclaracaldeira__kamillyclaracaldeira@caferibeiro.com.br', '29194248'), (7287125803, 'Eduarda Emily Almada', '20/04/1941', '32985692709', 'eduardaemilyalmada_@peopleside.com.br', '36200142')]</h1>
+<p>```</p>
+</li>
+<li>
+<p>Fechar conexão do banco de dados:</p>
+<p><code>python
+con.close()</code></p>
+</li>
+</ul>
+<h2 id="pyodbc"><strong>pyodbc</strong></h2>
+<ul>
+<li>
+<p>Instalar biblioteca:</p>
+<p><code>bash
+pip install pyodbc</code></p>
+</li>
+<li>
+<p>Importar biblioteca:</p>
+<p><code>python
+import pyodbc</code></p>
+</li>
+<li>
+<p>Criar conexão com o banco de dados:</p>
+<p>```python</p>
+<h1 id="com-credenciais">Com credenciais</h1>
+<p>conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente;UID=user;PWD=password')</p>
+<h1 id="sem-credenciais">Sem credenciais:</h1>
+<p>conn = pyodbc.connect('DRIVER={SQL Server};SERVER=localhost;DATABASE=TB_Cliente')
+```</p>
+</li>
+</ul>
+<h2 id="utilitarios-db">Utilitários DB</h2>
+<ul>
+<li>Visualizar bancos de dados:<ul>
+<li>DBeaver: <a href="https://dbeaver.io/?r=qal-sqle">https://dbeaver.io/?r=qal-sqle</a></li>
+<li>Beekeeper Studio: <a href="https://www.beekeeperstudio.io/">https://www.beekeeperstudio.io/</a></li>
+<li>SqlDbx: <a href="http://www.sqldbx.com/">http://www.sqldbx.com/</a></li>
+</ul>
+</li>
+<li>Outros Bancos de Dados:<ul>
+<li>MySQL: <a href="https://www.mysql.com/">https://www.mysql.com/</a></li>
+<li>PostgreSQL: <a href="https://www.postgresql.org/">https://www.postgresql.org/</a></li>
+<li>MariaDB: <a href="https://mariadb.org/">https://mariadb.org/</a></li>
+<li>MongoDB: <a href="https://www.mongodb.com/">https://www.mongodb.com/</a></li>
+<li>Apache Cassandra: <a href="https://cassandra.apache.org/_/download.html">https://cassandra.apache.org/</a></li>
+<li>Redis: <a href="https://redis.io/download">https://redis.io/download</a></li>
+</ul>
+</li>
+<li>"Minificar" a Query:<ul>
+<li>SQL-Minifier: <a href="https://www.webtoolkitonline.com/sql-minifier.html">https://www.webtoolkitonline.com/sql-minifier.html</a></li>
+</ul>
+</li>
+<li>Carregar a tabela:<ul>
+<li>Necessário criar um arquivo ".db" e renomear dentro do arquivo.py</li>
+<li>Deixar os arquivos ".json", ".db" e ".py" na mesma pasta</li>
+<li>
+<p>Arquivos:</p>
+<p><a href="../Aula%208%20-%20Email%2C%20DBs%20e%20OO%201f458ef924dd473a952375a676f36154/Aula9.zip">Aula8.zip</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="orientacao-a-objeto">Orientação à Objeto:</h2>
+<ul>
+<li>
+<p>Criar uma classe:</p>
+<p><code>python
+class Cachorro:</code></p>
+</li>
+<li>
+<p>Criar variáveis e ações da Classe ao chamá-la:</p>
+<p><code>python
+    def __init__(self, nome, idade, raca='Vira-Lata'):
+      self._nome = nome.title()
+    self._idade = int(idade)
+    self._raca = raca.title()</code></p>
+<ul>
+<li>
+<p>Criar variáveis “privadas” da Classe:</p>
+<ul>
+<li>Usar parênteses;</li>
+</ul>
+<p><code>python
+self._nome = nome.title()</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Inserir método de atualização do nome:</p>
+<p><code>python
+    def atualiza_nome(self, novo_nome):
+      self._nome = novo_nome</code></p>
+</li>
+<li>
+<p>Inserir método de atualização da idade:</p>
+<p><code>python
+    def atualiza_idade(self, nova_idade):
+      self._idade = nova_idade</code></p>
+</li>
+<li>
+<p>Inserir método de atualização da raça:</p>
+<p><code>python
+    def atualiza_raca(self, nova_raca):
+      self._raca = nova_raca</code></p>
+</li>
+<li>
+<p>Inserir método que imprime as descrições do cachorro:</p>
+<p><code>python
+    def informacoes(self):
+      print(f'O cachorro da raça {self._raca} se chama {self._nome} e possui {self._idade} anos.')</code></p>
+</li>
+<li>
+<p>Inserir método que faz o cachorro sentar:</p>
+<p><code>python
+    def sentar(self):
+      print(f'O cachorro {self._nome} está sentado agora!')</code></p>
+</li>
+<li>
+<p>Inserir método que faz o cachorro rolar:</p>
+<p><code>python
+    def rolar(self):
+      print(f'O cachorro {self._nome} está rolando agora!')</code></p>
+</li>
+<li>
+<p>Inserir método que faz o cachorro deita:</p>
+<p><code>python
+    def deitar(self):
+        print(f'O cachorro {self._nome} está deitado agora!')</code></p>
+</li>
+<li>
+<p>Importar uma Classe (vale destacar que para isso, você precisa estar no diretório em que foi criado o arquivo da classe):</p>
+<p><code>python
+from classe_cachorro import Cachorro</code></p>
+</li>
+<li>
+<p>Criar um objeto na Classe:</p>
+<p><code>python
+obj = Cachorro('Rex', 3, 'Shih Tzu')</code></p>
+</li>
+<li>
+<p>Acessar funcionalidades da classe com o objeto criado:</p>
+<p>```python
+obj.informacoes()</p>
+<h1 id="output-o-cachorro-da-raca-shih-tzu-se-chama-rex-e-possui-3-anos">output: O cachorro da raça Shih Tzu se chama Rex e possui 3 anos.</h1>
+<p>```</p>
+</li>
+<li>
+<p>Atualizar raça do cachorro contido no objeto:</p>
+<p><code>python
+obj.atualiza_raca('Terrier')</code></p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%207%20-%20RegEx%20e%20APIs/" class="btn btn-neutral float-left" title="Aula 7 - RegEx e APIs"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versões">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%207%20-%20RegEx%20e%20APIs/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

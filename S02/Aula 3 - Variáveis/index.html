@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%203%20-%20Vari%C3%A1veis/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Visão Geral - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Vis\u00e3o Geral";
+        var mkdocs_page_input_path = "S02\\Aula 3 - Vari\u00e1veis.md";
+        var mkdocs_page_url = "/S02/Aula%203%20-%20Vari%C3%A1veis/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Aula 3 - Variáveis</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Visão Geral</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#o-que-e-uma-variavel-e-para-que-serve">O que é uma variável (e para que serve)?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#explicacao">Explicação</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#qual-a-forma-certa-de-escrita-de-uma-variavel">Qual a forma certa de escrita de uma variável?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#explicacao_1">Explicação</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemplo">Exemplo</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../Aula 14 - Open.md">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2024%20-%20APIs/">Aula 24 - APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+          <li class="breadcrumb-item">Aula 3 - Variáveis</li>
+      <li class="breadcrumb-item active">Visão Geral</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="variaveis">Variáveis</h1>
+<h2 id="o-que-e-uma-variavel-e-para-que-serve">O que é uma variável (e para que serve)?</h2>
+<h3 id="explicacao">Explicação</h3>
+<h4 id="simplificada">Simplificada</h4>
+<p>É uma palavra (simples ou composta) utilizada para armazenar algum valor que poderá ser utilizado posteriormente pelo código.</p>
+<p>Se assemelha ao conceito de carteira, onde são armazenados cartões/cédulas de dinheiro para ser usufruido quando necessário.</p>
+<h4 id="tecnica">Técnica</h4>
+<p>Na programação, uma variável é um objeto (uma posição, frequentemente localizada na memória) capaz de reter e representar um valor ou expressão. Enquanto as variáveis só "existem" em tempo de execução, elas são associadas a "nomes", chamados identificadores, durante o tempo de desenvolvimento.</p>
+<p>Via: <a href="https://pt.wikipedia.org/wiki/Vari%C3%A1vel_(programa%C3%A7%C3%A3o)">Wikipedia</a></p>
+<h2 id="qual-a-forma-certa-de-escrita-de-uma-variavel">Qual a forma certa de escrita de uma variável?</h2>
+<h3 id="explicacao_1">Explicação</h3>
+<p>No Python é utilizado o formato <strong>snake_case</strong> para os casos onde possui uma nomenclatura composta (com mais de um palavra) e sempre será com <strong>letras minúsculas</strong>. Esse formato é chamado de <strong>"Pythonico"</strong>.</p>
+<p><strong>Obs.:</strong> Vale frisar que em âmbito corporativo, é sempre indicado usar termos em inglês para que o código fique de forma globalizada.</p>
+<h3 id="exemplo">Exemplo</h3>
+<p>```python
+nome = "João"</p>
+<h1 id="ou">ou</h1>
+<p>idade = 18</p>
+<h1 id="ou_1">ou</h1>
+<p>nome_do_arquivo = "boleto.pdf"</p>
+<h1 id="ou_2">ou</h1>
+<p>numero_do_contrato = 123456789
+```</p>
+<h1 id="quais-os-tipos-de-variaveis">Quais os tipos de variáveis?</h1>
+<ul>
+<li><strong>int</strong>(eger): São valores inteiros.<ul>
+<li>Ex.: 1, 1, 2, 3, 5, 8, ...</li>
+</ul>
+</li>
+<li><strong>str</strong>(ing): São palavras/textos.<ul>
+<li>Ex.: Lorem Ipsum</li>
+</ul>
+</li>
+<li><strong>float</strong>: São valores "quebrados", isto é, com casas decimais.<ul>
+<li>Ex.: 3.14159265359</li>
+</ul>
+</li>
+<li><strong>bool</strong>(ean): São validações para perguntas fechadas, podendo ser "Verdadeiro" ou "Falso".<ul>
+<li>Ex.: True, False.</li>
+</ul>
+</li>
+</ul>
+<h2 id="como-converter">Como converter?</h2>
+<ul>
+<li>
+<p>String para Integer:</p>
+<ul>
+<li>Vale destacar que isso só é permitido através de números no formato string para integer.</li>
+<li>Ex.:<pre><code>idade = int("12")
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Integer para String:</p>
+<ul>
+<li>Ex.:<pre><code>cm = str(25)
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Integer para Boolean</p>
+<ul>
+<li>Vale destacar que essa conversão só irá funcionar efetivamente com os números <strong>0</strong> e <strong>1</strong>.<ul>
+<li>0: Não</li>
+<li>1: Sim</li>
+</ul>
+</li>
+<li><strong>Obs.:</strong> Caso deseje usar números maiores que 1, o resultado sempre será <strong>"True"</strong>.</li>
+<li>Ex.:<pre><code>variavel = bool(1)
+# ou
+variavel = bool(0)
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Integer para Float</p>
+<ul>
+<li>Ex.:
+<code>python
+volume = float(25)</code></li>
+</ul>
+</li>
+<li>
+<p>Float para Integer</p>
+<ul>
+<li>Ex.:
+<code>python
+pi = int(3.14)</code></li>
+</ul>
+</li>
+<li>
+<p>Float para String</p>
+<ul>
+<li>Ex.:
+<code>python
+peso = str(78.6)</code></li>
+</ul>
+</li>
+<li>
+<p>String para Float</p>
+<ul>
+<li>Ex.:
+```python
+altura = "1.82"
+altura = float(altura)</li>
+</ul>
+<h1 id="ou_3">ou</h1>
+<p>altura = "1,82"
+altura = altura.replace(',', '.')
+altura = float(altura)
+```</p>
+</li>
+<li>
+<p>String para Boolean</p>
+<ul>
+<li>Essa conversão sempre irá validar se existe algum valor à ser convertido, logo, sempre será "True" se não estiver vazio.</li>
+<li>Ex.:
+    <code>python
+    teste = bool("valor")
+    # ou
+    teste = bool()</code></li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%202%20-%20IDEs/" class="btn btn-neutral float-left" title="Aula 2 - IDEs"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/" class="btn btn-neutral float-right" title="Manipulação de Strings">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versões">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%202%20-%20IDEs/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

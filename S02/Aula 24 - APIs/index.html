@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt_BR" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://rpapythonico.github.io/S02/Aula%2024%20-%20APIs/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Aula 24 - APIs - RPA Pythonico</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Aula 24 - APIs";
+        var mkdocs_page_input_path = "S02\\Aula 24 - APIs.md";
+        var mkdocs_page_url = "/S02/Aula%2024%20-%20APIs/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> RPA Pythonico
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Digite o termo a ser buscado aqui" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Principal</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 2</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%200%20-%20Instala%C3%A7%C3%A3o%20Python/">Aula 0 - Instalação Python</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%201%20-%20Distribui%C3%A7%C3%B5es/">Aula 1 - Distribuições</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%202%20-%20IDEs/">Aula 2 - IDEs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 3 - Variáveis</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203%20-%20Vari%C3%A1veis/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%203.1%20-%20Manipula%C3%A7%C3%A3o%20de%20Strings/">Manipulação de Strings</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%204%20-%20Variaveis%20Compostas/">Aula 4 - Variaveis Compostas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%205%20-%20Identa%C3%A7%C3%A3o%20e%20Condicionais/">Aula 5 - Identação e Condicionais</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%206%20-%20Operadores%20Aritm%C3%A9ticos/">Aula 6 - Operadores Aritméticos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%207%20-%20Operadores%20Comparativos/">Aula 7 - Operadores Comparativos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%208%20-%20Fun%C3%A7%C3%B5es/">Aula 8 - Funções</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%209%20-%20Looping/">Aula 9 - Looping</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2010%20-%20Tratativas%20de%20Erros/">Aula 10 - Tratativas de Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2011%20-%20Instala%C3%A7%C3%A3o%20e%20Importa%C3%A7%C3%A3o%20de%20Bibliotecas/">Aula 11 - Instalação e Importação de Bibliotecas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2012%20-%20Sistema%20Operacional/">Aula 12 - Sistema Operacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2013%20-%20Constants/">Aula 13 - Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../Aula 14 - Open.md">Aula 14 - Open</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2015%20-%20Openpyxl/">Aula 15 - Openpyxl</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2016%20-%20Xlsxwriter/">Aula 16 - Xlsxwriter</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2017%20-%20Pandas/">Aula 17 - Pandas</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2018%20-%20CSV/">Aula 18 - CSV</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2019%20-%20Pdfs/">Aula 19 - Pdfs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2020%20-%20Email/">Aula 20 - Email</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2021%20-%20RegEx/">Aula 21 - RegEx</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 22 - Selenium</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.0%20-%20Selenium%20-%20Vis%C3%A3o%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.1%20-%20Selenium%20-%20Navegador/">Navegador</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2022.2%20-%20Selenium%20-%20Intera%C3%A7%C3%B5es/">Interações</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2023%20-%20BeautifulSoup/">Aula 23 - BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Aula 24 - APIs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#o-que-e-uma-api">O que é uma API?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quais-os-tipos-de-apis">Quais os tipos de APIs?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#como-podemos-testar-uma-api">Como podemos testar uma API?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#programas">Programas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rest">REST</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#soap">SOAP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#codigo">Código</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#requests">requests</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#http">http</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#urllib">urllib</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get">GET</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#explicacao">Explicação</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplo">Exemplo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#apis-para-praticar">APIs Para Praticar</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#post">POST</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#explicacao_1">Explicação</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemplo_1">Exemplo</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Aula 25 - Bancos de Dados</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.0%20-%20DBs%20-%20Geral/">Visão Geral</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.1%20-%20DBs%20-%20Queries/">Queries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Aula%2025.2%20-%20DBs%20-%20Python/">Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%2026%20-%20Orienta%C3%A7%C3%A3o%20a%20Objetos/">Aula 26 - Orientação a Objetos</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Aula%20992%20-%20Datetime/">Aula 991 - Datetime</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Temporada 1</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%201%20-%20Introduc%CC%A7a%CC%83o/">Aula 1 - Introdução</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%202%20-%20Listas%2C%20Diciona%CC%81rios%20e%20Loopings/">Aula 2 - Listas, Dicionários e Loopings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%203%20-%20Func%CC%A7o%CC%83es%2C%20Manipulac%CC%A7o%CC%83es%20e%20Erros/">Aula 3 - Funções, Manipulações e Erros</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%204%20-%20Bibliotecas%2C%20Excel%20e%20TXTs/">Aula 4 - Bibliotecas, Excel e TXTs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%205%20-%20Selenium%20e%20BeautifulSoup/">Aula 5 - Selenium e BeautifulSoup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%207%20-%20RegEx%20e%20APIs/">Aula 7 - RegEx e APIs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../S01/Aula%208%20-%20Email%2C%20DBs%20e%20OO/">Aula 8 - Email, DBs e OO</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menu de navegação em dispositivo móvel">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">RPA Pythonico</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Documentos"></a></li>
+          <li class="breadcrumb-item">Temporada 2</li>
+      <li class="breadcrumb-item active">Aula 24 - APIs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="apis">APIs</h1>
+<h2 id="o-que-e-uma-api">O que é uma API?</h2>
+<p>Uma forma bem prática para poder entender isso, é imaginar um restaurante. Nele existe o cliente, o garçom e o cozinheiro.</p>
+<ol>
+<li>O cliente chega, senta e chama o garçom;</li>
+<li>O garçom vem até a mesa, anota o pedido e leva ao chefe de cozinha;</li>
+<li>O chefe de cozinha prepara o prato (processa o pedido);</li>
+<li>O garçom coleta o prato pronto e leva para o cliente que pediu;</li>
+<li>O cliente final consome o prato preparado.</li>
+</ol>
+<p>A API seria basicamente isso, um serviço que leva um dado, processa e devolve o resultado. </p>
+<p>As páginas webs são exemplos de serviços, onde o navegador envia o pedido e o servidor devolve o código da página para que seja renderizado como imagem ao usuário.</p>
+<h2 id="quais-os-tipos-de-apis">Quais os tipos de APIs?</h2>
+<p>As APIs possuem duas modalides, estas sendo REST ou SOAP.</p>
+<p>A tecnologia REST é mais recente e está sendo mais utilizada pelo mercado, já a SOAP foi muito utilizada por programas mais antigos (legados).</p>
+<h2 id="como-podemos-testar-uma-api">Como podemos testar uma API?</h2>
+<h3 id="programas">Programas</h3>
+<h4 id="rest">REST</h4>
+<ul>
+<li><a href="https://www.postman.com/downloads/">Postman</a></li>
+<li><a href="https://insomnia.rest/download">Insomnia</a></li>
+</ul>
+<h4 id="soap">SOAP</h4>
+<ul>
+<li><a href="https://www.soapui.org/downloads/soapui/">SoapUI</a></li>
+</ul>
+<h3 id="codigo">Código</h3>
+<h4 id="requests">requests</h4>
+<ul>
+<li>Instalando a "lib" requests
+  <code>bash
+  pip install requests</code></li>
+</ul>
+<h4 id="http">http</h4>
+<ul>
+<li>Importando a "lib" http.client
+  <code>python
+  from http.client import HTTPSConnection</code></li>
+</ul>
+<h4 id="urllib">urllib</h4>
+<ul>
+<li>Importando a "lib" urllib.request
+  <code>python
+  from urllib.request import urlopen</code></li>
+</ul>
+<h2 id="get">GET</h2>
+<h3 id="explicacao">Explicação</h3>
+<p>As APIs do tipo GET são de modelagem simples, isso é, a requisição é feita somente tendo uma URL e nela podem ser passado parâmetros extras para serem efetuados filtros e ajustes no retorno devolvido por ela.</p>
+<p><strong>Obs.</strong>: Devido a mesma ter uma facilidade na chamada, o tipo GET pode se tornar perigoso se for necessário passar credenciais ou dados sigilosos.</p>
+<h3 id="exemplo">Exemplo</h3>
+<ol>
+<li>
+<p>Importando a "lib" requests
+    <code>python
+    import requests</code></p>
+</li>
+<li>
+<p>Efetuando requisição
+    ```python
+    url = "http://universities.hipolabs.com/search?country=brazil"</p>
+<p>response = requests.get(url)
+```</p>
+</li>
+<li>
+<p>Transformando o retorno em dicionário
+    <code>python
+    r_json = response.json()</code></p>
+</li>
+<li>
+<p>Interagindo com o retorno
+    <code>python
+    print(r_json[15]['name'])
+    # output: 'Universidade Regional de Blumenau'</code></p>
+</li>
+</ol>
+<h3 id="apis-para-praticar">APIs Para Praticar</h3>
+<ul>
+<li><a href="https://viacep.com.br/">ViaCEP</a></li>
+<li><a href="https://jsonplaceholder.typicode.com/">JssonPlaceholder</a></li>
+<li><a href="https://www.bcb.gov.br/api/servico/sitebcb/indicadorinflacao">Banco Central</a></li>
+<li><a href="https://agify.io/">Agify</a></li>
+<li><a href="https://github.com/Hipo/university-domains-list">University Domains</a></li>
+</ul>
+<h2 id="post">POST</h2>
+<h3 id="explicacao_1">Explicação</h3>
+<p>O tipo POST permite a passagem de dados/parâmetros através de um "corpo" que fica "mascarado" durante o envio e o retorno. 
+Logo, ela tem uma base mais complexa para ser utilizada, podendo até mesmo ter autenticações baseadas em Token.</p>
+<p><strong>Obs.:</strong> Os "corpos" geralmente são no formato JSON.</p>
+<h3 id="exemplo_1">Exemplo</h3>
+<ol>
+<li>
+<p>Importando a "lib" requests e JSON
+    <code>python
+    import requests
+    import json</code></p>
+</li>
+<li>
+<p>Gerando "corpo" da API
+    <code>python
+    payload = json.dumps({
+      "name": "Harry Potter",
+      "job": "Desenvolvedor RPA"
+    })</code></p>
+</li>
+<li>
+<p>Gerando os cabeçalhos da API
+    <code>python
+    headers = {
+      'Content-Type': 'application/json'
+    }</code></p>
+</li>
+<li>
+<p>Efetuando requisição
+    ```python
+    url = "https://reqres.in/api/users"</p>
+<p>response = requests.post(url, headers=headers, data=payload)
+```</p>
+</li>
+<li>
+<p>Transformando o retorno em dicionário
+    <code>python
+    r_json = response.json()</code></p>
+</li>
+<li>
+<p>Interagindo com o retorno
+    <code>python
+    print(r_json.get('createdAt'))
+    # output: '2022-05-23T19:53:22.594Z'</code></p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegação no rodapé">
+        <a href="../Aula%2023%20-%20BeautifulSoup/" class="btn btn-neutral float-left" title="Aula 23 - BeautifulSoup"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+        <a href="../Aula%2025.0%20-%20DBs%20-%20Geral/" class="btn btn-neutral float-right" title="Visão Geral">Seguinte <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>RPA Pythonico @ 2022</p>
+  </div>
+
+  Construído com <a href="https://www.mkdocs.org/">MkDocs</a> usando <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provido por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versões">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Aula%2023%20-%20BeautifulSoup/" style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+      <span><a href="../Aula%2025.0%20-%20DBs%20-%20Geral/" style="color: #fcfcfc">Seguinte &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>
